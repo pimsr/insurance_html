@@ -5,68 +5,31 @@ class Home_model extends CI_Model{
 	function __construct(){
 		parent::__construct();
 	}
-	public function selectHome(){
+	public function selectBanner()
+	{
 		$query = $this->db->select('*')
-				->where('id', 1)
-				->limit(1)
-				->get('home');
-		$data = $query->result();
-		return $data[0];
+				->from('tb_banner')
+				->where('status != -1')
+				->get();
+		$data = $query->result_array();
+		return $data;	
 	}
-	public function updateHomeProject($value){
-		$date = date("Y-m-d H:i:s");
-		foreach($value['p_id'] as $key => $val){
-			$this->db->where('id', $val);
-			$this->db->update('home_project', array(
-				'cate_id' => $value['p_cate'][$key],
-				'project_id' => $value['p_project'][$key],
-				'updated_date' => $date
-			));
-		}
-		return 1;
-	}
-	public function updateHome($value, $img){
+	public function insertBanner($value){
 		$values = array(
-			'img' => $img['arr_file'][0],
-			'img_mobile' => $img['arr_file'][1],
-			'title' => $value['title'],
-			'subtitle' => $value['subtitle'],
-			'video' => $value['video'],
-			'link' => $value['link'],
-			'updated_date' => date("Y-m-d H:i:s")
+			'title_th' => $value['title_th'],
+			'title_en' => $value['title_en'],
+			'subtitle_th' => $value['subtitle_th'],
+			'subtitle_en' => $value['subtitle_en'],
+			'img' => sizeof($value['img'] > 0) ? $value['img'][0] : null,
+			'status' => 1,
+			'created_date' => date("Y-m-d H:i:s"),
 		);
 
-		if($values['img'] == '') unset($values['img']);
-		if($values['img_mobile'] == '') unset($values['img_mobile']);
+		if(trim($values['img']) == '') unset($values['img']);
 
-		$this->db->where('id', 1);
-		$this->db->update('home',$values);
-
-		return $this->updateHomeProject($value);
-		
+		$this->db->insert('tb_banner',$values);
+		return $this->db->affected_rows();
 	}
-	public function selectCategory(){
-		$query = $this->db->select('*')
-				->where('status', 1)
-				->order_by('title', 'asc')
-				->get('project_cate');
-		$data = $query->result();
-		return $data;
-	}
-	public function selectProject(){
-		$query = $this->db->select('*')
-				->where('status', 1)
-				->order_by('title', 'asc')
-				->get('project');
-		$data = $query->result();
-		return $data;
-	}
-	public function selectHomeProject(){
-		$query = $this->db->select('*')
-				->order_by('seq', 'asc')
-				->get('home_project');
-		$data = $query->result();
-		return $data;
-	}
+	
 }//class
 ?>

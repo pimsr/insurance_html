@@ -33,7 +33,7 @@
         <script src="{{ base_url('assets/backend/js/modernizr.min.js') }}"></script>
         {% block css %}{% endblock %}
     </head>
-    <body>
+    <body data-base-url="{{ base_url('backend') }}">
         {% if page != 'login' %}
         <header id="topnav">
             <div class="topbar-main">
@@ -122,6 +122,9 @@
         <!--FooTable-->
         <script src="{{ base_url('assets/backend/plugins/footable/js/footable.all.min.js') }}"></script>
         <script src="{{ base_url('assets/backend/pages/jquery.footable.js') }}"></script>
+
+        <script src="{{ base_url('assets/backend/plugins/notifyjs/dist/notify.min.js') }}"></script>
+        <script src="{{ base_url('assets/backend/plugins/notifications/notify-metro.js') }}"></script>
 
         <script src="{{ base_url('assets/backend/js/jquery.core.js') }}"></script>
         <script src="{{ base_url('assets/backend/js/jquery.app.js') }}"></script>

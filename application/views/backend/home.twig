@@ -17,13 +17,14 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-12">
+                            <form class="col-md-12 form-submit form-banner" action="{{ base_url('backend/home/setBanner') }}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="cmd" value="add">
                                 <div class="preview home_banner">
                                     <div class="text">
                                         <i class="fa fa-photo"></i>
                                         <p>1920 x 580</p>
                                     </div>
-                                    <input type="file" accept="image/*">
+                                    <input class="form-control" type="file" accept="image/*" name="img[]" required>
                                 </div>
                                 <br>
                                 <div class="form-horizontal">
@@ -32,10 +33,10 @@
                                         <div class="col-md-10">
                                             <div class="row_half">
                                                 <div class="col_half">
-                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                    <input name="title_th" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
                                                 </div>
                                                 <div class="col_half">
-                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                    <input name="title_en" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
                                                 </div>
                                             </div>
                                         </div>
@@ -45,10 +46,10 @@
                                         <div class="col-md-10 ">
                                             <div class="row_half">
                                                 <div class="col_half">
-                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                    <input name="subtitle_th" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
                                                 </div>
                                                 <div class="col_half">
-                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                    <input name="subtitle_en" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
                                                 </div>
                                             </div>
                                         </div>
@@ -56,14 +57,14 @@
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">ลิ้งค์ที่เกี่ยวข้อง : </label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" placeholder="http://...">
+                                            <input name="link" type="url" class="form-control" placeholder="http://...">
                                         </div>
                                     </div>
                                     <div class="text-right">
-                                        <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+                                        <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                             <div class="col-md-12"><br><br></div>
                             <div class="col-md-12">
                                 <div class="table-responsive">
@@ -79,42 +80,33 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            {% for key, value in banner %}
                                             <tr>
                                                 <td>
-                                                    <input type="text" class="seq">
+                                                    <input type="text" class="seq" value="{{ value.seq }}">
+                                                    <input type="hidden" class="for-edit" name="id" value="{{ value.id }}">
+                                                    <input type="hidden" class="for-edit" name="img[]" value="{{ link_banner~value.img }}">
+                                                    <input type="hidden" class="for-edit" name="title_th" value="{{ value.title_th }}">
+                                                    <input type="hidden" class="for-edit" name="title_en" value="{{ value.title_en }}">
+                                                    <input type="hidden" class="for-edit" name="subtitle_th" value="{{ value.subtitle_th }}">
+                                                    <input type="hidden" class="for-edit" name="subtitle_en" value="{{ value.subtitle_en }}">
+                                                    <input type="hidden" class="for-edit" name="link" value="{{ value.link }}">
                                                 </td>
-                                                <td><img src="{{ link_img }}banner.png" height="35"></td>
-                                                <td>หัวข้อ</td>
-                                                <td>เนื้อหา</td>
+                                                <td><img src="{{ link_banner~value.img }}" height="35"></td>
+                                                <td>{{ value.title_th }}</td>
+                                                <td>{{ value.subtitle_th }}</td>
                                                 <td align="center">
                                                     <div class="checkbox checkbox-purple">
-                                                        <input id="checkbox1" type="checkbox">
+                                                        <input id="checkbox1" type="checkbox" {{ value.status == 1 ? 'checked' : '' }}>
                                                         <label for="checkbox1"></label>
                                                     </div>
                                                 </td>
                                                 <td class="actions">
-                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a class="on-default edit-row on-edit" data-form="form-banner"><i class="md md-edit"></i></a>
                                                     <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="text" class="seq">
-                                                </td>
-                                                <td><img src="{{ link_img }}banner.png" height="35"></td>
-                                                <td>หัวข้อ</td>
-                                                <td>เนื้อหา</td>
-                                                <td align="center">
-                                                    <div class="checkbox checkbox-purple">
-                                                        <input id="checkbox1" type="checkbox">
-                                                        <label for="checkbox1"></label>
-                                                    </div>
-                                                </td>
-                                                <td class="actions">
-                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
-                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
-                                                </td>
-                                            </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
