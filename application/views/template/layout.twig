@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>  
+    <head>
+        <meta charset="utf-8">
+        <title>ประกันลูก</title>
+        <meta name="Description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" type="text/css" href="{{ base_url('assets/frontend/css/bootstrap-reboot.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ base_url('assets/frontend/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ base_url('assets/frontend/css/fonts.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ base_url('assets/frontend/css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ base_url('assets/frontend/css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ base_url('assets/frontend/css/animate.css') }}">
+        <link rel="stylesheet" href="{{ base_url('assets/frontend/css/font-awesome/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ base_url('assets/frontend/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ base_url('assets/frontend/css/aos.css') }}">
+        <link rel="stylesheet" href="{{ base_url('assets/frontend/css/owl.theme.default.min.css') }}">
+        <link rel="stylesheet" href="{{ base_url('assets/frontend/css/social-buttons.css') }}">
+        
+        <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+        {% block css %} {% endblock %}
+
+        <!-- CSS for IE -->
+        <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="assets/css/ie.css" />
+        <![endif]-->
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <section id="header">
+            <div class="topbar bg-violet ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="social top-social">
+                                <a href="#"><img src="{{ link_img }}icon/icon-fb.png" alt=""></a>
+                                <a href="#"><img src="{{ link_img }}icon/icon-ig.png" alt=""></a>
+                                <a href="#"><img src="{{ link_img }}icon/icon-tw.png" alt=""></a>
+                            </div>
+                        
+                        </div>
+                        <div class="col text-right lan">
+                            <span class="list-inline">
+                                <a class="active" href="#">ไทย</a>
+                                <a href="#">EN</a>
+                            </span>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="main-menu" id="menu">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light ">
+                        <a class="navbar-brand" href="{{ base_url('home') }}">
+                            <img src="{{ link_img }}logo.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse color-gray" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto ">
+                                <li class="nav-item {{ page == 'home' ? 'active' : '' }}">
+                                    <a class="nav-link color-gray" href="{{ base_url('home') }}">หน้าหลัก <span class="sr-only">(current)</span></a>
+                                </li>
+                            
+                                <li class="nav-item dropdown {{ page == 'info' ? 'active' : '' }}">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        ประกันสุขภาพลูก
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        
+                                        <li><a class="dropdown-item" href="{{ base_url('info') }}">หน้ารวมประกัน</a></li>
+                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/1') }}">ผ่อนหนักให้เป็นเบา</a></li>
+                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/2') }}">เบากระเป๋า</a></li>
+                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/3') }}">เบาใจเหมาจ่าย</a></li>
+                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/4') }}">เบี้ยไม่ทิ้ง</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item {{ page == 'hospital' ? 'active' : '' }}">
+                                    <a class="nav-link color-gray" href="{{ base_url('hospital') }}">โรงพยาบาลลูก</a>
+                                </li>
+                                 <li class="nav-item {{ page == 'momandkids' ? 'active' : '' }}">
+                                    <a class="nav-link color-gray" href="{{ base_url('momandkids') }}">แม่และลูก</a>
+                                </li>
+                                <li class="nav-item {{ page == 'plan' ? 'active' : '' }}">
+                                    <a class="nav-link color-gray" href="{{ base_url('plan') }}">วางแผนการศึกษา</a>
+                                </li>
+
+                                <li class="nav-item dropdown {{ page == 'contact' ? 'active' : '' }}">
+                                    <a class="nav-link dropdown-toggle color-gray" href="{{ base_url('contact') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        ติดต่อเรา
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent') }}">ตัวแทนของเรา</a></li>
+                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent/aia') }}">ตัวแทน เอ ไอ เอ</a></li>
+                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent/thailife') }}">ตัวแทน ไทยประกันชีวิต</a></li>
+                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent/prudential') }}">ตัวแทน พรูเด็นเชียล</a></li>
+                                    
+                                    </ul>
+                                </li>
+   
+                            </ul>
+                            <a class="form-inline my-2 my-lg-0 top-inline">
+                                <img src="{{ link_img }}icon/icon-24hr.png" alt="">
+                                <span class="color-violet">215 (362) 4579</span>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                
+            </div>
+        </section>
+
+        {% block content %} {% endblock %}
+
+        <footer class="bg-gray content-p-top ">
+            <div>
+                <div class="container">
+                    <div class="stop">
+                        <div class="row footer-social">
+                            <div class="col-12 col-sm-6 col-md-3 link">
+                                <h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-fb-footer.png"> <span>แชร์หน้านี้บนเฟสบุ๊ค</span></h4>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 link">
+                                <h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-line-footer.png"> <span>pragunluk</span></h4>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 link">
+                                <h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-tel-footer.png"> <span>215 (362) 4579</span></h4>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3 link">
+                                <h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-message-footer.png"> <span>info@pragundek.com</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="container content-p-bottom ">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="{{ link_img }}logo.png">
+                        <p class="mt-2 footer-content">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง </p>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row nav-footer">
+                            <div class="col-md-3">
+                                <h5>เกี่ยวกับเรา</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#">นิยามบริษัท</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ทำไมต้องเรา</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>ประกันเด็ก</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#">เบากระเป๋า</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">เบาใจเหมาจ่าย</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">เบี้ยไม่ทิ้ง</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>โรงพยาบาลเด็ก</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#">นิยามบริษัท</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ทำไมต้องเรา</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>ติดต่อสอบถาม</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a href="#">นิยามบริษัท</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">ทำไมต้องเรา</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copy-right bg-violet2">
+                <div class="container rel">
+                    <div class="text-center">Copyright © 2018 Pragundek.com All Rights Reserved.</div>
+
+                    <div class="social top-social social-footer">
+                        <a href="#"><img src="{{ link_img }}icon/icon-fb.png" alt=""></a>
+                        <a href="#"><img src="{{ link_img }}icon/icon-ig.png" alt=""></a>
+                        <a href="#"><img src="{{ link_img }}icon/icon-tw.png" alt=""></a>
+                    </div>
+                </div>
+
+               
+
+            </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        {# <script src="{{ base_url('assets/frontend/js/jquery-migrate-1.0.0.js') }}"></script> #}
+        <script src="{{ base_url('assets/frontend/js/bootstrap.min.js') }}"></script>
+        <script src="{{ base_url('assets/frontend/js/owl.carousel.js') }}"></script>
+        <script src="{{ base_url('assets/frontend/js/aos.js') }}"></script>
+        <script src="{{ base_url('assets/frontend/js/jquery.sticky.js') }}"></script>
+        <script src="{{ base_url('assets/frontend/js/social-buttons.js') }}"></script>
+        <script src="{{ base_url('assets/frontend/js/custom.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+
+        <script>
+            if ($(window).width() > 992){
+              jQuery(function($) {
+                    $('.navbar .dropdown').hover(function() {
+                    $(this).find('.dropdown-menu').first().stop(true, true).delay(0).slideDown();
+
+                    }, function() {
+                    $(this).find('.dropdown-menu').first().stop(true, true).delay(0).slideUp();
+
+                    });
+
+                    $('.navbar .dropdown > a').click(function(){
+                    location.href = this.href;
+                    });
+
+                });
+            }
+        </script>
+
+        {% block js %} {% endblock %}
+    </body>
+</html>
