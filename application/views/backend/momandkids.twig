@@ -1,0 +1,118 @@
+{% extends "layout_backend.twig" %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default panel-border">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">แบนเนอร์</h3>
+                        <i class="fa fa-angle-down tab-icon"></i>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="preview home_banner">
+                                    <div class="text">
+                                        <i class="fa fa-photo"></i>
+                                        <p>1920 x 580</p>
+                                    </div>
+                                    <input type="file" accept="image/*">
+                                </div>
+                                <div class="text-right mt-5">
+                                    <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">บันทึก</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="panel panel-default panel-border">
+                    <div class="panel-heading closed">
+                        <h3 class="panel-title">หมวดหมู่บทความ</h3>
+                        <i class="fa fa-angle-down tab-icon"></i>
+                    </div>
+                    <div class="panel-body closed">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ชื่อประเภท : </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                            <input type="text" class="form-control mt-5" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12"><br></div>
+                            <div class="col-sm-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th width="80">ลำดับ</th>
+                                                <th>ชื่อประเภท</th>
+                                                <th class="text-center"  width="120">แสดงหน้าเว็บ</th>
+                                                <th class="text-center"  width="120"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="seq">
+                                                </td>
+                                                <td>ประเภท 1</td>
+                                                <td align="center">
+                                                    <div class="checkbox checkbox-purple">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="{{ base_url('backend/momandkids/detail') }}" class="on-default edit-row"><i class="md md-search"></i></a>
+                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="seq">
+                                                </td>
+                                                <td>ประเภท 2</td>
+                                                <td align="center">
+                                                    <div class="checkbox checkbox-purple">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="{{ base_url('backend/momandkids/detail') }}" class="on-default edit-row"><i class="md md-search"></i></a>
+                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}{% endblock %}

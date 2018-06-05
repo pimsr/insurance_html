@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Contact extends MY_Controller {
+class Plan extends MY_Controller {
 	public function __construct(){
 		parent::__construct();
 	}
 	public function index()
 	{
-		$data['page'] = 'contact';
+		$data['page'] = 'plan';
 		$data['link_img'] = base_url('assets/frontend/images/');
-		$this->twig->display('@b/contact', $data);
+		$this->twig->display('@b/plan', $data);
 	}
 }

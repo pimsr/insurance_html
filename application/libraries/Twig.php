@@ -101,13 +101,13 @@ class Twig
 			/*============== custom path template ==================*/
 
 			$frontend   = APPPATH."views";
-			$admin      = APPPATH."views/backend";
+			$backend      = APPPATH."views/backend";
 			$template   = APPPATH."views/template";
 			$this->loader = new Twig_Loader_Filesystem($template); //for main directory
-			// $this->loader = new Twig_Loader_Filesystem(array($default, $admin, $template));
+			// $this->loader = new Twig_Loader_Filesystem(array($default, $backend, $template));
 
 			$this->loader->addPath($frontend, 'f');
-			$this->loader->addPath($admin, 'a');
+			$this->loader->addPath($backend, 'b');
 
 			/*============== custom path template ==================*/
 		}

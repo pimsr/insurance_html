@@ -1,0 +1,219 @@
+{% extends "layout_backend.twig" %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default panel-border">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">แบนเนอร์</h3>
+                        <i class="fa fa-angle-down tab-icon"></i>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="preview home_banner">
+                                    <div class="text">
+                                        <i class="fa fa-photo"></i>
+                                        <p>1920 x 580</p>
+                                    </div>
+                                    <input type="file" accept="image/*">
+                                </div>
+                                <br>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">หัวข้อ : </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                            <input type="text" class="form-control mt-5" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">เนื้อหา : </label>
+                                        <div class="col-md-10 ">
+                                            <textarea class="form-control" placeholder="กรุณาใส่ภาษาไทย"></textarea>
+                                            <textarea class="form-control mt-5" placeholder="กรุณาใส่ภาษาอังกฤษ"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">บันทึก</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="panel panel-default panel-border">
+                    <div class="panel-heading closed">
+                        <h3 class="panel-title">โรงพยาบาล</h3>
+                        <i class="fa fa-angle-down tab-icon"></i>
+                    </div>
+                    <div class="panel-body closed">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ชื่อโรงพยาบาล : </label>
+                                        <div class="col-md-10">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ห้อง 1 : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">ประเภทห้อง</span>
+                                                <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                <span class="input-group-addon">ราคา</span>
+                                                <input type="text" class="form-control" style="height:75px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ห้อง 2 : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">ประเภทห้อง</span>
+                                                <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                <span class="input-group-addon">ราคา</span>
+                                                <input type="text" class="form-control" style="height:75px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ห้อง 3 : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="input-group">
+                                                <span class="input-group-addon">ประเภทห้อง</span>
+                                                <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                <span class="input-group-addon">ราคา</span>
+                                                <input type="text" class="form-control" style="height:75px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">เบอร์ติดต่อ : </label>
+                                        <div class="col-md-10 ">
+                                            <input type="text" class="form-control" placeholder="XX-XXX-XXXX">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ลิ้งที่เกี่ยวข้อง : </label>
+                                        <div class="col-md-10 ">
+                                            <input type="url" class="form-control" placeholder="http://">
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12"><br><br></div>
+                            <div class="col-sm-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th width="80">ลำดับ</th>
+                                                <th>ชื่อโรงพยาบาล</th>
+                                                <th class="text-center"  width="120">แสดงหน้าเว็บ</th>
+                                                <th class="text-center"  width="120"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="seq">
+                                                </td>
+                                                <td>รพ.รามาธิบดี(อาคารสมเด็จพระเทพ)</td>
+                                                <td align="center">
+                                                    <div class="checkbox checkbox-purple">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="seq">
+                                                </td>
+                                                <td>รพ.กรุงเทพ</td>
+                                                <td align="center">
+                                                    <div class="checkbox checkbox-purple">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="seq">
+                                                </td>
+                                                <td>รพ.กรุงเทพคริสเตียน</td>
+                                                <td align="center">
+                                                    <div class="checkbox checkbox-purple">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="seq">
+                                                </td>
+                                                <td>รพ.กรุงเทพพระประแดง</td>
+                                                <td align="center">
+                                                    <div class="checkbox checkbox-purple">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}{% endblock %}

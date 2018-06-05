@@ -1,0 +1,310 @@
+{% extends "layout_backend.twig" %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default panel-border">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">เนื้อหา</h3>
+                        <i class="fa fa-angle-down tab-icon"></i>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="preview home_banner">
+                                    <div class="text">
+                                        <i class="fa fa-photo"></i>
+                                        <p>1920 x 580</p>
+                                    </div>
+                                    <input type="file" accept="image/*">
+                                </div>
+                                <br>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">หัวข้อ : </label>
+                                        <div class="col-md-10">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">เนื้อหา : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <textarea class="form-control" placeholder="กรุณาใส่ภาษาไทย"></textarea>
+                                                </div>
+                                                <div class="col_half">
+                                                    <textarea class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ติดต่อเรื่องเคลม : </label>
+                                        <div class="col-md-10">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่เบอร์ติดต่อ">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ลิ้งเว็บไซต์">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">เบอร์ติดต่อ : </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Fackbook : </label>
+                                        <div class="col-md-10">
+                                            <input type="url" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Line : </label>
+                                        <div class="col-md-10">
+                                            <input type="url" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Twitter : </label>
+                                        <div class="col-md-10">
+                                            <input type="url" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Instagram : </label>
+                                        <div class="col-md-10">
+                                            <input type="url" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">E-mail : </label>
+                                        <div class="col-md-10">
+                                            <input type="url" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right mt-5">
+                                    <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">บันทึก</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="panel panel-default panel-border">
+                    <div class="panel-heading closed">
+                        <h3 class="panel-title">ตัวแทน</h3>
+                        <i class="fa fa-angle-down tab-icon"></i>
+                    </div>
+                    <div class="panel-body closed">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="preview company_people">
+                                            <div class="text">
+                                                <i class="fa fa-photo"></i>
+                                                <p>395 x 440</p>
+                                            </div>
+                                            <input type="file" accept="image/*">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="preview company_banner">
+                                            <div class="text">
+                                                <i class="fa fa-photo"></i>
+                                                <p>1920 x 580</p>
+                                            </div>
+                                            <input type="file" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">หัวข้อ : </label>
+                                        <div class="col-md-10">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">เกริ่นนำ : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <textarea class="form-control" placeholder="กรุณาใส่ภาษาไทย"></textarea>
+                                                </div>
+                                                <div class="col_half">
+                                                    <textarea class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ชื่อ : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ตำแหน่ง : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">เนื้อหา : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <textarea class="form-control editor" placeholder="กรุณาใส่ภาษาไทย"></textarea>
+                                                </div>
+                                                <div class="col_half">
+                                                    <textarea class="form-control editor" placeholder="กรุณาใส่ภาษาอังกฤษ"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ที่อยู่ : </label>
+                                        <div class="col-md-10 ">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <textarea class="form-control" placeholder="กรุณาใส่ภาษาไทย"></textarea>
+                                                </div>
+                                                <div class="col_half">
+                                                    <textarea class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">เบอร์ : </label>
+                                        <div class="col-md-10 ">
+                                            <input type="tel" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">อีเมล : </label>
+                                        <div class="col-md-10 ">
+                                            <input type="url" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">เว็บไซต์ : </label>
+                                        <div class="col-md-10 ">
+                                            <input type="url" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+                                </div>
+                            </div>
+                            <div class="col-md-12"><br><br></div>
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th width="80">ลำดับ</th>
+                                                <th>รูปภาพ</th>
+                                                <th>หัวข้อ</th>
+                                                <th>เกริ่นนำ</th>
+                                                <th class="text-center" width="120">แสดงหน้าเว็บ</th>
+                                                <th class="text-center" width="120"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="seq">
+                                                </td>
+                                                <td><img src="{{ link_img }}staff1.png" height="35"></td>
+                                                <td>หัวข้อ</td>
+                                                <td>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดงสำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า</td>
+                                                <td align="center">
+                                                    <div class="checkbox checkbox-purple">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" class="seq">
+                                                </td>
+                                                <td><img src="{{ link_img }}staff2.png" height="35"></td>
+                                                <td>หัวข้อ</td>
+                                                <td>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดงสำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า</td>
+                                                <td align="center">
+                                                    <div class="checkbox checkbox-purple">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="actions">
+                                                    <a href="#" class="on-default edit-row"><i class="md md-edit"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i class="md md-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}{% endblock %}
