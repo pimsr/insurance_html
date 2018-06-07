@@ -1,0 +1,55 @@
+<form class="form-submit form-banner" data-table="box-table-banner" action="{{ mode == 'add' ? base_url('backend/home/addBanner') : base_url('backend/home/editBanner') }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{ data.id }}">
+    <div class="preview home_banner" style="background-image:url('{{ link_banner~data.img }}')">
+        <div class="text">
+            <i class="fa fa-photo"></i>
+            <p>1920 x 580</p>
+        </div>
+        <input class="form-control" type="file" accept="image/*" name="img[]" {{ mode == 'add' ? 'required' : '' }}>
+    </div>
+    <br>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label">หัวข้อ : </label>
+            <div class="col-md-10">
+                <div class="row_half">
+                    <div class="col_half">
+                        <input name="title_th" value="{{ data.title_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                    </div>
+                    <div class="col_half">
+                        <input name="title_en" value="{{ data.title_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">เนื้อหา : </label>
+            <div class="col-md-10 ">
+                <div class="row_half">
+                    <div class="col_half">
+                        <input name="subtitle_th" value="{{ data.subtitle_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                    </div>
+                    <div class="col_half">
+                        <input name="subtitle_en" value="{{ data.subtitle_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">ลิ้งค์ที่เกี่ยวข้อง : </label>
+            <div class="col-md-10">
+                <input name="link" value="{{ data.link }}" type="url" class="form-control" placeholder="http://...">
+            </div>
+        </div>
+        {% if mode == 'edit' %}
+        <div class="text-right">
+            <button type="button" class="btn btn-white waves-effect waves-light w-lg on-cancel">ยกเลิก</button>
+            <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">แก้ไข</button>
+        </div>
+        {% else %}
+        <div class="text-right">
+            <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+        </div>
+        {% endif %}
+    </div>
+</form>

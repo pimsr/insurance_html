@@ -1,6 +1,8 @@
 (function($){
   $base_url = $('body').attr('data-base-url');
   setEditor();
+  setTableData();
+  setForm();
   // setTable();
   $('body').on('change', '.preview input', function(input){
     var parents = $(this).parent();
@@ -52,6 +54,9 @@
   $('body').on('submit', '.form-submit', function(e){
     e.preventDefault();
     var url = $(this).attr('action');
+    var table = $(this).attr('data-table');
+    var re_form = $(this).parents('.box-form');
+    var re_link = re_form.attr('data-load');
     var formData = new FormData(this);
     $.ajax({
         type: "POST",
@@ -62,35 +67,107 @@
         success: function(response) {
           var res = JSON.parse(response);
           if(res.status == 1){
-            $.Notification.notify('success','top right', res.msg);
-            setTimeout(function(){
-              window.location.reload();
-            }, 1000);
+            $.Notification.notify('success','top right', 'Successful', res.msg);
+            re_form.load( re_link );
+            reloadTable(table);
           }else{
-            $.Notification.notify('error','top right', res.msg);
+            $.Notification.notify('error','top right', 'Error', res.msg);
           }
         },
         error: function(errResponse) {
-            console.log('ERR: '+errResponse);
+          $.Notification.notify('error','top right', 'Error', errResponse);
         }
     });
-  }).on('click', '.on-edit', function(){
-    var tr = $(this).parents('tr');
-    var form = $(this).attr('data-form');
-    
-    tr.find('.for-edit').each(function(){
-      var name = $(this).attr('name');
-      var value = $(this).attr('value');
-      var input = $('.'+form).find('.form-control[name="'+name+'"]');
-      if(input.attr('type') == 'file'){
-        input.parents('.preview').css('background-image', 'url("'+value+'")');
-      }else{
-        input.val(value);
-      }
+  }).on('submit', '.form-submit-table', function(e){
+    e.preventDefault();
+    var url = $(this).attr('action');
+    var table = $(this).attr('data-table');
+    var formData = new FormData(this);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+          var res = JSON.parse(response);
+          if(res.status == 1){
+            $.Notification.notify('success','top right', 'Successful' ,res.msg);
+            reloadTable(table);
+          }else{
+            $.Notification.notify('error','top right', 'Error', res.msg);
+          }
+        },
+        error: function(errResponse) {
+          $.Notification.notify('error','top right', 'Error', errResponse);
+        }
     });
+  }).on('click', '.on-edit', function(e){
+    e.preventDefault();
+    var link = $(this).attr('href');
+    var boxForm = $(this).attr('data-form');
+    
+    reloadForm(boxForm, link);
+  }).on('click', '.on-delete', function(e){
+    e.preventDefault();
+    if(confirm("คุณต้องการลบหรือไม่ ?")){
+      var url = $(this).attr('href');
+      var tr = $(this).parents('tr');
+      var table = $(this).parents('.box-table');
+      var link = table.attr('data-load');
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: "",
+        processData: false,
+        contentType: false,
+        success: function(response) {
+          var res = JSON.parse(response);
+          if(res > 0) {
+            table.load( link );
+          }
+        }
+      });
+    }
+  }).on('click', '.on-cancel', function(){
+    var form = $(this).parents('.box-form');
+    var link = form.attr('data-load');
+    form.load( link );
+  });
+  
+  function reloadTable(table){
+    var link = $('.'+table).attr('data-load');
+    $('.'+table).load( link );
+  }
 
-    $('html,body').animate({ scrollTop: $("."+form).offset().top-200}, 'fast');
-  })
+  function setTableData(){
+    if($('.box-table').length > 0){
+			$('.box-table').each(function(){
+        var html = $(this).attr('data-load');
+				if(html !== undefined || html !== null || html !== ''){
+					$(this).load( html );
+				}
+			});
+		}
+  }
+
+  function reloadForm(form, link){
+    $('.'+form).load( link );
+    $('html,body').animate({
+      scrollTop: $('.'+form).offset().top - 180
+    }, 'fast');
+  }
+
+  function setForm(){
+    if($('.box-form').length > 0){
+			$('.box-form').each(function(){
+        var html = $(this).attr('data-load');
+				if(html !== undefined || html !== null || html !== ''){
+					$(this).load( html );
+				}
+			});
+		}
+  }
 
   function setTable(){
     if($('#datatable').length > 0){

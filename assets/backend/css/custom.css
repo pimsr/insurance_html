@@ -398,7 +398,7 @@ table .actions a:hover{
     font-family: sans-serif;
 }
 .preview.home_dotcom{
-    height: 28vw;
+    height: 27vw;
     min-height: initial;
 }
 textarea.no-resize{
@@ -548,6 +548,12 @@ textarea.no-resize{
 }
 .demo-foo-accordion{
     font-size: 12px;
+}
+.actions i{
+    color: #99397f !important;
+}
+.btn-white, .btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white.active, .btn-white.focus, .btn-white:active, .btn-white:focus, .btn-white:hover, .open > .dropdown-toggle.btn-white {
+    border: 1px solid #e3e3e3 !important;
 }
 @media (max-width: 991px){
     #content .box .btn-remove{

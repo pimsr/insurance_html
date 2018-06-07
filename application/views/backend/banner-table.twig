@@ -1,0 +1,51 @@
+<form class="form-submit-table" data-table="box-table-banner" action="{{ base_url('backend/home/setBanner') }}" method="post">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th width="80">ลำดับ</th>
+                    <th>รูปภาพ</th>
+                    <th>หัวข้อ</th>
+                    <th>เนื้อหา</th>
+                    <th class="text-center" width="120">แสดงหน้าเว็บ</th>
+                    <th class="text-center" width="120"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if banner|length == 0 %}<td colspan="6" align="center">ยังไม่มีข้อมูล</td>{% endif %}
+                {% for key, value in banner %}
+                <tr>
+                    <td>
+                        <input type="text" class="seq" name="seq[{{ key }}]" value="{{ value.seq }}">
+                        <input type="hidden" name="id[{{ key }}]" value="{{ value.id }}">
+                    </td>
+                    <td>
+                        {% if value.img|trim == '' %}
+                            -
+                        {% else %}
+                            <img src="{{ link_banner~value.img }}" height="35">
+                        {% endif %}
+                    </td>
+                    <td>{{ value.title_th }}</td>
+                    <td>{{ value.subtitle_th }}</td>
+                    <td align="center">
+                        <div class="checkbox checkbox-purple">
+                            <input class="on-check" id="checkbox{{ key }}" name="status[{{ key }}]" type="checkbox" {{ value.status == 1 ? 'checked' : '' }}>
+                            <label for="checkbox{{ key }}"></label>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <a href="{{ base_url('backend/home/editBanner/')~value.id }}" data-form="box-form-banner" class="on-default edit-row on-edit"><i class="md md-edit"></i></a>
+                        <a href="{{ base_url('backend/home/deleteBanner/')~value.id }}" class="on-default remove-row on-delete"><i class="md md-delete"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% if banner|length > 0 %}
+    <div class="text-right">
+        <button type="submit" class="btn btn-white waves-effect waves-light w-lg">บันทึกการเปลี่ยนแปลง</button>
+    </div>
+    {% endif %}
+</form>
