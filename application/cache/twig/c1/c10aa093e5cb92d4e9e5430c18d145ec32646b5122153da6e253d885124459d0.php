@@ -40,7 +40,7 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
  \t<section id=\"main\" class=\" page-insurance\">
  \t\t<div class=\"container\">
  \t\t\t<div class=\"content-p-top content-p-bottom \">
- \t\t\t\t <h3 class=\"title color-violet2 text-center\">ประกันลูกดอทคอม</h3>
+ \t\t\t\t <h3 class=\"title color-violet2 text-center\">ประกันสุขภาพลูกทั้งหมด</h3>
  \t\t\t</div>
  \t\t\t<div class=\"row\">
 \t \t\t\t<div class=\"col-12 col-md-6\">
@@ -287,7 +287,7 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
  \t<section id=\"main\" class=\" page-insurance\">
  \t\t<div class=\"container\">
  \t\t\t<div class=\"content-p-top content-p-bottom \">
- \t\t\t\t <h3 class=\"title color-violet2 text-center\">ประกันลูกดอทคอม</h3>
+ \t\t\t\t <h3 class=\"title color-violet2 text-center\">ประกันสุขภาพลูกทั้งหมด</h3>
  \t\t\t</div>
  \t\t\t<div class=\"row\">
 \t \t\t\t<div class=\"col-12 col-md-6\">
