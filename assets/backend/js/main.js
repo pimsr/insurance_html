@@ -66,6 +66,7 @@
         contentType: false,
         success: function(response) {
           var res = JSON.parse(response);
+          // console.log(res);
           if(res.status == 1){
             $.Notification.notify('success','top right', 'Successful', res.msg);
             re_form.load( re_link );

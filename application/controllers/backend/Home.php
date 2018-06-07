@@ -160,4 +160,69 @@ class Home extends MY_Controller {
 			exit();
 		}
 	}
+
+	// review
+	public function tableReview(){
+		$data['link_review'] = base_url('upload/thumb/review/');
+		$data['review'] = $this->home_model->selectReview();
+		$this->twig->display('@b/review-table', $data);
+	}
+	public function addReview(){
+		if($this->input->post()){
+			$data = array();
+			$data['status'] = 0;
+			$data['msg'] = 'ไม่สามารถบันทึกข้อมูลได้';
+			$_POST['img'] = $this->uploadFile('review', 'img');
+			$res = $this->home_model->insertReview($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
+		$data['mode'] = 'add';
+		$data['link_review'] = base_url('upload/thumb/review/');
+		$this->twig->display('@b/review-form', $data);
+	}
+	public function editReview($id = 0){
+		if($this->input->post()){
+			$data = array();
+			$data['status'] = 0;
+			$data['msg'] = 'ไม่สามารถบันทึกข้อมูลได้';
+			$_POST['img'] = $this->uploadFile('review', 'img');
+			$res = $this->home_model->updateReview($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
+		$data['mode'] = 'edit';
+		$data['link_review'] = base_url('upload/thumb/review/');
+		$data['data'] = $this->home_model->selectReviewByID($id);
+		$data['id'] = $id;
+		$this->twig->display('@b/review-form', $data);
+	}
+	public function deleteReview($id)
+	{
+		$res = $this->home_model->deleteReview($id);
+		echo $res;
+	}
+	public function setReview()
+	{
+		if($this->input->post()){
+			$data = array();
+			$res = $this->home_model->updateReviewActions($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			echo json_encode($data);
+			exit();
+		}
+	}
 }

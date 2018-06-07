@@ -555,6 +555,10 @@ textarea.no-resize{
 .btn-white, .btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white.active, .btn-white.focus, .btn-white:active, .btn-white:focus, .btn-white:hover, .open > .dropdown-toggle.btn-white {
     border: 1px solid #e3e3e3 !important;
 }
+.form-control{
+    font-size: 14px;
+    line-height: 18px;
+}
 @media (max-width: 991px){
     #content .box .btn-remove{
         top: -12px;

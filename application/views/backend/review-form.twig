@@ -1,0 +1,50 @@
+<form class="row form-submit form-review" data-table="box-table-review" action="{{ mode == 'add' ? base_url('backend/home/addReview') : base_url('backend/home/editReview') }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{ data.id }}">
+    <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+        <div class="in_thumb">
+            <div class="clearfix">
+                <div class="preview home_icon" style="background-image:url('{{ link_review~data.img }}')">
+                    <div class="text">
+                        <i class="fa fa-photo"></i>
+                        <p>100 x 100</p>
+                    </div>
+                    <input type="file" accept="image/*" name="img[]">
+                </div>
+            </div>
+            <div class="row_half">
+                <div class="col_half">
+                    <input type="text" name="title_th" value="{{ data.title_th }}" class="form-control" placeholder="หัวข้อภาษาไทย">
+                </div>
+                <div class="col_half">
+                    <input type="text" name="title_en" value="{{ data.title_en }}" class="form-control" placeholder="หัวข้อภาษาอังกฤษ">
+                </div>
+            </div>
+            <div class="row_half mt-5">
+                <div class="col_half">
+                    <input type="text" name="subtitle_th" value="{{ data.subtitle_th }}" class="form-control" placeholder="หัวข้อย่อยภาษาไทย">
+                </div>
+                <div class="col_half">
+                    <input type="text" name="subtitle_en" value="{{ data.subtitle_en }}" class="form-control" placeholder="หัวข้อย่อยภาษาอังกฤษ">
+                </div>
+            </div>
+            <div class="row_half mt-5">
+                <div class="col_half">
+                    <textarea class="form-control no-resize" name="desc_th" rows="3" placeholder="รีวิวภาษาไทย">{{ data.desc_th }}</textarea>
+                </div>
+                <div class="col_half">
+                    <textarea class="form-control no-resize" name="desc_en" rows="3" placeholder="รีวิวภาษาอังกฤษ">{{ data.desc_en }}</textarea>
+                </div>
+            </div>
+            {% if mode == 'edit' %}
+            <div class="col-sm-12 text-center mt-20">
+                <button type="button" class="btn btn-white waves-effect waves-light w-lg on-cancel">ยกเลิก</button>
+                <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">แก้ไข</button>
+            </div>
+            {% else %}
+            <div class="col-sm-12 text-center mt-20">
+                <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</form>
