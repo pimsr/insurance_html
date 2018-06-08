@@ -1,0 +1,50 @@
+<form class="form-submit form-insurance" data-table="box-table-insurance" action="{{ mode == 'add' ? base_url('backend/info/addInsurance') : base_url('backend/info/editInsurance') }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{ data.id }}">
+    <div class="col-md-8 col-sm-10 col-md-offset-2 col-sm-offset-1">
+        <div class="in_thumb">
+            <div class="clearfix">
+                <div class="preview home_icon" style="background-image:url('{{ link_insurance~data.icon }}')">
+                    <div class="text">
+                        <i class="fa fa-photo"></i>
+                        <p>50 x 50</p>
+                    </div>
+                    <input type="file" accept="image/*" name="icon[]">
+                </div>
+            </div>
+            <div class="row_half">
+                <div class="col_half">
+                    <input type="text" name="title_th" value="{{ data.title_th }}" class="form-control" placeholder="หัวข้อภาษาไทย">
+                </div>
+                <div class="col_half">
+                    <input type="text" name="title_en" value="{{ data.title_en }}" class="form-control" placeholder="หัวข้อภาษาอังกฤษ">
+                </div>
+            </div>
+            <div class="row_half mt-5">
+                <div class="col_half">
+                    <textarea name="caption_th" class="form-control no-resize" rows="3" placeholder="เนื่อหาภาษาไทย">{{ data.caption_th }}</textarea>
+                </div>
+                <div class="col_half">
+                    <textarea name="caption_en" class="form-control no-resize" rows="3" placeholder="เนื่อหาภาษาอังกฤษ">{{ data.caption_en }}</textarea>
+                </div>
+            </div>
+            <div class="row_half mt-5">
+                <div class="col_half">
+                    <input type="text" name="note_th" value="{{ data.note_th }}" class="form-control" placeholder="หมายเหตุภาษาไทย">
+                </div>
+                <div class="col_half">
+                    <input type="text" name="note_en" value="{{ data.note_en }}" class="form-control" placeholder="หมายเหตุภาษาอังกฤษ">
+                </div>
+            </div>
+            {% if mode == 'edit' %}
+            <div class="text-center mt-20">
+                <button type="button" class="btn btn-white waves-effect waves-light w-lg on-cancel">ยกเลิก</button>
+                <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">แก้ไข</button>
+            </div>
+            {% else %}
+            <div class="text-center mt-20">
+                <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</form>

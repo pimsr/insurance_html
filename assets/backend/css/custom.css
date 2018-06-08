@@ -339,6 +339,10 @@ table .actions a:hover{
     height: 26vw;
     min-height: initial;
 }
+.preview.cover_banner{
+    height: 20vw;
+    min-height: initial;
+}
 .form-group {
     margin-bottom: 5px;
 }
@@ -453,7 +457,7 @@ textarea.no-resize{
     margin-top: 20px;
 }
 .in_how{
-    margin: 30px 0px 5px;
+    margin: 5px 0px;
 }
 .in_how textarea{
     min-height: 60px;

@@ -134,6 +134,26 @@
     var form = $(this).parents('.box-form');
     var link = form.attr('data-load');
     form.load( link );
+  }).on('submit', '.form-submit-update', function(e){
+    e.preventDefault();
+    var url = $(this).attr('action');
+    var formData = new FormData(this);
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+          var res = JSON.parse(response);
+          // console.log(res);
+          if(res.status == 1){
+            $.Notification.notify('success','top right', 'Successful', res.msg);
+          }else{
+            $.Notification.notify('error','top right', 'Error', res.msg);
+          }
+        }
+    });
   });
   
   function reloadTable(table){
