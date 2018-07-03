@@ -6,6 +6,7 @@ class Contact extends MY_Controller {
 		parent::__construct();
 		$this->load->model('backend/main_model');
 		$this->load->model('backend/contact_model');
+		$this->checkAdmin();
 	}
 	public function uploadFile($folder, $name){
 		if(isset($_FILES[$name])){

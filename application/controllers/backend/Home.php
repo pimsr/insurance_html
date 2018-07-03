@@ -6,6 +6,7 @@ class Home extends MY_Controller {
 		parent::__construct();
 		$this->load->model('backend/main_model');
 		$this->load->model('backend/home_model');
+		$this->checkAdmin();
 	}
 	public function index()
 	{

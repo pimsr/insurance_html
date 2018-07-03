@@ -54,6 +54,17 @@ class Main_model extends CI_Model{
 		$this->db->update('tb_headline', $values);
 		return $this->db->affected_rows();
 	}
+
+	function selectAdmin($value){
+		$query = $this->db->select('*')
+				->from('tb_admin')
+				->where('user', $value['user'])
+				->where('pass', hash('sha512', $value['pass']))
+				->limit(1)
+				->get();
+		$data = $query->result_array();
+		return sizeof($data) > 0 ? $data[0] : null;	
+	}
 	
 }//class
 ?>
