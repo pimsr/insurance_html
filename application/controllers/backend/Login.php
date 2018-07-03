@@ -10,6 +10,11 @@ class Login extends MY_Controller {
 	{
 		$data['page'] = 'login';
 		$data['link_img'] = base_url('assets/frontend/images/');
+		$data['alert'] = 0;
+		if($this->session->userdata('alert')) {
+			$data['alert'] = $this->session->userdata('alert');
+			$this->session->unset_userdata('alert');
+		}
 		$this->twig->display('@b/login', $data);
 	}
 
@@ -18,13 +23,16 @@ class Login extends MY_Controller {
 		if($this->input->post()){
 			$res = $this->main_model->selectAdmin($_POST);
 			if($res != null){
-				$this->session->set_userdata('admin', array(
-					'admin' => $res['user']
-				));
-				redirect('backend/home', 'refresh');
+				$log = $this->main_model->insertLog($res['id']);
+				if($log > 0){
+					$this->session->set_userdata('admin', array(
+						'admin' => $res['user']
+					));
+				}
 			}else{
-				echo "<script>$.Notification.notify('error','top right', 'ข้อมูลผิดพลาด', 'ไม่สามารถเข้าสู่ระบบได้')</script>";
+				$this->session->set_userdata('alert', 1);
 			}
+			redirect('backend/home', 'refresh');
 		}
 	}
 }

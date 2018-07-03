@@ -7,8 +7,7 @@ class Logout extends MY_Controller {
 	}
 	public function index()
 	{
-		$data['page'] = 'login';
-		$data['link_img'] = base_url('assets/frontend/images/');
-		$this->twig->display('@b/login', $data);
+		$this->session->unset_userdata('admin');
+		redirect('backend/login', 'refresh');
 	}
 }

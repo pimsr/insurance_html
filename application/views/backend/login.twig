@@ -31,4 +31,13 @@
 </div>
 {% endblock %}
 
-{% block js %}{% endblock %}
+{% block js %}
+<script>
+(function(){
+    var alert = '{{ alert }}';
+    if(alert == '1') {
+        $.Notification.notify('error','top right', 'ข้อมูลผิดพลาด', 'ไม่สามารถเข้าสู่ระบบได้');
+    }
+})();
+</script>
+{% endblock %}

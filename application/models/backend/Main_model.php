@@ -65,6 +65,18 @@ class Main_model extends CI_Model{
 		$data = $query->result_array();
 		return sizeof($data) > 0 ? $data[0] : null;	
 	}
+
+	function insertLog($id){
+		$this->load->library('user_agent');
+		$values = array(
+			'device' => $this->agent->browser().' '.$this->agent->version(),
+			'admin_id' => $id,
+			'created_date' => date("Y-m-d H:i:s"),
+		);
+
+		$this->db->insert('tb_log',$values);
+		return $this->db->insert_id();
+	}
 	
 }//class
 ?>
