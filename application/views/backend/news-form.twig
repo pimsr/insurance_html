@@ -1,0 +1,84 @@
+<form class="form-submit form-news" data-table="box-table-news" action="{{ mode == 'add' ? base_url('backend/momandkids/addNews/')~data.category_id : base_url('backend/momandkids/editNews') }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{ data.id }}">
+    <input type="hidden" name="category_id" value="{{ data.category_id }}">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label">รูปภาพ : </label>
+            <div class="col-md-10">
+                <div class="preview news_img" style="background-image:url('{{ link_news~data.img }}')">
+                    <div class="text">
+                        <i class="fa fa-photo"></i>
+                        <p>730 x 500</p>
+                    </div>
+                    <input type="file" accept="image/*" name="img[]">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">วันที่ : </label>
+            <div class="col-md-10">
+                <input name="date" value="{{ data.date }}" type="date" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">ชื่อบทความ : </label>
+            <div class="col-md-10">
+                <div class="row_half">
+                    <div class="col_half">
+                        <input name="title_th" value="{{ data.title_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                    </div>
+                    <div class="col_half">
+                        <input name="title_en" value="{{ data.title_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">เกริ่นนำ : </label>
+            <div class="col-md-10">
+                <div class="row_half">
+                    <div class="col_half">
+                        <textarea name="caption_th" class="form-control" placeholder="กรุณาใส่ภาษาไทย">{{ data.caption_th }}</textarea>
+                    </div>
+                    <div class="col_half">
+                        <textarea name="caption_en" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">{{ data.caption_en }}</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">เนื้อหา (TH) : </label>
+            <div class="col-md-10">
+                <textarea name="desc_th" class="editor_all">{{ data.desc_th }}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">เนื้อหา (EN) : </label>
+            <div class="col-md-10">
+                <textarea name="desc_en" class="editor_all">{{ data.desc_en }}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">แท็ก (TH) : </label>
+            <div class="col-md-10">
+                <input name="tags_th" value="{{ data.tags_th }}" type="text" value="" data-role="tagsinput"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">แท็ก (EN) : </label>
+            <div class="col-md-10">
+                <input name="tags_en" value="{{ data.tags_en }}" type="text" value="" data-role="tagsinput"/>
+            </div>
+        </div>
+        {% if mode == 'edit' %}
+        <div class="text-right mt-20">
+            <button type="button" class="btn btn-white waves-effect waves-light w-lg on-cancel">ยกเลิก</button>
+            <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">แก้ไข</button>
+        </div>
+        {% else %}
+        <div class="text-right mt-20">
+            <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+        </div>
+        {% endif %}
+    </div>
+</form>

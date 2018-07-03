@@ -45,11 +45,14 @@ class Momandkids extends MY_Controller {
 			exit();
 		}
 	}
-	public function detail()
+	public function category($id = 0)
 	{
+		if($id == 0) redirect('backend/momandkids');
 		$data['page'] = 'momandkids';
 		$data['subpage'] = 'detail';
 		$data['link_img'] = base_url('assets/frontend/images/');
+		$data['link_news'] = base_url('upload/thumb/news/');
+		$data['category'] = $this->momandkids_model->selectCategoryByID($id);
 		$this->twig->display('@b/momandkids-detail', $data);
 	}
 
@@ -107,6 +110,74 @@ class Momandkids extends MY_Controller {
 		if($this->input->post()){
 			$data = array();
 			$res = $this->momandkids_model->updateCategoryActions($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			echo json_encode($data);
+			exit();
+		}
+	}
+
+	// news
+	public function tableNews($cate){
+		$data['link_news'] = base_url('upload/thumb/news/');
+		$data['news'] = $this->momandkids_model->selectNews($cate);
+		$this->twig->display('@b/news-table', $data);
+	}
+	public function addNews($cate = 0){
+		if($this->input->post()){
+			$data = array();
+			$data['status'] = 0;
+			$data['msg'] = 'ไม่สามารถบันทึกข้อมูลได้';
+			$_POST['img'] = $this->uploadFile('news', 'img');
+			$res = $this->momandkids_model->insertNews($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';
+			}
+			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
+		$data['mode'] = 'add';
+		$data['link_news'] = base_url('upload/thumb/news/');
+		$data['data'] = array(
+			'category_id' => $cate
+		);
+		$this->twig->display('@b/news-form', $data);
+	}
+	public function editNews($id = 0){
+		if($this->input->post()){
+			$data = array();
+			$data['status'] = 0;
+			$data['msg'] = 'ไม่สามารถบันทึกข้อมูลได้';
+			$_POST['img'] = $this->uploadFile('news', 'img');
+			$res = $this->momandkids_model->updateNews($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
+		$data['mode'] = 'edit';
+		$data['link_news'] = base_url('upload/thumb/news/');
+		$data['data'] = $this->momandkids_model->selectNewsByID($id);
+		$data['id'] = $id;
+		$this->twig->display('@b/news-form', $data);
+	}
+	public function deleteNews($id)
+	{
+		$res = $this->momandkids_model->deleteNews($id);
+		echo $res;
+	}
+	public function setNews()
+	{
+		if($this->input->post()){
+			$data = array();
+			$res = $this->momandkids_model->updateNewsActions($_POST);
 			if($res > 0) {
 				$data['status'] = 1;
 				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	

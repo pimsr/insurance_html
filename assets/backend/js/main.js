@@ -1,5 +1,6 @@
 (function($){
   $base_url = $('body').attr('data-base-url');
+  $timeout = null;
   setEditor();
   setTableData();
   setForm();
@@ -71,6 +72,11 @@
             $.Notification.notify('success','top right', 'Successful', res.msg);
             re_form.load( re_link );
             reloadTable(table);
+            clearTimeout($timeout);
+            $timeout = setTimeout(function(){
+              setEditor();
+              setTags();
+            }, 500);
           }else{
             $.Notification.notify('error','top right', 'Error', res.msg);
           }
@@ -134,6 +140,11 @@
     var form = $(this).parents('.box-form');
     var link = form.attr('data-load');
     form.load( link );
+    clearTimeout($timeout);
+    $timeout = setTimeout(function(){
+      setEditor();
+      setTags();
+    }, 500);
   }).on('submit', '.form-submit-update', function(e){
     e.preventDefault();
     var url = $(this).attr('action');
@@ -173,7 +184,13 @@
   }
 
   function reloadForm(form, link){
+    console.log('reloadForm');
     $('.'+form).load( link );
+    clearTimeout($timeout);
+    $timeout = setTimeout(function(){
+      setEditor();
+      setTags();
+    }, 500);
     $('html,body').animate({
       scrollTop: $('.'+form).offset().top - 180
     }, 'fast');
@@ -184,7 +201,10 @@
 			$('.box-form').each(function(){
         var html = $(this).attr('data-load');
 				if(html !== undefined || html !== null || html !== ''){
-					$(this).load( html );
+          $(this).load( html , function(){
+            setEditor();
+            setTags();
+          });
 				}
 			});
 		}
@@ -203,6 +223,8 @@
   }
 
   function setEditor() {
+    console.log('setEditor');
+    tinymce.remove();
     if($('.editor').length > 0){
       tinymce.init({
         selector: ".editor",
@@ -215,7 +237,7 @@
         ],
         toolbar: "undo redo | styleselect | textcolor | table | bold italic underline | link",
         menubar:false,
-        content_css: "../css/css_frontend.css",
+        content_css: "./assets/frontend/css/css_frontend.css",
         statusbar: false
       });
     }
@@ -231,7 +253,7 @@
         ],
         toolbar: "undo redo | styleselect | textcolor | bold italic underline | link",
         menubar:false,
-        content_css: "../css/css_frontend.css",
+        content_css: "./assets/frontend/css/css_frontend.css",
         statusbar: false,
         style_formats: [
           {title: 'H1', block: 'h1'},
@@ -264,9 +286,16 @@
           {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
         ],
         menubar:false,
-        content_css: "../css/css_frontend.css",
+        content_css: "./assets/frontend/css/css_frontend.css",
         statusbar: false,
       });
+    }
+  }
+
+  function  setTags() {
+    console.log('setTags');
+    if($('input[data-role="tagsinput"]').length > 0){
+      $('input[data-role="tagsinput"]').tagsinput();
     }
   }
 })(jQuery);

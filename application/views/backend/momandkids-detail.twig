@@ -6,13 +6,13 @@
         <div class="row">
             <br>
             <div class="col-sm-12">
-                <h4 class="page-title">ประเภท 1</h4>
+                <h4 class="page-title">{{ category.name_th }}</h4>
                 <ol class="breadcrumb">
                     <li>
-                        <a href="{{ base_url('backend/momandkids') }}">แม่และลูก</a>
+                        <a href="{{ base_url('backend/momandkids#article') }}">แม่และลูก</a>
                     </li>
                     <li class="active">
-                        ประเภท 1
+                        {{ category.name_th }}
                     </li>
                 </ol>
 
@@ -25,6 +25,13 @@
                         <h3 class="panel-title">บทความ</h3>
                     </div>
                     <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12 box-form box-form-news" data-load="{{ base_url('backend/momandkids/addNews/')~category.id }}"></div>
+                            <div class="col-md-12"><br><br></div>
+                            <div class="col-md-12 box-table box-table-news" data-load="{{ base_url('backend/momandkids/tableNews/')~category.id }}"></div>
+                        </div>
+                    </div>
+                    {# <div class="panel-body">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-horizontal">
@@ -153,7 +160,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> #}
                 </div>
             </div>
         </div>
