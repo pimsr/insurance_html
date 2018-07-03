@@ -1,0 +1,79 @@
+<form class="form-submit form-hospital" data-table="box-table-hospital" action="{{ mode == 'add' ? base_url('backend/hospital/addHospital') : base_url('backend/hospital/editHospital') }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{ data.id }}">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label">ชื่อโรงพยาบาล : </label>
+            <div class="col-md-10">
+                <div class="row_half">
+                    <div class="col_half">
+                        <input name="name_th" value="{{ data.name_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                    </div>
+                    <div class="col_half">
+                        <input name="name_en" value="{{ data.name_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% set room_th = json_decode(data.room_th) %}
+        {% set room_en = json_decode(data.room_en) %}
+        {% set price = json_decode(data.price) %}
+        <div class="form-group">
+            <label class="col-md-2 control-label">ห้อง 1 : </label>
+            <div class="col-md-10 ">
+                <div class="input-group">
+                    <span class="input-group-addon">ประเภทห้อง</span>
+                    <input name="room_th[]" value="{{ room_th[0] }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                    <input name="room_en[]" value="{{ room_en[0] }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                    <span class="input-group-addon">ราคา</span>
+                    <input name="price[]" value="{{ price[0] }}" type="text" class="form-control" style="height:75px">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">ห้อง 2 : </label>
+            <div class="col-md-10 ">
+                <div class="input-group">
+                    <span class="input-group-addon">ประเภทห้อง</span>
+                    <input name="room_th[]" value="{{ room_th[1] }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                    <input name="room_en[]" value="{{ room_en[1] }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                    <span class="input-group-addon">ราคา</span>
+                    <input name="price[]" value="{{ price[1] }}" type="text" class="form-control" style="height:75px">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">ห้อง 3 : </label>
+            <div class="col-md-10 ">
+                <div class="input-group">
+                    <span class="input-group-addon">ประเภทห้อง</span>
+                    <input name="room_th[]" value="{{ room_th[2] }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                    <input name="room_en[]" value="{{ room_en[2] }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                    <span class="input-group-addon">ราคา</span>
+                    <input name="price[]" value="{{ price[2] }}" type="text" class="form-control" style="height:75px">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">เบอร์ติดต่อ : </label>
+            <div class="col-md-10 ">
+                <input name="tel" value="{{ data.tel }}" type="text" class="form-control" placeholder="กรุณาใส่เบอร์ติดต่อ">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">ลิ้งที่เกี่ยวข้อง : </label>
+            <div class="col-md-10 ">
+                <input name="link" value="{{ data.link }}" type="url" class="form-control" placeholder="กรุณาใส่ลิ้งที่เกี่ยวข้อง">
+            </div>
+        </div>
+        {% if mode == 'edit' %}
+        <div class="text-center mt-20">
+            <button type="button" class="btn btn-white waves-effect waves-light w-lg on-cancel">ยกเลิก</button>
+            <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">แก้ไข</button>
+        </div>
+        {% else %}
+        <div class="text-center mt-20">
+            <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+        </div>
+        {% endif %}
+    </div>
+</form>
