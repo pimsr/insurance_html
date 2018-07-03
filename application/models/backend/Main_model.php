@@ -30,6 +30,30 @@ class Main_model extends CI_Model{
 		$this->db->update('tb_cover', $values);
 		return $this->db->affected_rows();
 	}
+
+	function selectHeadline($pos){
+		$query = $this->db->select('*')
+				->from('tb_headline')
+				->where('position', $pos)
+				->limit(1)
+				->get();
+		$data = $query->result_array();
+		return sizeof($data) > 0 ? $data[0] : null;	
+	}
+
+	function updateHeadline($value){
+		$values = array(
+			'title_th' => $value['h_title_th'],
+			'title_en' => $value['h_title_en'],
+			'subtitle_th' => $value['h_subtitle_th'],
+			'subtitle_en' => $value['h_subtitle_en'],
+			'updated_date' => date("Y-m-d H:i:s")
+		);
+
+		$this->db->where('position', $value['h_position']);
+		$this->db->update('tb_headline', $values);
+		return $this->db->affected_rows();
+	}
 	
 }//class
 ?>

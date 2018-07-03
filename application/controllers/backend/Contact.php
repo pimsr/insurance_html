@@ -28,8 +28,21 @@ class Contact extends MY_Controller {
 		$data['link_cover'] = base_url('upload/thumb/cover/');
 		$data['link_contact'] = base_url('upload/thumb/contact/');
 		$data['cover'] = $this->main_model->selectCover('contact');
+		$data['headline'] = $this->main_model->selectHeadline('company');
 		$data['data'] = $this->contact_model->selectContact();
 		$this->twig->display('@b/contact', $data);
+	}
+	public function setHeadline(){
+		if($this->input->post()){
+			$data = array();
+			$res = $this->main_model->updateHeadline($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			echo json_encode($data);
+			exit();
+		}
 	}
 	public function editContact()
 	{

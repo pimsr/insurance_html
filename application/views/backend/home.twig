@@ -32,6 +32,40 @@
                     </div>
                     <div class="panel-body closed">
                         <div class="row">
+                            <div class="col-md-12">
+                                <form class="form-submit-update in_thumb headline form-horizontal" action="{{ base_url('backend/home/setHeadline') }}" method="post" enctype="multipart/form-data">
+                                    <h4><b>ข้อความเกริ่นนำ</b></h4>
+                                    <input type="hidden" name="h_position" value="{{ headline.position }}">
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input name="h_title_th" value="{{ headline.title_th }}" type="text" class="form-control" placeholder="หัวข้อภาษาไทย">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input name="h_title_en" value="{{ headline.title_en }}" type="text" class="form-control" placeholder="หัวข้อภาษาอังกฤษ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 ">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <textarea name="h_subtitle_th" class="form-control no-resize" placeholder="เนื้อหาภาษาไทย">{{ headline.subtitle_th }}</textarea>
+                                                </div>
+                                                <div class="col_half">
+                                                    <textarea name="h_subtitle_en" class="form-control no-resize" placeholder="เนื้อหาภาษาอังกฤษ">{{ headline.subtitle_en }}</textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">บันทีก</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-12"><br><hr><br></div>
                             <div class="col-md-12 box-form box-form-home" data-load="{{ base_url('backend/home/addHome') }}"></div>
                             <div class="col-md-12"><br><br></div>
                             <div class="col-md-12 box-table box-table-home" data-load="{{ base_url('backend/home/tableHome') }}"></div>

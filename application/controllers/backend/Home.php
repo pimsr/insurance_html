@@ -13,6 +13,7 @@ class Home extends MY_Controller {
 		$data['link_img'] = base_url('assets/frontend/images/');
 		$data['link_banner'] = base_url('upload/thumb/banner/');
 		$data['banner'] = $this->home_model->selectBanner();
+		$data['headline'] = $this->main_model->selectHeadline('dotcom');
 		$this->twig->display('@b/home', $data);
 	}
 	public function uploadFile($folder, $name){
@@ -27,6 +28,18 @@ class Home extends MY_Controller {
 			}
 		}else{
 			return null;
+		}
+	}
+	public function setHeadline(){
+		if($this->input->post()){
+			$data = array();
+			$res = $this->main_model->updateHeadline($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			echo json_encode($data);
+			exit();
 		}
 	}
 

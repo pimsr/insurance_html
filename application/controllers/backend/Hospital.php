@@ -13,6 +13,7 @@ class Hospital extends MY_Controller {
 		$data['link_img'] = base_url('assets/frontend/images/');
 		$data['link_cover'] = base_url('upload/thumb/cover/');
 		$data['cover'] = $this->main_model->selectCover('hospital');
+		$data['headline'] = $this->main_model->selectHeadline('hospital');
 		$this->twig->display('@b/hospital', $data);
 	}
 	public function uploadFile($folder, $name){
@@ -41,6 +42,18 @@ class Hospital extends MY_Controller {
 				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
 			}
 			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
+	}
+	public function setHeadline(){
+		if($this->input->post()){
+			$data = array();
+			$res = $this->main_model->updateHeadline($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
 			echo json_encode($data);
 			exit();
 		}

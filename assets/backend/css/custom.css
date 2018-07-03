@@ -571,8 +571,24 @@ textarea.no-resize{
     border-radius: 5px;
     text-align: center;
 }
+.msg-empty{
+    width: 100%;
+    padding: 8px;
+    background: #f2f2f3;
+    border-radius: 5px;
+    text-align: center;
+}
 .in_editor .mce-tinymce{
     width: 100% !important;
+}
+.in_thumb.headline h4{
+    margin-top: 0px;
+}
+.in_thumb.headline{
+    background: #f1f2f3;
+}
+.in_thumb.headline button{
+    margin-top: 5px;
 }
 @media (max-width: 991px){
     #content .box .btn-remove{
