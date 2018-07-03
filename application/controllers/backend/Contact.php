@@ -57,4 +57,69 @@ class Contact extends MY_Controller {
 			exit();
 		}
 	}
+
+	// Company
+	public function tableCompany(){
+		$data['link_company'] = base_url('upload/thumb/company/');
+		$data['company'] = $this->contact_model->selectCompany();
+		$this->twig->display('@b/company-table', $data);
+	}
+	public function addCompany(){
+		if($this->input->post()){
+			$data = array();
+			$data['status'] = 0;
+			$data['msg'] = 'ไม่สามารถบันทึกข้อมูลได้';
+			$_POST['img'] = $this->uploadFile('company', 'img');
+			$res = $this->contact_model->insertCompany($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';
+			}
+			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
+		$data['mode'] = 'add';
+		$data['link_company'] = base_url('upload/thumb/company/');
+		$this->twig->display('@b/company-form', $data);
+	}
+	public function editCompany($id = 0){
+		if($this->input->post()){
+			$data = array();
+			$data['status'] = 0;
+			$data['msg'] = 'ไม่สามารถบันทึกข้อมูลได้';
+			$_POST['img'] = $this->uploadFile('company', 'img');
+			$res = $this->contact_model->updateCompany($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
+		$data['mode'] = 'edit';
+		$data['link_company'] = base_url('upload/thumb/company/');
+		$data['data'] = $this->contact_model->selectCompanyByID($id);
+		$data['id'] = $id;
+		$this->twig->display('@b/company-form', $data);
+	}
+	public function deleteCompany($id)
+	{
+		$res = $this->contact_model->deleteCompany($id);
+		echo $res;
+	}
+	public function setCompany()
+	{
+		if($this->input->post()){
+			$data = array();
+			$res = $this->contact_model->updateCompanyActions($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+			}
+			echo json_encode($data);
+			exit();
+		}
+	}
 }

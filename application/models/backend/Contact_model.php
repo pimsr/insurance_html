@@ -40,69 +40,97 @@ class Contact_model extends CI_Model{
 		$this->db->update('tb_contact', $values);
 		return $this->db->affected_rows();
 	}
-	public function updateInsuranceActions($data){
+	// company
+	public function selectCompany()
+	{
+		$query = $this->db->select('*')
+				->from('tb_company')
+				->where('status != -1')
+				->order_by('seq', 'ASC')
+				->order_by('id', 'DESC')
+				->get();
+		$data = $query->result_array();
+		return $data;	
+	}
+	public function selectCompanyByID($id)
+	{
+		$query = $this->db->select('*')
+				->from('tb_company')
+				->where('id', $id)
+				->where('status != -1')
+				->get();
+		$data = $query->result_array();
+		return sizeof($data) > 0 ? $data[0] : null;	
+	}
+	public function insertCompany($value){
+		$values = array(
+			'title_th' => $value['title_th'],
+			'title_en' => $value['title_en'],
+			'caption_th' => $value['caption_th'],
+			'caption_en' => $value['caption_en'],
+			'name_th' => $value['name_th'],
+			'name_en' => $value['name_en'],
+			'position_th' => $value['position_th'],
+			'position_en' => $value['position_en'],
+			'desc_th' => $value['desc_th'],
+			'desc_en' => $value['desc_en'],
+			'address_th' => $value['address_th'],
+			'address_en' => $value['address_en'],
+			'tel' => $value['tel'],
+			'email' => $value['email'],
+			'link' => $value['link'],
+			'img' => sizeof($value['img'] > 0) ? $value['img'][0] : null,
+			'status' => 0,
+			'created_date' => date("Y-m-d H:i:s"),
+		);
+
+		if(trim($values['img']) == '') unset($values['img']);
+
+		$this->db->insert('tb_company',$values);
+		return $this->db->insert_id();
+	}
+	public function updateCompany($value){
+		$values = array(
+			'title_th' => $value['title_th'],
+			'title_en' => $value['title_en'],
+			'caption_th' => $value['caption_th'],
+			'caption_en' => $value['caption_en'],
+			'name_th' => $value['name_th'],
+			'name_en' => $value['name_en'],
+			'position_th' => $value['position_th'],
+			'position_en' => $value['position_en'],
+			'desc_th' => $value['desc_th'],
+			'desc_en' => $value['desc_en'],
+			'address_th' => $value['address_th'],
+			'address_en' => $value['address_en'],
+			'tel' => $value['tel'],
+			'email' => $value['email'],
+			'link' => $value['link'],
+			'img' => sizeof($value['img'] > 0) ? $value['img'][0] : null,
+			'updated_date' => date("Y-m-d H:i:s"),
+		);
+
+		if(trim($values['img']) == '') unset($values['img']);
+
+		$this->db->where('id', $value['id']);
+		$this->db->update('tb_company', $values);
+		return $this->db->affected_rows();
+	}
+	public function updateCompanyActions($data){
 		foreach($data['id'] as $key => $id){
 			$values = array(
 				'seq' => $data['seq'][$key],
 				'status' => empty($data['status'][$key]) ? 0 : 1
 			);
 			$this->db->where('id', $id);
-			$this->db->update('tb_insurance', $values);
+			$this->db->update('tb_company', $values);
 		}
 		return 1;
 	}
-	public function deleteInsurance($id){
+	public function deleteCompany($id){
 		$this->db->where('id', $id);
-		$this->db->update('tb_insurance', array('status' => -1));
+		$this->db->update('tb_company', array('status' => -1));
 		return $this->db->affected_rows();
-	}
-	public function insertInsuranceContent($parent_id){
-		for($i=1 ; $i<=2 ; $i++){
-			$values = array(
-				'seq' => $i,
-				'insurance_id' => $parent_id,
-				'created_date' => date("Y-m-d H:i:s"),
-			);
-			$this->db->insert('tb_insurance_content',$values);
-		}
-		return 1;
-	}
-
-	// how
-	public function selectInsuranceHow($type)
-	{
-		$query = $this->db->select('*')
-				->from('tb_insurance_how')
-				->where('type', $type)
-				->order_by('id', 'ASC')
-				->get();
-		$data = $query->result_array();
-		return $data;	
-	}
-	public function updateInsuranceHow($data){
-		$date = date("Y-m-d H:i:s");
-
-		$this->db->where('type', 'head');
-		$this->db->update('tb_insurance_how', array(
-			'desc_th' => $data['head_th'],
-			'desc_en' => $data['head_en'],
-			'updated_date' => $date
-		));
-
-		foreach($data['id'] as $key => $id){
-			$values = array(
-				'title_th' => $data['title_th'][$key],
-				'title_en' => $data['title_en'][$key],
-				'desc_th' => $data['desc_th'][$key],
-				'desc_en' => $data['desc_en'][$key],
-				'icon' => $data['icon'][$key],
-				'updated_date' => $date
-			);
-			if(trim($values['icon']) == '') unset($values['icon']);
-			$this->db->where('id', $id);
-			$this->db->update('tb_insurance_how', $values);
-		}
-		return 1;
 	}
 }//class
 ?>
