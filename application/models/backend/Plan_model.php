@@ -58,7 +58,6 @@ class Plan_model extends CI_Model{
 					'desc_en' => $value['desc_en'][$key],
 					'status' => $value['status'][$key],
 					'seq' => $value['seq'][$key],
-					'status' => 1,
 					'created_date' => $date,
 				);
 				$this->db->insert('tb_plan_package',$values);

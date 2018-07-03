@@ -571,6 +571,9 @@ textarea.no-resize{
     border-radius: 5px;
     text-align: center;
 }
+.in_editor .mce-tinymce{
+    width: 100% !important;
+}
 @media (max-width: 991px){
     #content .box .btn-remove{
         top: -12px;

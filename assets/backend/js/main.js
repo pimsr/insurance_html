@@ -28,8 +28,9 @@
     var parents = $(this).parents('.in_editor');
     parents.find('.in').removeClass('active');
     $(this).addClass('active');
-    parents.find('.mce-tinymce').hide();
-    parents.find('.mce-tinymce').eq(index).show();
+    tinymce.remove();
+    parents.find('.editor').hide();
+    parents.find('.editor').eq(index).show();
     setEditor();
   }).on('keydown', '.seq', function (e) {
     // Allow: backspace, delete, tab, escape, enter and .
@@ -82,6 +83,7 @@
             reloadTable(table);
             clearTimeout($timeout);
             $timeout = setTimeout(function(){
+              tinymce.remove();
               setEditor();
               setTags();
             }, 500);
@@ -150,6 +152,7 @@
     form.load( link );
     clearTimeout($timeout);
     $timeout = setTimeout(function(){
+      tinymce.remove();
       setEditor();
       setTags();
     }, 500);
@@ -196,6 +199,7 @@
     $('.'+form).load( link );
     clearTimeout($timeout);
     $timeout = setTimeout(function(){
+      tinymce.remove();
       setEditor();
       setTags();
     }, 500);
@@ -210,6 +214,7 @@
         var html = $(this).attr('data-load');
 				if(html !== undefined || html !== null || html !== ''){
           $(this).load( html , function(){
+            tinymce.remove();
             setEditor();
             setTags();
           });
@@ -231,8 +236,6 @@
   }
 
   function setEditor() {
-    console.log('setEditor');
-    tinymce.remove();
     if($('.editor').length > 0){
       tinymce.init({
         selector: ".editor",
@@ -245,7 +248,7 @@
         ],
         toolbar: "undo redo | styleselect | textcolor | table | bold italic underline | link",
         menubar:false,
-        content_css: "../assets/backend/css/css_frontend.css",
+        content_css: $base_url+"assets/backend/css/css_frontend.css",
         statusbar: false
       });
     }
@@ -261,7 +264,7 @@
         ],
         toolbar: "undo redo | styleselect | textcolor | bold italic underline | link",
         menubar:false,
-        content_css: "../assets/backend/css/css_frontend.css",
+        content_css: $base_url+"assets/backend/css/css_frontend.css",
         statusbar: false,
         style_formats: [
           {title: 'H1', block: 'h1'},
@@ -294,7 +297,7 @@
           {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
         ],
         menubar:false,
-        content_css: "../assets/backend/css/css_frontend.css",
+        content_css: $base_url+"assets/backend/css/css_frontend.css",
         statusbar: false,
       });
     }
@@ -358,7 +361,7 @@ function addPackage() {
                                       </div>
                                       <div class="text-right mt-5">
                                           <input type="hidden" name="id[]" value="0">
-                                          <input type="hidden" class="input-status" name="status[]" value="">
+                                          <input type="hidden" class="input-status" name="status[]" value="1">
                                           <button type="button" class="delete_package btn btn-pinterest waves-effect waves-light">
                                               <i class="fa fa-trash"></i> ลบแพ็คเกจนี้
                                           </button>
@@ -377,7 +380,7 @@ function addPackage() {
     ],
     toolbar: "undo redo | styleselect | textcolor | table | bold italic underline | link",
     menubar:false,
-    content_css: "../css/css_frontend.css",
+    content_css: $base_url+"assets/backend/css/css_frontend.css",
     statusbar: false
   });
 

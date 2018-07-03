@@ -5,6 +5,64 @@ class Info_model extends CI_Model{
 	function __construct(){
 		parent::__construct();
 	}
+	public function setDetail($value){
+		// default
+		$date = date("Y-m-d H:i:s");
+		$in = array(
+			'img' => sizeof($value['banner'] > 0) ? $value['banner'][0] : null,
+			'updated_date' => $date
+		);
+		if(trim($in['img']) == '') unset($in['img']);
+		$this->db->where('id', $value['type_id']);
+		$this->db->update('tb_insurance', $in);
+
+		// content
+		foreach($value['c_id'] as $key => $c_id){
+			$content = array(
+				'title_th' => $value['c_title_th'][$key],
+				'title_en' => $value['c_title_en'][$key],
+				'desc_th' => $value['c_desc_th'][$key],
+				'desc_en' => $value['c_desc_en'][$key],
+				'img' => sizeof($value['img'] > 0) ? $value['img'][$key] : null,
+				'updated_date' => $date
+			);
+			if(trim($content['img']) == '') unset($content['img']);
+			$this->db->where('id', $c_id);
+			$this->db->update('tb_insurance_content', $content);
+		}
+		
+		// package
+		foreach($value['id'] as $key => $id){
+			if($id == 0){
+				$values = array(
+					'title_th' => $value['title_th'][$key],
+					'title_en' => $value['title_en'][$key],
+					'desc_th' => $value['desc_th'][$key],
+					'desc_en' => $value['desc_en'][$key],
+					'status' => $value['status'][$key],
+					'seq' => $value['seq'][$key],
+					'created_date' => $date,
+					'insurance_id' => $value['type_id']
+				);
+				$this->db->insert('tb_insurance_package',$values);
+			}else{
+				$values = array(
+					'title_th' => $value['title_th'][$key],
+					'title_en' => $value['title_en'][$key],
+					'desc_th' => $value['desc_th'][$key],
+					'desc_en' => $value['desc_en'][$key],
+					'status' => $value['status'][$key],
+					'seq' => $value['seq'][$key],
+					'updated_date' => $date,
+					'insurance_id' => $value['type_id']
+				);
+				$this->db->where('id', $id);
+				$this->db->update('tb_insurance_package', $values);
+			}
+		}
+
+		return 1;
+	}
 	// insurance
 	public function selectInsurance()
 	{
@@ -26,6 +84,27 @@ class Info_model extends CI_Model{
 				->get();
 		$data = $query->result_array();
 		return sizeof($data) > 0 ? $data[0] : null;	
+	}
+	public function selectInsuranceContent($id)
+	{
+		$query = $this->db->select('*')
+				->from('tb_insurance_content')
+				->where('insurance_id', $id)
+				->order_by('seq', 'ASC')
+				->get();
+		$data = $query->result_array();
+		return $data;	
+	}
+	public function selectInsurancePackage($id)
+	{
+		$query = $this->db->select('*')
+				->from('tb_insurance_package')
+				->where('status != -1')
+				->where('insurance_id', $id)
+				->order_by('seq', 'ASC')
+				->get();
+		$data = $query->result_array();
+		return $data;	
 	}
 	public function insertInsurance($value){
 		$values = array(

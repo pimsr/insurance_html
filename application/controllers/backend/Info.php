@@ -46,8 +46,27 @@ class Info extends MY_Controller {
 		$data['link_insurance'] = base_url('upload/thumb/insurance/');
 		$data['data'] = $this->info_model->selectInsuranceByID($id);
 		if($data['data'] == null) redirect('backend/info', 'refresh');
-
+		$data['content'] = $this->info_model->selectInsuranceContent($data['data']['id']);
+		$data['package'] = $this->info_model->selectInsurancePackage($data['data']['id']);
 		$this->twig->display('@b/insurance-detail', $data);
+	}
+	public function setDetail()
+	{
+		if($this->input->post()){
+			$data = array();
+			$data['status'] = 0;
+			$data['msg'] = 'ไม่สามารถบันทึกข้อมูลได้';
+			$_POST['banner'] = $this->uploadFile('insurance', 'banner');
+			$_POST['img'] = $this->uploadFile('insurance', 'c_img');
+			$res = $this->info_model->setDetail($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';
+			}
+			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
 	}
 	public function tableInsurance(){
 		$data['link_insurance'] = base_url('upload/thumb/insurance/');

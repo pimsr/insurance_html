@@ -33,7 +33,7 @@
         <script src="{{ base_url('assets/backend/js/modernizr.min.js') }}"></script>
         {% block css %}{% endblock %}
     </head>
-    <body data-base-url="{{ base_url('backend') }}">
+    <body data-base-url="{{ base_url() }}">
         {% if page != 'login' %}
         <header id="topnav">
             <div class="topbar-main">
