@@ -1,0 +1,22 @@
+<form class="form-submit form-category" data-table="box-table-category" action="{{ mode == 'add' ? base_url('backend/momandkids/addCategory') : base_url('backend/momandkids/editCategory') }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{ data.id }}">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label">ชื่อประเภท : </label>
+            <div class="col-md-10">
+                <input name="name_th" value="{{ data.name_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                <input name="name_en" value="{{ data.name_en }}" type="text" class="form-control mt-5" placeholder="กรุณาใส่ภาษาอังกฤษ">
+            </div>
+        </div>
+        {% if mode == 'edit' %}
+        <div class="text-center mt-20">
+            <button type="button" class="btn btn-white waves-effect waves-light w-lg on-cancel">ยกเลิก</button>
+            <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">แก้ไข</button>
+        </div>
+        {% else %}
+        <div class="text-center mt-20">
+            <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">+ เพิ่ม</button>
+        </div>
+        {% endif %}
+    </div>
+</form>
