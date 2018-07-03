@@ -14,20 +14,37 @@
                         <i class="fa fa-angle-down tab-icon"></i>
                     </div>
                     <div class="panel-body">
-                        <div class="row">
+                        <form class="row form-submit-update" action="{{ base_url('backend/plan/setCover') }}" method="post" enctype="multipart/form-data">
                             <div class="col-md-12">
-                                <div class="preview home_banner">
+                                <input type="hidden" name="position" value="{{ cover.position }}">
+                                <div class="preview cover_banner" style="background-image: url('{{ link_cover~cover.img }}')">
                                     <div class="text">
                                         <i class="fa fa-photo"></i>
                                         <p>1920 x 580</p>
                                     </div>
-                                    <input type="file" accept="image/*">
+                                    <input type="file" accept="image/*" name="img[]">
+                                </div>
+                               <br>
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">หัวข้อ : </label>
+                                        <div class="col-md-10">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input name="title_th" value="{{ cover.title_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input name="title_en" value="{{ cover.title_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="text-right mt-5">
-                                    <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">บันทึก</button>
+                                    <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">บันทึก</button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -40,79 +57,71 @@
                         <i class="fa fa-angle-down tab-icon"></i>
                     </div>
                     <div class="panel-body closed">
-                        <div class="row in_caption">
-                            <div class="col-md-6">
-                                <div class="preview">
-                                    <div class="text">
-                                        <i class="fa fa-photo"></i>
-                                        <p>540 x 360</p>
-                                    </div>
-                                    <input type="file" accept="image/*">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div role="form">
-                                    <div class="form-group">
-                                        <label>หัวข้อ: </label>
-                                        <div class="row_half">
-                                            <div class="col_half"><input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย"></div>
-                                            <div class="col_half"><input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></div>
+                        <form class="row form-submit-update" action="{{ base_url('backend/plan/setContent') }}" method="post" enctype="multipart/form-data">
+                            <div class="row in_caption">
+                                <input type="hidden" name="id[]" value="{{ content[0].id }}">
+                                <div class="col-md-6">
+                                    <div class="preview" style="background-image: url('{{ link_plan~content[0].img }}')">
+                                        <div class="text">
+                                            <i class="fa fa-photo"></i>
+                                            <p>540 x 360</p>
                                         </div>
+                                        <input type="file" accept="image/*" name="img[]">
                                     </div>
-                                    <div class="form-group">
-                                        <label>เนื้อหา: </label>
-                                        <textarea class="form-control no-resize" placeholder="กรุณาใส่ภาษาไทย"></textarea>
-                                        <textarea class="form-control no-resize mt-5" placeholder="กรุณาใส่ภาษาอังกฤษ"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>หมายเหตุ: </label>
-                                        <div class="row_half">
-                                            <div class="col_half"><input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย"></div>
-                                            <div class="col_half"><input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div role="form">
+                                        <div class="form-group">
+                                            <label>หัวข้อ: </label>
+                                            <div class="row_half">
+                                                <div class="col_half"><input name="title_th[]" value="{{ content[0].title_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย"></div>
+                                                <div class="col_half"><input name="title_en[]" value="{{ content[0].title_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>เนื้อหา (ไทย) : </label>
+                                            <textarea name="desc_th[]" class="text-only2 form-control" placeholder="กรุณาใส่ภาษาไทย">{{ content[0].desc_th }}</textarea>
+                                            <label>เนื้อหา (Eng) : </label>
+                                            <textarea name="desc_en[]" class="text-only2 form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">{{ content[0].desc_en }}</textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <br>
-                        <div class="row in_caption">
-                            <div class="col-md-6">
-                                <div role="form">
-                                    <div class="form-group">
-                                        <label>หัวข้อ: </label>
-                                        <div class="row_half">
-                                            <div class="col_half"><input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย"></div>
-                                            <div class="col_half"><input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></div>
+                            <br>
+                            <div class="row in_caption">
+                                <input type="hidden" name="id[]" value="{{ content[1].id }}">
+                                <div class="col-md-6">
+                                    <div role="form">
+                                        <div class="form-group">
+                                            <label>หัวข้อ: </label>
+                                            <div class="row_half">
+                                                <div class="col_half"><input name="title_th[]" value="{{ content[1].title_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย"></div>
+                                                <div class="col_half"><input name="title_en[]" value="{{ content[1].title_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>เนื้อหา: </label>
-                                        <textarea class="form-control no-resize" placeholder="กรุณาใส่ภาษาไทย"></textarea>
-                                        <textarea class="form-control no-resize mt-5" placeholder="กรุณาใส่ภาษาอังกฤษ"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>หมายเหตุ: </label>
-                                        <div class="row_half">
-                                            <div class="col_half"><input type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย"></div>
-                                            <div class="col_half"><input type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ"></div>
+                                        <div class="form-group">
+                                            <label>เนื้อหา (ไทย) : </label>
+                                            <textarea name="desc_th[]" class="text-only2 form-control" placeholder="กรุณาใส่ภาษาไทย">{{ content[0].desc_th }}</textarea>
+                                            <label>เนื้อหา (Eng) : </label>
+                                            <textarea name="desc_en[]" class="text-only2 form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">{{ content[0].desc_en }}</textarea>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="preview">
-                                    <div class="text">
-                                        <i class="fa fa-photo"></i>
-                                        <p>540 x 360</p>
+                                <div class="col-md-6">
+                                    <div class="preview" style="background-image: url('{{ link_plan~content[1].img }}')">
+                                        <div class="text">
+                                            <i class="fa fa-photo"></i>
+                                            <p>540 x 360</p>
+                                        </div>
+                                        <input type="file" accept="image/*" name="img[]">
                                     </div>
-                                    <input type="file" accept="image/*">
                                 </div>
                             </div>
-                        </div>
-                        <br>
-                        <div class="text-right">
-                            <button type="button" class="btn btn-inverse waves-effect waves-light w-lg">บันทึก</button>
-                        </div>
+                            <br>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-inverse waves-effect waves-light w-lg">บันทึก</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
