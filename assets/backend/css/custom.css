@@ -234,7 +234,7 @@ body{
     height: 320px;
 }
 .portlet .portlet-heading .portlet-title{
-    width: 90%;
+    width: calc(100% - 35px);
 }
 .portlet .portlet-heading{
     background: #f2f2f3;
@@ -562,6 +562,14 @@ textarea.no-resize{
 .form-control{
     font-size: 14px;
     line-height: 18px;
+}
+.package-empty{
+    width: 100%;
+    padding: 20px;
+    background: #f2f2f3;
+    margin: 5px 0px;
+    border-radius: 5px;
+    text-align: center;
 }
 @media (max-width: 991px){
     #content .box .btn-remove{

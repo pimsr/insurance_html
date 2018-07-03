@@ -25,12 +25,12 @@
     }
   }).on('click', '.in_editor .in', function(){
     var index = $(this).index();
-    $('.in_editor .in').removeClass('active');
+    var parents = $(this).parents('.in_editor');
+    parents.find('.in').removeClass('active');
     $(this).addClass('active');
-    $(this).parents('.in_editor').find('.mce-tinymce').hide();
-    $(this).parents('.in_editor').find('.mce-tinymce').eq(index).show();
-  }).on('click', '.delete_package', function(){
-    $(this).parents('.portlet').remove();
+    parents.find('.mce-tinymce').hide();
+    parents.find('.mce-tinymce').eq(index).show();
+    setEditor();
   }).on('keydown', '.seq', function (e) {
     // Allow: backspace, delete, tab, escape, enter and .
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -48,6 +48,14 @@
     // Ensure that it is a number and stop the keypress
     if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
         e.preventDefault();
+    }
+  }).on('click', '.delete_package', function(){
+    var parent = $(this).parents('.portlet');
+    var parents = $(this).parents('.box_package');
+    parent.find('.input-status').val(-1);
+    parent.hide();
+    if(parents.find('.portlet:visible').length == 0){
+      parents.find('.package-empty').removeClass('hide');
     }
   });
 
@@ -237,7 +245,7 @@
         ],
         toolbar: "undo redo | styleselect | textcolor | table | bold italic underline | link",
         menubar:false,
-        content_css: "./assets/frontend/css/css_frontend.css",
+        content_css: "../assets/backend/css/css_frontend.css",
         statusbar: false
       });
     }
@@ -253,7 +261,7 @@
         ],
         toolbar: "undo redo | styleselect | textcolor | bold italic underline | link",
         menubar:false,
-        content_css: "./assets/frontend/css/css_frontend.css",
+        content_css: "../assets/backend/css/css_frontend.css",
         statusbar: false,
         style_formats: [
           {title: 'H1', block: 'h1'},
@@ -286,7 +294,7 @@
           {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}
         ],
         menubar:false,
-        content_css: "./assets/frontend/css/css_frontend.css",
+        content_css: "../assets/backend/css/css_frontend.css",
         statusbar: false,
       });
     }
@@ -312,36 +320,45 @@ function addCategory() {
 }
 
 function addPackage() {
-  var num = $('.box_package .portlet').length;
-  $('.box_package').append(`<div class="portlet">
+  var num = 0;
+  $('.box_package .portlet').each(function(){
+    var id = parseInt($(this).attr('data-id'));
+    if( num < id ){
+      num = id;
+    }
+  });
+
+  $('.box_package').append(`<div class="portlet" data-id="${num+1}">
                               <div class="portlet-heading portlet-default">
-                                  <div class="portlet-title text-dark in_packname" data-toggle="collapse" data-parent="#accordion${num}" class="collapsed" aria-expanded="false">
-                                      <input type="text" class="seq form-control" maxlength="2" value="0">
+                                  <div class="portlet-title text-dark in_packname" data-toggle="collapse" data-parent="#accordion${num+1}" class="collapsed" aria-expanded="false">
+                                      <input type="text" class="seq form-control" maxlength="2" value="0" name="seq[]">
                                       <div class="row_half">
                                           <div class="col_half">
-                                              <input type="text" class="form-control" placeholder="แพ็คเกจภาษาไทย">
+                                              <input name="title_th[]" value="" type="text" class="form-control" placeholder="แพ็คเกจภาษาไทย">
                                           </div>
                                           <div class="col_half">
-                                              <input type="text" class="form-control" placeholder="แพ็คเกจภาษาอังกฤษ">
+                                              <input name="title_en[]" value="" type="text" class="form-control" placeholder="แพ็คเกจภาษาอังกฤษ">
                                           </div>
                                       </div>
                                   </div>
                                   <div class="portlet-widgets">
-                                      <a data-toggle="collapse" data-parent="#accordion${num}" href="#pack${num}" class="collapsed" aria-expanded="false"><i class="ion-minus-round"></i></a>
+                                      <a data-toggle="collapse" data-parent="#accordion${num+1}" href="#pack${num+1}" class="collapsed" aria-expanded="false"><i class="ion-minus-round"></i></a>
                                   </div>
                                   <div class="clearfix"></div>
                               </div>
-                              <div id="pack${num}" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                              <div id="pack${num+1}" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                                   <div class="portlet-body">
                                       <div class="in_editor">
                                           <div class="lang">
                                               <div class="in active">ไทย</div>
                                               <div class="in">Eng</div>
                                           </div>
-                                          <textarea class="editor th"></textarea>
-                                          <textarea class="editor en" style="display:none;"></textarea>
+                                          <textarea name="desc_th[]" class="editor th"></textarea>
+                                          <textarea name="desc_en[]" class="editor en" style="display:none;"></textarea>
                                       </div>
                                       <div class="text-right mt-5">
+                                          <input type="hidden" name="id[]" value="0">
+                                          <input type="hidden" class="input-status" name="status[]" value="">
                                           <button type="button" class="delete_package btn btn-pinterest waves-effect waves-light">
                                               <i class="fa fa-trash"></i> ลบแพ็คเกจนี้
                                           </button>
@@ -363,5 +380,7 @@ function addPackage() {
     content_css: "../css/css_frontend.css",
     statusbar: false
   });
+
+  $('.package-empty').addClass('hide');
 }
 

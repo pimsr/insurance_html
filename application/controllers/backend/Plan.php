@@ -63,4 +63,21 @@ class Plan extends MY_Controller {
 			exit();
 		}
 	}
+	public function setPackage(){
+		if($this->input->post()){
+			$data = array();
+			$data['status'] = 0;
+			$data['msg'] = 'ไม่สามารถบันทึกข้อมูลได้';
+			$res = $this->plan_model->updatePackage($_POST);
+			if($res > 0) {
+				$data['status'] = 1;
+				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';
+			}
+			unset($_POST);
+			echo json_encode($data);
+			exit();
+		}
+		$data['package'] = $this->plan_model->selectPackage();
+		$this->twig->display('@b/plan-package', $data);
+	}
 }
