@@ -42,16 +42,16 @@
                     <div class="row">
                         <div class="col">
                             <div class="social top-social">
-                                <a href="#"><img src="{{ link_img }}icon/icon-fb.png" alt=""></a>
-                                <a href="#"><img src="{{ link_img }}icon/icon-ig.png" alt=""></a>
-                                <a href="#"><img src="{{ link_img }}icon/icon-tw.png" alt=""></a>
+                                <a href="{{ nav.contact.facebook }}" target="_blank"><img src="{{ link_img }}icon/icon-fb.png" alt=""></a>
+                                <a href="{{ nav.contact.instagram }}" target="_blank"><img src="{{ link_img }}icon/icon-ig.png" alt=""></a>
+                                <a href="{{ nav.contact.twitter }}" target="_blank"><img src="{{ link_img }}icon/icon-tw.png" alt=""></a>
                             </div>
                         
                         </div>
                         <div class="col text-right lan">
                             <span class="list-inline">
-                                <a class="active" href="#">ไทย</a>
-                                <a href="#">EN</a>
+                                <a class="{{ lang == 'th' ? 'active' : '' }}" href="{{ base_url('lang/change/th') }}">ไทย</a>
+                                <a class="{{ lang == 'en' ? 'active' : '' }}" href="{{ base_url('lang/change/en') }}">EN</a>
                             </span>
 
                         </div>
@@ -80,12 +80,10 @@
                                         ประกันสุขภาพลูก
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        
                                         <li><a class="dropdown-item" href="{{ base_url('info') }}">หน้ารวมประกัน</a></li>
-                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/1') }}">ผ่อนหนักให้เป็นเบา</a></li>
-                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/2') }}">เบากระเป๋า</a></li>
-                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/3') }}">เบาใจเหมาจ่าย</a></li>
-                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/4') }}">เบี้ยไม่ทิ้ง</a></li>
+                                        {% for value in nav.insurance %}
+                                        <li><a class="dropdown-item" href="{{ base_url('info/detail/')~value.id }}">{{ attribute(value,'title_'~lang) }}</a></li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
                                 <li class="nav-item {{ page == 'hospital' ? 'active' : '' }}">
@@ -104,17 +102,16 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <li><a class="dropdown-item " href="{{ base_url('contact/agent') }}">ตัวแทนของเรา</a></li>
-                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent/aia') }}">ตัวแทน เอ ไอ เอ</a></li>
-                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent/thailife') }}">ตัวแทน ไทยประกันชีวิต</a></li>
-                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent/prudential') }}">ตัวแทน พรูเด็นเชียล</a></li>
-                                    
+                                        {% for value in nav.company %}
+                                        <li><a class="dropdown-item" href="{{ base_url('contact/agent/')~value.id }}">{{ attribute(value,'title_'~lang) }}</a></li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
    
                             </ul>
-                            <a class="form-inline my-2 my-lg-0 top-inline">
+                            <a class="form-inline my-2 my-lg-0 top-inline" href="tel: {{ nav.contact.tel }}">
                                 <img src="{{ link_img }}icon/icon-24hr.png" alt="">
-                                <span class="color-violet">215 (362) 4579</span>
+                                <span class="color-violet">{{ nav.contact.tel }}</span>
                             </a>
                         </div>
                     </nav>
@@ -131,16 +128,16 @@
                     <div class="stop">
                         <div class="row footer-social">
                             <div class="col-12 col-sm-6 col-md-3 link">
-                                <h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-fb-footer.png"> <span>แชร์หน้านี้บนเฟสบุ๊ค</span></h4>
+                                <a href="{{ nav.contact.facebook }}" target="_blank"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-fb-footer.png"> <span>แชร์หน้านี้บนเฟสบุ๊ค</span></h4></a>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3 link">
-                                <h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-line-footer.png"> <span>pragunluk</span></h4>
+                                <a href="{{ nav.contact.line }}" target="_blank"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-line-footer.png"> <span>pragunluk</span></h4></a>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3 link">
-                                <h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-tel-footer.png"> <span>215 (362) 4579</span></h4>
+                                <a href="tel: {{ nav.contact.tel }}"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-tel-footer.png"> <span>{{ nav.contact.tel }}</span></h4></a>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3 link">
-                                <h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-message-footer.png"> <span>info@pragundek.com</span></h4>
+                                <a href="mailto: {{ nav.contact.email }}"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-message-footer.png"> <span>{{ nav.contact.email }}</span></h4></a>
                             </div>
                         </div>
                     </div>
@@ -212,14 +209,11 @@
                     <div class="text-center">Copyright © 2018 Pragundek.com All Rights Reserved.</div>
 
                     <div class="social top-social social-footer">
-                        <a href="#"><img src="{{ link_img }}icon/icon-fb.png" alt=""></a>
-                        <a href="#"><img src="{{ link_img }}icon/icon-ig.png" alt=""></a>
-                        <a href="#"><img src="{{ link_img }}icon/icon-tw.png" alt=""></a>
+                        <a href="{{ nav.contact.facebook }}" target="_blank"><img src="{{ link_img }}icon/icon-fb.png" alt=""></a>
+                        <a href="{{ nav.contact.instagram }}" target="_blank"><img src="{{ link_img }}icon/icon-ig.png" alt=""></a>
+                        <a href="{{ nav.contact.twitter }}" target="_blank"><img src="{{ link_img }}icon/icon-tw.png" alt=""></a>
                     </div>
                 </div>
-
-               
-
             </div>
         </footer>
 

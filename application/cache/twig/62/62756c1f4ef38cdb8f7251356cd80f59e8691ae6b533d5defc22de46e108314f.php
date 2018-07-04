@@ -99,16 +99,22 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                     <div class=\"row\">
                         <div class=\"col\">
                             <div class=\"social top-social\">
-                                <a href=\"#\"><img src=\"";
+                                <a href=\"";
         // line 45
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "facebook", array()), "html", null, true);
+        echo "\" target=\"_blank\"><img src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-fb.png\" alt=\"\"></a>
-                                <a href=\"#\"><img src=\"";
+                                <a href=\"";
         // line 46
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "instagram", array()), "html", null, true);
+        echo "\" target=\"_blank\"><img src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-ig.png\" alt=\"\"></a>
-                                <a href=\"#\"><img src=\"";
+                                <a href=\"";
         // line 47
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "twitter", array()), "html", null, true);
+        echo "\" target=\"_blank\"><img src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-tw.png\" alt=\"\"></a>
                             </div>
@@ -116,8 +122,18 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                         </div>
                         <div class=\"col text-right lan\">
                             <span class=\"list-inline\">
-                                <a class=\"active\" href=\"#\">ไทย</a>
-                                <a href=\"#\">EN</a>
+                                <a class=\"";
+        // line 53
+        echo ((((isset($context["lang"]) ? $context["lang"] : null) == "th")) ? ("active") : (""));
+        echo "\" href=\"";
+        echo twig_escape_filter($this->env, base_url("lang/change/th"), "html", null, true);
+        echo "\">ไทย</a>
+                                <a class=\"";
+        // line 54
+        echo ((((isset($context["lang"]) ? $context["lang"] : null) == "en")) ? ("active") : (""));
+        echo "\" href=\"";
+        echo twig_escape_filter($this->env, base_url("lang/change/en"), "html", null, true);
+        echo "\">EN</a>
                             </span>
 
                         </div>
@@ -161,95 +177,105 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                                         ประกันสุขภาพลูก
                                     </a>
                                     <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-                                        
                                         <li><a class=\"dropdown-item\" href=\"";
-        // line 84
+        // line 83
         echo twig_escape_filter($this->env, base_url("info"), "html", null, true);
         echo "\">หน้ารวมประกัน</a></li>
-                                        <li><a class=\"dropdown-item\" href=\"";
-        // line 85
-        echo twig_escape_filter($this->env, base_url("info/detail/1"), "html", null, true);
-        echo "\">ผ่อนหนักให้เป็นเบา</a></li>
-                                        <li><a class=\"dropdown-item\" href=\"";
-        // line 86
-        echo twig_escape_filter($this->env, base_url("info/detail/2"), "html", null, true);
-        echo "\">เบากระเป๋า</a></li>
-                                        <li><a class=\"dropdown-item\" href=\"";
+                                        ";
+        // line 84
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "insurance", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 85
+            echo "                                        <li><a class=\"dropdown-item\" href=\"";
+            echo twig_escape_filter($this->env, (base_url("info/detail/") . $this->getAttribute($context["value"], "id", array())), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</a></li>
+                                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 87
-        echo twig_escape_filter($this->env, base_url("info/detail/3"), "html", null, true);
-        echo "\">เบาใจเหมาจ่าย</a></li>
-                                        <li><a class=\"dropdown-item\" href=\"";
-        // line 88
-        echo twig_escape_filter($this->env, base_url("info/detail/4"), "html", null, true);
-        echo "\">เบี้ยไม่ทิ้ง</a></li>
-                                    </ul>
+        echo "                                    </ul>
                                 </li>
                                 <li class=\"nav-item ";
-        // line 91
+        // line 89
         echo ((((isset($context["page"]) ? $context["page"] : null) == "hospital")) ? ("active") : (""));
         echo "\">
                                     <a class=\"nav-link color-gray\" href=\"";
-        // line 92
+        // line 90
         echo twig_escape_filter($this->env, base_url("hospital"), "html", null, true);
         echo "\">โรงพยาบาลลูก</a>
                                 </li>
                                  <li class=\"nav-item ";
-        // line 94
+        // line 92
         echo ((((isset($context["page"]) ? $context["page"] : null) == "momandkids")) ? ("active") : (""));
         echo "\">
                                     <a class=\"nav-link color-gray\" href=\"";
-        // line 95
+        // line 93
         echo twig_escape_filter($this->env, base_url("momandkids"), "html", null, true);
         echo "\">แม่และลูก</a>
                                 </li>
                                 <li class=\"nav-item ";
-        // line 97
+        // line 95
         echo ((((isset($context["page"]) ? $context["page"] : null) == "plan")) ? ("active") : (""));
         echo "\">
                                     <a class=\"nav-link color-gray\" href=\"";
-        // line 98
+        // line 96
         echo twig_escape_filter($this->env, base_url("plan"), "html", null, true);
         echo "\">วางแผนการศึกษา</a>
                                 </li>
 
                                 <li class=\"nav-item dropdown ";
-        // line 101
+        // line 99
         echo ((((isset($context["page"]) ? $context["page"] : null) == "contact")) ? ("active") : (""));
         echo "\">
                                     <a class=\"nav-link dropdown-toggle color-gray\" href=\"";
-        // line 102
+        // line 100
         echo twig_escape_filter($this->env, base_url("contact"), "html", null, true);
         echo "\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                                         ติดต่อเรา
                                     </a>
                                     <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
                                         <li><a class=\"dropdown-item \" href=\"";
-        // line 106
+        // line 104
         echo twig_escape_filter($this->env, base_url("contact/agent"), "html", null, true);
         echo "\">ตัวแทนของเรา</a></li>
-                                        <li><a class=\"dropdown-item \" href=\"";
-        // line 107
-        echo twig_escape_filter($this->env, base_url("contact/agent/aia"), "html", null, true);
-        echo "\">ตัวแทน เอ ไอ เอ</a></li>
-                                        <li><a class=\"dropdown-item \" href=\"";
+                                        ";
+        // line 105
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "company", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 106
+            echo "                                        <li><a class=\"dropdown-item\" href=\"";
+            echo twig_escape_filter($this->env, (base_url("contact/agent/") . $this->getAttribute($context["value"], "id", array())), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</a></li>
+                                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 108
-        echo twig_escape_filter($this->env, base_url("contact/agent/thailife"), "html", null, true);
-        echo "\">ตัวแทน ไทยประกันชีวิต</a></li>
-                                        <li><a class=\"dropdown-item \" href=\"";
-        // line 109
-        echo twig_escape_filter($this->env, base_url("contact/agent/prudential"), "html", null, true);
-        echo "\">ตัวแทน พรูเด็นเชียล</a></li>
-                                    
-                                    </ul>
+        echo "                                    </ul>
                                 </li>
    
                             </ul>
-                            <a class=\"form-inline my-2 my-lg-0 top-inline\">
+                            <a class=\"form-inline my-2 my-lg-0 top-inline\" href=\"tel: ";
+        // line 112
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "tel", array()), "html", null, true);
+        echo "\">
                                 <img src=\"";
-        // line 116
+        // line 113
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-24hr.png\" alt=\"\">
-                                <span class=\"color-violet\">215 (362) 4579</span>
+                                <span class=\"color-violet\">";
+        // line 114
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "tel", array()), "html", null, true);
+        echo "</span>
                             </a>
                         </div>
                     </nav>
@@ -259,9 +285,9 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
         </section>
 
         ";
-        // line 126
+        // line 123
         $this->displayBlock('content', $context, $blocks);
-        // line 127
+        // line 124
         echo "
         <footer class=\"bg-gray content-p-top \">
             <div>
@@ -269,28 +295,40 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                     <div class=\"stop\">
                         <div class=\"row footer-social\">
                             <div class=\"col-12 col-sm-6 col-md-3 link\">
-                                <h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"";
+                                <a href=\"";
+        // line 131
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "facebook", array()), "html", null, true);
+        echo "\" target=\"_blank\"><h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"";
+        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
+        echo "icon/icon-fb-footer.png\"> <span>แชร์หน้านี้บนเฟสบุ๊ค</span></h4></a>
+                            </div>
+                            <div class=\"col-12 col-sm-6 col-md-3 link\">
+                                <a href=\"";
         // line 134
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "line", array()), "html", null, true);
+        echo "\" target=\"_blank\"><h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-fb-footer.png\"> <span>แชร์หน้านี้บนเฟสบุ๊ค</span></h4>
+        echo "icon/icon-line-footer.png\"> <span>pragunluk</span></h4></a>
                             </div>
                             <div class=\"col-12 col-sm-6 col-md-3 link\">
-                                <h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"";
+                                <a href=\"tel: ";
         // line 137
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "tel", array()), "html", null, true);
+        echo "\"><h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-line-footer.png\"> <span>pragunluk</span></h4>
+        echo "icon/icon-tel-footer.png\"> <span>";
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "tel", array()), "html", null, true);
+        echo "</span></h4></a>
                             </div>
                             <div class=\"col-12 col-sm-6 col-md-3 link\">
-                                <h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"";
+                                <a href=\"mailto: ";
         // line 140
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "email", array()), "html", null, true);
+        echo "\"><h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-tel-footer.png\"> <span>215 (362) 4579</span></h4>
-                            </div>
-                            <div class=\"col-12 col-sm-6 col-md-3 link\">
-                                <h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"";
-        // line 143
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-message-footer.png\"> <span>info@pragundek.com</span></h4>
+        echo "icon/icon-message-footer.png\"> <span>";
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "email", array()), "html", null, true);
+        echo "</span></h4></a>
                             </div>
                         </div>
                     </div>
@@ -301,7 +339,7 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                 <div class=\"row\">
                     <div class=\"col-md-4\">
                         <img src=\"";
-        // line 153
+        // line 150
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "logo.png\">
                         <p class=\"mt-2 footer-content\">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง </p>
@@ -365,50 +403,53 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                     <div class=\"text-center\">Copyright © 2018 Pragundek.com All Rights Reserved.</div>
 
                     <div class=\"social top-social social-footer\">
-                        <a href=\"#\"><img src=\"";
-        // line 215
+                        <a href=\"";
+        // line 212
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "facebook", array()), "html", null, true);
+        echo "\" target=\"_blank\"><img src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-fb.png\" alt=\"\"></a>
-                        <a href=\"#\"><img src=\"";
-        // line 216
+                        <a href=\"";
+        // line 213
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "instagram", array()), "html", null, true);
+        echo "\" target=\"_blank\"><img src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-ig.png\" alt=\"\"></a>
-                        <a href=\"#\"><img src=\"";
-        // line 217
+                        <a href=\"";
+        // line 214
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "twitter", array()), "html", null, true);
+        echo "\" target=\"_blank\"><img src=\"";
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-tw.png\" alt=\"\"></a>
                     </div>
                 </div>
-
-               
-
             </div>
         </footer>
 
         <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js\"></script>
         ";
-        // line 228
+        // line 222
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, base_url("assets/frontend/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 229
+        // line 223
         echo twig_escape_filter($this->env, base_url("assets/frontend/js/owl.carousel.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 230
+        // line 224
         echo twig_escape_filter($this->env, base_url("assets/frontend/js/aos.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 231
+        // line 225
         echo twig_escape_filter($this->env, base_url("assets/frontend/js/jquery.sticky.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 232
+        // line 226
         echo twig_escape_filter($this->env, base_url("assets/frontend/js/social-buttons.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 233
+        // line 227
         echo twig_escape_filter($this->env, base_url("assets/frontend/js/custom.js"), "html", null, true);
         echo "\"></script>
         <script src=\"https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js\" type=\"text/javascript\"></script>
@@ -433,9 +474,9 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
         </script>
 
         ";
-        // line 255
+        // line 249
         $this->displayBlock('js', $context, $blocks);
-        // line 256
+        // line 250
         echo "    </body>
 </html>";
     }
@@ -446,13 +487,13 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
         echo " ";
     }
 
-    // line 126
+    // line 123
     public function block_content($context, array $blocks = array())
     {
         echo " ";
     }
 
-    // line 255
+    // line 249
     public function block_js($context, array $blocks = array())
     {
         echo " ";
@@ -470,7 +511,7 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
 
     public function getDebugInfo()
     {
-        return array (  456 => 255,  450 => 126,  444 => 25,  439 => 256,  437 => 255,  412 => 233,  408 => 232,  404 => 231,  400 => 230,  396 => 229,  391 => 228,  378 => 217,  374 => 216,  370 => 215,  305 => 153,  292 => 143,  286 => 140,  280 => 137,  274 => 134,  265 => 127,  263 => 126,  250 => 116,  240 => 109,  236 => 108,  232 => 107,  228 => 106,  221 => 102,  217 => 101,  211 => 98,  207 => 97,  202 => 95,  198 => 94,  193 => 92,  189 => 91,  183 => 88,  179 => 87,  175 => 86,  171 => 85,  167 => 84,  158 => 78,  152 => 75,  148 => 74,  137 => 66,  133 => 65,  112 => 47,  108 => 46,  104 => 45,  83 => 26,  81 => 25,  74 => 21,  70 => 20,  66 => 19,  62 => 18,  58 => 17,  54 => 16,  50 => 15,  46 => 14,  42 => 13,  38 => 12,  34 => 11,  22 => 1,);
+        return array (  497 => 249,  491 => 123,  485 => 25,  480 => 250,  478 => 249,  453 => 227,  449 => 226,  445 => 225,  441 => 224,  437 => 223,  432 => 222,  420 => 214,  414 => 213,  408 => 212,  343 => 150,  326 => 140,  316 => 137,  308 => 134,  300 => 131,  291 => 124,  289 => 123,  277 => 114,  273 => 113,  269 => 112,  263 => 108,  252 => 106,  248 => 105,  244 => 104,  237 => 100,  233 => 99,  227 => 96,  223 => 95,  218 => 93,  214 => 92,  209 => 90,  205 => 89,  201 => 87,  190 => 85,  186 => 84,  182 => 83,  174 => 78,  168 => 75,  164 => 74,  153 => 66,  149 => 65,  133 => 54,  127 => 53,  116 => 47,  110 => 46,  104 => 45,  83 => 26,  81 => 25,  74 => 21,  70 => 20,  66 => 19,  62 => 18,  58 => 17,  54 => 16,  50 => 15,  46 => 14,  42 => 13,  38 => 12,  34 => 11,  22 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -527,16 +568,16 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                     <div class=\"row\">
                         <div class=\"col\">
                             <div class=\"social top-social\">
-                                <a href=\"#\"><img src=\"{{ link_img }}icon/icon-fb.png\" alt=\"\"></a>
-                                <a href=\"#\"><img src=\"{{ link_img }}icon/icon-ig.png\" alt=\"\"></a>
-                                <a href=\"#\"><img src=\"{{ link_img }}icon/icon-tw.png\" alt=\"\"></a>
+                                <a href=\"{{ nav.contact.facebook }}\" target=\"_blank\"><img src=\"{{ link_img }}icon/icon-fb.png\" alt=\"\"></a>
+                                <a href=\"{{ nav.contact.instagram }}\" target=\"_blank\"><img src=\"{{ link_img }}icon/icon-ig.png\" alt=\"\"></a>
+                                <a href=\"{{ nav.contact.twitter }}\" target=\"_blank\"><img src=\"{{ link_img }}icon/icon-tw.png\" alt=\"\"></a>
                             </div>
                         
                         </div>
                         <div class=\"col text-right lan\">
                             <span class=\"list-inline\">
-                                <a class=\"active\" href=\"#\">ไทย</a>
-                                <a href=\"#\">EN</a>
+                                <a class=\"{{ lang == 'th' ? 'active' : '' }}\" href=\"{{ base_url('lang/change/th') }}\">ไทย</a>
+                                <a class=\"{{ lang == 'en' ? 'active' : '' }}\" href=\"{{ base_url('lang/change/en') }}\">EN</a>
                             </span>
 
                         </div>
@@ -565,12 +606,10 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                                         ประกันสุขภาพลูก
                                     </a>
                                     <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
-                                        
                                         <li><a class=\"dropdown-item\" href=\"{{ base_url('info') }}\">หน้ารวมประกัน</a></li>
-                                        <li><a class=\"dropdown-item\" href=\"{{ base_url('info/detail/1') }}\">ผ่อนหนักให้เป็นเบา</a></li>
-                                        <li><a class=\"dropdown-item\" href=\"{{ base_url('info/detail/2') }}\">เบากระเป๋า</a></li>
-                                        <li><a class=\"dropdown-item\" href=\"{{ base_url('info/detail/3') }}\">เบาใจเหมาจ่าย</a></li>
-                                        <li><a class=\"dropdown-item\" href=\"{{ base_url('info/detail/4') }}\">เบี้ยไม่ทิ้ง</a></li>
+                                        {% for value in nav.insurance %}
+                                        <li><a class=\"dropdown-item\" href=\"{{ base_url('info/detail/')~value.id }}\">{{ attribute(value,'title_'~lang) }}</a></li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
                                 <li class=\"nav-item {{ page == 'hospital' ? 'active' : '' }}\">
@@ -589,17 +628,16 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                                     </a>
                                     <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">
                                         <li><a class=\"dropdown-item \" href=\"{{ base_url('contact/agent') }}\">ตัวแทนของเรา</a></li>
-                                        <li><a class=\"dropdown-item \" href=\"{{ base_url('contact/agent/aia') }}\">ตัวแทน เอ ไอ เอ</a></li>
-                                        <li><a class=\"dropdown-item \" href=\"{{ base_url('contact/agent/thailife') }}\">ตัวแทน ไทยประกันชีวิต</a></li>
-                                        <li><a class=\"dropdown-item \" href=\"{{ base_url('contact/agent/prudential') }}\">ตัวแทน พรูเด็นเชียล</a></li>
-                                    
+                                        {% for value in nav.company %}
+                                        <li><a class=\"dropdown-item\" href=\"{{ base_url('contact/agent/')~value.id }}\">{{ attribute(value,'title_'~lang) }}</a></li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
    
                             </ul>
-                            <a class=\"form-inline my-2 my-lg-0 top-inline\">
+                            <a class=\"form-inline my-2 my-lg-0 top-inline\" href=\"tel: {{ nav.contact.tel }}\">
                                 <img src=\"{{ link_img }}icon/icon-24hr.png\" alt=\"\">
-                                <span class=\"color-violet\">215 (362) 4579</span>
+                                <span class=\"color-violet\">{{ nav.contact.tel }}</span>
                             </a>
                         </div>
                     </nav>
@@ -616,16 +654,16 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                     <div class=\"stop\">
                         <div class=\"row footer-social\">
                             <div class=\"col-12 col-sm-6 col-md-3 link\">
-                                <h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"{{ link_img }}icon/icon-fb-footer.png\"> <span>แชร์หน้านี้บนเฟสบุ๊ค</span></h4>
+                                <a href=\"{{ nav.contact.facebook }}\" target=\"_blank\"><h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"{{ link_img }}icon/icon-fb-footer.png\"> <span>แชร์หน้านี้บนเฟสบุ๊ค</span></h4></a>
                             </div>
                             <div class=\"col-12 col-sm-6 col-md-3 link\">
-                                <h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"{{ link_img }}icon/icon-line-footer.png\"> <span>pragunluk</span></h4>
+                                <a href=\"{{ nav.contact.line }}\" target=\"_blank\"><h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"{{ link_img }}icon/icon-line-footer.png\"> <span>pragunluk</span></h4></a>
                             </div>
                             <div class=\"col-12 col-sm-6 col-md-3 link\">
-                                <h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"{{ link_img }}icon/icon-tel-footer.png\"> <span>215 (362) 4579</span></h4>
+                                <a href=\"tel: {{ nav.contact.tel }}\"><h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"{{ link_img }}icon/icon-tel-footer.png\"> <span>{{ nav.contact.tel }}</span></h4></a>
                             </div>
                             <div class=\"col-12 col-sm-6 col-md-3 link\">
-                                <h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"{{ link_img }}icon/icon-message-footer.png\"> <span>info@pragundek.com</span></h4>
+                                <a href=\"mailto: {{ nav.contact.email }}\"><h4 class=\"title color-violet2\"><img draggable=\"false\"  alt=\"\" src=\"{{ link_img }}icon/icon-message-footer.png\"> <span>{{ nav.contact.email }}</span></h4></a>
                             </div>
                         </div>
                     </div>
@@ -697,14 +735,11 @@ class __TwigTemplate_2a70f1b3c0b64f43b5cd997a228852ec08a4cc66d8bc26c326a24076a3d
                     <div class=\"text-center\">Copyright © 2018 Pragundek.com All Rights Reserved.</div>
 
                     <div class=\"social top-social social-footer\">
-                        <a href=\"#\"><img src=\"{{ link_img }}icon/icon-fb.png\" alt=\"\"></a>
-                        <a href=\"#\"><img src=\"{{ link_img }}icon/icon-ig.png\" alt=\"\"></a>
-                        <a href=\"#\"><img src=\"{{ link_img }}icon/icon-tw.png\" alt=\"\"></a>
+                        <a href=\"{{ nav.contact.facebook }}\" target=\"_blank\"><img src=\"{{ link_img }}icon/icon-fb.png\" alt=\"\"></a>
+                        <a href=\"{{ nav.contact.instagram }}\" target=\"_blank\"><img src=\"{{ link_img }}icon/icon-ig.png\" alt=\"\"></a>
+                        <a href=\"{{ nav.contact.twitter }}\" target=\"_blank\"><img src=\"{{ link_img }}icon/icon-tw.png\" alt=\"\"></a>
                     </div>
                 </div>
-
-               
-
             </div>
         </footer>
 
