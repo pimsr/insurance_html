@@ -32,36 +32,70 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
         echo "<section id=\"main-slide\">
     <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
-            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
-            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>
-        </ol>
+            ";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["banner"]) ? $context["banner"] : null));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 8
+            echo "            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"";
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "\" class=\"";
+            echo ((($context["key"] == 0)) ? ("active") : (""));
+            echo "\"></li>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 10
+        echo "        </ol>
         <div class=\"carousel-inner\">
-            <div class=\"carousel-item active\">
+            ";
+        // line 12
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["banner"]) ? $context["banner"] : null));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 13
+            echo "            ";
+            $context["img"] = (((trim($this->getAttribute($context["value"], "img", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/banner.png")) : (((isset($context["link_banner"]) ? $context["link_banner"] : null) . $this->getAttribute($context["value"], "img", array()))));
+            // line 14
+            echo "            <div class=\"carousel-item ";
+            echo ((($context["key"] == 0)) ? ("active") : (""));
+            echo "\">
                 <div class=\"overlay\"></div>
                 <img class=\"d-block w-100\" src=\"";
-        // line 13
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "banner.png\" alt=\"ประกันเด็ก\">
+            // line 16
+            echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : null), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "\">
                 <div class=\"carousel-caption d-none d-md-block\">
-                    <h5>หมดห่วงสารพัดเรื่องกับ</h5>
-                    <p>ประกันสุขภาพเด็กเบากระเป๋า</p>
-                    <a class=\"btn btn-violet\" href=\"#\">ดูรายละเอียด</a>
-                </div>
+                    <h5>";
+            // line 18
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</h5>
+                    <p>";
+            // line 19
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("subtitle_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</p>
+                    ";
+            // line 20
+            if ($this->getAttribute($context["value"], "link", array())) {
+                echo "<a class=\"btn btn-violet\" href=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "link", array()), "html", null, true);
+                echo "\">ดูรายละเอียด</a>";
+            }
+            // line 21
+            echo "                </div>
             </div>
-            <div class=\"carousel-item \">
-                <div class=\"overlay\"></div>
-                <img class=\"d-block w-100\" src=\"";
-        // line 22
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "banner.png\" alt=\"ประกันเด็ก\">
-                <div class=\"carousel-caption d-none d-md-block\">
-                    <h5>หมดห่วงสารพัดเรื่องกับ</h5>
-                    <p>ประกันสุขภาพเด็กเบากระเป๋า</p>
-                    <a class=\"btn btn-violet\" href=\"#\">ดูรายละเอียด</a>
-                </div>
-            </div>
-            
-        </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 24
+        echo "        </div>
         <!-- <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
             <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
             <span class=\"sr-only\">Previous</span>
@@ -76,44 +110,81 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 <section id=\"content\" class=\"content-p-top ser\">
     <div class=\"container\">
         <div class=\"row\">
-            <div class=\"col-12 col-sm-12 col-md-6 \">
-                <img class=\"img-fluid\" src=\"";
-        // line 46
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "home-img.png\" alt=\"img15\"/>
-            </div>
+            <div class=\"col-12 col-sm-12 col-md-6 dotcom-img\">
+                ";
+        // line 40
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["dotcom"]) ? $context["dotcom"] : null));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 41
+            echo "                ";
+            $context["img"] = (((trim($this->getAttribute($context["value"], "img", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/dotcom.png")) : (((isset($context["link_home"]) ? $context["link_home"] : null) . $this->getAttribute($context["value"], "img", array()))));
+            // line 42
+            echo "                <img class=\"img-fluid\" style=\"";
+            echo ((($context["key"] == 0)) ? ("") : ("display: none"));
+            echo "\" src=\"";
+            echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : null), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "\"/>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 44
+        echo "            </div>
             <div class=\"col-12 col-sm-12 col-md-6\">
-                <h3 class=\"title color-violet2\">ประกันลูกดอทคอม</h3>
+                <h3 class=\"title color-violet2\">";
+        // line 46
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dotcom_headline"]) ? $context["dotcom_headline"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h3>
                 <p>
-                    โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง 
+                    ";
+        // line 48
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["dotcom_headline"]) ? $context["dotcom_headline"] : null), ("subtitle_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "
                 </p>
 
                 <ul class=\"home-services\">
-                    <li class=\"list list1\">
+                    ";
+        // line 52
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["dotcom"]) ? $context["dotcom"] : null));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 53
+            echo "                    ";
+            $context["icon"] = (((trim($this->getAttribute($context["value"], "icon", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/icon.png")) : (((isset($context["link_home"]) ? $context["link_home"] : null) . $this->getAttribute($context["value"], "icon", array()))));
+            // line 54
+            echo "                    <li class=\"list list";
+            echo twig_escape_filter($this->env, ($context["key"] + 1), "html", null, true);
+            echo " ";
+            echo ((($context["key"] == 0)) ? ("active") : (""));
+            echo "\">
                         <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
+                            <div class=\"icon\">
+                                <img src=\"";
+            // line 57
+            echo twig_escape_filter($this->env, (isset($context["icon"]) ? $context["icon"] : null), "html", null, true);
+            echo "\">
+                            </div>
+                            <h4>";
+            // line 59
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</h4>
+                            <p>";
+            // line 60
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("desc_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</p>
                         </div>
                     </li>
-                    <li class=\"list list2\">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
-                    <li class=\"list list3\">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
-                    <li class=\"list list4\">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
-                </ul>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 64
+        echo "                </ul>
             </div>
         </div>
     </div>
@@ -179,7 +250,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
             </div>
             <div class=\"col-12 col-sm-12 col-md-6 order-2\">
                 <img class=\"img-fluid\" src=\"";
-        // line 144
+        // line 129
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "img-service.png\" alt=\"img15\"/>
             </div>
@@ -197,7 +268,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
                 <div class=\"card\" >
                     <div class=\"card-img\">
                         <img class=\"card-img-top\" src=\"";
-        // line 159
+        // line 144
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "new1.png\" alt=\"Card image cap\">
                         <div class=\"news-date\">
@@ -206,13 +277,13 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
                     </div>
                     <div class=\"card-body text-left\">
                     <a href=\"";
-        // line 165
+        // line 150
         echo twig_escape_filter($this->env, base_url("momandkids/detail"), "html", null, true);
         echo "\">
                             <h5 class=\"card-title\">โลเล็ม อิปซัม (lorem ipsum)</h5>
                             <p class=\"card-text\">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
                             <p class=\"color-violet2\">อ่านเพิ่ม <img src=\"";
-        // line 168
+        // line 153
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-right.png\"></p>
                     </a>
@@ -223,7 +294,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
                 <div class=\"card\" >
                     <div class=\"card-img\">
                         <img class=\"card-img-top\" src=\"";
-        // line 176
+        // line 161
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "new1.png\" alt=\"Card image cap\">
                         <div class=\"news-date\">
@@ -232,13 +303,13 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
                     </div>
                     <div class=\"card-body text-left\">
                     <a href=\"";
-        // line 182
+        // line 167
         echo twig_escape_filter($this->env, base_url("momandkids/detail"), "html", null, true);
         echo "\">
                             <h5 class=\"card-title\">โลเล็ม อิปซัม (lorem ipsum)</h5>
                             <p class=\"card-text\">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
                             <p class=\"color-violet2\">อ่านเพิ่ม <img src=\"";
-        // line 185
+        // line 170
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-right.png\"></p>
                     </a>
@@ -249,7 +320,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
                 <div class=\"card\">
                     <div class=\"card-img\">
                         <img class=\"card-img-top\" src=\"";
-        // line 193
+        // line 178
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "new1.png\" alt=\"Card image cap\">
                         <div class=\"news-date\">
@@ -258,13 +329,13 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
                     </div>
                     <div class=\"card-body text-left\">
                     <a href=\"";
-        // line 199
+        // line 184
         echo twig_escape_filter($this->env, base_url("momandkids/detail"), "html", null, true);
         echo "\">
                             <h5 class=\"card-title\">โลเล็ม อิปซัม (lorem ipsum)</h5>
                             <p class=\"card-text\">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
                             <p class=\"color-violet2\">อ่านเพิ่ม <img src=\"";
-        // line 202
+        // line 187
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-right.png\"></p>
                     </a>
@@ -275,7 +346,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 
         <div class=\"text-center load-more\">
             <a class=\"btn btn-violet\" href=\"";
-        // line 210
+        // line 195
         echo twig_escape_filter($this->env, base_url("momandkids"), "html", null, true);
         echo "\">ดูข่าวทั้งหมด</a>
         </div>
@@ -286,7 +357,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 <section id=\"home-contact\" class=\"content-p-top bg-gray content-p-bottom home-contact-inner\">
     <div class=\"container  \">
         <h3 class=\"title color-violet2\"><img draggable=\"false\" class=\"emoji\" alt=\"\" src=\"";
-        // line 218
+        // line 203
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/phone-contact.png\"> ให้เราติดต่อคุณ</h3>
 
@@ -327,7 +398,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 
     </div>
     <img  class=\"c-img\" src=\"";
-        // line 256
+        // line 241
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "baby.png\">
 </section>
@@ -339,87 +410,59 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 
         
         <div class=\"owl-carousel owl-theme mt-5\">
-            <div class=\"item\">
+            ";
+        // line 251
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["review"]) ? $context["review"] : null));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 252
+            echo "            ";
+            $context["img"] = (((trim($this->getAttribute($context["value"], "img", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/review.png")) : (((isset($context["link_review"]) ? $context["link_review"] : null) . $this->getAttribute($context["value"], "img", array()))));
+            // line 253
+            echo "            <div class=\"item\">
                 <div class=\"card\" >
                     <div class=\"text-center\">
                         <img class=\"\" src=\"";
-        // line 269
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "avatar.png\" alt=\"\">
-                            
+            // line 256
+            echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : null), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "\">
                     </div>
                     <div class=\"card-body\">
-                        <h5 class=\"card-title color-violet\">Card titlea</h5>
-                        <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>
-                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class=\"card-title color-violet\">";
+            // line 259
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</h5>
+                        <h6 class=\"card-subtitle mb-2 text-muted\">";
+            // line 260
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("subtitle_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</h6>
+                        <p class=\"card-text\">";
+            // line 261
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("desc_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</p>
                         
                     </div>
                 </div>
             </div>
-            <div class=\"item\">
-                <div class=\"card\" >
-                    <div class=\"text-center\">
-                        <img class=\"\" src=\"";
-        // line 283
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "avatar.png\" alt=\"\">
-                            
-                    </div>
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title color-violet\">Card titlea</h5>
-                        <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>
-                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class=\"item\">
-                <div class=\"card\" >
-                    <div class=\"text-center\">
-                        <img class=\"\" src=\"";
-        // line 297
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "avatar.png\" alt=\"\">
-                            
-                    </div>
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title color-violet\">Card titlea</h5>
-                        <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>
-                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class=\"item\">
-                <div class=\"card\" >
-                    <div class=\"text-center\">
-                        <img class=\"\" src=\"";
-        // line 311
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "avatar.png\" alt=\"\">
-                            
-                    </div>
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title color-violet\">Card titlea</h5>
-                        <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>
-                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-
-            
-        </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 267
+        echo "        </div>
     
     </div>
 </section>
 ";
     }
 
-    // line 330
+    // line 273
     public function block_js($context, array $blocks = array())
     {
-        // line 331
+        // line 274
         echo "<script>
     (function(){
         \$('.owl-carousel').owlCarousel({
@@ -442,6 +485,12 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
         \$('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
         });
+
+        \$('#content .home-services li').click(function(){
+            var index = \$(this).index();
+            \$('#content .dotcom-img img').hide().eq(index).fadeIn(300);
+            \$('#content .home-services li').removeClass('active').eq(index).addClass('active');
+        });
     })();
 </script>
 ";
@@ -459,7 +508,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 
     public function getDebugInfo()
     {
-        return array (  423 => 331,  420 => 330,  398 => 311,  381 => 297,  364 => 283,  347 => 269,  331 => 256,  290 => 218,  279 => 210,  268 => 202,  262 => 199,  253 => 193,  242 => 185,  236 => 182,  227 => 176,  216 => 168,  210 => 165,  201 => 159,  183 => 144,  82 => 46,  55 => 22,  43 => 13,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  466 => 274,  463 => 273,  455 => 267,  443 => 261,  439 => 260,  435 => 259,  427 => 256,  422 => 253,  419 => 252,  415 => 251,  402 => 241,  361 => 203,  350 => 195,  339 => 187,  333 => 184,  324 => 178,  313 => 170,  307 => 167,  298 => 161,  287 => 153,  281 => 150,  272 => 144,  254 => 129,  187 => 64,  177 => 60,  173 => 59,  168 => 57,  159 => 54,  156 => 53,  152 => 52,  145 => 48,  140 => 46,  136 => 44,  123 => 42,  120 => 41,  116 => 40,  98 => 24,  90 => 21,  84 => 20,  80 => 19,  76 => 18,  69 => 16,  63 => 14,  60 => 13,  56 => 12,  52 => 10,  41 => 8,  37 => 7,  32 => 4,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -478,29 +527,23 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 <section id=\"main-slide\">
     <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">
         <ol class=\"carousel-indicators\">
-            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>
-            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>
+            {% for key, value in banner %}
+            <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"{{ key }}\" class=\"{{ key == 0 ? 'active' : '' }}\"></li>
+            {% endfor %}
         </ol>
         <div class=\"carousel-inner\">
-            <div class=\"carousel-item active\">
+            {% for key, value in banner %}
+            {% set img = trim(value.img) == '' ?  link_img~'default/banner.png' : link_banner~value.img %}
+            <div class=\"carousel-item {{ key == 0 ? 'active' : '' }}\">
                 <div class=\"overlay\"></div>
-                <img class=\"d-block w-100\" src=\"{{ link_img }}banner.png\" alt=\"ประกันเด็ก\">
+                <img class=\"d-block w-100\" src=\"{{ img }}\" alt=\"{{ attribute(value,'title_'~lang) }}\">
                 <div class=\"carousel-caption d-none d-md-block\">
-                    <h5>หมดห่วงสารพัดเรื่องกับ</h5>
-                    <p>ประกันสุขภาพเด็กเบากระเป๋า</p>
-                    <a class=\"btn btn-violet\" href=\"#\">ดูรายละเอียด</a>
+                    <h5>{{ attribute(value,'title_'~lang) }}</h5>
+                    <p>{{ attribute(value,'subtitle_'~lang) }}</p>
+                    {% if value.link %}<a class=\"btn btn-violet\" href=\"{{ value.link }}\">ดูรายละเอียด</a>{% endif %}
                 </div>
             </div>
-            <div class=\"carousel-item \">
-                <div class=\"overlay\"></div>
-                <img class=\"d-block w-100\" src=\"{{ link_img }}banner.png\" alt=\"ประกันเด็ก\">
-                <div class=\"carousel-caption d-none d-md-block\">
-                    <h5>หมดห่วงสารพัดเรื่องกับ</h5>
-                    <p>ประกันสุขภาพเด็กเบากระเป๋า</p>
-                    <a class=\"btn btn-violet\" href=\"#\">ดูรายละเอียด</a>
-                </div>
-            </div>
-            
+            {% endfor %}
         </div>
         <!-- <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">
             <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
@@ -516,40 +559,31 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 <section id=\"content\" class=\"content-p-top ser\">
     <div class=\"container\">
         <div class=\"row\">
-            <div class=\"col-12 col-sm-12 col-md-6 \">
-                <img class=\"img-fluid\" src=\"{{ link_img }}home-img.png\" alt=\"img15\"/>
+            <div class=\"col-12 col-sm-12 col-md-6 dotcom-img\">
+                {% for key, value in dotcom %}
+                {% set img = trim(value.img) == '' ?  link_img~'default/dotcom.png' : link_home~value.img %}
+                <img class=\"img-fluid\" style=\"{{ key == 0 ? '' : 'display: none' }}\" src=\"{{ img }}\" alt=\"{{ attribute(value,'title_'~lang) }}\"/>
+                {% endfor %}
             </div>
             <div class=\"col-12 col-sm-12 col-md-6\">
-                <h3 class=\"title color-violet2\">ประกันลูกดอทคอม</h3>
+                <h3 class=\"title color-violet2\">{{ attribute(dotcom_headline,'title_'~lang) }}</h3>
                 <p>
-                    โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง 
+                    {{ attribute(dotcom_headline,'subtitle_'~lang) }}
                 </p>
 
                 <ul class=\"home-services\">
-                    <li class=\"list list1\">
+                    {% for key, value in dotcom %}
+                    {% set icon = trim(value.icon) == '' ?  link_img~'default/icon.png' : link_home~value.icon %}
+                    <li class=\"list list{{ key + 1 }} {{ key == 0 ? 'active' : '' }}\">
                         <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
+                            <div class=\"icon\">
+                                <img src=\"{{ icon }}\">
+                            </div>
+                            <h4>{{ attribute(value,'title_'~lang) }}</h4>
+                            <p>{{ attribute(value,'desc_'~lang) }}</p>
                         </div>
                     </li>
-                    <li class=\"list list2\">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
-                    <li class=\"list list3\">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
-                    <li class=\"list list4\">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -737,64 +771,22 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 
         
         <div class=\"owl-carousel owl-theme mt-5\">
+            {% for key, value in review %}
+            {% set img = trim(value.img) == '' ?  link_img~'default/review.png' : link_review~value.img %}
             <div class=\"item\">
                 <div class=\"card\" >
                     <div class=\"text-center\">
-                        <img class=\"\" src=\"{{ link_img }}avatar.png\" alt=\"\">
-                            
+                        <img class=\"\" src=\"{{ img }}\" alt=\"{{ attribute(value,'title_'~lang) }}\">
                     </div>
                     <div class=\"card-body\">
-                        <h5 class=\"card-title color-violet\">Card titlea</h5>
-                        <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>
-                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class=\"card-title color-violet\">{{ attribute(value,'title_'~lang) }}</h5>
+                        <h6 class=\"card-subtitle mb-2 text-muted\">{{ attribute(value,'subtitle_'~lang) }}</h6>
+                        <p class=\"card-text\">{{ attribute(value,'desc_'~lang) }}</p>
                         
                     </div>
                 </div>
             </div>
-            <div class=\"item\">
-                <div class=\"card\" >
-                    <div class=\"text-center\">
-                        <img class=\"\" src=\"{{ link_img }}avatar.png\" alt=\"\">
-                            
-                    </div>
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title color-violet\">Card titlea</h5>
-                        <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>
-                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class=\"item\">
-                <div class=\"card\" >
-                    <div class=\"text-center\">
-                        <img class=\"\" src=\"{{ link_img }}avatar.png\" alt=\"\">
-                            
-                    </div>
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title color-violet\">Card titlea</h5>
-                        <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>
-                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class=\"item\">
-                <div class=\"card\" >
-                    <div class=\"text-center\">
-                        <img class=\"\" src=\"{{ link_img }}avatar.png\" alt=\"\">
-                            
-                    </div>
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title color-violet\">Card titlea</h5>
-                        <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>
-                        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-
-            
+            {% endfor %}
         </div>
     
     </div>
@@ -823,6 +815,12 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 
         \$('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
+        });
+
+        \$('#content .home-services li').click(function(){
+            var index = \$(this).index();
+            \$('#content .dotcom-img img').hide().eq(index).fadeIn(300);
+            \$('#content .home-services li').removeClass('active').eq(index).addClass('active');
         });
     })();
 </script>

@@ -22,4 +22,24 @@ if(!function_exists('mapData')){
 		}
 	}
 }
+
+function label($label)
+{
+	$ci =& get_instance();
+	$rs = $ci->lang->line($label);
+	if($rs)
+	{
+		return $rs;
+	}
+	else
+	{
+		return $label;
+	}
+}
+
+function getLang(){
+	$ci =& get_instance();
+	$rs = ($ci->session->userdata('lang')=='') ? 'th' : $ci->session->userdata('lang');
+	return $rs;
+}
 ?>

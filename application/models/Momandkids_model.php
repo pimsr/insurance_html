@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home_model extends CI_Model{
+class Momandkids_model extends CI_Model{
 	function __construct(){
 		parent::__construct();
 	}
-	public function selectBanner()
+	public function selectCategory()
 	{
 		$query = $this->db->select('*')
-				->from('tb_banner')
+				->from('tb_news_category')
 				->where('status', 1)
 				->order_by('seq', 'ASC')
 				->order_by('id', 'DESC')
@@ -16,52 +16,32 @@ class Home_model extends CI_Model{
 		$data = $query->result_array();
 		return $data;	
 	}
-	public function selectBannerByID($id)
+	public function selectCategoryByID($id)
 	{
 		$query = $this->db->select('*')
-				->from('tb_banner')
+				->from('tb_news_category')
 				->where('id', $id)
 				->where('status', 1)
 				->get();
 		$data = $query->result_array();
 		return sizeof($data) > 0 ? $data[0] : null;	
 	}
-	public function selectHome()
+	public function selectNews($cate)
 	{
 		$query = $this->db->select('*')
-				->from('tb_home')
+				->from('tb_news')
 				->where('status', 1)
+				->where('category_id', $cate)
 				->order_by('seq', 'ASC')
 				->order_by('id', 'DESC')
 				->get();
 		$data = $query->result_array();
 		return $data;	
 	}
-	public function selectHomeByID($id)
+	public function selectNewsByID($id)
 	{
 		$query = $this->db->select('*')
-				->from('tb_home')
-				->where('id', $id)
-				->where('status', 1)
-				->get();
-		$data = $query->result_array();
-		return sizeof($data) > 0 ? $data[0] : null;	
-	}
-	public function selectReview()
-	{
-		$query = $this->db->select('*')
-				->from('tb_review')
-				->where('status', 1)
-				->order_by('seq', 'ASC')
-				->order_by('id', 'DESC')
-				->get();
-		$data = $query->result_array();
-		return $data;	
-	}
-	public function selectReviewByID($id)
-	{
-		$query = $this->db->select('*')
-				->from('tb_review')
+				->from('tb_news')
 				->where('id', $id)
 				->where('status', 1)
 				->get();

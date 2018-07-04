@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home_model extends CI_Model{
+class Info_model extends CI_Model{
 	function __construct(){
 		parent::__construct();
 	}
-	public function selectBanner()
+	public function selectInsurance()
 	{
 		$query = $this->db->select('*')
-				->from('tb_banner')
+				->from('tb_insurance')
 				->where('status', 1)
 				->order_by('seq', 'ASC')
 				->order_by('id', 'DESC')
@@ -16,57 +16,46 @@ class Home_model extends CI_Model{
 		$data = $query->result_array();
 		return $data;	
 	}
-	public function selectBannerByID($id)
+	public function selectInsuranceByID($id)
 	{
 		$query = $this->db->select('*')
-				->from('tb_banner')
+				->from('tb_insurance')
 				->where('id', $id)
 				->where('status', 1)
 				->get();
 		$data = $query->result_array();
 		return sizeof($data) > 0 ? $data[0] : null;	
 	}
-	public function selectHome()
+	public function selectInsuranceContent($id)
 	{
 		$query = $this->db->select('*')
-				->from('tb_home')
-				->where('status', 1)
+				->from('tb_insurance_content')
+				->where('insurance_id', $id)
 				->order_by('seq', 'ASC')
-				->order_by('id', 'DESC')
 				->get();
 		$data = $query->result_array();
 		return $data;	
 	}
-	public function selectHomeByID($id)
+	public function selectInsurancePackage($id)
 	{
 		$query = $this->db->select('*')
-				->from('tb_home')
-				->where('id', $id)
+				->from('tb_insurance_package')
 				->where('status', 1)
-				->get();
-		$data = $query->result_array();
-		return sizeof($data) > 0 ? $data[0] : null;	
-	}
-	public function selectReview()
-	{
-		$query = $this->db->select('*')
-				->from('tb_review')
-				->where('status', 1)
+				->where('insurance_id', $id)
 				->order_by('seq', 'ASC')
-				->order_by('id', 'DESC')
 				->get();
 		$data = $query->result_array();
 		return $data;	
 	}
-	public function selectReviewByID($id)
+	public function selectInsuranceHow($type)
 	{
 		$query = $this->db->select('*')
-				->from('tb_review')
-				->where('id', $id)
-				->where('status', 1)
+				->from('tb_insurance_how')
+				->where('type', $type)
+				->order_by('id', 'ASC')
 				->get();
 		$data = $query->result_array();
-		return sizeof($data) > 0 ? $data[0] : null;	
+		return $data;	
 	}
 }//class
 ?>

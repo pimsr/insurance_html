@@ -345,8 +345,47 @@ background-color: #ffffff;
 .home-services .list:last-child>div:after {
      background-color: transparent;
 }
+.home-services .list:hover h4,
+.home-services .list:focus h4 {
+    color: #9A397F;
+   
+}
+.home-services .list .icon{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #AB2271;
+    left: 0;
+    z-index: 99;
+    background-color: #fff;
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat; 
+}
+.home-services .list .icon img{
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.home-services .list:hover .icon, .home-services .list.active .icon{
+    color: #ffffff;
+    background-color: #AB2272;
+}
 
-.home-services .list>div:before{
+.home-services .list:hover .icon img, .home-services .list.active .icon img{
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
+}
+
+/* .home-services .list>div:before{
     content: "";
     position: absolute;
     width: 50px;
@@ -358,11 +397,6 @@ background-color: #ffffff;
     background-color: #fff;
 }
 
-.home-services .list:hover h4,
-.home-services .list:focus h4 {
-    color: #9A397F;
-   
-}
 .home-services .list>div:before {
     background-repeat: no-repeat;
     background-position: center center;
@@ -404,7 +438,7 @@ background-color: #ffffff;
 
 .home-services .list4:hover>div:before {
     background-image: url("../images/icon/pregnancy.png");
-}
+} */
 
 .service2{margin-top: 20px;}
 .service2 .icon{
@@ -496,11 +530,6 @@ background-color: #ffffff;
     top: -193px;
 }
 
-#home-reviews .owl-carousel .owl-item img{
-    width: auto;
-    margin: auto;
-}
-
 #home-reviews .owl-carousel .owl-item .card{
     border: none;
 }
@@ -513,6 +542,11 @@ background-color: #ffffff;
     margin: 15px 0;
     text-align: left;
 
+}
+
+#home-reviews img{
+    width: 98px;
+    margin: 0 auto;
 }
 
 footer{

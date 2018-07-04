@@ -4,29 +4,23 @@
 <section id="main-slide">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            {% for key, value in banner %}
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{ key }}" class="{{ key == 0 ? 'active' : '' }}"></li>
+            {% endfor %}
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            {% for key, value in banner %}
+            {% set img = trim(value.img) == '' ?  link_img~'default/banner.png' : link_banner~value.img %}
+            <div class="carousel-item {{ key == 0 ? 'active' : '' }}">
                 <div class="overlay"></div>
-                <img class="d-block w-100" src="{{ link_img }}banner.png" alt="ประกันเด็ก">
+                <img class="d-block w-100" src="{{ img }}" alt="{{ attribute(value,'title_'~lang) }}">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>หมดห่วงสารพัดเรื่องกับ</h5>
-                    <p>ประกันสุขภาพเด็กเบากระเป๋า</p>
-                    <a class="btn btn-violet" href="#">ดูรายละเอียด</a>
+                    <h5>{{ attribute(value,'title_'~lang) }}</h5>
+                    <p>{{ attribute(value,'subtitle_'~lang) }}</p>
+                    {% if value.link %}<a class="btn btn-violet" href="{{ value.link }}">ดูรายละเอียด</a>{% endif %}
                 </div>
             </div>
-            <div class="carousel-item ">
-                <div class="overlay"></div>
-                <img class="d-block w-100" src="{{ link_img }}banner.png" alt="ประกันเด็ก">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>หมดห่วงสารพัดเรื่องกับ</h5>
-                    <p>ประกันสุขภาพเด็กเบากระเป๋า</p>
-                    <a class="btn btn-violet" href="#">ดูรายละเอียด</a>
-                </div>
-            </div>
-            
+            {% endfor %}
         </div>
         <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -42,40 +36,31 @@
 <section id="content" class="content-p-top ser">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-6 ">
-                <img class="img-fluid" src="{{ link_img }}home-img.png" alt="img15"/>
+            <div class="col-12 col-sm-12 col-md-6 dotcom-img">
+                {% for key, value in dotcom %}
+                {% set img = trim(value.img) == '' ?  link_img~'default/dotcom.png' : link_home~value.img %}
+                <img class="img-fluid" style="{{ key == 0 ? '' : 'display: none' }}" src="{{ img }}" alt="{{ attribute(value,'title_'~lang) }}"/>
+                {% endfor %}
             </div>
             <div class="col-12 col-sm-12 col-md-6">
-                <h3 class="title color-violet2">ประกันลูกดอทคอม</h3>
+                <h3 class="title color-violet2">{{ attribute(dotcom_headline,'title_'~lang) }}</h3>
                 <p>
-                    โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง 
+                    {{ attribute(dotcom_headline,'subtitle_'~lang) }}
                 </p>
 
                 <ul class="home-services">
-                    <li class="list list1">
+                    {% for key, value in dotcom %}
+                    {% set icon = trim(value.icon) == '' ?  link_img~'default/icon.png' : link_home~value.icon %}
+                    <li class="list list{{ key + 1 }} {{ key == 0 ? 'active' : '' }}">
                         <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
+                            <div class="icon">
+                                <img src="{{ icon }}">
+                            </div>
+                            <h4>{{ attribute(value,'title_'~lang) }}</h4>
+                            <p>{{ attribute(value,'desc_'~lang) }}</p>
                         </div>
                     </li>
-                    <li class="list list2">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
-                    <li class="list list3">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
-                    <li class="list list4">
-                        <div>
-                            <h4>โลเล็ม อิปซัม </h4>
-                            <p>โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ </p>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -263,64 +248,22 @@
 
         
         <div class="owl-carousel owl-theme mt-5">
+            {% for key, value in review %}
+            {% set img = trim(value.img) == '' ?  link_img~'default/review.png' : link_review~value.img %}
             <div class="item">
                 <div class="card" >
                     <div class="text-center">
-                        <img class="" src="{{ link_img }}avatar.png" alt="">
-                            
+                        <img class="" src="{{ img }}" alt="{{ attribute(value,'title_'~lang) }}">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title color-violet">Card titlea</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title color-violet">{{ attribute(value,'title_'~lang) }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ attribute(value,'subtitle_'~lang) }}</h6>
+                        <p class="card-text">{{ attribute(value,'desc_'~lang) }}</p>
                         
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="card" >
-                    <div class="text-center">
-                        <img class="" src="{{ link_img }}avatar.png" alt="">
-                            
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title color-violet">Card titlea</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card" >
-                    <div class="text-center">
-                        <img class="" src="{{ link_img }}avatar.png" alt="">
-                            
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title color-violet">Card titlea</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="card" >
-                    <div class="text-center">
-                        <img class="" src="{{ link_img }}avatar.png" alt="">
-                            
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title color-violet">Card titlea</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        
-                    </div>
-                </div>
-            </div>
-
-            
+            {% endfor %}
         </div>
     
     </div>
@@ -349,6 +292,12 @@
 
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
+        });
+
+        $('#content .home-services li').click(function(){
+            var index = $(this).index();
+            $('#content .dotcom-img img').hide().eq(index).fadeIn(300);
+            $('#content .home-services li').removeClass('active').eq(index).addClass('active');
         });
     })();
 </script>

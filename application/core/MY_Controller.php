@@ -13,6 +13,12 @@ class MY_Controller extends CI_Controller{
 		}
 	}
 
+	protected function currentLang(){
+		$lang = $this->session->userdata('lang')==null ? "en" : $this->session->userdata('lang');
+		$this->lang->load($lang, $lang);
+		return $lang;
+	}
+
 	protected function imageManipulation($folder_name, $file_ele)
 	{
 		$this->load->library('upload');

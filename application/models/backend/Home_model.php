@@ -33,6 +33,7 @@ class Home_model extends CI_Model{
 			'title_en' => $value['title_en'],
 			'subtitle_th' => $value['subtitle_th'],
 			'subtitle_en' => $value['subtitle_en'],
+			'link' => $value['link'],
 			'img' => sizeof($value['img'] > 0) ? $value['img'][0] : null,
 			'status' => 0,
 			'created_date' => date("Y-m-d H:i:s"),
@@ -49,6 +50,7 @@ class Home_model extends CI_Model{
 			'title_en' => $value['title_en'],
 			'subtitle_th' => $value['subtitle_th'],
 			'subtitle_en' => $value['subtitle_en'],
+			'link' => $value['link'],
 			'img' => sizeof($value['img'] > 0) ? $value['img'][0] : null,
 			'updated_date' => date("Y-m-d H:i:s"),
 		);
