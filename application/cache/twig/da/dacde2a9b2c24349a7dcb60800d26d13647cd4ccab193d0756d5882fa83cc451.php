@@ -30,1181 +30,243 @@ class __TwigTemplate_aef657ed0c1800da673f4690b8c7ebf141e3236463d7382487c37a1710f
     {
         // line 4
         echo "  <section class=\"banner\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "banner-main.png');\">
+        echo twig_escape_filter($this->env, ((isset($context["link_cover"]) ? $context["link_cover"] : null) . $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), "img", array())), "html", null, true);
+        echo "');\">
     <div class=\"banner-caption\">
-      <h2>วางแผนการศึกษา</h2>
+      <h2>";
+        // line 6
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h2>
     </div>
     <div class=\"overlay\"></div>
   </section>
+  <!-- Start Service -->
   <section id=\"content\" class=\"content-p-top\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-12 col-sm-12 col-md-6 \">
-                    <img class=\"img-fluid\" src=\"";
-        // line 14
+      <div class=\"container\">
+          <div class=\"row\">
+              <div class=\"col-12 col-sm-12 col-md-6 \">
+                ";
+        // line 15
+        $context["img"] = (((trim($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 0, array(), "array"), "img", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/detail.png")) : (((isset($context["link_plan"]) ? $context["link_plan"] : null) . $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 0, array(), "array"), "img", array()))));
+        // line 16
+        echo "                <img class=\"img-fluid\" src=\"";
+        echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : null), "html", null, true);
+        echo "\" alt=\"";
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 0, array(), "array"), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "\"/>
+              </div>
+              <div class=\"col-12 col-sm-12 col-md-6 content-p-bottom\">
+                  <h3 class=\"title color-violet2 d-top\">";
+        // line 19
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 0, array(), "array"), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h3>
+                  <div class=\"service-content\">
+                    ";
+        // line 22
+        echo "                      ";
+        echo $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 0, array(), "array"), ("desc_" . (isset($context["lang"]) ? $context["lang"] : null)));
+        echo "
+                    ";
+        // line 23
+        echo " 
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <div class=\"line-center text-center\">
+    <img class=\"img-fluid\" src=\"";
+        // line 30
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "img1.png\" alt=\"img15\"/>
-                </div>
-                <div class=\"col-12 col-sm-12 col-md-6 content-p-bottom\">
-                    <h3 class=\"title color-violet2 d-top\">วางแผนการศึกษา</h3>
-                    <p>
-                        โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง 
-                    </p>
-
-                    <div class=\"service-content\">
-                        <p>
-                            ยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-
-                        </p>
-                        <p>
-                            ประกันสุขภาพผ่อนหนักให้เป็นเบา  จะบรรเทาภาระค่ารักษาพยาบาลและรายได้ที่หายไป เพื่อให้พ่อแม่มีเวลาดูแลลูกน้อยได้อย่างเต็มที่ ด้วยการคำนวณผลประโยชน์แบบวงเงินคุ้มครองที่เลือกได้
-
-                        </p>
-                        <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Service 1 -->
-    <div class=\"line-center text-center\">
-      <img class=\"img-fluid\" src=\"";
-        // line 41
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon6.png\">
-    </div>
-    <section id=\"content2\" class=\"\">
-        <div class=\"container\">
-            <div class=\"row d-flex\">
-                
-                <div class=\"col-12 col-sm-12 col-md-6 content-p-top order-1  d-top0\">
-                    <h3 class=\"title color-violet2 d-top\">ทำไมต้องวางแผนการศึกษา?</h3>
-                    <div>
-                      <p>- ประกันสุขภาพแผนแรกของประเทศไทยที่ให้ความคุ้มครองเพิ่มขึ้นทุกปีจนถึง 300%</p>
-                      <p>- จ่ายค่ารักษาพยาบาลตามจริง </p>
-                      <p>- กรณีมีการผ่าตัดสำหรับผู้ป่วยใน วงเงินคุ้มครอง จะเพิ่มเป็น 5 เท่า</p>
-                      <p>
-                        - เพิ่มวงเงินคุ้มครองเป็น 3 เท่า กรณีรักษาโรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ, โรคคาวาซากิที่ทำให้         เกิดโรคแทรกซ้อนของหัวใจ, โรคเบาหวาน และโรคน้ำไขสันหลังในสมองมาก ซึ่งเกิดภายหลังและต้องใส่ท่อระบาย สำหรับกรณีที่วันแรกที่เข้ารับการรักษาตัวผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี
-
-                      </p>
-                      <p>- หากเบิกค่ารักษาพยาบาลที่อื่นครบแล้ว สามารถเบิกผลประโยชน์พิเศษรายวันจากประกันเบากระเป๋าได้อีกตามจำนวนวันที่เข้ารักษาในโรงพยาบาล</p>
-                      <p>- ต่ออายุได้ถึง 80 ปี หรือจนกว่าความคุ้มครองของแบบประกันภัยหลักจะหมดลง</p>
-                    </div>
-                    <p>ประกันสุขภาพลูกผ่อนหนักให้เป็นเบา เป็นชื่อทางการตลาด</p>
-                    pชื่อจริงตามบริษัท เอไอเอ จำกัด คือ <span class=\"color-violet2\">AIA H&S JUNIOR</span>
-
-                    
-                </div>
-                <div class=\"col-12 col-sm-12 col-md-6 order-2\">
-                    <img class=\"img-fluid\" src=\"";
-        // line 66
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "img2.png\" alt=\"img15\"/>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Service 1 -->
-
+        echo "icon/icon5.png\">
+  </div>
+  <section id=\"content2\" class=\"\">
+      <div class=\"container\">
+          <div class=\"row d-flex\">
+              <div class=\"col-12 col-sm-12 col-md-6 content-p-top content-p-bottom order-1 d-top0\">
+                  <h3 class=\"title color-violet2 d-top\">";
+        // line 36
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 1, array(), "array"), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h3>
+                  <div class=\"service-content\">
+                    ";
+        // line 39
+        echo "                      ";
+        echo $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 1, array(), "array"), ("desc_" . (isset($context["lang"]) ? $context["lang"] : null)));
+        echo "
+                    ";
+        // line 40
+        echo " 
+                  </div>
+              </div>
+              <div class=\"col-12 col-sm-12 col-md-6 order-2\">
+                ";
+        // line 44
+        $context["img"] = (((trim($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 1, array(), "array"), "img", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/detail.png")) : (((isset($context["link_plan"]) ? $context["link_plan"] : null) . $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 1, array(), "array"), "img", array()))));
+        // line 45
+        echo "                <img class=\"img-fluid\" src=\"";
+        echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : null), "html", null, true);
+        echo "\" alt=\"";
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "content", array()), 1, array(), "array"), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "\"/>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- End Service -->
   <section>
     <div class=\"h150\"></div>
   </section>
   <section id=\"home-contact\" class=\"content-p-top bg-gray content-p-bottom home-contact-inner\">
-        <div class=\"container  \">
-            <h3 class=\"title color-violet2\"><img draggable=\"false\" class=\"emoji\" alt=\"\" src=\"";
-        // line 78
+      <div class=\"container  \">
+          <h3 class=\"title color-violet2\"><img draggable=\"false\" class=\"emoji\" alt=\"\" src=\"";
+        // line 56
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/phone-contact.png\"> ให้เราติดต่อคุณ</h3>
-
-            <div class=\"row mt-5 contact-position\">
-                <div class=\"col-md-12 col-xl-6\">
-
-                    <div class=\"row \">
-                        <div class=\"col-md-6\">
-                            <div class=\"form-group\">
-                                <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"ชื่อของคุณ\">
-                            </div>
-                             <div class=\"form-group\">
-                                <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"อีเมล์\">
-                            </div>
-                             <div class=\"form-group\">
-                                <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"เบอร์โทรศัพท์\">
-                            </div>
-                        </div>
-                        <div class=\"col-md-6\">
-                             <div class=\"form-group\">
-                                <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"วันเกิดลูก*\">
-                            </div>
-                            <div class=\"form-group select-wrapper\">
-                                <select class=\"form-custom\">
-                                    <option>ประเภทประกันที่สนใจ*</option>
-                                    <option>ประเภทประกันที่สนใจ*</option>
-                                    <option>ประเภทประกันที่สนใจ*</option>
-                                </select>
-                            </div>
-                             <div class=\"form-group d-center\">
-                                <a class=\"btn btn-violet \" href=\"#\">ดูข่าวทั้งหมด</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-
-        </div>
-       <img  class=\"c-img\" src=\"";
-        // line 116
+          <form class=\"row mt-5 contact-position\"  action=\"";
+        // line 57
+        echo twig_escape_filter($this->env, base_url("contact/sendMsgKids"), "html", null, true);
+        echo "\" method=\"post\">
+              <div class=\"col-md-12 col-xl-6\">
+                  <div class=\"row\">
+                      <div class=\"col-md-6\">
+                          <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"text\" name=\"name\" placeholder=\"ชื่อของคุณ\">
+                          </div>
+                           <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"email\" name=\"email\" placeholder=\"อีเมล์\">
+                          </div>
+                           <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"text\" name=\"tel\" placeholder=\"เบอร์โทรศัพท์\">
+                          </div>
+                      </div>
+                      <div class=\"col-md-6\">
+                           <div class=\"form-group\">
+                              <input id=\"datepicker\" class=\"form-custom\" type=\"text\" name=\"date\" placeholder=\"วันเกิดลูก*\">
+                          </div>
+                          <div class=\"form-group select-wrapper\">
+                              <select class=\"form-custom\" name=\"insurance_id\">
+                                <option value=\"\" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                ";
+        // line 78
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "insurance", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 79
+            echo "                                <option value=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</option>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 81
+        echo "                              </select>
+                          </div>
+                          <div class=\"form-group d-center\">
+                              <button type=\"submit\" class=\"btn btn-violet\">ส่งข้อมูล   </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+      <img  class=\"c-img\" src=\"";
+        // line 91
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "baby.png\">
-    </section>
-    <!-- home-contact -->   
+  </section>
+  <!-- home-contact -->   
 
-    <section class=\"content-p-top\">
-       <div class=\"container\">
-            
-            <div class=\"\">
-                <h3 class=\"title color-violet2 text-center\">แพ็คเกจวางแผนการศึกษา</h3>
+  <section class=\"content-p-top\">
+      <div class=\"container\">
+          
+          <div class=\"\">
+              <h3 class=\"title color-violet2 text-center\">แพ็คเกจวางแผนการศึกษา</h3>
 
-                <div class=\"list-head pt-5\">
-                  <div class=\"owl-carousel owl-theme\">
-                      <div class=\"item tabs\"><a class=\"btn btn-violet activelink\" href=\"javascript:void();\" data-tag=\"one\">แพ็คเกจ 10,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"two\">แพ็คเกจ 15,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"three\">แพ็คเกจ 20,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"four\">แพ็คเกจ 25,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"five\">แพ็คเกจ 30,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"six\">แพ็คเกจ 35,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\"href=\"javascript:void();\" data-tag=\"seven\">แพ็คเกจ 40,000</a></div>
+              <div class=\"list-head pt-5\">
+                <div class=\"owl-carousel owl-theme\">
+                    ";
+        // line 103
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "package", array()));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 104
+            echo "                    <div class=\"item tabs\"><a class=\"btn btn-violet ";
+            echo ((($context["key"] == 0)) ? ("activelink") : (""));
+            echo "\" href=\"javascript:void();\" data-tag=\"pack";
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</a></div>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 106
+        echo "                </div>
+              </div>
+              <div class=\"list-content\">
+                ";
+        // line 109
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["data"]) ? $context["data"] : null), "package", array()));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 110
+            echo "                <div class=\"list box-list\" id=\"pack";
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "\">
+                  <div class=\"table-group\">
+                    <div class=\"table-responsive\">
+                      ";
+            // line 114
+            echo "                        ";
+            echo $this->getAttribute($context["value"], ("desc_" . (isset($context["lang"]) ? $context["lang"] : null)));
+            echo "
+                      ";
+            // line 115
+            echo " 
+                    </div>
                   </div>
-
                 </div>
-                
-                <div class=\"list-content\">
-                  <div class=\"list\" id=\"one\">
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีไม่มีการผ่าตัด</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 10,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"8\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  10,000 <br>
-                                  คุ้มครองที่ 2      :  12,000<br>
-                                  คุ้มครองที่ 3      :  14,000<br>
-                                  คุ้มครองที่ 4      :  16,000<br>
-                                  คุ้มครองที่ 5      :  18,000<br>
-                                  คุ้มครองที่ 6      :  20,000<br>
-                                  คุ้มครองที่ 7      :  22,000<br>
-                                  คุ้มครองที่ 8      :  24,000<br>
-                                  คุ้มครองที่ 9      :  26,000<br>
-                                  คุ้มครองที่ 10    :   28,000<br>
-                                  คุ้มครองที่ 11    :   30,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่าห้อง ค่าบริการพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.7 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้<br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>2. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 2 ได้</strong>                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>3. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                        
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>4. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์กรณีเสียชีวิต</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีมีการผ่าตัด</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 425,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"7\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  50,000 <br>
-                                  คุ้มครองที่ 2      :  6,000<br>
-                                  คุ้มครองที่ 3      :  7,000<br>
-                                  คุ้มครองที่ 4      :  8,000<br>
-                                  คุ้มครองที่ 5      :  9,000<br>
-                                  คุ้มครองที่ 6      :  100,000<br>
-                                  คุ้มครองที่ 7      :  110,000<br>
-                                  คุ้มครองที่ 8      :  120,000<br>
-                                  คุ้มครองที่ 9      :  130,000<br>
-                                  คุ้มครองที่ 10    :   140,000<br>
-                                  คุ้มครองที่ 11    :   150,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้  <br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>2. ค่าห้อง ค่าอาหาร ค่าบริการพยาบาล (สูงสุดไม่เกิน 125 วัน)</strong>                                                                           
-                              </td>
-                              <td>3,000</td>
-                            </tr>
-                           
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>3. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 3 ได้</strong>                                                                        
-                              </td>
-                              
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษการผ่าตัดสำหรับผู้ป่วยใน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                5,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ) ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> 
-                                <strong>4. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                         
-                              </td>
-                              <td>
-                                10,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>6. ผลประโยชน์กรณีเสียชีวิต (AIA 20 PAY Life (Non Par)</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group color-violet2\">
-                       <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th class=\"text-center\" width=\"55%\" colspan=\"3\">
-                              <h4 class=\"mb-0\">ค่าเบี้ยต่อปี</h4>
-                            </th>
-                          </thead>
-
-                          <tbody>
-                            <tr>
-                              <td class=\"text-center\"><h6>อายุ</h6></td>
-                              <td class=\"text-center\"><h6>ลูกชาย</h6></td>
-                              <td class=\"text-center\"><h6>ลูกสาว</h6></td>
-                            </tr>
-                            <tr>
-                              <td class=\"text-center\">1 เดือน</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">1</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">2</td>
-                              <td class=\"text-center\">12,252</td>
-                              <td class=\"text-center\">11,851</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">3</td>
-                              <td class=\"text-center\">11,073</td>
-                              <td class=\"text-center\">9,758</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">4</td>
-                              <td class=\"text-center\">9,202</td>
-                              <td class=\"text-center\">8,068</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">5</td>
-                              <td class=\"text-center\">8,229</td>
-                              <td class=\"text-center\">7,280</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-                    <div class=\"remark\">
-                        <div class=\"media\">
-                          <h3 class=\"color-violet2 mr-5 line-right\">คำเตือน </h3>
-                          <div class=\"media-body\">
-                            <p>
-                              ผู้ขอเอาประกันภัยควรศึกษาและทำความเข้าใจในเอกสารเสนอขายก่อนตัดสินใจทำประกันภัย เมื่อได้รับกรมธรรม์แล้วโปรดศึกษารายละเอียดข้อกำหนดและเงื่อนไขกรมธรรม์
-
-                            </p>
-                          </div>
-                        </div>
-                    </div>
-                  </div><!-- End tab Contant -->
-
-                  <div class=\"list\" id=\"two\">
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีไม่มีการผ่าตัด 3</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 10,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"8\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  10,000 <br>
-                                  คุ้มครองที่ 2      :  12,000<br>
-                                  คุ้มครองที่ 3      :  14,000<br>
-                                  คุ้มครองที่ 4      :  16,000<br>
-                                  คุ้มครองที่ 5      :  18,000<br>
-                                  คุ้มครองที่ 6      :  20,000<br>
-                                  คุ้มครองที่ 7      :  22,000<br>
-                                  คุ้มครองที่ 8      :  24,000<br>
-                                  คุ้มครองที่ 9      :  26,000<br>
-                                  คุ้มครองที่ 10    :   28,000<br>
-                                  คุ้มครองที่ 11    :   30,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่าห้อง ค่าบริการพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.7 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้<br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>2. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 2 ได้</strong>                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>3. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                        
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>4. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์กรณีเสียชีวิต</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีมีการผ่าตัด</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 425,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"7\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  50,000 <br>
-                                  คุ้มครองที่ 2      :  6,000<br>
-                                  คุ้มครองที่ 3      :  7,000<br>
-                                  คุ้มครองที่ 4      :  8,000<br>
-                                  คุ้มครองที่ 5      :  9,000<br>
-                                  คุ้มครองที่ 6      :  100,000<br>
-                                  คุ้มครองที่ 7      :  110,000<br>
-                                  คุ้มครองที่ 8      :  120,000<br>
-                                  คุ้มครองที่ 9      :  130,000<br>
-                                  คุ้มครองที่ 10    :   140,000<br>
-                                  คุ้มครองที่ 11    :   150,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้  <br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>2. ค่าห้อง ค่าอาหาร ค่าบริการพยาบาล (สูงสุดไม่เกิน 125 วัน)</strong>                                                                           
-                              </td>
-                              <td>3,000</td>
-                            </tr>
-                           
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>3. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 3 ได้</strong>                                                                        
-                              </td>
-                              
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษการผ่าตัดสำหรับผู้ป่วยใน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                5,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ) ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> 
-                                <strong>4. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                         
-                              </td>
-                              <td>
-                                10,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>6. ผลประโยชน์กรณีเสียชีวิต (AIA 20 PAY Life (Non Par)</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group color-violet2\">
-                       <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th class=\"text-center\" width=\"55%\" colspan=\"3\">
-                              <h4 class=\"mb-0\">ค่าเบี้ยต่อปี</h4>
-                            </th>
-                          </thead>
-
-                          <tbody>
-                            <tr>
-                              <td class=\"text-center\"><h6>อายุ</h6></td>
-                              <td class=\"text-center\"><h6>ลูกชาย</h6></td>
-                              <td class=\"text-center\"><h6>ลูกสาว</h6></td>
-                            </tr>
-                            <tr>
-                              <td class=\"text-center\">1 เดือน</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">1</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">2</td>
-                              <td class=\"text-center\">12,252</td>
-                              <td class=\"text-center\">11,851</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">3</td>
-                              <td class=\"text-center\">11,073</td>
-                              <td class=\"text-center\">9,758</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">4</td>
-                              <td class=\"text-center\">9,202</td>
-                              <td class=\"text-center\">8,068</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">5</td>
-                              <td class=\"text-center\">8,229</td>
-                              <td class=\"text-center\">7,280</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-                    <div class=\"remark\">
-                        <div class=\"media\">
-                          <h3 class=\"color-violet2 mr-5 line-right\">คำเตือน </h3>
-                          <div class=\"media-body\">
-                            <p>
-                              ผู้ขอเอาประกันภัยควรศึกษาและทำความเข้าใจในเอกสารเสนอขายก่อนตัดสินใจทำประกันภัย เมื่อได้รับกรมธรรม์แล้วโปรดศึกษารายละเอียดข้อกำหนดและเงื่อนไขกรมธรรม์
-
-                            </p>
-                          </div>
-                        </div>
-                    </div>
-                  </div><!-- End tab Contant -->
-                  <div class=\"list\" id=\"three\">
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีไม่มีการผ่าตัด 4</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 10,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"8\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  10,000 <br>
-                                  คุ้มครองที่ 2      :  12,000<br>
-                                  คุ้มครองที่ 3      :  14,000<br>
-                                  คุ้มครองที่ 4      :  16,000<br>
-                                  คุ้มครองที่ 5      :  18,000<br>
-                                  คุ้มครองที่ 6      :  20,000<br>
-                                  คุ้มครองที่ 7      :  22,000<br>
-                                  คุ้มครองที่ 8      :  24,000<br>
-                                  คุ้มครองที่ 9      :  26,000<br>
-                                  คุ้มครองที่ 10    :   28,000<br>
-                                  คุ้มครองที่ 11    :   30,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่าห้อง ค่าบริการพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.7 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้<br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>2. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 2 ได้</strong>                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>3. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                        
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>4. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์กรณีเสียชีวิต</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีมีการผ่าตัด</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 425,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"7\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  50,000 <br>
-                                  คุ้มครองที่ 2      :  6,000<br>
-                                  คุ้มครองที่ 3      :  7,000<br>
-                                  คุ้มครองที่ 4      :  8,000<br>
-                                  คุ้มครองที่ 5      :  9,000<br>
-                                  คุ้มครองที่ 6      :  100,000<br>
-                                  คุ้มครองที่ 7      :  110,000<br>
-                                  คุ้มครองที่ 8      :  120,000<br>
-                                  คุ้มครองที่ 9      :  130,000<br>
-                                  คุ้มครองที่ 10    :   140,000<br>
-                                  คุ้มครองที่ 11    :   150,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้  <br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>2. ค่าห้อง ค่าอาหาร ค่าบริการพยาบาล (สูงสุดไม่เกิน 125 วัน)</strong>                                                                           
-                              </td>
-                              <td>3,000</td>
-                            </tr>
-                           
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>3. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 3 ได้</strong>                                                                        
-                              </td>
-                              
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษการผ่าตัดสำหรับผู้ป่วยใน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                5,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ) ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> 
-                                <strong>4. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                         
-                              </td>
-                              <td>
-                                10,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>6. ผลประโยชน์กรณีเสียชีวิต (AIA 20 PAY Life (Non Par)</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group color-violet2\">
-                       <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th class=\"text-center\" width=\"55%\" colspan=\"3\">
-                              <h4 class=\"mb-0\">ค่าเบี้ยต่อปี</h4>
-                            </th>
-                          </thead>
-
-                          <tbody>
-                            <tr>
-                              <td class=\"text-center\"><strong>อายุ</strong></td>
-                              <td class=\"text-center\"><strong>ลูกชาย</strong></td>
-                              <td class=\"text-center\"><strong>ลูกสาว</strong></td>
-                            </tr>
-                            <tr>
-                              <td class=\"text-center\">1 เดือน</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">1</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">2</td>
-                              <td class=\"text-center\">12,252</td>
-                              <td class=\"text-center\">11,851</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">3</td>
-                              <td class=\"text-center\">11,073</td>
-                              <td class=\"text-center\">9,758</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">4</td>
-                              <td class=\"text-center\">9,202</td>
-                              <td class=\"text-center\">8,068</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">5</td>
-                              <td class=\"text-center\">8,229</td>
-                              <td class=\"text-center\">7,280</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-                    <div class=\"remark\">
-                        <div class=\"media\">
-                          <h3 class=\"color-violet2 mr-5 line-right\">คำเตือน </h3>
-                          <div class=\"media-body\">
-                            <p>
-                              ผู้ขอเอาประกันภัยควรศึกษาและทำความเข้าใจในเอกสารเสนอขายก่อนตัดสินใจทำประกันภัย เมื่อได้รับกรมธรรม์แล้วโปรดศึกษารายละเอียดข้อกำหนดและเงื่อนไขกรมธรรม์
-
-                            </p>
-                          </div>
-                        </div>
-                    </div>
-                  </div><!-- End tab Contant -->
-                </div>
-            </div>
-       </div>
-       
-    </section>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 120
+        echo "              </div>
+          </div>
+      </div>
+      
+  </section>
 
 
 ";
     }
 
-    // line 1137
+    // line 129
     public function block_js($context, array $blocks = array())
     {
-        // line 1138
+        // line 130
         echo "<script>
   \$(document).ready(function(){
       \$('.tabs a').click(function(){
+          var tagid = \$(this).data('tag');
           \$('.tabs a').removeClass('activelink');
           \$(this).addClass('activelink');
-          var tagid = \$(this).data('tag');
-          
-          //\$('.list').removeClass('active').addClass('hide');
-          \$( '.list' ).slideUp( 'slow', function() {
+          \$( '.box-list' ).slideUp( 'slow', function() {
             \$(this).removeClass('active').addClass('hide');
           });
-
           \$( '#'+tagid ).slideDown( 'slow', function() {
             \$(this).addClass('active').removeClass('hide');
           });
-          // \$('#'+tagid).show( 4000, function(){
-          //    \$(this).addClass('active').removeClass('hide');
-          // }
       });
       \$('.owl-carousel').owlCarousel({
-          loop:true,
           margin:10,
 
           responsive:{
@@ -1236,7 +298,7 @@ class __TwigTemplate_aef657ed0c1800da673f4690b8c7ebf141e3236463d7382487c37a1710f
 
     public function getDebugInfo()
     {
-        return array (  1187 => 1138,  1184 => 1137,  160 => 116,  119 => 78,  104 => 66,  76 => 41,  46 => 14,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  256 => 130,  253 => 129,  242 => 120,  232 => 115,  227 => 114,  220 => 110,  216 => 109,  211 => 106,  198 => 104,  194 => 103,  179 => 91,  167 => 81,  156 => 79,  152 => 78,  128 => 57,  124 => 56,  107 => 45,  105 => 44,  99 => 40,  94 => 39,  89 => 36,  80 => 30,  71 => 23,  66 => 22,  61 => 19,  52 => 16,  50 => 15,  38 => 6,  32 => 4,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1252,1135 +314,127 @@ class __TwigTemplate_aef657ed0c1800da673f4690b8c7ebf141e3236463d7382487c37a1710f
         return new Twig_Source("{% extends \"layout.twig\" %}
 
 {% block content %}
-  <section class=\"banner\" style=\"background-image: url('{{ link_img }}banner-main.png');\">
+  <section class=\"banner\" style=\"background-image: url('{{ link_cover~cover.img }}');\">
     <div class=\"banner-caption\">
-      <h2>วางแผนการศึกษา</h2>
+      <h2>{{ attribute(cover, 'title_'~lang) }}</h2>
     </div>
     <div class=\"overlay\"></div>
   </section>
+  <!-- Start Service -->
   <section id=\"content\" class=\"content-p-top\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-12 col-sm-12 col-md-6 \">
-                    <img class=\"img-fluid\" src=\"{{ link_img }}img1.png\" alt=\"img15\"/>
-                </div>
-                <div class=\"col-12 col-sm-12 col-md-6 content-p-bottom\">
-                    <h3 class=\"title color-violet2 d-top\">วางแผนการศึกษา</h3>
-                    <p>
-                        โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง 
-                    </p>
-
-                    <div class=\"service-content\">
-                        <p>
-                            ยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-
-                        </p>
-                        <p>
-                            ประกันสุขภาพผ่อนหนักให้เป็นเบา  จะบรรเทาภาระค่ารักษาพยาบาลและรายได้ที่หายไป เพื่อให้พ่อแม่มีเวลาดูแลลูกน้อยได้อย่างเต็มที่ ด้วยการคำนวณผลประโยชน์แบบวงเงินคุ้มครองที่เลือกได้
-
-                        </p>
-                        <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Service 1 -->
-    <div class=\"line-center text-center\">
-      <img class=\"img-fluid\" src=\"{{ link_img }}icon/icon6.png\">
-    </div>
-    <section id=\"content2\" class=\"\">
-        <div class=\"container\">
-            <div class=\"row d-flex\">
-                
-                <div class=\"col-12 col-sm-12 col-md-6 content-p-top order-1  d-top0\">
-                    <h3 class=\"title color-violet2 d-top\">ทำไมต้องวางแผนการศึกษา?</h3>
-                    <div>
-                      <p>- ประกันสุขภาพแผนแรกของประเทศไทยที่ให้ความคุ้มครองเพิ่มขึ้นทุกปีจนถึง 300%</p>
-                      <p>- จ่ายค่ารักษาพยาบาลตามจริง </p>
-                      <p>- กรณีมีการผ่าตัดสำหรับผู้ป่วยใน วงเงินคุ้มครอง จะเพิ่มเป็น 5 เท่า</p>
-                      <p>
-                        - เพิ่มวงเงินคุ้มครองเป็น 3 เท่า กรณีรักษาโรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ, โรคคาวาซากิที่ทำให้         เกิดโรคแทรกซ้อนของหัวใจ, โรคเบาหวาน และโรคน้ำไขสันหลังในสมองมาก ซึ่งเกิดภายหลังและต้องใส่ท่อระบาย สำหรับกรณีที่วันแรกที่เข้ารับการรักษาตัวผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี
-
-                      </p>
-                      <p>- หากเบิกค่ารักษาพยาบาลที่อื่นครบแล้ว สามารถเบิกผลประโยชน์พิเศษรายวันจากประกันเบากระเป๋าได้อีกตามจำนวนวันที่เข้ารักษาในโรงพยาบาล</p>
-                      <p>- ต่ออายุได้ถึง 80 ปี หรือจนกว่าความคุ้มครองของแบบประกันภัยหลักจะหมดลง</p>
-                    </div>
-                    <p>ประกันสุขภาพลูกผ่อนหนักให้เป็นเบา เป็นชื่อทางการตลาด</p>
-                    pชื่อจริงตามบริษัท เอไอเอ จำกัด คือ <span class=\"color-violet2\">AIA H&S JUNIOR</span>
-
-                    
-                </div>
-                <div class=\"col-12 col-sm-12 col-md-6 order-2\">
-                    <img class=\"img-fluid\" src=\"{{ link_img }}img2.png\" alt=\"img15\"/>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Service 1 -->
-
+      <div class=\"container\">
+          <div class=\"row\">
+              <div class=\"col-12 col-sm-12 col-md-6 \">
+                {% set img = trim(data.content[0].img) == '' ?  link_img~'default/detail.png' : link_plan~data.content[0].img %}
+                <img class=\"img-fluid\" src=\"{{ img }}\" alt=\"{{ attribute(data.content[0], 'title_'~lang) }}\"/>
+              </div>
+              <div class=\"col-12 col-sm-12 col-md-6 content-p-bottom\">
+                  <h3 class=\"title color-violet2 d-top\">{{ attribute(data.content[0], 'title_'~lang) }}</h3>
+                  <div class=\"service-content\">
+                    {% autoescape %}
+                      {{ attribute(data.content[0],'desc_'~lang)|raw }}
+                    {% endautoescape %} 
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <div class=\"line-center text-center\">
+    <img class=\"img-fluid\" src=\"{{ link_img }}icon/icon5.png\">
+  </div>
+  <section id=\"content2\" class=\"\">
+      <div class=\"container\">
+          <div class=\"row d-flex\">
+              <div class=\"col-12 col-sm-12 col-md-6 content-p-top content-p-bottom order-1 d-top0\">
+                  <h3 class=\"title color-violet2 d-top\">{{ attribute(data.content[1], 'title_'~lang) }}</h3>
+                  <div class=\"service-content\">
+                    {% autoescape %}
+                      {{ attribute(data.content[1],'desc_'~lang)|raw }}
+                    {% endautoescape %} 
+                  </div>
+              </div>
+              <div class=\"col-12 col-sm-12 col-md-6 order-2\">
+                {% set img = trim(data.content[1].img) == '' ?  link_img~'default/detail.png' : link_plan~data.content[1].img %}
+                <img class=\"img-fluid\" src=\"{{ img }}\" alt=\"{{ attribute(data.content[1], 'title_'~lang) }}\"/>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- End Service -->
   <section>
     <div class=\"h150\"></div>
   </section>
   <section id=\"home-contact\" class=\"content-p-top bg-gray content-p-bottom home-contact-inner\">
-        <div class=\"container  \">
-            <h3 class=\"title color-violet2\"><img draggable=\"false\" class=\"emoji\" alt=\"\" src=\"{{ link_img }}icon/phone-contact.png\"> ให้เราติดต่อคุณ</h3>
-
-            <div class=\"row mt-5 contact-position\">
-                <div class=\"col-md-12 col-xl-6\">
-
-                    <div class=\"row \">
-                        <div class=\"col-md-6\">
-                            <div class=\"form-group\">
-                                <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"ชื่อของคุณ\">
-                            </div>
-                             <div class=\"form-group\">
-                                <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"อีเมล์\">
-                            </div>
-                             <div class=\"form-group\">
-                                <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"เบอร์โทรศัพท์\">
-                            </div>
-                        </div>
-                        <div class=\"col-md-6\">
-                             <div class=\"form-group\">
-                                <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"วันเกิดลูก*\">
-                            </div>
-                            <div class=\"form-group select-wrapper\">
-                                <select class=\"form-custom\">
-                                    <option>ประเภทประกันที่สนใจ*</option>
-                                    <option>ประเภทประกันที่สนใจ*</option>
-                                    <option>ประเภทประกันที่สนใจ*</option>
-                                </select>
-                            </div>
-                             <div class=\"form-group d-center\">
-                                <a class=\"btn btn-violet \" href=\"#\">ดูข่าวทั้งหมด</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-
-        </div>
-       <img  class=\"c-img\" src=\"{{ link_img }}baby.png\">
-    </section>
-    <!-- home-contact -->   
-
-    <section class=\"content-p-top\">
-       <div class=\"container\">
-            
-            <div class=\"\">
-                <h3 class=\"title color-violet2 text-center\">แพ็คเกจวางแผนการศึกษา</h3>
-
-                <div class=\"list-head pt-5\">
-                  <div class=\"owl-carousel owl-theme\">
-                      <div class=\"item tabs\"><a class=\"btn btn-violet activelink\" href=\"javascript:void();\" data-tag=\"one\">แพ็คเกจ 10,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"two\">แพ็คเกจ 15,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"three\">แพ็คเกจ 20,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"four\">แพ็คเกจ 25,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"five\">แพ็คเกจ 30,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\" href=\"javascript:void();\" data-tag=\"six\">แพ็คเกจ 35,000</a></div>
-                      <div class=\"item tabs\"><a class=\"btn btn-violet\"href=\"javascript:void();\" data-tag=\"seven\">แพ็คเกจ 40,000</a></div>
+      <div class=\"container  \">
+          <h3 class=\"title color-violet2\"><img draggable=\"false\" class=\"emoji\" alt=\"\" src=\"{{ link_img }}icon/phone-contact.png\"> ให้เราติดต่อคุณ</h3>
+          <form class=\"row mt-5 contact-position\"  action=\"{{ base_url('contact/sendMsgKids') }}\" method=\"post\">
+              <div class=\"col-md-12 col-xl-6\">
+                  <div class=\"row\">
+                      <div class=\"col-md-6\">
+                          <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"text\" name=\"name\" placeholder=\"ชื่อของคุณ\">
+                          </div>
+                           <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"email\" name=\"email\" placeholder=\"อีเมล์\">
+                          </div>
+                           <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"text\" name=\"tel\" placeholder=\"เบอร์โทรศัพท์\">
+                          </div>
+                      </div>
+                      <div class=\"col-md-6\">
+                           <div class=\"form-group\">
+                              <input id=\"datepicker\" class=\"form-custom\" type=\"text\" name=\"date\" placeholder=\"วันเกิดลูก*\">
+                          </div>
+                          <div class=\"form-group select-wrapper\">
+                              <select class=\"form-custom\" name=\"insurance_id\">
+                                <option value=\"\" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                {% for value in nav.insurance %}
+                                <option value=\"{{ value.id }}\">{{ attribute(value, 'title_'~lang) }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <div class=\"form-group d-center\">
+                              <button type=\"submit\" class=\"btn btn-violet\">ส่งข้อมูล   </button>
+                          </div>
+                      </div>
                   </div>
+              </div>
+          </form>
+      </div>
+      <img  class=\"c-img\" src=\"{{ link_img }}baby.png\">
+  </section>
+  <!-- home-contact -->   
 
+  <section class=\"content-p-top\">
+      <div class=\"container\">
+          
+          <div class=\"\">
+              <h3 class=\"title color-violet2 text-center\">แพ็คเกจวางแผนการศึกษา</h3>
+
+              <div class=\"list-head pt-5\">
+                <div class=\"owl-carousel owl-theme\">
+                    {% for key, value in data.package %}
+                    <div class=\"item tabs\"><a class=\"btn btn-violet {{ key == 0 ? 'activelink' : '' }}\" href=\"javascript:void();\" data-tag=\"pack{{ key }}\">{{ attribute(value, 'title_'~lang) }}</a></div>
+                    {% endfor %}
                 </div>
-                
-                <div class=\"list-content\">
-                  <div class=\"list\" id=\"one\">
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีไม่มีการผ่าตัด</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 10,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"8\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  10,000 <br>
-                                  คุ้มครองที่ 2      :  12,000<br>
-                                  คุ้มครองที่ 3      :  14,000<br>
-                                  คุ้มครองที่ 4      :  16,000<br>
-                                  คุ้มครองที่ 5      :  18,000<br>
-                                  คุ้มครองที่ 6      :  20,000<br>
-                                  คุ้มครองที่ 7      :  22,000<br>
-                                  คุ้มครองที่ 8      :  24,000<br>
-                                  คุ้มครองที่ 9      :  26,000<br>
-                                  คุ้มครองที่ 10    :   28,000<br>
-                                  คุ้มครองที่ 11    :   30,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่าห้อง ค่าบริการพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.7 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้<br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>2. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 2 ได้</strong>                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>3. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                        
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>4. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์กรณีเสียชีวิต</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
+              </div>
+              <div class=\"list-content\">
+                {% for key, value in data.package %}
+                <div class=\"list box-list\" id=\"pack{{ key }}\">
+                  <div class=\"table-group\">
+                    <div class=\"table-responsive\">
+                      {% autoescape %}
+                        {{ attribute(value,'desc_'~lang)|raw }}
+                      {% endautoescape %} 
                     </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีมีการผ่าตัด</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 425,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"7\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  50,000 <br>
-                                  คุ้มครองที่ 2      :  6,000<br>
-                                  คุ้มครองที่ 3      :  7,000<br>
-                                  คุ้มครองที่ 4      :  8,000<br>
-                                  คุ้มครองที่ 5      :  9,000<br>
-                                  คุ้มครองที่ 6      :  100,000<br>
-                                  คุ้มครองที่ 7      :  110,000<br>
-                                  คุ้มครองที่ 8      :  120,000<br>
-                                  คุ้มครองที่ 9      :  130,000<br>
-                                  คุ้มครองที่ 10    :   140,000<br>
-                                  คุ้มครองที่ 11    :   150,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้  <br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>2. ค่าห้อง ค่าอาหาร ค่าบริการพยาบาล (สูงสุดไม่เกิน 125 วัน)</strong>                                                                           
-                              </td>
-                              <td>3,000</td>
-                            </tr>
-                           
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>3. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 3 ได้</strong>                                                                        
-                              </td>
-                              
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษการผ่าตัดสำหรับผู้ป่วยใน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                5,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ) ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> 
-                                <strong>4. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                         
-                              </td>
-                              <td>
-                                10,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>6. ผลประโยชน์กรณีเสียชีวิต (AIA 20 PAY Life (Non Par)</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group color-violet2\">
-                       <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th class=\"text-center\" width=\"55%\" colspan=\"3\">
-                              <h4 class=\"mb-0\">ค่าเบี้ยต่อปี</h4>
-                            </th>
-                          </thead>
-
-                          <tbody>
-                            <tr>
-                              <td class=\"text-center\"><h6>อายุ</h6></td>
-                              <td class=\"text-center\"><h6>ลูกชาย</h6></td>
-                              <td class=\"text-center\"><h6>ลูกสาว</h6></td>
-                            </tr>
-                            <tr>
-                              <td class=\"text-center\">1 เดือน</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">1</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">2</td>
-                              <td class=\"text-center\">12,252</td>
-                              <td class=\"text-center\">11,851</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">3</td>
-                              <td class=\"text-center\">11,073</td>
-                              <td class=\"text-center\">9,758</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">4</td>
-                              <td class=\"text-center\">9,202</td>
-                              <td class=\"text-center\">8,068</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">5</td>
-                              <td class=\"text-center\">8,229</td>
-                              <td class=\"text-center\">7,280</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-                    <div class=\"remark\">
-                        <div class=\"media\">
-                          <h3 class=\"color-violet2 mr-5 line-right\">คำเตือน </h3>
-                          <div class=\"media-body\">
-                            <p>
-                              ผู้ขอเอาประกันภัยควรศึกษาและทำความเข้าใจในเอกสารเสนอขายก่อนตัดสินใจทำประกันภัย เมื่อได้รับกรมธรรม์แล้วโปรดศึกษารายละเอียดข้อกำหนดและเงื่อนไขกรมธรรม์
-
-                            </p>
-                          </div>
-                        </div>
-                    </div>
-                  </div><!-- End tab Contant -->
-
-                  <div class=\"list\" id=\"two\">
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีไม่มีการผ่าตัด 3</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 10,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"8\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  10,000 <br>
-                                  คุ้มครองที่ 2      :  12,000<br>
-                                  คุ้มครองที่ 3      :  14,000<br>
-                                  คุ้มครองที่ 4      :  16,000<br>
-                                  คุ้มครองที่ 5      :  18,000<br>
-                                  คุ้มครองที่ 6      :  20,000<br>
-                                  คุ้มครองที่ 7      :  22,000<br>
-                                  คุ้มครองที่ 8      :  24,000<br>
-                                  คุ้มครองที่ 9      :  26,000<br>
-                                  คุ้มครองที่ 10    :   28,000<br>
-                                  คุ้มครองที่ 11    :   30,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่าห้อง ค่าบริการพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.7 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้<br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>2. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 2 ได้</strong>                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>3. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                        
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>4. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์กรณีเสียชีวิต</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีมีการผ่าตัด</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 425,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"7\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  50,000 <br>
-                                  คุ้มครองที่ 2      :  6,000<br>
-                                  คุ้มครองที่ 3      :  7,000<br>
-                                  คุ้มครองที่ 4      :  8,000<br>
-                                  คุ้มครองที่ 5      :  9,000<br>
-                                  คุ้มครองที่ 6      :  100,000<br>
-                                  คุ้มครองที่ 7      :  110,000<br>
-                                  คุ้มครองที่ 8      :  120,000<br>
-                                  คุ้มครองที่ 9      :  130,000<br>
-                                  คุ้มครองที่ 10    :   140,000<br>
-                                  คุ้มครองที่ 11    :   150,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้  <br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>2. ค่าห้อง ค่าอาหาร ค่าบริการพยาบาล (สูงสุดไม่เกิน 125 วัน)</strong>                                                                           
-                              </td>
-                              <td>3,000</td>
-                            </tr>
-                           
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>3. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 3 ได้</strong>                                                                        
-                              </td>
-                              
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษการผ่าตัดสำหรับผู้ป่วยใน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                5,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ) ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> 
-                                <strong>4. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                         
-                              </td>
-                              <td>
-                                10,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>6. ผลประโยชน์กรณีเสียชีวิต (AIA 20 PAY Life (Non Par)</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group color-violet2\">
-                       <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th class=\"text-center\" width=\"55%\" colspan=\"3\">
-                              <h4 class=\"mb-0\">ค่าเบี้ยต่อปี</h4>
-                            </th>
-                          </thead>
-
-                          <tbody>
-                            <tr>
-                              <td class=\"text-center\"><h6>อายุ</h6></td>
-                              <td class=\"text-center\"><h6>ลูกชาย</h6></td>
-                              <td class=\"text-center\"><h6>ลูกสาว</h6></td>
-                            </tr>
-                            <tr>
-                              <td class=\"text-center\">1 เดือน</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">1</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">2</td>
-                              <td class=\"text-center\">12,252</td>
-                              <td class=\"text-center\">11,851</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">3</td>
-                              <td class=\"text-center\">11,073</td>
-                              <td class=\"text-center\">9,758</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">4</td>
-                              <td class=\"text-center\">9,202</td>
-                              <td class=\"text-center\">8,068</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">5</td>
-                              <td class=\"text-center\">8,229</td>
-                              <td class=\"text-center\">7,280</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-                    <div class=\"remark\">
-                        <div class=\"media\">
-                          <h3 class=\"color-violet2 mr-5 line-right\">คำเตือน </h3>
-                          <div class=\"media-body\">
-                            <p>
-                              ผู้ขอเอาประกันภัยควรศึกษาและทำความเข้าใจในเอกสารเสนอขายก่อนตัดสินใจทำประกันภัย เมื่อได้รับกรมธรรม์แล้วโปรดศึกษารายละเอียดข้อกำหนดและเงื่อนไขกรมธรรม์
-
-                            </p>
-                          </div>
-                        </div>
-                    </div>
-                  </div><!-- End tab Contant -->
-                  <div class=\"list\" id=\"three\">
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีไม่มีการผ่าตัด 4</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 10,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"8\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  10,000 <br>
-                                  คุ้มครองที่ 2      :  12,000<br>
-                                  คุ้มครองที่ 3      :  14,000<br>
-                                  คุ้มครองที่ 4      :  16,000<br>
-                                  คุ้มครองที่ 5      :  18,000<br>
-                                  คุ้มครองที่ 6      :  20,000<br>
-                                  คุ้มครองที่ 7      :  22,000<br>
-                                  คุ้มครองที่ 8      :  24,000<br>
-                                  คุ้มครองที่ 9      :  26,000<br>
-                                  คุ้มครองที่ 10    :   28,000<br>
-                                  คุ้มครองที่ 11    :   30,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่าห้อง ค่าบริการพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.7 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้<br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>2. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 2 ได้</strong>                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>3. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                        
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>4. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์กรณีเสียชีวิต</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group\">
-                      <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th width=\"55%\" colspan=\"2\">
-                              <h4 class=\"mb-0\">ค่ารักษากรณีมีการผ่าตัด</h4>
-                            </th>
-                           
-                          </thead>
-                          <tbody>
-                            <tr class=\"bg-gray\">
-                              <td class=\"color-violet2\"><h6>ผลประโยชน์สูงสุด 425,000 บาท</h6></td>
-                              <td class=\"color-violet2 text-center lead\">
-                               <h6>จำนวนเงินคุ้มครอง (บาท)</h6>
-                                
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td width=\"60%\"><strong>1. ค่ารักษาพยาบาลกรณีเป็นผู้ป่วยในของโรงพยาบาล</strong></td>
-                              <td rowspan=\"7\">
-                                <div class=\"px-3 py-3 text-center\">
-                                  ผลประโยชน์ข้อ 1 รวมกันสูงสุดต่อการเข้าพักรักษา ปี<br>
-                                  คุ้มครองที่ 1      :  50,000 <br>
-                                  คุ้มครองที่ 2      :  6,000<br>
-                                  คุ้มครองที่ 3      :  7,000<br>
-                                  คุ้มครองที่ 4      :  8,000<br>
-                                  คุ้มครองที่ 5      :  9,000<br>
-                                  คุ้มครองที่ 6      :  100,000<br>
-                                  คุ้มครองที่ 7      :  110,000<br>
-                                  คุ้มครองที่ 8      :  120,000<br>
-                                  คุ้มครองที่ 9      :  130,000<br>
-                                  คุ้มครองที่ 10    :   140,000<br>
-                                  คุ้มครองที่ 11    :   150,000<br>
-                                </div>
-
-                              </td>
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.1 ค่ายากลับบ้าน (สูงสุดไม่เกิน 7 วัน ต่อครั้ง)</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.2 ค่าแพทย์ตรวจรักษาในโรงพยาบาลประจำวัน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.3 ค่ารถพยาบาลฉุกเฉิน</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.4 ค่ารักษาพยาบาลโดยการผ่าตัด</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.5 ค่ารักษาพยาบาลอื่นๆ ในโรงพยาบาล</td>
-                              
-                            </tr>
-                            <tr class=\"\">
-                              <td>1.6 ค่าครวจวินิจฉัยทางรังสีวิทยาและการตรวจทางห้องปฏิบัติการสำหรับผู้ป่วยนอกซึ่งเกิดขึ้นภายใน 30 วัน ก่อนหรือหลังการเข้าพักรักษาตัวในโรงพยาบาล ต่อการเข้าพักรักษาตัวครั้งใดครั้งหนั่ง</td>
-                              
-                            </tr>
-                            
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>
-                                  ผลประโยชน์ข้อ 1 ข้างต้นจะเพิ่มขึ้นเป็น 3 เท่า หากวันแรกที่เข้ารักษาตัวเป็นผู้ป่วยในอยู่ในรอบปีกรมธรรม์ที่มีผู้เอาประกันภัยมีอายุไม่เกิน 16 ปี และการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งนั้นได้รับการวินิจฉัย และเป็นผลโดยตรงจากโรคใดโดรคหนึ่งดังต่อไปนี้  <br>
-                                  
-                                </strong>
-                                <p>
-                                  -โรคไข้รูห์มาติกที่ทำให้หัวใจผิดปกติ    <br>                                                                                                   
-                                  -โรคคาวาซากิที่ทำให้เกิดโดรคแทรกซ้อนของหัวใจ         <br>                                                                           
-                                  -โรคเบาหวาน <br>
-                                  -โรคน้ำไขสันหลังในสมองมากต้องใช้ท่อระบาย
-                                </p>                                                                                     
-
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>2. ค่าห้อง ค่าอาหาร ค่าบริการพยาบาล (สูงสุดไม่เกิน 125 วัน)</strong>                                                                           
-                              </td>
-                              <td>3,000</td>
-                            </tr>
-                           
-                            <tr>
-                              <td colspan=\"2\">
-                                <strong>3. ผลประโยชน์พิเศษ กรณีไม่เรียกร้องข้อ 1 สามารถเรียกร้องข้อ 3 ได้</strong>                                                                        
-                              </td>
-                              
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษการผ่าตัดสำหรับผู้ป่วยใน ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                5,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                ผลประโยชน์พิเศษรายวัน (สูงสุด 10 วัน ) ต่อการเข้าพักรักษาตัวเป็นผู้ป่วยในครั้งใดครั้งหนึ่ง                                                                       
-                              </td>
-                              <td>
-                                1,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> 
-                                <strong>4. ค่ารักษาพยาบาลเนื่องจากอุบัติเหตุภายใน 24 ชั่วโมง ขณะเป็นผู้ป่วยนอก</strong>                                                                         
-                              </td>
-                              <td>
-                                10,000                                                                           
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>5. ผลประโยชน์ค่าปลงศพ</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <strong>6. ผลประโยชน์กรณีเสียชีวิต (AIA 20 PAY Life (Non Par)</strong>                                                                         
-                              </td>
-                              <td>
-                                100,000                                                                       
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-
-                    <div class=\"table-group color-violet2\">
-                       <div class=\"table-responsive-sm\">
-                        <table class=\"table table-bordered\">
-                          <thead>
-                            <th class=\"text-center\" width=\"55%\" colspan=\"3\">
-                              <h4 class=\"mb-0\">ค่าเบี้ยต่อปี</h4>
-                            </th>
-                          </thead>
-
-                          <tbody>
-                            <tr>
-                              <td class=\"text-center\"><strong>อายุ</strong></td>
-                              <td class=\"text-center\"><strong>ลูกชาย</strong></td>
-                              <td class=\"text-center\"><strong>ลูกสาว</strong></td>
-                            </tr>
-                            <tr>
-                              <td class=\"text-center\">1 เดือน</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">1</td>
-                              <td class=\"text-center\">13,141</td>
-                              <td class=\"text-center\">12,947</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">2</td>
-                              <td class=\"text-center\">12,252</td>
-                              <td class=\"text-center\">11,851</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">3</td>
-                              <td class=\"text-center\">11,073</td>
-                              <td class=\"text-center\">9,758</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">4</td>
-                              <td class=\"text-center\">9,202</td>
-                              <td class=\"text-center\">8,068</td>
-                            </tr>
-
-                            <tr>
-                              <td class=\"text-center\">5</td>
-                              <td class=\"text-center\">8,229</td>
-                              <td class=\"text-center\">7,280</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- END Table-->
-                    <div class=\"remark\">
-                        <div class=\"media\">
-                          <h3 class=\"color-violet2 mr-5 line-right\">คำเตือน </h3>
-                          <div class=\"media-body\">
-                            <p>
-                              ผู้ขอเอาประกันภัยควรศึกษาและทำความเข้าใจในเอกสารเสนอขายก่อนตัดสินใจทำประกันภัย เมื่อได้รับกรมธรรม์แล้วโปรดศึกษารายละเอียดข้อกำหนดและเงื่อนไขกรมธรรม์
-
-                            </p>
-                          </div>
-                        </div>
-                    </div>
-                  </div><!-- End tab Contant -->
+                  </div>
                 </div>
-            </div>
-       </div>
-       
-    </section>
+                {% endfor %}
+              </div>
+          </div>
+      </div>
+      
+  </section>
 
 
 {% endblock %}
@@ -2389,24 +443,17 @@ class __TwigTemplate_aef657ed0c1800da673f4690b8c7ebf141e3236463d7382487c37a1710f
 <script>
   \$(document).ready(function(){
       \$('.tabs a').click(function(){
+          var tagid = \$(this).data('tag');
           \$('.tabs a').removeClass('activelink');
           \$(this).addClass('activelink');
-          var tagid = \$(this).data('tag');
-          
-          //\$('.list').removeClass('active').addClass('hide');
-          \$( '.list' ).slideUp( 'slow', function() {
+          \$( '.box-list' ).slideUp( 'slow', function() {
             \$(this).removeClass('active').addClass('hide');
           });
-
           \$( '#'+tagid ).slideDown( 'slow', function() {
             \$(this).addClass('active').removeClass('hide');
           });
-          // \$('#'+tagid).show( 4000, function(){
-          //    \$(this).addClass('active').removeClass('hide');
-          // }
       });
       \$('.owl-carousel').owlCarousel({
-          loop:true,
           margin:10,
 
           responsive:{

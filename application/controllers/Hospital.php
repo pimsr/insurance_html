@@ -20,9 +20,6 @@ class Hospital extends MY_Controller {
 		$data['nav'] = $this->main_model->selectNavbar();
 		$data['data'] = $this->hospital_model->selectHospital();
 		$data['province'] = $this->hospital_model->selectProvince();
-		// echo '<pre>';
-		// var_dump($data['province']);
-		// exit();
 		$this->twig->display('@f/hospital', $data);
 	}
 }
