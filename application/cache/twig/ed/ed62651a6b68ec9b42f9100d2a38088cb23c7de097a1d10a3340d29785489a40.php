@@ -30,46 +30,58 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
     {
         // line 4
         echo " \t<section class=\"banner\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "banner-main4.png');\">
+        echo twig_escape_filter($this->env, ((isset($context["link_cover"]) ? $context["link_cover"] : null) . $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), "img", array())), "html", null, true);
+        echo "');\">
  \t\t<div class=\"banner-caption\">
- \t\t\t<h2>ติดต่อเรา</h2>
+ \t\t\t<h2>";
+        // line 6
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h2>
  \t\t</div>
  \t\t<div class=\"overlay\"></div>
  \t</section>
   <section class=\"content-p-top\">
      <div class=\"container\">
-          
           <div class=\"\">
-              <h3 class=\"title color-violet2 text-center\">บริการลูกค้า</h3>
+              <h3 class=\"title color-violet2 text-center\">";
+        // line 13
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h3>
               <div class=\"text-center\">
-                โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อ
+                ";
+        // line 15
+        echo nl2br(twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : null), ("subtitle_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true));
+        echo "
               </div>
 
               <div class=\"row my-5\">
                 <div class=\"col-md-6\">
                   <div class=\"bg-gray contact-list text-center\">
                       <img src=\"";
-        // line 22
+        // line 21
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-location.png\">
                       <h6 class=\"color-violet2 my-3\">ที่อยู่บริษัท</h6>
                       <p>
-                        The Wilson Selly Corporation 550 Helsey wings Rd. <br>
-                        Vanfoyld Village, CA 44143
+                        ";
+        // line 24
+        echo nl2br(twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : null), ("address_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true));
+        echo "
                       </p>
                   </div>
                 </div>
                 <div class=\"col-md-6\">
                   <div class=\"bg-gray contact-list text-center\">
                       <img src=\"";
-        // line 32
+        // line 30
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/icon-time.png\">
                       <h6 class=\"color-violet2 my-3\">เวลาทำการ</h6>
                       <p>
-                        Monday to Friday 9.00 am to 6.00 pm  <br>
-                        Saturday 10.00 am to 4.00 pm
+                        ";
+        // line 33
+        echo nl2br(twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : null), ("time_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true));
+        echo "
                       </p>
                   </div>
                 </div>
@@ -77,8 +89,16 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
 
               <div class=\"row mt-5 bg-gray contact-list\">
                 <div class=\"col-md-12 text-center\">
-                    <h4 class=\"color-violet2 mb-4\" >ติดต่อเรื่องเคลม  ( 800 - 123 - 4567 )</h4>
-                    <a href=\"#\" class=\"btn btn-violet\">ดูข้อมูลการเคลม</a>
+                    <a href=\"tel: ";
+        // line 41
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : null), "claim_tel", array()), "html", null, true);
+        echo "\"><h4 class=\"color-violet2 mb-4\" >ติดต่อเรื่องเคลม  ( ";
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : null), "claim_tel", array()), "html", null, true);
+        echo " )</h4></a>
+                    <a href=\"";
+        // line 42
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["data"]) ? $context["data"] : null), "claim_link", array()), "html", null, true);
+        echo "\" target=\"_blank\" class=\"btn btn-violet\">ดูข้อมูลการเคลม</a>
                 </div>
               </div>
               
@@ -88,47 +108,46 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
               <h3 class=\"color-violet2 text-center title\">ติดต่อประกันลูก</h3>
               <p class=\"text-center\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อ</p>
 
-              <div class=\"mt-5\">
+              <form class=\"mt-5\" action=\"";
+        // line 52
+        echo twig_escape_filter($this->env, base_url("contact/sendMsg"), "html", null, true);
+        echo "\" method=\"post\">
                 <div class=\"row\">
                   <div class=\"col-md-6\">
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"text\" name=\"\" placeholder=\"ช่ือ-นามสกุล\">
+                      <input class=\"form-custom\" type=\"text\" name=\"name\" placeholder=\"ช่ือ-นามสกุล\" required>
                     </div>
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"email\" name=\"\" placeholder=\"อีเมล์\">
+                      <input class=\"form-custom\" type=\"email\" name=\"email\" placeholder=\"อีเมล์\" required>
                     </div>
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"text\" name=\"\" placeholder=\"เลขบัตรประชาชน*\">
+                      <input class=\"form-custom\" type=\"text\" name=\"card_id\" placeholder=\"เลขบัตรประชาชน*\" required>
                     </div>
                   </div>
 
                   <div class=\"col-md-6\">
-                    <div class=\"form-group select-wrapper\">
-                          <select class=\"form-custom\">
-                              <option>เรื่องที่ต้องการสอบถาม**</option>
-                              <option>เรื่องที่ต้องการสอบถาม**</option>
-                              <option>เรื่องที่ต้องการสอบถาม**</option>
-                          </select>
+                    <div class=\"form-group\">
+                      <input class=\"form-custom\" type=\"text\" name=\"subject\" placeholder=\"เรื่องที่ต้องการสอบถาม**\" required>
                     </div>
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"email\" name=\"\" placeholder=\"เบอร์โทรศัพท์\">
+                      <input class=\"form-custom\" type=\"text\" name=\"tel\" placeholder=\"เบอร์โทรศัพท์\" required>
                     </div>
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"text\" name=\"\" placeholder=\"เลขที่กรมธรรม์\">
+                      <input class=\"form-custom\" type=\"text\" name=\"policy_number\" placeholder=\"เลขที่กรมธรรม์\" required>
                     </div>
                   </div>
 
                   <div class=\"col-md-12\">
                     <div class=\"form-group\">
-                      <textarea class=\"form-custom\" rows=\"6\" placeholder=\"ข้อความ...\"></textarea>
+                      <textarea class=\"form-custom\" rows=\"6\" name=\"message\" laceholder=\"ข้อความ...\" required></textarea>
                     </div>
                   </div>
 
                   <div class=\"col-md-12 text-center\">
-                    <a href=\"#\" class=\"btn btn-violet\">ส่งข้อมูล</a>
+                    <button type=\"submit\" class=\"btn btn-violet\">ส่งข้อมูล</button>
                   </div>
                 </div>
-              </div>
+              </form>
           </div>
      </div>
      
@@ -136,7 +155,7 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
 ";
     }
 
-    // line 102
+    // line 95
     public function block_js($context, array $blocks = array())
     {
     }
@@ -153,7 +172,7 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
 
     public function getDebugInfo()
     {
-        return array (  140 => 102,  67 => 32,  54 => 22,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  159 => 95,  113 => 52,  100 => 42,  94 => 41,  83 => 33,  77 => 30,  68 => 24,  62 => 21,  53 => 15,  48 => 13,  38 => 6,  32 => 4,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -169,19 +188,18 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
         return new Twig_Source("{% extends \"layout.twig\" %}
 
 {% block content %}
- \t<section class=\"banner\" style=\"background-image: url('{{ link_img }}banner-main4.png');\">
+ \t<section class=\"banner\" style=\"background-image: url('{{ link_cover~cover.img }}');\">
  \t\t<div class=\"banner-caption\">
- \t\t\t<h2>ติดต่อเรา</h2>
+ \t\t\t<h2>{{ attribute(cover, 'title_'~lang) }}</h2>
  \t\t</div>
  \t\t<div class=\"overlay\"></div>
  \t</section>
   <section class=\"content-p-top\">
      <div class=\"container\">
-          
           <div class=\"\">
-              <h3 class=\"title color-violet2 text-center\">บริการลูกค้า</h3>
+              <h3 class=\"title color-violet2 text-center\">{{ attribute(data, 'title_'~lang) }}</h3>
               <div class=\"text-center\">
-                โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อ
+                {{ attribute(data, 'subtitle_'~lang)|nl2br }}
               </div>
 
               <div class=\"row my-5\">
@@ -190,8 +208,7 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
                       <img src=\"{{ link_img }}icon/icon-location.png\">
                       <h6 class=\"color-violet2 my-3\">ที่อยู่บริษัท</h6>
                       <p>
-                        The Wilson Selly Corporation 550 Helsey wings Rd. <br>
-                        Vanfoyld Village, CA 44143
+                        {{ attribute(data, 'address_'~lang)|nl2br }}
                       </p>
                   </div>
                 </div>
@@ -200,8 +217,7 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
                       <img src=\"{{ link_img }}icon/icon-time.png\">
                       <h6 class=\"color-violet2 my-3\">เวลาทำการ</h6>
                       <p>
-                        Monday to Friday 9.00 am to 6.00 pm  <br>
-                        Saturday 10.00 am to 4.00 pm
+                        {{ attribute(data, 'time_'~lang)|nl2br }}
                       </p>
                   </div>
                 </div>
@@ -209,8 +225,8 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
 
               <div class=\"row mt-5 bg-gray contact-list\">
                 <div class=\"col-md-12 text-center\">
-                    <h4 class=\"color-violet2 mb-4\" >ติดต่อเรื่องเคลม  ( 800 - 123 - 4567 )</h4>
-                    <a href=\"#\" class=\"btn btn-violet\">ดูข้อมูลการเคลม</a>
+                    <a href=\"tel: {{ data.claim_tel }}\"><h4 class=\"color-violet2 mb-4\" >ติดต่อเรื่องเคลม  ( {{ data.claim_tel }} )</h4></a>
+                    <a href=\"{{ data.claim_link }}\" target=\"_blank\" class=\"btn btn-violet\">ดูข้อมูลการเคลม</a>
                 </div>
               </div>
               
@@ -220,47 +236,43 @@ class __TwigTemplate_bbe21b8d2dc352716d982dd2f14897d411a463c8fd8051bd920b0f3bcfa
               <h3 class=\"color-violet2 text-center title\">ติดต่อประกันลูก</h3>
               <p class=\"text-center\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อ</p>
 
-              <div class=\"mt-5\">
+              <form class=\"mt-5\" action=\"{{ base_url('contact/sendMsg') }}\" method=\"post\">
                 <div class=\"row\">
                   <div class=\"col-md-6\">
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"text\" name=\"\" placeholder=\"ช่ือ-นามสกุล\">
+                      <input class=\"form-custom\" type=\"text\" name=\"name\" placeholder=\"ช่ือ-นามสกุล\" required>
                     </div>
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"email\" name=\"\" placeholder=\"อีเมล์\">
+                      <input class=\"form-custom\" type=\"email\" name=\"email\" placeholder=\"อีเมล์\" required>
                     </div>
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"text\" name=\"\" placeholder=\"เลขบัตรประชาชน*\">
+                      <input class=\"form-custom\" type=\"text\" name=\"card_id\" placeholder=\"เลขบัตรประชาชน*\" required>
                     </div>
                   </div>
 
                   <div class=\"col-md-6\">
-                    <div class=\"form-group select-wrapper\">
-                          <select class=\"form-custom\">
-                              <option>เรื่องที่ต้องการสอบถาม**</option>
-                              <option>เรื่องที่ต้องการสอบถาม**</option>
-                              <option>เรื่องที่ต้องการสอบถาม**</option>
-                          </select>
+                    <div class=\"form-group\">
+                      <input class=\"form-custom\" type=\"text\" name=\"subject\" placeholder=\"เรื่องที่ต้องการสอบถาม**\" required>
                     </div>
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"email\" name=\"\" placeholder=\"เบอร์โทรศัพท์\">
+                      <input class=\"form-custom\" type=\"text\" name=\"tel\" placeholder=\"เบอร์โทรศัพท์\" required>
                     </div>
                     <div class=\"form-group\">
-                      <input class=\"form-custom\" type=\"text\" name=\"\" placeholder=\"เลขที่กรมธรรม์\">
+                      <input class=\"form-custom\" type=\"text\" name=\"policy_number\" placeholder=\"เลขที่กรมธรรม์\" required>
                     </div>
                   </div>
 
                   <div class=\"col-md-12\">
                     <div class=\"form-group\">
-                      <textarea class=\"form-custom\" rows=\"6\" placeholder=\"ข้อความ...\"></textarea>
+                      <textarea class=\"form-custom\" rows=\"6\" name=\"message\" laceholder=\"ข้อความ...\" required></textarea>
                     </div>
                   </div>
 
                   <div class=\"col-md-12 text-center\">
-                    <a href=\"#\" class=\"btn btn-violet\">ส่งข้อมูล</a>
+                    <button type=\"submit\" class=\"btn btn-violet\">ส่งข้อมูล</button>
                   </div>
                 </div>
-              </div>
+              </form>
           </div>
      </div>
      
