@@ -482,10 +482,6 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
             }
         });
 
-        \$('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-
         \$('#content .home-services li').click(function(){
             var index = \$(this).index();
             \$('#content .dotcom-img img').hide().eq(index).fadeIn(300);
@@ -811,10 +807,6 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
                     items:3
                 }
             }
-        });
-
-        \$('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
         });
 
         \$('#content .home-services li').click(function(){

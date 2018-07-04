@@ -30,10 +30,13 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
     {
         // line 4
         echo " \t<section class=\"banner\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "banner-main.png');\">
+        echo twig_escape_filter($this->env, ((isset($context["link_cover"]) ? $context["link_cover"] : null) . $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), "img", array())), "html", null, true);
+        echo "');\">
  \t\t<div class=\"banner-caption\">
- \t\t\t<h2>ประกันสุขภาพลูก</h2>
+ \t\t\t<h2>";
+        // line 6
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h2>
  \t\t</div>
  \t\t<div class=\"overlay\"></div>
  \t</section>
@@ -43,133 +46,114 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
  \t\t\t\t <h3 class=\"title color-violet2 text-center\">ประกันสุขภาพลูกทั้งหมด</h3>
  \t\t\t</div>
  \t\t\t<div class=\"row\">
-\t \t\t\t<div class=\"col-12 col-md-6\">
+                ";
+        // line 16
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["info"]) ? $context["info"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 17
+            echo "                ";
+            $context["icon"] = (((trim($this->getAttribute($context["value"], "icon", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/icon.png")) : (((isset($context["link_insurance"]) ? $context["link_insurance"] : null) . $this->getAttribute($context["value"], "icon", array()))));
+            // line 18
+            echo "\t \t\t\t<div class=\"col-12 col-md-6\">
 \t \t\t\t\t<div class=\"service2\">
 \t \t\t\t\t\t<div class=\"list_ active\">
-                  <div class=\"icon icon1 \"></div>
-                  <h4 class=\"text-center\">ผ่อนหนักให้เป็นเบา</h4>
-                  <div class=\"service-content text-center\">
-                    <p>
-                    \tยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-                    </p>
-                    <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <a class=\"btn btn-violet\" href=\"";
-        // line 27
-        echo twig_escape_filter($this->env, base_url("info/detail/1"), "html", null, true);
-        echo "\">ดูรายละเอียด</a>
-                </div>
-              </div>
+                            <div class=\"icon\" style=\"background-image: url('";
+            // line 21
+            echo twig_escape_filter($this->env, ((isset($context["link_insurance"]) ? $context["link_insurance"] : null) . $this->getAttribute($context["value"], "icon", array())), "html", null, true);
+            echo "')\"></div>
+                            <h4 class=\"text-center\">";
+            // line 22
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</h4>
+                            <div class=\"service-content text-center\">
+                                <p>";
+            // line 24
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("caption_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</p>
+                                <p class=\"color-violet2\">";
+            // line 25
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("note_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</p>
+                                <a class=\"btn btn-violet\" href=\"";
+            // line 26
+            echo twig_escape_filter($this->env, (base_url("info/detail/") . $this->getAttribute($context["value"], "id", array())), "html", null, true);
+            echo "\">ดูรายละเอียด</a>
+                            </div>
+                        </div>
 \t \t\t\t\t</div>
 \t \t\t\t</div>
-\t \t\t\t<div class=\"col-12 col-md-6\">
-\t \t\t\t\t<div class=\"service2\">
-\t \t\t\t\t\t<div class=\"list_ active\">
-                  <div class=\"icon icon2 \"></div>
-                  <h4 class=\"text-center\">เบากระเป๋า</h4>
-                  <div class=\"service-content text-center\">
-                    <p>
-                    \tยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-                    </p>
-                    <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <a class=\"btn btn-violet\" href=\"";
-        // line 43
-        echo twig_escape_filter($this->env, base_url("info/detail/2"), "html", null, true);
-        echo "\">ดูรายละเอียด</a>
-                </div>
-              </div>
-\t \t\t\t\t</div>
-\t \t\t\t</div>
-\t \t\t\t<div class=\"col-12 col-md-6\">
-\t \t\t\t\t<div class=\"service2\">
-\t \t\t\t\t\t<div class=\"list_ active\">
-                  <div class=\"icon icon1 \"></div>
-                  <h4 class=\"text-center\">เบาใจเหมาจ่าย</h4>
-                  <div class=\"service-content text-center\">
-                    <p>
-                    \tยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-                    </p>
-                    <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <a class=\"btn btn-violet\" href=\"";
-        // line 59
-        echo twig_escape_filter($this->env, base_url("info/detail/3"), "html", null, true);
-        echo "\">ดูรายละเอียด</a>
-                </div>
-              </div>
-\t \t\t\t\t</div>
-\t \t\t\t</div>
-\t \t\t\t<div class=\"col-12 col-md-6\">
-\t \t\t\t\t<div class=\"service2\">
-\t \t\t\t\t\t<div class=\"list_ active\">
-                  <div class=\"icon icon2 \"></div>
-                  <h4 class=\"text-center\">เบี้ยไม่ทิ้ง</h4>
-                  <div class=\"service-content text-center\">
-                    <p>
-                    \tยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-                    </p>
-                    <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <a class=\"btn btn-violet\" href=\"";
-        // line 75
-        echo twig_escape_filter($this->env, base_url("info/detail/4"), "html", null, true);
-        echo "\">ดูรายละเอียด</a>
-                </div>
-              </div>
-\t \t\t\t\t</div>
-\t \t\t\t</div>
-\t \t\t</div>
+                 ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 32
+        echo "\t \t\t</div>
  \t\t</div>
  \t</section>
  \t<section>
  \t\t<div class=\"h150\"></div>
  \t</section>
  \t<section id=\"home-contact\" class=\"content-p-top bg-gray content-p-bottom home-contact-inner\">
-      <div class=\"container  \">
+      <div class=\"container\">
           <h3 class=\"title color-violet2\"><img draggable=\"false\" class=\"emoji\" alt=\"\" src=\"";
-        // line 88
+        // line 40
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/phone-contact.png\"> ให้เราติดต่อคุณ</h3>
-
-          <div class=\"row mt-5 contact-position\">
+          <form class=\"row mt-5 contact-position\"  action=\"";
+        // line 41
+        echo twig_escape_filter($this->env, base_url("contact/sendMsgKids"), "html", null, true);
+        echo "\" method=\"post\">
               <div class=\"col-md-12 col-xl-6\">
-
-                  <div class=\"row \">
+                  <div class=\"row\">
                       <div class=\"col-md-6\">
                           <div class=\"form-group\">
-                              <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"ชื่อของคุณ\">
+                              <input class=\"form-custom\" type=\"text\" name=\"name\" placeholder=\"ชื่อของคุณ\">
                           </div>
                            <div class=\"form-group\">
-                              <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"อีเมล์\">
+                              <input class=\"form-custom\" type=\"email\" name=\"email\" placeholder=\"อีเมล์\">
                           </div>
                            <div class=\"form-group\">
-                              <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"เบอร์โทรศัพท์\">
+                              <input class=\"form-custom\" type=\"text\" name=\"tel\" placeholder=\"เบอร์โทรศัพท์\">
                           </div>
                       </div>
                       <div class=\"col-md-6\">
                            <div class=\"form-group\">
-                              <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"วันเกิดลูก*\">
+                              <input id=\"datepicker\" class=\"form-custom\" type=\"text\" name=\"date\" placeholder=\"วันเกิดลูก*\">
                           </div>
                           <div class=\"form-group select-wrapper\">
-                              <select class=\"form-custom\">
-                                  <option>ประเภทประกันที่สนใจ*</option>
-                                  <option>ประเภทประกันที่สนใจ*</option>
-                                  <option>ประเภทประกันที่สนใจ*</option>
-                              </select>
+                              <select class=\"form-custom\" name=\"insurance_id\">
+                                <option value=\"\" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                ";
+        // line 62
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "insurance", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 63
+            echo "                                <option value=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</option>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 65
+        echo "                              </select>
                           </div>
-                           <div class=\"form-group d-center\">
-                              <a class=\"btn btn-violet \" href=\"#\">ดูข่าวทั้งหมด</a>
+                          <div class=\"form-group d-center\">
+                              <button type=\"submit\" class=\"btn btn-violet\">ส่งข้อมูล   </button>
                           </div>
                       </div>
                   </div>
               </div>
-             
-          </div>
-
+          </form>
       </div>
      <img  class=\"c-img\" src=\"";
-        // line 126
+        // line 75
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "baby.png\">
     </section>
@@ -177,66 +161,55 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
     <section class=\"content-p-top content-p-bottom\">
        <div class=\"container\">
             <div class=\"content-pcontent-p\">
-                <h3 class=\"title color-violet2 text-center\">ทำไมต้องเลือกประกันลูก</h3>
+                <h3 class=\"title color-violet2 text-center\">";
+        // line 81
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["how_head"]) ? $context["how_head"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h3>
                 <div class=\"text-center mt-4 mb-4\">
-                    โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม อิปซัมเป็นข้อความส่วนหนึ่งในภาษาละตินที่แต่งโดย ซิเซโร โดยมีการตัดต่อคำให้ดูเหมือนเป็นข้อความที่ไม่มีความหมายและไม่ใช่ภาษาละตินที่ถูกต้อง
+                    ";
+        // line 83
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["how_head"]) ? $context["how_head"] : null), ("desc_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "
                 </div>
 
                 <div class=\"in-list\">
                     <div class=\"row\">
-                       <div class=\"col-md-6\">
+                        ";
+        // line 88
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["how_content"]) ? $context["how_content"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 89
+            echo "                        ";
+            $context["icon"] = (((trim($this->getAttribute($context["value"], "icon", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/icon.png")) : (((isset($context["link_insurance"]) ? $context["link_insurance"] : null) . $this->getAttribute($context["value"], "icon", array()))));
+            // line 90
+            echo "                        <div class=\"col-md-6\">
                            <div class=\"media\">
                               <img width=\"80\" class=\"align-self-center mr-3\" src=\"";
-        // line 141
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon1.png\" alt=\"\">
+            // line 92
+            echo twig_escape_filter($this->env, (isset($context["icon"]) ? $context["icon"] : null), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "\">
                               <div class=\"media-body align-self-center\">
-                                <h5 class=\"mt-0 color-violet2\">โลเล็ม อิปซัม</h5>
-                                <p class=\"mb-0\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซตโลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซต์</p>
-                               
+                                <h5 class=\"mt-0 color-violet2\">";
+            // line 94
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</h5>
+                                <p class=\"mb-0\">";
+            // line 95
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("desc_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</p>
                               </div>
                             </div>
-                       </div>
-                       <div class=\"col-md-6\">
-                            <div class=\"media\">
-                              <img width=\"80\" class=\"align-self-center mr-3\" src=\"";
-        // line 151
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon2.png\" alt=\"\">
-                              <div class=\"media-body align-self-center\">
-                                <h5 class=\"mt-0 color-violet2\">โลเล็ม อิปซัม</h5>
-                                <p class=\"mb-0\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซต์</p>
-                               
-                              </div>
-                            </div>
-                       </div>
-                       <div class=\"col-md-6\">
-                           <div class=\"media\">
-                              <img width=\"80\" class=\"align-self-center mr-3\" src=\"";
-        // line 161
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon3.png\" alt=\"\">
-                              <div class=\"media-body align-self-center\">
-                                <h5 class=\"mt-0 color-violet2\">โลเล็ม อิปซัม</h5>
-                                <p class=\"mb-0\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซต์</p>
-                               
-                              </div>
-                            </div>
-                       </div>
-                       <div class=\"col-md-6\">
-                           <div class=\"media\">
-                              <img width=\"80\" class=\"align-self-center mr-3\" src=\"";
-        // line 171
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon4.png\" alt=\"\">
-                              <div class=\"media-body align-self-center\">
-                                <h5 class=\"mt-0 color-violet2\">โลเล็ม อิปซัม</h5>
-                                <p class=\"mb-0\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซต์</p>
-                               
-                              </div>
-                            </div>
-                       </div>
-                    </div>
+                        </div>
+                        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 100
+        echo "                    </div>
                </div>
             </div>
        </div>
@@ -245,7 +218,7 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
 ";
     }
 
-    // line 187
+    // line 108
     public function block_js($context, array $blocks = array())
     {
     }
@@ -262,7 +235,7 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
 
     public function getDebugInfo()
     {
-        return array (  249 => 187,  230 => 171,  217 => 161,  204 => 151,  191 => 141,  173 => 126,  132 => 88,  116 => 75,  97 => 59,  78 => 43,  59 => 27,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  222 => 108,  212 => 100,  201 => 95,  197 => 94,  190 => 92,  186 => 90,  183 => 89,  179 => 88,  171 => 83,  166 => 81,  157 => 75,  145 => 65,  134 => 63,  130 => 62,  106 => 41,  102 => 40,  92 => 32,  80 => 26,  76 => 25,  72 => 24,  67 => 22,  63 => 21,  58 => 18,  55 => 17,  51 => 16,  38 => 6,  32 => 4,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -278,9 +251,9 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
         return new Twig_Source("{% extends \"layout.twig\" %}
 
 {% block content %}
- \t<section class=\"banner\" style=\"background-image: url('{{ link_img }}banner-main.png');\">
+ \t<section class=\"banner\" style=\"background-image: url('{{ link_cover~cover.img }}');\">
  \t\t<div class=\"banner-caption\">
- \t\t\t<h2>ประกันสุขภาพลูก</h2>
+ \t\t\t<h2>{{ attribute(cover,'title_'~lang) }}</h2>
  \t\t</div>
  \t\t<div class=\"overlay\"></div>
  \t</section>
@@ -290,70 +263,22 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
  \t\t\t\t <h3 class=\"title color-violet2 text-center\">ประกันสุขภาพลูกทั้งหมด</h3>
  \t\t\t</div>
  \t\t\t<div class=\"row\">
+                {% for value in info %}
+                {% set icon = trim(value.icon) == '' ?  link_img~'default/icon.png' : link_insurance~value.icon %}
 \t \t\t\t<div class=\"col-12 col-md-6\">
 \t \t\t\t\t<div class=\"service2\">
 \t \t\t\t\t\t<div class=\"list_ active\">
-                  <div class=\"icon icon1 \"></div>
-                  <h4 class=\"text-center\">ผ่อนหนักให้เป็นเบา</h4>
-                  <div class=\"service-content text-center\">
-                    <p>
-                    \tยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-                    </p>
-                    <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <a class=\"btn btn-violet\" href=\"{{ base_url('info/detail/1') }}\">ดูรายละเอียด</a>
-                </div>
-              </div>
+                            <div class=\"icon\" style=\"background-image: url('{{ link_insurance~value.icon }}')\"></div>
+                            <h4 class=\"text-center\">{{ attribute(value, 'title_'~lang) }}</h4>
+                            <div class=\"service-content text-center\">
+                                <p>{{ attribute(value, 'caption_'~lang) }}</p>
+                                <p class=\"color-violet2\">{{ attribute(value, 'note_'~lang) }}</p>
+                                <a class=\"btn btn-violet\" href=\"{{ base_url('info/detail/')~value.id }}\">ดูรายละเอียด</a>
+                            </div>
+                        </div>
 \t \t\t\t\t</div>
 \t \t\t\t</div>
-\t \t\t\t<div class=\"col-12 col-md-6\">
-\t \t\t\t\t<div class=\"service2\">
-\t \t\t\t\t\t<div class=\"list_ active\">
-                  <div class=\"icon icon2 \"></div>
-                  <h4 class=\"text-center\">เบากระเป๋า</h4>
-                  <div class=\"service-content text-center\">
-                    <p>
-                    \tยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-                    </p>
-                    <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <a class=\"btn btn-violet\" href=\"{{ base_url('info/detail/2') }}\">ดูรายละเอียด</a>
-                </div>
-              </div>
-\t \t\t\t\t</div>
-\t \t\t\t</div>
-\t \t\t\t<div class=\"col-12 col-md-6\">
-\t \t\t\t\t<div class=\"service2\">
-\t \t\t\t\t\t<div class=\"list_ active\">
-                  <div class=\"icon icon1 \"></div>
-                  <h4 class=\"text-center\">เบาใจเหมาจ่าย</h4>
-                  <div class=\"service-content text-center\">
-                    <p>
-                    \tยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-                    </p>
-                    <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <a class=\"btn btn-violet\" href=\"{{ base_url('info/detail/3') }}\">ดูรายละเอียด</a>
-                </div>
-              </div>
-\t \t\t\t\t</div>
-\t \t\t\t</div>
-\t \t\t\t<div class=\"col-12 col-md-6\">
-\t \t\t\t\t<div class=\"service2\">
-\t \t\t\t\t\t<div class=\"list_ active\">
-                  <div class=\"icon icon2 \"></div>
-                  <h4 class=\"text-center\">เบี้ยไม่ทิ้ง</h4>
-                  <div class=\"service-content text-center\">
-                    <p>
-                    \tยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
-                    </p>
-                    <p class=\"color-violet2\">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <a class=\"btn btn-violet\" href=\"{{ base_url('info/detail/4') }}\">ดูรายละเอียด</a>
-                </div>
-              </div>
-\t \t\t\t\t</div>
-\t \t\t\t</div>
+                 {% endfor %}
 \t \t\t</div>
  \t\t</div>
  \t</section>
@@ -361,44 +286,41 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
  \t\t<div class=\"h150\"></div>
  \t</section>
  \t<section id=\"home-contact\" class=\"content-p-top bg-gray content-p-bottom home-contact-inner\">
-      <div class=\"container  \">
+      <div class=\"container\">
           <h3 class=\"title color-violet2\"><img draggable=\"false\" class=\"emoji\" alt=\"\" src=\"{{ link_img }}icon/phone-contact.png\"> ให้เราติดต่อคุณ</h3>
-
-          <div class=\"row mt-5 contact-position\">
+          <form class=\"row mt-5 contact-position\"  action=\"{{ base_url('contact/sendMsgKids') }}\" method=\"post\">
               <div class=\"col-md-12 col-xl-6\">
-
-                  <div class=\"row \">
+                  <div class=\"row\">
                       <div class=\"col-md-6\">
                           <div class=\"form-group\">
-                              <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"ชื่อของคุณ\">
+                              <input class=\"form-custom\" type=\"text\" name=\"name\" placeholder=\"ชื่อของคุณ\">
                           </div>
                            <div class=\"form-group\">
-                              <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"อีเมล์\">
+                              <input class=\"form-custom\" type=\"email\" name=\"email\" placeholder=\"อีเมล์\">
                           </div>
                            <div class=\"form-group\">
-                              <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"เบอร์โทรศัพท์\">
+                              <input class=\"form-custom\" type=\"text\" name=\"tel\" placeholder=\"เบอร์โทรศัพท์\">
                           </div>
                       </div>
                       <div class=\"col-md-6\">
                            <div class=\"form-group\">
-                              <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"วันเกิดลูก*\">
+                              <input id=\"datepicker\" class=\"form-custom\" type=\"text\" name=\"date\" placeholder=\"วันเกิดลูก*\">
                           </div>
                           <div class=\"form-group select-wrapper\">
-                              <select class=\"form-custom\">
-                                  <option>ประเภทประกันที่สนใจ*</option>
-                                  <option>ประเภทประกันที่สนใจ*</option>
-                                  <option>ประเภทประกันที่สนใจ*</option>
+                              <select class=\"form-custom\" name=\"insurance_id\">
+                                <option value=\"\" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                {% for value in nav.insurance %}
+                                <option value=\"{{ value.id }}\">{{ attribute(value, 'title_'~lang) }}</option>
+                                {% endfor %}
                               </select>
                           </div>
-                           <div class=\"form-group d-center\">
-                              <a class=\"btn btn-violet \" href=\"#\">ดูข่าวทั้งหมด</a>
+                          <div class=\"form-group d-center\">
+                              <button type=\"submit\" class=\"btn btn-violet\">ส่งข้อมูล   </button>
                           </div>
                       </div>
                   </div>
               </div>
-             
-          </div>
-
+          </form>
       </div>
      <img  class=\"c-img\" src=\"{{ link_img }}baby.png\">
     </section>
@@ -406,53 +328,25 @@ class __TwigTemplate_0a20496013b09df68092bbc0358e3641f740e8983519abcf98ea80975d9
     <section class=\"content-p-top content-p-bottom\">
        <div class=\"container\">
             <div class=\"content-pcontent-p\">
-                <h3 class=\"title color-violet2 text-center\">ทำไมต้องเลือกประกันลูก</h3>
+                <h3 class=\"title color-violet2 text-center\">{{ attribute(how_head, 'title_'~lang) }}</h3>
                 <div class=\"text-center mt-4 mb-4\">
-                    โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม อิปซัมเป็นข้อความส่วนหนึ่งในภาษาละตินที่แต่งโดย ซิเซโร โดยมีการตัดต่อคำให้ดูเหมือนเป็นข้อความที่ไม่มีความหมายและไม่ใช่ภาษาละตินที่ถูกต้อง
+                    {{ attribute(how_head, 'desc_'~lang) }}
                 </div>
 
                 <div class=\"in-list\">
                     <div class=\"row\">
-                       <div class=\"col-md-6\">
+                        {% for value in how_content %}
+                        {% set icon = trim(value.icon) == '' ?  link_img~'default/icon.png' : link_insurance~value.icon %}
+                        <div class=\"col-md-6\">
                            <div class=\"media\">
-                              <img width=\"80\" class=\"align-self-center mr-3\" src=\"{{ link_img }}icon/icon1.png\" alt=\"\">
+                              <img width=\"80\" class=\"align-self-center mr-3\" src=\"{{ icon }}\" alt=\"{{ attribute(value, 'title_'~lang) }}\">
                               <div class=\"media-body align-self-center\">
-                                <h5 class=\"mt-0 color-violet2\">โลเล็ม อิปซัม</h5>
-                                <p class=\"mb-0\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซตโลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซต์</p>
-                               
+                                <h5 class=\"mt-0 color-violet2\">{{ attribute(value, 'title_'~lang) }}</h5>
+                                <p class=\"mb-0\">{{ attribute(value, 'desc_'~lang) }}</p>
                               </div>
                             </div>
-                       </div>
-                       <div class=\"col-md-6\">
-                            <div class=\"media\">
-                              <img width=\"80\" class=\"align-self-center mr-3\" src=\"{{ link_img }}icon/icon2.png\" alt=\"\">
-                              <div class=\"media-body align-self-center\">
-                                <h5 class=\"mt-0 color-violet2\">โลเล็ม อิปซัม</h5>
-                                <p class=\"mb-0\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซต์</p>
-                               
-                              </div>
-                            </div>
-                       </div>
-                       <div class=\"col-md-6\">
-                           <div class=\"media\">
-                              <img width=\"80\" class=\"align-self-center mr-3\" src=\"{{ link_img }}icon/icon3.png\" alt=\"\">
-                              <div class=\"media-body align-self-center\">
-                                <h5 class=\"mt-0 color-violet2\">โลเล็ม อิปซัม</h5>
-                                <p class=\"mb-0\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซต์</p>
-                               
-                              </div>
-                            </div>
-                       </div>
-                       <div class=\"col-md-6\">
-                           <div class=\"media\">
-                              <img width=\"80\" class=\"align-self-center mr-3\" src=\"{{ link_img }}icon/icon4.png\" alt=\"\">
-                              <div class=\"media-body align-self-center\">
-                                <h5 class=\"mt-0 color-violet2\">โลเล็ม อิปซัม</h5>
-                                <p class=\"mb-0\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ ใช้ทดสอบหน้าเว็บไซต์</p>
-                               
-                              </div>
-                            </div>
-                       </div>
+                        </div>
+                        {% endfor %}
                     </div>
                </div>
             </div>

@@ -36,5 +36,19 @@ class Contact_model extends CI_Model{
 		$data = $query->result_array();
 		return sizeof($data) > 0 ? $data[0] : null;	
 	}
+	public function insertContactKids($value)
+	{
+		$values = array(
+			'name' => $value['name'],
+			'date' => $value['date'],
+			'email' => $value['email'],
+			'tel' => $value['tel'],
+			'insurance_id' => $value['insurance_id'],
+			'status' => 1,
+			'created_date' => date("Y-m-d H:i:s")
+		);
+		$this->db->insert('tb_contact_kid',$values);
+		return $this->db->insert_id();
+	}
 }//class
 ?>

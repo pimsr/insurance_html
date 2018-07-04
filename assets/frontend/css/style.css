@@ -60,6 +60,7 @@ h3.title{
 }
 .color-violet2{
     color: #AB2271;
+    min-height: 20px;
 }
 .color-black{
     color: #5A5A5A;
@@ -448,7 +449,7 @@ background-color: #ffffff;
     border-radius: 50%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 60%;
+    background-size: cover;
     margin: auto;
 }
 .service2 h4{
@@ -463,7 +464,7 @@ background-color: #ffffff;
     color: #ab2370;
 }
 
-.service2 .icon1{
+/* .service2 .icon1{
     background-image: url("../images/icon/icon-boy-broad-smile.png");
 }
 .service2 .icon2{
@@ -474,7 +475,7 @@ background-color: #ffffff;
 }
 .service2 .icon4{
     background-image: url("../images/icon/icon-leaves.png");
-}
+} */
 
 .service-content{
     margin: 20px 0;
@@ -729,6 +730,11 @@ table thead th:last-child  {
 .list-head a.btn-violet{
     background-color: #D3D3D3;
     padding: 13px 15px;
+    min-width: 140px;
+    outline: none !important;
+}
+.list-head .owl-stage{
+    margin: 0 auto;
 }
 
 .input-group-text{

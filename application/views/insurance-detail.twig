@@ -1,0 +1,159 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+ 	<section class="banner" style="background-image: url('{{ link_insurance~data.img }}');">
+ 		<div class="banner-caption">
+ 			<h2>{{ attribute(data, 'title_'~lang) }}</h2>
+ 		</div>
+ 		<div class="overlay"></div>
+ 	</section>
+ 	<section id="content" class="content-p-top">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-sm-12 col-md-6 ">
+                {% set img = trim(data.content[0].img) == '' ?  link_img~'default/detail.png' : link_insurance~data.content[0].img %}
+                <img class="img-fluid" src="{{ img }}" alt="{{ attribute(data.content[0], 'title_'~lang) }}"/>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 content-p-bottom">
+                  <h3 class="title color-violet2 d-top">{{ attribute(data.content[0], 'title_'~lang) }}</h3>
+                  <div class="service-content">
+                    {% autoescape %}
+                      {{ attribute(data.content[0],'desc_'~lang)|raw }}
+                    {% endautoescape %} 
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- End Service 1 -->
+  <div class="line-center text-center">
+    <img class="img-fluid" src="{{ link_img }}icon/icon5.png">
+  </div>
+  <section id="content2" class="">
+      <div class="container">
+          <div class="row d-flex">
+              <div class="col-12 col-sm-12 col-md-6 content-p-top content-p-bottom order-1 d-top0">
+                  <h3 class="title color-violet2 d-top">{{ attribute(data.content[1], 'title_'~lang) }}</h3>
+                  <div class="service-content">
+                    {% autoescape %}
+                      {{ attribute(data.content[1],'desc_'~lang)|raw }}
+                    {% endautoescape %} 
+                  </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 order-2">
+                {% set img = trim(data.content[1].img) == '' ?  link_img~'default/detail.png' : link_insurance~data.content[1].img %}
+                <img class="img-fluid" src="{{ img }}" alt="{{ attribute(data.content[1], 'title_'~lang) }}"/>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- End Service 1 -->
+  <section>
+    <div class="h150"></div>
+  </section>
+  <section id="home-contact" class="content-p-top bg-gray content-p-bottom home-contact-inner">
+      <div class="container  ">
+          <h3 class="title color-violet2"><img draggable="false" class="emoji" alt="" src="{{ link_img }}icon/phone-contact.png"> ให้เราติดต่อคุณ</h3>
+          <form class="row mt-5 contact-position"  action="{{ base_url('contact/sendMsgKids') }}" method="post">
+              <div class="col-md-12 col-xl-6">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input class="form-custom" type="text" name="name" placeholder="ชื่อของคุณ">
+                          </div>
+                           <div class="form-group">
+                              <input class="form-custom" type="email" name="email" placeholder="อีเมล์">
+                          </div>
+                           <div class="form-group">
+                              <input class="form-custom" type="text" name="tel" placeholder="เบอร์โทรศัพท์">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                           <div class="form-group">
+                              <input id="datepicker" class="form-custom" type="text" name="date" placeholder="วันเกิดลูก*">
+                          </div>
+                          <div class="form-group select-wrapper">
+                              <select class="form-custom" name="insurance_id">
+                                <option value="" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                {% for value in nav.insurance %}
+                                <option value="{{ value.id }}">{{ attribute(value, 'title_'~lang) }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <div class="form-group d-center">
+                              <button type="submit" class="btn btn-violet">ส่งข้อมูล   </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+      <img  class="c-img" src="{{ link_img }}baby.png">
+  </section>
+  <!-- home-contact -->   
+  <section class="content-p-top">
+      <div class="container">
+          <div class="">
+              <h3 class="title color-violet2 text-center">แพ็คเกจ{{ attribute(data, 'title_'~lang) }}</h3>
+
+              <div class="list-head pt-5">
+                <div class="owl-carousel owl-theme">
+                    {% for key, value in data.package %}
+                    <div class="item tabs"><a class="btn btn-violet {{ key == 0 ? 'activelink' : '' }}" href="javascript:void();" data-tag="pack{{ key }}">{{ attribute(value, 'title_'~lang) }}</a></div>
+                    {% endfor %}
+                </div>
+
+              </div>
+              
+              <div class="list-content">
+                {% for key, value in data.package %}
+                <div class="list box-list" id="pack{{ key }}">
+                  <div class="table-group">
+                    <div class="table-responsive">
+                      {% autoescape %}
+                        {{ attribute(value,'desc_'~lang)|raw }}
+                      {% endautoescape %} 
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+          </div>
+      </div>
+      
+  </section>
+{% endblock %}
+
+{% block js %}
+  <script>
+      //  insurance
+      $('.owl-carousel').owlCarousel({
+          margin:10,
+          responsive:{
+              0:{
+                  items:2
+              },
+              600:{
+                  items:3
+              },
+              1200:{
+                  items:5
+              }
+          }
+      });
+
+      $(document).ready(function(){
+          $('.tabs a').click(function(){
+              var tagid = $(this).data('tag');
+              $('.tabs a').removeClass('activelink');
+              $(this).addClass('activelink');
+              $( '.box-list' ).slideUp( 'slow', function() {
+                $(this).removeClass('active').addClass('hide');
+              });
+              $( '#'+tagid ).slideDown( 'slow', function() {
+                $(this).addClass('active').removeClass('hide');
+              });
+          });
+      });
+  </script>
+{% endblock %}
