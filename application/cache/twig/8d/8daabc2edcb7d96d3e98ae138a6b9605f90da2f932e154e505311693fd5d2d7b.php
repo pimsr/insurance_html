@@ -30,10 +30,13 @@ class __TwigTemplate_4e6a89d8a281ba3e5a1b288747b1460dd954ad792a5896d557d1a545846
     {
         // line 4
         echo " \t<section class=\"banner\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "banner-main2.png');\">
+        echo twig_escape_filter($this->env, ((isset($context["link_cover"]) ? $context["link_cover"] : null) . $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), "img", array())), "html", null, true);
+        echo "');\">
  \t\t<div class=\"banner-caption\">
- \t\t\t<h2>โรงพยาบาลลูกรัก</h2>
+ \t\t\t<h2>";
+        // line 6
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h2>
  \t\t</div>
  \t\t<div class=\"overlay\"></div>
  \t</section>
@@ -41,296 +44,194 @@ class __TwigTemplate_4e6a89d8a281ba3e5a1b288747b1460dd954ad792a5896d557d1a545846
      <div class=\"container\">
           
           <div class=\"\">
-              <h3 class=\"title color-violet2 text-center\">โรงพยาบาลลูกรัก</h3>
+              <h3 class=\"title color-violet2 text-center\">";
+        // line 14
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["headline"]) ? $context["headline"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h3>
               <div class=\"text-center\">
-                หมดกังวลไม่ว่าจะอยู่ที่ไหนของประเทศ เพราะเราใส่ใจในบริการจึงมีโรงพยาบาลเพื่อลูกรักคอยให้การรักษาครอบคลุมทั่วประเทศไทย<br>
-                มีโรงพยาบาลในเครือข่ายครอบคลุมทุกการรักษา จึงหมดห่วงเรื่องการรักษาลูกรักได้เลย 
+                ";
+        // line 16
+        echo nl2br(twig_escape_filter($this->env, $this->getAttribute((isset($context["headline"]) ? $context["headline"] : null), ("subtitle_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true));
+        echo "
               </div>
 
               <div class=\"py-5 list-head\">
                 <form class=\"\">
-                    <div class=\"row\">
-                        <div class=\"col-sm-8\">
-                            <div class=\"input-group \">
-                              
-                              <input  type=\"text\" class=\"form-custom search\" id=\"\" placeholder=\"ค้นหาโรงพยาบาล\">
-                            </div>
-                        </div>
-                       
-                        <div class=\"col-sm-4\">
-                            <div class=\"row\">
-                              <label for=\"inputPassword\" class=\"col-sm-4  color-violet2 label-filter\">Filters :</label>
-                              <div class=\"col-sm-8\">
-                                <div class=\"select-wrapper\">
-                                    <select class=\"form-custom\">
-                                        <option>ทั้งหมด*</option>
-                                        <option>ทั้งหมด*</option>
-                                        <option>ทั้งหมด*</option>
-                                    </select>
-                                </div>
+                  <div class=\"row\">
+                      <div class=\"col-sm-8\">
+                          <div class=\"input-group \">
+                            <input  type=\"text\" class=\"form-custom search\" id=\"input-filter\" placeholder=\"ค้นหาโรงพยาบาล\">
+                          </div>
+                      </div>
+                      
+                      <div class=\"col-sm-4\">
+                          <div class=\"row\">
+                            <label for=\"inputPassword\" class=\"col-sm-4  color-violet2 label-filter\">Filters :</label>
+                            <div class=\"col-sm-8\">
+                              <div class=\"select-wrapper\">
+                                  <select class=\"form-custom\" id=\"select-filter\">
+                                    <option value=\"0\">ทั้งหมด*</option>
+                                    ";
+        // line 35
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["province"]) ? $context["province"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 36
+            echo "                                    <option value=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("name_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</option>
+                                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 38
+        echo "                                  </select>
                               </div>
                             </div>
-                           
-                         
-                        </div>
-                        
+                          </div>
                       </div>
-                    
-                  </form>
+                    </div>
+                </form>
 
                   <div class=\"mt-4\">
                     <div id=\"accordion\" class=\"accordion\">
-                      <div class=\"card\">
-                        <div class=\"card-header\" id=\"headingOne\">
+                      ";
+        // line 48
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["data"]) ? $context["data"] : null));
+        foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+            // line 49
+            echo "                      <div class=\"card\" data-filter=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("name_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "\" data-province=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "province_id", array()), "html", null, true);
+            echo "\">
+                        <div class=\"card-header\" id=\"heading";
+            // line 50
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "\">
                           <h5 class=\"mb-0\">
-                            <button class=\"btn btn-link\" data-toggle=\"collapse\" data-target=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\">
+                            <button class=\"btn btn-link ";
+            // line 52
+            echo ((($context["key"] == 0)) ? ("") : ("collapsed"));
+            echo "\" data-toggle=\"collapse\" data-target=\"#collapse";
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "\" aria-expanded=\"";
+            echo twig_escape_filter($this->env, ($context["key"] == 0), "html", null, true);
+            echo "\" aria-controls=\"collapse";
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "\">
                               <img src=\"";
-        // line 57
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-hospital.png\"> รพ.รามาธิบดี(อาคารสมเด็จพระเทพ)
+            // line 53
+            echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
+            echo "icon/icon-hospital.png\"> ";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("name_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "
                             </button>
                           </h5>
                         </div>
-
-                        <div id=\"collapseOne\" class=\"collapse show\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\">
+                        <div id=\"collapse";
+            // line 57
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "\" class=\"collapse ";
+            echo ((($context["key"] == 0)) ? ("show") : (""));
+            echo "\" aria-labelledby=\"heading";
+            echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+            echo "\" data-parent=\"#accordion\">
                           <div class=\"card-body\">
-                            <div class=\"list-hospital\">
+                            ";
+            // line 59
+            $context["room"] = json_decode($this->getAttribute($context["value"], ("room_" . (isset($context["lang"]) ? $context["lang"] : null))));
+            // line 60
+            echo "                            ";
+            $context["price"] = json_decode($this->getAttribute($context["value"], "price", array()));
+            // line 61
+            echo "                            ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["room"]) ? $context["room"] : null));
+            foreach ($context['_seq'] as $context["key"] => $context["value"]) {
+                // line 62
+                echo "                            <div class=\"list-hospital\">
                               <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
+                                <li>";
+                // line 64
+                echo twig_escape_filter($this->env, $context["value"], "html", null, true);
+                echo "</li>
+                                <li>";
+                // line 65
+                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["price"]) ? $context["price"] : null), $context["key"], array(), "array"), "html", null, true);
+                echo "</li>
                               </ul>
                             </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class=\"link mt-3 \">
+                            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 69
+            echo "                            <div class=\"link mt-3 \">
                               <ul class=\"list-inline mb-0\">
-                                <li class=\"list-inline-item\">
+                                
+                                ";
+            // line 72
+            if (trim($this->getAttribute($context["value"], "tel", array()))) {
+                // line 73
+                echo "                                <li class=\"list-inline-item\">
                                     <img src=\"";
-        // line 88
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-tel.png\">
+                // line 74
+                echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
+                echo "icon/icon-tel.png\">
                                 </li>
                                 <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">02-201-1000</a>
+                                    <a href=\"tel:";
+                // line 77
+                echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "tel", array()), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "tel", array()), "html", null, true);
+                echo "</a>
                                 </li>
-
-                                <li class=\"list-inline-item\">
+                                ";
+            }
+            // line 80
+            echo "
+                                ";
+            // line 81
+            if (trim($this->getAttribute($context["value"], "link", array()))) {
+                // line 82
+                echo "                                <li class=\"list-inline-item\">
                                     <img src=\"";
+                // line 83
+                echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
+                echo "icon/icon-link.png\">
+                                </li>
+                                <li class=\"list-inline-item\">
+                                    <a href=\"";
+                // line 86
+                echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "link", array()), "html", null, true);
+                echo "\" target=\"_blank\">เข้าเว็บไซต์</a>
+                                </li>
+                                ";
+            }
+            // line 89
+            echo "                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 95
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-link.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
-                      <div class=\"card\">
-                        <div class=\"card-header\" id=\"headingTwo\">
-                          <h5 class=\"mb-0\">
-                            <button class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"false\" aria-controls=\"collapseTwo\">
-                              <img src=\"";
-        // line 109
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-hospital.png\"> รพ.กรุงเทพ
-                            </button>
-                          </h5>
-                        </div>
-                        <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordion\">
-                          <div class=\"card-body\">
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
+        echo "                    </div>
 
-                              
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class=\"link mt-3 \">
-                              <ul class=\"list-inline mb-0\">
-                                <li class=\"list-inline-item\">
-                                    <img src=\"";
-        // line 139
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-tel.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">02-201-1000</a>
-                                </li>
-
-                                <li class=\"list-inline-item\">
-                                    <img src=\"";
-        // line 146
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-link.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
-                      <div class=\"card\">
-                        <div class=\"card-header\" id=\"headingThree\">
-                          <h5 class=\"mb-0\">
-                            <button class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"false\" aria-controls=\"collapseThree\">
-                              <img src=\"";
-        // line 160
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-hospital.png\"> รพ.กรุงเทพคริสเตียน
-                            </button>
-                          </h5>
-                        </div>
-                        <div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingThree\" data-parent=\"#accordion\">
-                          <div class=\"card-body\">
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class=\"link mt-3 \">
-                              <ul class=\"list-inline mb-0\">
-                                <li class=\"list-inline-item\">
-                                    <img src=\"";
-        // line 190
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-tel.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">02-201-1000</a>
-                                </li>
-
-                                <li class=\"list-inline-item\">
-                                    <img src=\"";
-        // line 197
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-link.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
-                      <div class=\"card\">
-                        <div class=\"card-header\" id=\"headingfour\">
-                          <h5 class=\"mb-0\">
-                            <button class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseFour\" aria-expanded=\"false\" aria-controls=\"collapseFour\">
-                              <img src=\"";
-        // line 211
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-hospital.png\"> รพ.กรุงเทพพระประแดง
-                            </button>
-                          </h5>
-                        </div>
-                        <div id=\"collapseFour\" class=\"collapse\" aria-labelledby=\"headingfour\" data-parent=\"#accordion\">
-                          <div class=\"card-body\">
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class=\"link mt-3 \">
-                              <ul class=\"list-inline mb-0\">
-                                <li class=\"list-inline-item\">
-                                    <img src=\"";
-        // line 241
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-tel.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">02-201-1000</a>
-                                </li>
-
-                                <li class=\"list-inline-item\">
-                                    <img src=\"";
-        // line 248
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-link.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
-                    </div>
-
-                    <div class=\"text-center\">
-                      <p><img src=\"";
-        // line 261
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "icon/icon-loading.png\"></p>
-                      <p class=\"color-violet2\">กำลังโหลดเพิ่ม</p>
-                    </div>
-                  </div>
+                    ";
+        // line 101
+        echo "                  </div>
               </div>
 
               
@@ -341,9 +242,33 @@ class __TwigTemplate_4e6a89d8a281ba3e5a1b288747b1460dd954ad792a5896d557d1a545846
 ";
     }
 
-    // line 274
+    // line 111
     public function block_js($context, array $blocks = array())
     {
+        // line 112
+        echo "<script>
+(function(){
+  var province = null;
+  var text = null;
+  \$('#select-filter').change(function(){
+    var val = \$(this).val();
+    \$('#accordion .card').hide();
+    \$('#accordion .card[data-province=\"'+val+'\"]').fadeIn(300);
+    province = val;
+  });
+  \$('#input-filter').keyup(function(){
+    var val = \$(this).val();
+    text = val;
+    \$('#accordion .card').hide();
+    if(val.trim() == ''){
+      \$('#accordion .card').fadeIn(300);
+    }else{
+      \$('#accordion .card[data-filter*=\"'+val+'\"]').fadeIn(300);
+    }
+  });
+})();
+</script>
+";
     }
 
     public function getTemplateName()
@@ -358,7 +283,7 @@ class __TwigTemplate_4e6a89d8a281ba3e5a1b288747b1460dd954ad792a5896d557d1a545846
 
     public function getDebugInfo()
     {
-        return array (  345 => 274,  329 => 261,  313 => 248,  303 => 241,  270 => 211,  253 => 197,  243 => 190,  210 => 160,  193 => 146,  183 => 139,  150 => 109,  133 => 95,  123 => 88,  89 => 57,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  249 => 112,  246 => 111,  234 => 101,  230 => 95,  219 => 89,  213 => 86,  207 => 83,  204 => 82,  202 => 81,  199 => 80,  191 => 77,  185 => 74,  182 => 73,  180 => 72,  175 => 69,  165 => 65,  161 => 64,  157 => 62,  152 => 61,  149 => 60,  147 => 59,  138 => 57,  129 => 53,  119 => 52,  114 => 50,  107 => 49,  103 => 48,  91 => 38,  80 => 36,  76 => 35,  54 => 16,  49 => 14,  38 => 6,  32 => 4,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -374,9 +299,9 @@ class __TwigTemplate_4e6a89d8a281ba3e5a1b288747b1460dd954ad792a5896d557d1a545846
         return new Twig_Source("{% extends \"layout.twig\" %}
 
 {% block content %}
- \t<section class=\"banner\" style=\"background-image: url('{{ link_img }}banner-main2.png');\">
+ \t<section class=\"banner\" style=\"background-image: url('{{ link_cover~cover.img }}');\">
  \t\t<div class=\"banner-caption\">
- \t\t\t<h2>โรงพยาบาลลูกรัก</h2>
+ \t\t\t<h2>{{ attribute(cover, 'title_'~lang) }}</h2>
  \t\t</div>
  \t\t<div class=\"overlay\"></div>
  \t</section>
@@ -384,256 +309,93 @@ class __TwigTemplate_4e6a89d8a281ba3e5a1b288747b1460dd954ad792a5896d557d1a545846
      <div class=\"container\">
           
           <div class=\"\">
-              <h3 class=\"title color-violet2 text-center\">โรงพยาบาลลูกรัก</h3>
+              <h3 class=\"title color-violet2 text-center\">{{ attribute(headline, 'title_'~lang) }}</h3>
               <div class=\"text-center\">
-                หมดกังวลไม่ว่าจะอยู่ที่ไหนของประเทศ เพราะเราใส่ใจในบริการจึงมีโรงพยาบาลเพื่อลูกรักคอยให้การรักษาครอบคลุมทั่วประเทศไทย<br>
-                มีโรงพยาบาลในเครือข่ายครอบคลุมทุกการรักษา จึงหมดห่วงเรื่องการรักษาลูกรักได้เลย 
+                {{ attribute(headline, 'subtitle_'~lang)|nl2br }}
               </div>
 
               <div class=\"py-5 list-head\">
                 <form class=\"\">
-                    <div class=\"row\">
-                        <div class=\"col-sm-8\">
-                            <div class=\"input-group \">
-                              
-                              <input  type=\"text\" class=\"form-custom search\" id=\"\" placeholder=\"ค้นหาโรงพยาบาล\">
-                            </div>
-                        </div>
-                       
-                        <div class=\"col-sm-4\">
-                            <div class=\"row\">
-                              <label for=\"inputPassword\" class=\"col-sm-4  color-violet2 label-filter\">Filters :</label>
-                              <div class=\"col-sm-8\">
-                                <div class=\"select-wrapper\">
-                                    <select class=\"form-custom\">
-                                        <option>ทั้งหมด*</option>
-                                        <option>ทั้งหมด*</option>
-                                        <option>ทั้งหมด*</option>
-                                    </select>
-                                </div>
+                  <div class=\"row\">
+                      <div class=\"col-sm-8\">
+                          <div class=\"input-group \">
+                            <input  type=\"text\" class=\"form-custom search\" id=\"input-filter\" placeholder=\"ค้นหาโรงพยาบาล\">
+                          </div>
+                      </div>
+                      
+                      <div class=\"col-sm-4\">
+                          <div class=\"row\">
+                            <label for=\"inputPassword\" class=\"col-sm-4  color-violet2 label-filter\">Filters :</label>
+                            <div class=\"col-sm-8\">
+                              <div class=\"select-wrapper\">
+                                  <select class=\"form-custom\" id=\"select-filter\">
+                                    <option value=\"0\">ทั้งหมด*</option>
+                                    {% for value in province %}
+                                    <option value=\"{{ value.id }}\">{{ attribute(value, 'name_'~lang) }}</option>
+                                    {% endfor %}
+                                  </select>
                               </div>
                             </div>
-                           
-                         
-                        </div>
-                        
+                          </div>
                       </div>
-                    
-                  </form>
+                    </div>
+                </form>
 
                   <div class=\"mt-4\">
                     <div id=\"accordion\" class=\"accordion\">
-                      <div class=\"card\">
-                        <div class=\"card-header\" id=\"headingOne\">
+                      {% for key, value in data %}
+                      <div class=\"card\" data-filter=\"{{ attribute(value, 'name_'~lang) }}\" data-province=\"{{ value.province_id }}\">
+                        <div class=\"card-header\" id=\"heading{{ key }}\">
                           <h5 class=\"mb-0\">
-                            <button class=\"btn btn-link\" data-toggle=\"collapse\" data-target=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\">
-                              <img src=\"{{ link_img }}icon/icon-hospital.png\"> รพ.รามาธิบดี(อาคารสมเด็จพระเทพ)
+                            <button class=\"btn btn-link {{ key == 0 ? '' : 'collapsed' }}\" data-toggle=\"collapse\" data-target=\"#collapse{{ key }}\" aria-expanded=\"{{ key == 0 }}\" aria-controls=\"collapse{{ key }}\">
+                              <img src=\"{{ link_img }}icon/icon-hospital.png\"> {{ attribute(value, 'name_'~lang) }}
                             </button>
                           </h5>
                         </div>
-
-                        <div id=\"collapseOne\" class=\"collapse show\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\">
+                        <div id=\"collapse{{ key }}\" class=\"collapse {{ key == 0 ? 'show' : '' }}\" aria-labelledby=\"heading{{ key }}\" data-parent=\"#accordion\">
                           <div class=\"card-body\">
+                            {% set room = json_decode(attribute(value, 'room_'~lang) ) %}
+                            {% set price = json_decode(value.price) %}
+                            {% for key, value in room %}
                             <div class=\"list-hospital\">
                               <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
+                                <li>{{ value }}</li>
+                                <li>{{ price[key] }}</li>
                               </ul>
                             </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
+                            {% endfor %}
                             <div class=\"link mt-3 \">
                               <ul class=\"list-inline mb-0\">
+                                
+                                {% if value.tel|trim %}
                                 <li class=\"list-inline-item\">
                                     <img src=\"{{ link_img }}icon/icon-tel.png\">
                                 </li>
                                 <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">02-201-1000</a>
+                                    <a href=\"tel:{{ value.tel }}\">{{ value.tel }}</a>
                                 </li>
+                                {% endif %}
 
+                                {% if value.link|trim %}
                                 <li class=\"list-inline-item\">
                                     <img src=\"{{ link_img }}icon/icon-link.png\">
                                 </li>
                                 <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">เข้าเว็บไซต์ รพ</a>
+                                    <a href=\"{{ value.link }}\" target=\"_blank\">เข้าเว็บไซต์</a>
                                 </li>
+                                {% endif %}
                               </ul>
                             </div>
                           </div>
                         </div>
-                      </div><!-- card -->
-                      <div class=\"card\">
-                        <div class=\"card-header\" id=\"headingTwo\">
-                          <h5 class=\"mb-0\">
-                            <button class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"false\" aria-controls=\"collapseTwo\">
-                              <img src=\"{{ link_img }}icon/icon-hospital.png\"> รพ.กรุงเทพ
-                            </button>
-                          </h5>
-                        </div>
-                        <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordion\">
-                          <div class=\"card-body\">
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class=\"link mt-3 \">
-                              <ul class=\"list-inline mb-0\">
-                                <li class=\"list-inline-item\">
-                                    <img src=\"{{ link_img }}icon/icon-tel.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">02-201-1000</a>
-                                </li>
-
-                                <li class=\"list-inline-item\">
-                                    <img src=\"{{ link_img }}icon/icon-link.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
-                      <div class=\"card\">
-                        <div class=\"card-header\" id=\"headingThree\">
-                          <h5 class=\"mb-0\">
-                            <button class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"false\" aria-controls=\"collapseThree\">
-                              <img src=\"{{ link_img }}icon/icon-hospital.png\"> รพ.กรุงเทพคริสเตียน
-                            </button>
-                          </h5>
-                        </div>
-                        <div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingThree\" data-parent=\"#accordion\">
-                          <div class=\"card-body\">
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class=\"link mt-3 \">
-                              <ul class=\"list-inline mb-0\">
-                                <li class=\"list-inline-item\">
-                                    <img src=\"{{ link_img }}icon/icon-tel.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">02-201-1000</a>
-                                </li>
-
-                                <li class=\"list-inline-item\">
-                                    <img src=\"{{ link_img }}icon/icon-link.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
-                      <div class=\"card\">
-                        <div class=\"card-header\" id=\"headingfour\">
-                          <h5 class=\"mb-0\">
-                            <button class=\"btn btn-link collapsed\" data-toggle=\"collapse\" data-target=\"#collapseFour\" aria-expanded=\"false\" aria-controls=\"collapseFour\">
-                              <img src=\"{{ link_img }}icon/icon-hospital.png\"> รพ.กรุงเทพพระประแดง
-                            </button>
-                          </h5>
-                        </div>
-                        <div id=\"collapseFour\" class=\"collapse\" aria-labelledby=\"headingfour\" data-parent=\"#accordion\">
-                          <div class=\"card-body\">
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class=\"list-hospital\">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class=\"link mt-3 \">
-                              <ul class=\"list-inline mb-0\">
-                                <li class=\"list-inline-item\">
-                                    <img src=\"{{ link_img }}icon/icon-tel.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">02-201-1000</a>
-                                </li>
-
-                                <li class=\"list-inline-item\">
-                                    <img src=\"{{ link_img }}icon/icon-link.png\">
-                                </li>
-                                <li class=\"list-inline-item\">
-                                    <a href=\"tel:02-201-1000\">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
+                      </div>
+                      {% endfor %}
                     </div>
 
-                    <div class=\"text-center\">
+                    {# <div class=\"text-center\">
                       <p><img src=\"{{ link_img }}icon/icon-loading.png\"></p>
                       <p class=\"color-violet2\">กำลังโหลดเพิ่ม</p>
-                    </div>
+                    </div> #}
                   </div>
               </div>
 
@@ -644,6 +406,29 @@ class __TwigTemplate_4e6a89d8a281ba3e5a1b288747b1460dd954ad792a5896d557d1a545846
   </section>
 {% endblock %}
 
-{% block js %}{% endblock %}", "@f/hospital.twig", "/Applications/MAMP/htdocs/insurance/application/views/hospital.twig");
+{% block js %}
+<script>
+(function(){
+  var province = null;
+  var text = null;
+  \$('#select-filter').change(function(){
+    var val = \$(this).val();
+    \$('#accordion .card').hide();
+    \$('#accordion .card[data-province=\"'+val+'\"]').fadeIn(300);
+    province = val;
+  });
+  \$('#input-filter').keyup(function(){
+    var val = \$(this).val();
+    text = val;
+    \$('#accordion .card').hide();
+    if(val.trim() == ''){
+      \$('#accordion .card').fadeIn(300);
+    }else{
+      \$('#accordion .card[data-filter*=\"'+val+'\"]').fadeIn(300);
+    }
+  });
+})();
+</script>
+{% endblock %}", "@f/hospital.twig", "/Applications/MAMP/htdocs/insurance/application/views/hospital.twig");
     }
 }

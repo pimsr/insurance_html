@@ -81,6 +81,7 @@ class Hospital extends MY_Controller {
 			exit();
 		}
 		$data['mode'] = 'add';
+		$data['province'] = $this->hospital_model->selectProvince();
 		$this->twig->display('@b/hospital-form', $data);
 	}
 	public function editHospital($id = 0){
@@ -101,6 +102,7 @@ class Hospital extends MY_Controller {
 		$data['mode'] = 'edit';
 		$data['data'] = $this->hospital_model->selectHospitalByID($id);
 		$data['id'] = $id;
+		$data['province'] = $this->hospital_model->selectProvince();
 		$this->twig->display('@b/hospital-form', $data);
 	}
 	public function deleteHospital($id)

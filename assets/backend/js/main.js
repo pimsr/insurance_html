@@ -4,7 +4,9 @@
   setEditor();
   setTableData();
   setForm();
+  setSelect2();
   // setTable();
+  
   $('body').on('change', '.preview input', function(input){
     var parents = $(this).parent();
     if (input.target.files && input.target.files[0]) {
@@ -86,6 +88,7 @@
               tinymce.remove();
               setEditor();
               setTags();
+              setSelect2();
             }, 500);
           }else{
             $.Notification.notify('error','top right', 'Error', res.msg);
@@ -155,6 +158,7 @@
       tinymce.remove();
       setEditor();
       setTags();
+      setSelect2();
     }, 500);
   }).on('submit', '.form-submit-update', function(e){
     e.preventDefault();
@@ -202,6 +206,7 @@
       tinymce.remove();
       setEditor();
       setTags();
+      setSelect2();
     }, 500);
     $('html,body').animate({
       scrollTop: $('.'+form).offset().top - 180
@@ -217,6 +222,7 @@
             tinymce.remove();
             setEditor();
             setTags();
+            setSelect2();
           });
 				}
 			});
@@ -307,6 +313,14 @@
     console.log('setTags');
     if($('input[data-role="tagsinput"]').length > 0){
       $('input[data-role="tagsinput"]').tagsinput();
+    }
+  }
+
+  function setSelect2() {
+    if($('.select2').length > 0) {
+      $(".select2").select2({
+        placeholder: "กรุณาเลือกจังหวัด",
+      });
     }
   }
 })(jQuery);

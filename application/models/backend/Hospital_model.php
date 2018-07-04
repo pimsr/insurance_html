@@ -6,6 +6,15 @@ class Hospital_model extends CI_Model{
 		parent::__construct();
 	}
 	// hospital
+	public function selectProvince()
+	{
+		$query = $this->db->select('*')
+				->from('tb_province')
+				->order_by('id', 'ASC')
+				->get();
+		$data = $query->result_array();
+		return $data;	
+	}
 	public function selectHospital()
 	{
 		$query = $this->db->select('*')
@@ -33,6 +42,7 @@ class Hospital_model extends CI_Model{
 			'name_en' => $value['name_en'],
 			'room_th' => json_encode($value['room_th']),
 			'room_en' => json_encode($value['room_en']),
+			'province_id' => $value['province_id'],
 			'price' => json_encode($value['price']),
 			'tel' => $value['tel'],
 			'link' => $value['link'],
@@ -49,6 +59,7 @@ class Hospital_model extends CI_Model{
 			'name_en' => $value['name_en'],
 			'room_th' => json_encode($value['room_th']),
 			'room_en' => json_encode($value['room_en']),
+			'province_id' => $value['province_id'],
 			'price' => json_encode($value['price']),
 			'tel' => $value['tel'],
 			'link' => $value['link'],

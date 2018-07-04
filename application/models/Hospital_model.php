@@ -26,5 +26,16 @@ class Hospital_model extends CI_Model{
 		$data = $query->result_array();
 		return sizeof($data) > 0 ? $data[0] : null;	
 	}
+	public function selectProvince()
+	{
+		$query = $this->db->select('tb_province.*')
+				->from('tb_hospital')
+				->join('tb_province', 'tb_province.id = tb_hospital.province_id')
+				->where('tb_hospital.status', 1)
+				->group_by('tb_hospital.province_id')
+				->get();
+		$data = $query->result_array();
+		return $data;	
+	}
 }//class
 ?>

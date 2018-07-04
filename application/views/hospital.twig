@@ -1,9 +1,9 @@
 {% extends "layout.twig" %}
 
 {% block content %}
- 	<section class="banner" style="background-image: url('{{ link_img }}banner-main2.png');">
+ 	<section class="banner" style="background-image: url('{{ link_cover~cover.img }}');">
  		<div class="banner-caption">
- 			<h2>โรงพยาบาลลูกรัก</h2>
+ 			<h2>{{ attribute(cover, 'title_'~lang) }}</h2>
  		</div>
  		<div class="overlay"></div>
  	</section>
@@ -11,256 +11,93 @@
      <div class="container">
           
           <div class="">
-              <h3 class="title color-violet2 text-center">โรงพยาบาลลูกรัก</h3>
+              <h3 class="title color-violet2 text-center">{{ attribute(headline, 'title_'~lang) }}</h3>
               <div class="text-center">
-                หมดกังวลไม่ว่าจะอยู่ที่ไหนของประเทศ เพราะเราใส่ใจในบริการจึงมีโรงพยาบาลเพื่อลูกรักคอยให้การรักษาครอบคลุมทั่วประเทศไทย<br>
-                มีโรงพยาบาลในเครือข่ายครอบคลุมทุกการรักษา จึงหมดห่วงเรื่องการรักษาลูกรักได้เลย 
+                {{ attribute(headline, 'subtitle_'~lang)|nl2br }}
               </div>
 
               <div class="py-5 list-head">
                 <form class="">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="input-group ">
-                              
-                              <input  type="text" class="form-custom search" id="" placeholder="ค้นหาโรงพยาบาล">
-                            </div>
-                        </div>
-                       
-                        <div class="col-sm-4">
-                            <div class="row">
-                              <label for="inputPassword" class="col-sm-4  color-violet2 label-filter">Filters :</label>
-                              <div class="col-sm-8">
-                                <div class="select-wrapper">
-                                    <select class="form-custom">
-                                        <option>ทั้งหมด*</option>
-                                        <option>ทั้งหมด*</option>
-                                        <option>ทั้งหมด*</option>
-                                    </select>
-                                </div>
+                  <div class="row">
+                      <div class="col-sm-8">
+                          <div class="input-group ">
+                            <input  type="text" class="form-custom search" id="input-filter" placeholder="ค้นหาโรงพยาบาล">
+                          </div>
+                      </div>
+                      
+                      <div class="col-sm-4">
+                          <div class="row">
+                            <label for="inputPassword" class="col-sm-4  color-violet2 label-filter">Filters :</label>
+                            <div class="col-sm-8">
+                              <div class="select-wrapper">
+                                  <select class="form-custom" id="select-filter">
+                                    <option value="0">ทั้งหมด*</option>
+                                    {% for value in province %}
+                                    <option value="{{ value.id }}">{{ attribute(value, 'name_'~lang) }}</option>
+                                    {% endfor %}
+                                  </select>
                               </div>
                             </div>
-                           
-                         
-                        </div>
-                        
+                          </div>
                       </div>
-                    
-                  </form>
+                    </div>
+                </form>
 
                   <div class="mt-4">
                     <div id="accordion" class="accordion">
-                      <div class="card">
-                        <div class="card-header" id="headingOne">
+                      {% for key, value in data %}
+                      <div class="card" data-filter="{{ attribute(value, 'name_'~lang) }}" data-province="{{ value.province_id }}">
+                        <div class="card-header" id="heading{{ key }}">
                           <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              <img src="{{ link_img }}icon/icon-hospital.png"> รพ.รามาธิบดี(อาคารสมเด็จพระเทพ)
+                            <button class="btn btn-link {{ key == 0 ? '' : 'collapsed' }}" data-toggle="collapse" data-target="#collapse{{ key }}" aria-expanded="{{ key == 0 }}" aria-controls="collapse{{ key }}">
+                              <img src="{{ link_img }}icon/icon-hospital.png"> {{ attribute(value, 'name_'~lang) }}
                             </button>
                           </h5>
                         </div>
-
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="collapse{{ key }}" class="collapse {{ key == 0 ? 'show' : '' }}" aria-labelledby="heading{{ key }}" data-parent="#accordion">
                           <div class="card-body">
+                            {% set room = json_decode(attribute(value, 'room_'~lang) ) %}
+                            {% set price = json_decode(value.price) %}
+                            {% for key, value in room %}
                             <div class="list-hospital">
                               <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
+                                <li>{{ value }}</li>
+                                <li>{{ price[key] }}</li>
                               </ul>
                             </div>
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
+                            {% endfor %}
                             <div class="link mt-3 ">
                               <ul class="list-inline mb-0">
+                                
+                                {% if value.tel|trim %}
                                 <li class="list-inline-item">
                                     <img src="{{ link_img }}icon/icon-tel.png">
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="tel:02-201-1000">02-201-1000</a>
+                                    <a href="tel:{{ value.tel }}">{{ value.tel }}</a>
                                 </li>
+                                {% endif %}
 
+                                {% if value.link|trim %}
                                 <li class="list-inline-item">
                                     <img src="{{ link_img }}icon/icon-link.png">
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="tel:02-201-1000">เข้าเว็บไซต์ รพ</a>
+                                    <a href="{{ value.link }}" target="_blank">เข้าเว็บไซต์</a>
                                 </li>
+                                {% endif %}
                               </ul>
                             </div>
                           </div>
                         </div>
-                      </div><!-- card -->
-                      <div class="card">
-                        <div class="card-header" id="headingTwo">
-                          <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              <img src="{{ link_img }}icon/icon-hospital.png"> รพ.กรุงเทพ
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                          <div class="card-body">
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class="link mt-3 ">
-                              <ul class="list-inline mb-0">
-                                <li class="list-inline-item">
-                                    <img src="{{ link_img }}icon/icon-tel.png">
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="tel:02-201-1000">02-201-1000</a>
-                                </li>
-
-                                <li class="list-inline-item">
-                                    <img src="{{ link_img }}icon/icon-link.png">
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="tel:02-201-1000">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
-                      <div class="card">
-                        <div class="card-header" id="headingThree">
-                          <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              <img src="{{ link_img }}icon/icon-hospital.png"> รพ.กรุงเทพคริสเตียน
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                          <div class="card-body">
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class="link mt-3 ">
-                              <ul class="list-inline mb-0">
-                                <li class="list-inline-item">
-                                    <img src="{{ link_img }}icon/icon-tel.png">
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="tel:02-201-1000">02-201-1000</a>
-                                </li>
-
-                                <li class="list-inline-item">
-                                    <img src="{{ link_img }}icon/icon-link.png">
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="tel:02-201-1000">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
-                      <div class="card">
-                        <div class="card-header" id="headingfour">
-                          <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                              <img src="{{ link_img }}icon/icon-hospital.png"> รพ.กรุงเทพพระประแดง
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
-                          <div class="card-body">
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-
-                              
-                            </div>
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-                            <div class="list-hospital">
-                              <ul>
-                                <li>ห้องพรีเมี่ยม </li>
-                                <li>4,500 บาทต่อวัน </li>
-                              </ul>
-                            </div>
-
-                            <div class="link mt-3 ">
-                              <ul class="list-inline mb-0">
-                                <li class="list-inline-item">
-                                    <img src="{{ link_img }}icon/icon-tel.png">
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="tel:02-201-1000">02-201-1000</a>
-                                </li>
-
-                                <li class="list-inline-item">
-                                    <img src="{{ link_img }}icon/icon-link.png">
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="tel:02-201-1000">เข้าเว็บไซต์ รพ</a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div><!-- card -->
+                      </div>
+                      {% endfor %}
                     </div>
 
-                    <div class="text-center">
+                    {# <div class="text-center">
                       <p><img src="{{ link_img }}icon/icon-loading.png"></p>
                       <p class="color-violet2">กำลังโหลดเพิ่ม</p>
-                    </div>
+                    </div> #}
                   </div>
               </div>
 
@@ -271,4 +108,27 @@
   </section>
 {% endblock %}
 
-{% block js %}{% endblock %}
+{% block js %}
+<script>
+(function(){
+  var province = null;
+  var text = null;
+  $('#select-filter').change(function(){
+    var val = $(this).val();
+    $('#accordion .card').hide();
+    $('#accordion .card[data-province="'+val+'"]').fadeIn(300);
+    province = val;
+  });
+  $('#input-filter').keyup(function(){
+    var val = $(this).val();
+    text = val;
+    $('#accordion .card').hide();
+    if(val.trim() == ''){
+      $('#accordion .card').fadeIn(300);
+    }else{
+      $('#accordion .card[data-filter*="'+val+'"]').fadeIn(300);
+    }
+  });
+})();
+</script>
+{% endblock %}
