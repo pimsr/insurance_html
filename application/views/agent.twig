@@ -1,9 +1,9 @@
 {% extends "layout.twig" %}
 
 {% block content %}
- 	<section class="banner" style="background-image: url('{{ link_img }}banner-main5.png');">
+ 	<section class="banner" style="background-image: url('{{ link_cover~cover.img }}');">
  		<div class="banner-caption">
- 			<h2>ตัวแทนของเรา</h2>
+ 			<h2>{{ attribute(cover, 'title_'~lang) }}</h2>
  		</div>
  		<div class="overlay"></div>
  	</section>
@@ -11,55 +11,33 @@
      <div class="container">
           
           <div class="agent">
-              <h3 class="title color-violet2 text-center">ให้คำแนะนำโดยตัวแทนคุณภาพ</h3>
+              <h3 class="title color-violet2 text-center">{{ attribute(headline, 'title_'~lang) }}</h3>
               <div class="text-center">
-                โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง<br> สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า
+                {{ attribute(headline, 'subtitle_'~lang)|nl2br }}
               </div>
 
               <div class="row my-5">
+                {% for value in data %}
+                {% set img = trim(value.img) == '' ?  link_img~'default/staff.png' : link_company~value.img %}
                 <div class="col-md-4">
-                  <a href="{{ base_url('contact/agent/aia') }}">
+                  <a href="{{ base_url('contact/agent/')~value.id }}">
                     <div class="card">
-                      <img class="card-img-top" src="{{ link_img }}staff1.png" alt="Card image cap">
+                      <img class="card-img-top" src="{{ img }}" alt="Card image cap">
                       <div class="card-body text-center">
-                        <h5 class="card-title mb-0 color-violet2">Cowel Ben</h5>
-                        <h6 class="color-violet2">(เอ ไอ เอ)</h6>
-                        <p class="card-text">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
+                        <h5 class="card-title mb-0 color-violet2">{{ attribute(value, 'name_'~lang) }}</h5>
+                        <h6 class="color-violet2">{{ attribute(value, 'position_'~lang) }}</h6>
+                        <p class="card-text">{{ attribute(value, 'caption_'~lang) }} </p>
                       </div>
                     </div>
                   </a>
                 </div>
-                <div class="col-md-4">
-                  <a href="{{ base_url('contact/agent/thailife') }}">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ link_img }}staff2.png" alt="Card image cap">
-                      <div class="card-body text-center ">
-                        <h5 class="card-title mb-0 color-violet2">Cowel Ben</h5>
-                        <h6 class="color-violet2">(ไทยประกันชีวิต)</h6>
-                        <p class="card-text">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="{{ base_url('contact/agent/prudential') }}">
-                    <div class="card">
-                      <img class="card-img-top" src="{{ link_img }}staff3.png" alt="Card image cap">
-                      <div class="card-body text-center ">
-                        <h5 class="card-title mb-0 color-violet2">Cowel Ben</h5>
-                        <h6 class="color-violet2">(พรูเดนเชียล)</h6>
-                        <p class="card-text">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-               
+                {% endfor %}
               </div>
 
               <div class="row mt-5 bg-gray contact-list">
                 <div class="col-md-12 text-center">
-                    <h4 class="color-violet2 mb-4" >ติดต่อเรื่องเคลม  ( 800 - 123 - 4567 )</h4>
-                    <a href="#" class="btn btn-violet">ดูข้อมูลการเคลม</a>
+                    <a href="tel: {{ nav.contact.claim_tel }}"><h4 class="color-violet2 mb-4" >ติดต่อเรื่องเคลม  ( {{ nav.contact.claim_tel }} )</h4></a>
+                    <a href="{{ nav.contact.claim_link }}" target="_blank" class="btn btn-violet">ดูข้อมูลการเคลม</a>
                 </div>
               </div>
               

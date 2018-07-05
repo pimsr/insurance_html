@@ -1,9 +1,9 @@
 {% extends "layout.twig" %}
 
 {% block content %}
- 	<section class="banner" style="background-image: url('{{ link_img }}banner-main5.png');">
+ 	<section class="banner" style="background-image: url('{{ link_cover~cover.img }}');">
  		<div class="banner-caption">
- 			<h2>ตัวแทน เอ ไอ เอ</h2>
+ 			<h2>{{ attribute(data, 'title_'~lang) }}</h2>
  		</div>
  		<div class="overlay"></div>
  	</section>
@@ -11,26 +11,27 @@
      <div class="container">
           
           <div class="agent">
-              <h3 class="title color-violet2 text-center">ตัวแทน เอ ไอ เอ</h3>
+              <h3 class="title color-violet2 text-center">{{ attribute(data, 'title_'~lang) }}</h3>
               <div class="text-center">
-                โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง<br> สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า
+                {{ attribute(data, 'caption_'~lang)|nl2br }}
               </div>
 
               <div class="row my-5">
                 <div class="col-md-4 pr-5">
-                    <div class="staff-img"><img class="img-fluid" src="{{ link_img }}staff1.png"></div>
+                    {% set img = trim(data.img) == '' ?  link_img~'default/staff.png' : link_company~data.img %}
+                    <div class="staff-img"><img class="img-fluid" src="{{ img }}"></div>
                 </div>
                 <div class="col-md-8">
                     <div class="">
                       <div class="agent-info row px-5 py-5 ">
                         <div class="col-md-12">
-                          <h6 class="color-violet2">Cowel Ben</h6>
-                          <p class="color-violet2">(เอ ไอ เอ)</p>
+                          <h6 class="color-violet2">{{ attribute(data, 'name_'~lang) }}</h6>
+                          <p class="color-violet2">{{ attribute(data, 'position_'~lang) }}</p>
 
                           <div>
-                            โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า
-                            <br> <br>
-                            ข้อความโลเร็ม อิปซัมเป็นข้อความส่วนหนึ่งในภาษาละตินที่แต่งโดย ซิเซโร โดยมีการตัดต่อคำให้ดูเหมือนเป็นข้อความที่ไม่มีความหมายและไม่ใช่ภาษาละตินที่ถูกต้อง
+                            {% autoescape %}
+                              {{ attribute(data,'desc_'~lang)|raw }}
+                            {% endautoescape %} 
                           </div>
 
                           <div class="link mt-3 ">
@@ -40,7 +41,7 @@
                                   <img  src="{{ link_img }}icon/icon-link.png">
                               </li>
                               <li class="list-inline-item">
-                                  <a href="tel:02-201-1000">เข้าสู่เว็บไซต์  เอ ไอ เอ</a>
+                                  <a href="{{ data.link }}" target="_blank">เข้าสู่เว็บไซต์</a>
                               </li>
                             </ul>
                           </div>
@@ -53,7 +54,9 @@
                             <img class="align-self-center mr-3" src="{{ link_img }}icon/icon-location-white.png" alt="">
                             <div class="media-body">
                               <h5 class="mt-0">Address</h5>
-                              <p>PO Box 16122 Collins Street West<br> Victoria - Australia Zip - 3000</p>
+                              <p>
+                                {{ attribute(data, 'address_'~lang)|nl2br }}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -62,8 +65,7 @@
                             <img class="align-self-center mr-3" src="{{ link_img }}icon/icon-tel-footer.png" alt="">
                             <div class="media-body">
                               <h5 class="mt-0">Address</h5>
-                              <p>+66 3 8376 6284 <br>
-                                  cowel.ben@ip.com</p>
+                              <p><a href="tel:{{ data.tel }}" style="color:inherit">{{ data.tel }}</a><br><a href="mailto:{{ data.email }}" style="color:inherit">{{ data.email }}</a></p>
                             </div>
                           </div>
                         </div>

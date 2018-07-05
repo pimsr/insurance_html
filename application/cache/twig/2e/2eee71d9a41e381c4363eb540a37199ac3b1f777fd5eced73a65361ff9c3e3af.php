@@ -30,10 +30,13 @@ class __TwigTemplate_4640a7d78cda78d07568adcbdb715b94f86c6db9a067219f71bccee49c9
     {
         // line 4
         echo " \t<section class=\"banner\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "banner-main5.png');\">
+        echo twig_escape_filter($this->env, ((isset($context["link_cover"]) ? $context["link_cover"] : null) . $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), "img", array())), "html", null, true);
+        echo "');\">
  \t\t<div class=\"banner-caption\">
- \t\t\t<h2>ตัวแทนของเรา</h2>
+ \t\t\t<h2>";
+        // line 6
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["cover"]) ? $context["cover"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h2>
  \t\t</div>
  \t\t<div class=\"overlay\"></div>
  \t</section>
@@ -41,73 +44,74 @@ class __TwigTemplate_4640a7d78cda78d07568adcbdb715b94f86c6db9a067219f71bccee49c9
      <div class=\"container\">
           
           <div class=\"agent\">
-              <h3 class=\"title color-violet2 text-center\">ให้คำแนะนำโดยตัวแทนคุณภาพ</h3>
+              <h3 class=\"title color-violet2 text-center\">";
+        // line 14
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["headline"]) ? $context["headline"] : null), ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+        echo "</h3>
               <div class=\"text-center\">
-                โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง<br> สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า
+                ";
+        // line 16
+        echo nl2br(twig_escape_filter($this->env, $this->getAttribute((isset($context["headline"]) ? $context["headline"] : null), ("subtitle_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true));
+        echo "
               </div>
 
               <div class=\"row my-5\">
-                <div class=\"col-md-4\">
+                ";
+        // line 20
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["data"]) ? $context["data"] : null));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 21
+            echo "                ";
+            $context["img"] = (((trim($this->getAttribute($context["value"], "img", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/staff.png")) : (((isset($context["link_company"]) ? $context["link_company"] : null) . $this->getAttribute($context["value"], "img", array()))));
+            // line 22
+            echo "                <div class=\"col-md-4\">
                   <a href=\"";
-        // line 21
-        echo twig_escape_filter($this->env, base_url("contact/agent/aia"), "html", null, true);
-        echo "\">
+            // line 23
+            echo twig_escape_filter($this->env, (base_url("contact/agent/") . $this->getAttribute($context["value"], "id", array())), "html", null, true);
+            echo "\">
                     <div class=\"card\">
                       <img class=\"card-img-top\" src=\"";
-        // line 23
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "staff1.png\" alt=\"Card image cap\">
+            // line 25
+            echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : null), "html", null, true);
+            echo "\" alt=\"Card image cap\">
                       <div class=\"card-body text-center\">
-                        <h5 class=\"card-title mb-0 color-violet2\">Cowel Ben</h5>
-                        <h6 class=\"color-violet2\">(เอ ไอ เอ)</h6>
-                        <p class=\"card-text\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
+                        <h5 class=\"card-title mb-0 color-violet2\">";
+            // line 27
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("name_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</h5>
+                        <h6 class=\"color-violet2\">";
+            // line 28
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("position_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</h6>
+                        <p class=\"card-text\">";
+            // line 29
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("caption_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo " </p>
                       </div>
                     </div>
                   </a>
                 </div>
-                <div class=\"col-md-4\">
-                  <a href=\"";
-        // line 33
-        echo twig_escape_filter($this->env, base_url("contact/agent/thailife"), "html", null, true);
-        echo "\">
-                    <div class=\"card\">
-                      <img class=\"card-img-top\" src=\"";
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         // line 35
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "staff2.png\" alt=\"Card image cap\">
-                      <div class=\"card-body text-center \">
-                        <h5 class=\"card-title mb-0 color-violet2\">Cowel Ben</h5>
-                        <h6 class=\"color-violet2\">(ไทยประกันชีวิต)</h6>
-                        <p class=\"card-text\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class=\"col-md-4\">
-                  <a href=\"";
-        // line 45
-        echo twig_escape_filter($this->env, base_url("contact/agent/prudential"), "html", null, true);
-        echo "\">
-                    <div class=\"card\">
-                      <img class=\"card-img-top\" src=\"";
-        // line 47
-        echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
-        echo "staff3.png\" alt=\"Card image cap\">
-                      <div class=\"card-body text-center \">
-                        <h5 class=\"card-title mb-0 color-violet2\">Cowel Ben</h5>
-                        <h6 class=\"color-violet2\">(พรูเดนเชียล)</h6>
-                        <p class=\"card-text\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-               
-              </div>
+        echo "              </div>
 
               <div class=\"row mt-5 bg-gray contact-list\">
                 <div class=\"col-md-12 text-center\">
-                    <h4 class=\"color-violet2 mb-4\" >ติดต่อเรื่องเคลม  ( 800 - 123 - 4567 )</h4>
-                    <a href=\"#\" class=\"btn btn-violet\">ดูข้อมูลการเคลม</a>
+                    <a href=\"tel: ";
+        // line 39
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "claim_tel", array()), "html", null, true);
+        echo "\"><h4 class=\"color-violet2 mb-4\" >ติดต่อเรื่องเคลม  ( ";
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "claim_tel", array()), "html", null, true);
+        echo " )</h4></a>
+                    <a href=\"";
+        // line 40
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "contact", array()), "claim_link", array()), "html", null, true);
+        echo "\" target=\"_blank\" class=\"btn btn-violet\">ดูข้อมูลการเคลม</a>
                 </div>
               </div>
               
@@ -120,7 +124,7 @@ class __TwigTemplate_4640a7d78cda78d07568adcbdb715b94f86c6db9a067219f71bccee49c9
 ";
     }
 
-    // line 74
+    // line 52
     public function block_js($context, array $blocks = array())
     {
     }
@@ -137,7 +141,7 @@ class __TwigTemplate_4640a7d78cda78d07568adcbdb715b94f86c6db9a067219f71bccee49c9
 
     public function getDebugInfo()
     {
-        return array (  124 => 74,  94 => 47,  89 => 45,  76 => 35,  71 => 33,  58 => 23,  53 => 21,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  128 => 52,  113 => 40,  107 => 39,  101 => 35,  89 => 29,  85 => 28,  81 => 27,  76 => 25,  71 => 23,  68 => 22,  65 => 21,  61 => 20,  54 => 16,  49 => 14,  38 => 6,  32 => 4,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -153,9 +157,9 @@ class __TwigTemplate_4640a7d78cda78d07568adcbdb715b94f86c6db9a067219f71bccee49c9
         return new Twig_Source("{% extends \"layout.twig\" %}
 
 {% block content %}
- \t<section class=\"banner\" style=\"background-image: url('{{ link_img }}banner-main5.png');\">
+ \t<section class=\"banner\" style=\"background-image: url('{{ link_cover~cover.img }}');\">
  \t\t<div class=\"banner-caption\">
- \t\t\t<h2>ตัวแทนของเรา</h2>
+ \t\t\t<h2>{{ attribute(cover, 'title_'~lang) }}</h2>
  \t\t</div>
  \t\t<div class=\"overlay\"></div>
  \t</section>
@@ -163,55 +167,33 @@ class __TwigTemplate_4640a7d78cda78d07568adcbdb715b94f86c6db9a067219f71bccee49c9
      <div class=\"container\">
           
           <div class=\"agent\">
-              <h3 class=\"title color-violet2 text-center\">ให้คำแนะนำโดยตัวแทนคุณภาพ</h3>
+              <h3 class=\"title color-violet2 text-center\">{{ attribute(headline, 'title_'~lang) }}</h3>
               <div class=\"text-center\">
-                โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง<br> สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า
+                {{ attribute(headline, 'subtitle_'~lang)|nl2br }}
               </div>
 
               <div class=\"row my-5\">
+                {% for value in data %}
+                {% set img = trim(value.img) == '' ?  link_img~'default/staff.png' : link_company~value.img %}
                 <div class=\"col-md-4\">
-                  <a href=\"{{ base_url('contact/agent/aia') }}\">
+                  <a href=\"{{ base_url('contact/agent/')~value.id }}\">
                     <div class=\"card\">
-                      <img class=\"card-img-top\" src=\"{{ link_img }}staff1.png\" alt=\"Card image cap\">
+                      <img class=\"card-img-top\" src=\"{{ img }}\" alt=\"Card image cap\">
                       <div class=\"card-body text-center\">
-                        <h5 class=\"card-title mb-0 color-violet2\">Cowel Ben</h5>
-                        <h6 class=\"color-violet2\">(เอ ไอ เอ)</h6>
-                        <p class=\"card-text\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
+                        <h5 class=\"card-title mb-0 color-violet2\">{{ attribute(value, 'name_'~lang) }}</h5>
+                        <h6 class=\"color-violet2\">{{ attribute(value, 'position_'~lang) }}</h6>
+                        <p class=\"card-text\">{{ attribute(value, 'caption_'~lang) }} </p>
                       </div>
                     </div>
                   </a>
                 </div>
-                <div class=\"col-md-4\">
-                  <a href=\"{{ base_url('contact/agent/thailife') }}\">
-                    <div class=\"card\">
-                      <img class=\"card-img-top\" src=\"{{ link_img }}staff2.png\" alt=\"Card image cap\">
-                      <div class=\"card-body text-center \">
-                        <h5 class=\"card-title mb-0 color-violet2\">Cowel Ben</h5>
-                        <h6 class=\"color-violet2\">(ไทยประกันชีวิต)</h6>
-                        <p class=\"card-text\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class=\"col-md-4\">
-                  <a href=\"{{ base_url('contact/agent/prudential') }}\">
-                    <div class=\"card\">
-                      <img class=\"card-img-top\" src=\"{{ link_img }}staff3.png\" alt=\"Card image cap\">
-                      <div class=\"card-body text-center \">
-                        <h5 class=\"card-title mb-0 color-violet2\">Cowel Ben</h5>
-                        <h6 class=\"color-violet2\">(พรูเดนเชียล)</h6>
-                        <p class=\"card-text\">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-               
+                {% endfor %}
               </div>
 
               <div class=\"row mt-5 bg-gray contact-list\">
                 <div class=\"col-md-12 text-center\">
-                    <h4 class=\"color-violet2 mb-4\" >ติดต่อเรื่องเคลม  ( 800 - 123 - 4567 )</h4>
-                    <a href=\"#\" class=\"btn btn-violet\">ดูข้อมูลการเคลม</a>
+                    <a href=\"tel: {{ nav.contact.claim_tel }}\"><h4 class=\"color-violet2 mb-4\" >ติดต่อเรื่องเคลม  ( {{ nav.contact.claim_tel }} )</h4></a>
+                    <a href=\"{{ nav.contact.claim_link }}\" target=\"_blank\" class=\"btn btn-violet\">ดูข้อมูลการเคลม</a>
                 </div>
               </div>
               
