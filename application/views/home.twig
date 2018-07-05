@@ -201,42 +201,39 @@
 <section id="home-contact" class="content-p-top bg-gray content-p-bottom home-contact-inner">
     <div class="container  ">
         <h3 class="title color-violet2"><img draggable="false" class="emoji" alt="" src="{{ link_img }}icon/phone-contact.png"> ให้เราติดต่อคุณ</h3>
-
-        <div class="row mt-5 contact-position">
-            <div class="col-md-12 col-xl-6">
-
-                <div class="row ">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input class="form-custom" type="" name="" placeholder="ชื่อของคุณ">
-                        </div>
-                            <div class="form-group">
-                            <input class="form-custom" type="" name="" placeholder="อีเมล์">
-                        </div>
-                            <div class="form-group">
-                            <input class="form-custom" type="" name="" placeholder="เบอร์โทรศัพท์">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                            <div class="form-group">
-                            <input id="datepicker" class="form-custom" type="" name="" placeholder="วันเกิดลูก*">
-                        </div>
-                        <div class="form-group select-wrapper">
-                            <select class="form-custom">
-                                <option>ประเภทประกันที่สนใจ*</option>
-                                <option>ประเภทประกันที่สนใจ*</option>
-                                <option>ประเภทประกันที่สนใจ*</option>
-                            </select>
-                        </div>
-                            <div class="form-group d-center">
-                            <a class="btn btn-violet " href="#">ส่งข้อมูล</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
+        <form class="row mt-5 contact-position"  action="{{ base_url('contact/sendMsgKids') }}" method="post">
+              <div class="col-md-12 col-xl-6">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <input class="form-custom" type="text" name="name" placeholder="ชื่อของคุณ">
+                          </div>
+                           <div class="form-group">
+                              <input class="form-custom" type="email" name="email" placeholder="อีเมล์">
+                          </div>
+                           <div class="form-group">
+                              <input class="form-custom" type="text" name="tel" placeholder="เบอร์โทรศัพท์">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                           <div class="form-group">
+                              <input id="datepicker" class="form-custom" type="text" name="date" placeholder="วันเกิดลูก*">
+                          </div>
+                          <div class="form-group select-wrapper">
+                              <select class="form-custom" name="insurance_id">
+                                <option value="" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                {% for value in nav.insurance %}
+                                <option value="{{ value.id }}">{{ attribute(value, 'title_'~lang) }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <div class="form-group d-center">
+                              <button type="submit" class="btn btn-violet">ส่งข้อมูล   </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
     </div>
     <img  class="c-img" src="{{ link_img }}baby.png">
 </section>

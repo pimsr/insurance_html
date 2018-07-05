@@ -360,45 +360,59 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
         // line 203
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "icon/phone-contact.png\"> ให้เราติดต่อคุณ</h3>
-
-        <div class=\"row mt-5 contact-position\">
-            <div class=\"col-md-12 col-xl-6\">
-
-                <div class=\"row \">
-                    <div class=\"col-md-6\">
-                        <div class=\"form-group\">
-                            <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"ชื่อของคุณ\">
-                        </div>
-                            <div class=\"form-group\">
-                            <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"อีเมล์\">
-                        </div>
-                            <div class=\"form-group\">
-                            <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"เบอร์โทรศัพท์\">
-                        </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                            <div class=\"form-group\">
-                            <input id=\"datepicker\" class=\"form-custom\" type=\"\" name=\"\" placeholder=\"วันเกิดลูก*\">
-                        </div>
-                        <div class=\"form-group select-wrapper\">
-                            <select class=\"form-custom\">
-                                <option>ประเภทประกันที่สนใจ*</option>
-                                <option>ประเภทประกันที่สนใจ*</option>
-                                <option>ประเภทประกันที่สนใจ*</option>
-                            </select>
-                        </div>
-                            <div class=\"form-group d-center\">
-                            <a class=\"btn btn-violet \" href=\"#\">ส่งข้อมูล</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
+        <form class=\"row mt-5 contact-position\"  action=\"";
+        // line 204
+        echo twig_escape_filter($this->env, base_url("contact/sendMsgKids"), "html", null, true);
+        echo "\" method=\"post\">
+              <div class=\"col-md-12 col-xl-6\">
+                  <div class=\"row\">
+                      <div class=\"col-md-6\">
+                          <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"text\" name=\"name\" placeholder=\"ชื่อของคุณ\">
+                          </div>
+                           <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"email\" name=\"email\" placeholder=\"อีเมล์\">
+                          </div>
+                           <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"text\" name=\"tel\" placeholder=\"เบอร์โทรศัพท์\">
+                          </div>
+                      </div>
+                      <div class=\"col-md-6\">
+                           <div class=\"form-group\">
+                              <input id=\"datepicker\" class=\"form-custom\" type=\"text\" name=\"date\" placeholder=\"วันเกิดลูก*\">
+                          </div>
+                          <div class=\"form-group select-wrapper\">
+                              <select class=\"form-custom\" name=\"insurance_id\">
+                                <option value=\"\" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                ";
+        // line 225
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["nav"]) ? $context["nav"] : null), "insurance", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["value"]) {
+            // line 226
+            echo "                                <option value=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], "id", array()), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
+            echo "</option>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['value'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 228
+        echo "                              </select>
+                          </div>
+                          <div class=\"form-group d-center\">
+                              <button type=\"submit\" class=\"btn btn-violet\">ส่งข้อมูล   </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
     </div>
     <img  class=\"c-img\" src=\"";
-        // line 241
+        // line 238
         echo twig_escape_filter($this->env, (isset($context["link_img"]) ? $context["link_img"] : null), "html", null, true);
         echo "baby.png\">
 </section>
@@ -411,19 +425,19 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
         
         <div class=\"owl-carousel owl-theme mt-5\">
             ";
-        // line 251
+        // line 248
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["review"]) ? $context["review"] : null));
         foreach ($context['_seq'] as $context["key"] => $context["value"]) {
-            // line 252
+            // line 249
             echo "            ";
             $context["img"] = (((trim($this->getAttribute($context["value"], "img", array())) == "")) ? (((isset($context["link_img"]) ? $context["link_img"] : null) . "default/review.png")) : (((isset($context["link_review"]) ? $context["link_review"] : null) . $this->getAttribute($context["value"], "img", array()))));
-            // line 253
+            // line 250
             echo "            <div class=\"item\">
                 <div class=\"card\" >
                     <div class=\"text-center\">
                         <img class=\"\" src=\"";
-            // line 256
+            // line 253
             echo twig_escape_filter($this->env, (isset($context["img"]) ? $context["img"] : null), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
@@ -431,15 +445,15 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
                     </div>
                     <div class=\"card-body\">
                         <h5 class=\"card-title color-violet\">";
-            // line 259
+            // line 256
             echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("title_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
             echo "</h5>
                         <h6 class=\"card-subtitle mb-2 text-muted\">";
-            // line 260
+            // line 257
             echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("subtitle_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
             echo "</h6>
                         <p class=\"card-text\">";
-            // line 261
+            // line 258
             echo twig_escape_filter($this->env, $this->getAttribute($context["value"], ("desc_" . (isset($context["lang"]) ? $context["lang"] : null))), "html", null, true);
             echo "</p>
                         
@@ -451,7 +465,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['key'], $context['value'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 267
+        // line 264
         echo "        </div>
     
     </div>
@@ -459,10 +473,10 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 ";
     }
 
-    // line 273
+    // line 270
     public function block_js($context, array $blocks = array())
     {
-        // line 274
+        // line 271
         echo "<script>
     (function(){
         \$('.owl-carousel').owlCarousel({
@@ -504,7 +518,7 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 
     public function getDebugInfo()
     {
-        return array (  466 => 274,  463 => 273,  455 => 267,  443 => 261,  439 => 260,  435 => 259,  427 => 256,  422 => 253,  419 => 252,  415 => 251,  402 => 241,  361 => 203,  350 => 195,  339 => 187,  333 => 184,  324 => 178,  313 => 170,  307 => 167,  298 => 161,  287 => 153,  281 => 150,  272 => 144,  254 => 129,  187 => 64,  177 => 60,  173 => 59,  168 => 57,  159 => 54,  156 => 53,  152 => 52,  145 => 48,  140 => 46,  136 => 44,  123 => 42,  120 => 41,  116 => 40,  98 => 24,  90 => 21,  84 => 20,  80 => 19,  76 => 18,  69 => 16,  63 => 14,  60 => 13,  56 => 12,  52 => 10,  41 => 8,  37 => 7,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  480 => 271,  477 => 270,  469 => 264,  457 => 258,  453 => 257,  449 => 256,  441 => 253,  436 => 250,  433 => 249,  429 => 248,  416 => 238,  404 => 228,  393 => 226,  389 => 225,  365 => 204,  361 => 203,  350 => 195,  339 => 187,  333 => 184,  324 => 178,  313 => 170,  307 => 167,  298 => 161,  287 => 153,  281 => 150,  272 => 144,  254 => 129,  187 => 64,  177 => 60,  173 => 59,  168 => 57,  159 => 54,  156 => 53,  152 => 52,  145 => 48,  140 => 46,  136 => 44,  123 => 42,  120 => 41,  116 => 40,  98 => 24,  90 => 21,  84 => 20,  80 => 19,  76 => 18,  69 => 16,  63 => 14,  60 => 13,  56 => 12,  52 => 10,  41 => 8,  37 => 7,  32 => 4,  29 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -720,42 +734,39 @@ class __TwigTemplate_8a51facb5a0b42b3e9ba6c7a4d1353eff932d80dab575c48625b15f9731
 <section id=\"home-contact\" class=\"content-p-top bg-gray content-p-bottom home-contact-inner\">
     <div class=\"container  \">
         <h3 class=\"title color-violet2\"><img draggable=\"false\" class=\"emoji\" alt=\"\" src=\"{{ link_img }}icon/phone-contact.png\"> ให้เราติดต่อคุณ</h3>
-
-        <div class=\"row mt-5 contact-position\">
-            <div class=\"col-md-12 col-xl-6\">
-
-                <div class=\"row \">
-                    <div class=\"col-md-6\">
-                        <div class=\"form-group\">
-                            <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"ชื่อของคุณ\">
-                        </div>
-                            <div class=\"form-group\">
-                            <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"อีเมล์\">
-                        </div>
-                            <div class=\"form-group\">
-                            <input class=\"form-custom\" type=\"\" name=\"\" placeholder=\"เบอร์โทรศัพท์\">
-                        </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                            <div class=\"form-group\">
-                            <input id=\"datepicker\" class=\"form-custom\" type=\"\" name=\"\" placeholder=\"วันเกิดลูก*\">
-                        </div>
-                        <div class=\"form-group select-wrapper\">
-                            <select class=\"form-custom\">
-                                <option>ประเภทประกันที่สนใจ*</option>
-                                <option>ประเภทประกันที่สนใจ*</option>
-                                <option>ประเภทประกันที่สนใจ*</option>
-                            </select>
-                        </div>
-                            <div class=\"form-group d-center\">
-                            <a class=\"btn btn-violet \" href=\"#\">ส่งข้อมูล</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
+        <form class=\"row mt-5 contact-position\"  action=\"{{ base_url('contact/sendMsgKids') }}\" method=\"post\">
+              <div class=\"col-md-12 col-xl-6\">
+                  <div class=\"row\">
+                      <div class=\"col-md-6\">
+                          <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"text\" name=\"name\" placeholder=\"ชื่อของคุณ\">
+                          </div>
+                           <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"email\" name=\"email\" placeholder=\"อีเมล์\">
+                          </div>
+                           <div class=\"form-group\">
+                              <input class=\"form-custom\" type=\"text\" name=\"tel\" placeholder=\"เบอร์โทรศัพท์\">
+                          </div>
+                      </div>
+                      <div class=\"col-md-6\">
+                           <div class=\"form-group\">
+                              <input id=\"datepicker\" class=\"form-custom\" type=\"text\" name=\"date\" placeholder=\"วันเกิดลูก*\">
+                          </div>
+                          <div class=\"form-group select-wrapper\">
+                              <select class=\"form-custom\" name=\"insurance_id\">
+                                <option value=\"\" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                {% for value in nav.insurance %}
+                                <option value=\"{{ value.id }}\">{{ attribute(value, 'title_'~lang) }}</option>
+                                {% endfor %}
+                              </select>
+                          </div>
+                          <div class=\"form-group d-center\">
+                              <button type=\"submit\" class=\"btn btn-violet\">ส่งข้อมูล   </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
     </div>
     <img  class=\"c-img\" src=\"{{ link_img }}baby.png\">
 </section>

@@ -26,7 +26,7 @@ class Contact extends MY_Controller {
 	{
 		if($id === 0) {
 			$lang = $this->currentLang();
-			$this->session->set_userdata('page', 'contact');
+			$this->session->set_userdata('page', 'contact/agent');
 			$data['lang'] = $lang;
 			$data['page'] = 'contact';
 			$data['link_img'] = base_url('assets/frontend/images/');
@@ -39,7 +39,7 @@ class Contact extends MY_Controller {
 			$this->twig->display('@f/agent', $data);
 		}else{
 			$lang = $this->currentLang();
-			$this->session->set_userdata('page', 'contact');
+			$this->session->set_userdata('page', 'contact/agent/'.$id);
 			$data['lang'] = $lang;
 			$data['page'] = 'contact';
 			$data['link_img'] = base_url('assets/frontend/images/');
