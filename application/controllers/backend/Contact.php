@@ -29,6 +29,7 @@ class Contact extends MY_Controller {
 		$data['link_cover'] = base_url('upload/thumb/cover/');
 		$data['link_contact'] = base_url('upload/thumb/contact/');
 		$data['cover'] = $this->main_model->selectCover('contact');
+		$data['cover_company'] = $this->main_model->selectCover('company');
 		$data['headline'] = $this->main_model->selectHeadline('company');
 		$data['data'] = $this->contact_model->selectContact();
 		$this->twig->display('@b/contact', $data);
@@ -38,9 +39,22 @@ class Contact extends MY_Controller {
 			$data = array();
 			$res = $this->main_model->updateHeadline($_POST);
 			if($res > 0) {
-				$data['status'] = 1;
-				$data['msg'] = 'บันทึกข้อมูลสำเร็จ';	
+				if($res > 0) {
+					$img = $this->uploadFile('cover', 'cc_img');
+					$cover = array(
+						'img' => $img,
+						'title_th' => $_POST['cc_title_th'],
+						'title_en' => $_POST['cc_title_en'],
+						'position' => 'company'
+					);
+					$res2 = $this->main_model->updateCover($cover);
+					if($res2 > 0){
+						$data['status'] = 1;
+						$data['msg'] = 'บันทึกข้อมูลสำเร็จ';
+					}
+				}
 			}
+			unset($_POST);
 			echo json_encode($data);
 			exit();
 		}

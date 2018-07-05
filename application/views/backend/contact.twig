@@ -153,7 +153,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default panel-border">
                     <div class="panel-heading closed">
-                        <h3 class="panel-title">ข้อความเกริ่นนำ</h3>
+                        <h3 class="panel-title">ข้อความเกริ่นนำตัวแทน</h3>
                         <i class="fa fa-angle-down tab-icon"></i>
                     </div>
                     <div class="panel-body closed">
@@ -161,15 +161,36 @@
                             <div class="col-md-12">
                                 <form class="form-submit-update form-horizontal" action="{{ base_url('backend/contact/setHeadline') }}" method="post" enctype="multipart/form-data">
                                     <input type="hidden" name="h_position" value="{{ headline.position }}">
+                                    <div class="preview cover_banner" style="background-image: url('{{ link_cover~cover_company.img }}')">
+                                        <div class="text">
+                                            <i class="fa fa-photo"></i>
+                                            <p>1920 x 440</p>
+                                        </div>
+                                        <input type="file" accept="image/*" name="cc_img[]">
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">ข้อความแบนเนอร์ : </label>
+                                        <div class="col-md-10">
+                                            <div class="row_half">
+                                                <div class="col_half">
+                                                    <input name="cc_title_th" value="{{ cover_company.title_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
+                                                </div>
+                                                <div class="col_half">
+                                                    <input name="cc_title_en" value="{{ cover_company.title_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label class="col-md-2 control-label">หัวข้อ : </label>
                                         <div class="col-md-10">
                                             <div class="row_half">
                                                 <div class="col_half">
-                                                    <input name="h_title_th" value="{{ headline.title_th }}" type="text" class="form-control" placeholder="หัวข้อภาษาไทย">
+                                                    <input name="h_title_th" value="{{ headline.title_th }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาไทย">
                                                 </div>
                                                 <div class="col_half">
-                                                    <input name="h_title_en" value="{{ headline.title_en }}" type="text" class="form-control" placeholder="หัวข้อภาษาอังกฤษ">
+                                                    <input name="h_title_en" value="{{ headline.title_en }}" type="text" class="form-control" placeholder="กรุณาใส่ภาษาอังกฤษ">
                                                 </div>
                                             </div>
                                         </div>
@@ -179,10 +200,10 @@
                                         <div class="col-md-10 ">
                                             <div class="row_half">
                                                 <div class="col_half">
-                                                    <textarea name="h_subtitle_th" rows="6" class="form-control no-resize" placeholder="เนื้อหาภาษาไทย">{{ headline.subtitle_th }}</textarea>
+                                                    <textarea name="h_subtitle_th" rows="6" class="form-control no-resize" placeholder="กรุณาใส่ภาษาไทย">{{ headline.subtitle_th }}</textarea>
                                                 </div>
                                                 <div class="col_half">
-                                                    <textarea name="h_subtitle_en" rows="6" class="form-control no-resize" placeholder="เนื้อหาภาษาอังกฤษ">{{ headline.subtitle_en }}</textarea>
+                                                    <textarea name="h_subtitle_en" rows="6" class="form-control no-resize" placeholder="กรุณาใส่ภาษาอังกฤษ">{{ headline.subtitle_en }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -199,7 +220,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default panel-border">
                     <div class="panel-heading closed">
-                        <h3 class="panel-title">ตัวแทน</h3>
+                        <h3 class="panel-title">ข้อมูลตัวแทน</h3>
                         <i class="fa fa-angle-down tab-icon"></i>
                     </div>
                     <div class="panel-body closed">
