@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.5
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 04, 2018 at 02:07 PM
--- Server version: 5.6.38
--- PHP Version: 5.6.32
+-- Generation Time: Jul 05, 2018 at 06:45 AM
+-- Server version: 5.6.35
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Insurance`
+-- Database: `insurance`
 --
 
 -- --------------------------------------------------------
@@ -172,7 +172,8 @@ CREATE TABLE `tb_contact_data` (
 INSERT INTO `tb_contact_data` (`id`, `name`, `subject`, `email`, `tel`, `card_id`, `policy_number`, `message`, `status`, `created_date`, `updated_date`) VALUES
 (1, 'puu', 'test', 'email@gmail.com', '0999688501', 'xxx-xxxx-xxx', 'xxx-xxxxxx', 'ทดสอบระบบ', 1, '2018-07-03 00:00:00', NULL),
 (2, 'x', 'x', 'x@gmail.com', 'x', 'x', 'x', 'xxxxxxx', 1, '2018-07-04 14:01:33', NULL),
-(3, 'a', 'a', 'a@gmail.com', 'a', 'a', 'a', 'aaaaaa', 1, '2018-07-04 14:02:05', NULL);
+(3, 'a', 'a', 'a@gmail.com', 'a', 'a', 'a', 'aaaaaa', 1, '2018-07-04 14:02:05', NULL),
+(4, 'c', 'c', 'c@gmail.com', 'c', 'c', 'c', 'ccccc', 1, '2018-07-05 06:07:34', NULL);
 
 -- --------------------------------------------------------
 
@@ -213,7 +214,7 @@ CREATE TABLE `tb_cover` (
   `title_th` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `title_en` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `img` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `position` enum('insurance','hospital','momandkids','plan','contact') COLLATE utf8_bin DEFAULT NULL,
+  `position` enum('insurance','hospital','momandkids','plan','contact','company') COLLATE utf8_bin DEFAULT NULL,
   `updated_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -226,7 +227,8 @@ INSERT INTO `tb_cover` (`id`, `title_th`, `title_en`, `img`, `position`, `update
 (2, 'โรงพยาบาลลูกรัก', 'โรงพยาบาลลูกรัก', 'ba1b35719645b35df8465538fc6d5a6d.png', 'hospital', '2018-07-03 05:39:14'),
 (3, 'แม่และลูก', 'แม่และลูก', 'b4c0ad279ab2c09bc7e6f9e32864c6c3.png', 'momandkids', '2018-07-03 07:40:15'),
 (4, 'วางแผนการศึกษา', 'วางแผนการศึกษา', 'ff4144fa08a81dec9ecc2c9b9e4a21c8.png', 'plan', '2018-07-03 10:07:13'),
-(5, 'ติดต่อเรา', 'ติดต่อเรา', '46c35ebdcdfb2417bc3d98f2b7758cab.png', 'contact', '2018-07-04 13:48:58');
+(5, 'ติดต่อเรา', 'ติดต่อเรา', '46c35ebdcdfb2417bc3d98f2b7758cab.png', 'contact', '2018-07-04 13:48:58'),
+(6, 'ตัวแทนของเรา', 'ตัวแทนของเรา', 'bce1105bc27e02e5307d087806dfaabf.png', 'company', '2018-07-05 06:18:33');
 
 -- --------------------------------------------------------
 
@@ -251,7 +253,7 @@ CREATE TABLE `tb_headline` (
 INSERT INTO `tb_headline` (`id`, `title_th`, `title_en`, `subtitle_th`, `subtitle_en`, `position`, `updated_date`) VALUES
 (1, 'ประกันลูกดอทคอม', 'ประกันลูกดอทคอม', 'โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง', 'โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง', 'dotcom', '2018-07-03 13:42:50'),
 (2, 'โรงพยาบาลลูกรัก', 'โรงพยาบาลลูกรัก', 'หมดกังวลไม่ว่าจะอยู่ที่ไหนของประเทศ เพราะเราใส่ใจในบริการจึงมีโรงพยาบาลเพื่อลูกรักคอยให้การรักษาครอบคลุมทั่วประเทศไทย\r\nมีโรงพยาบาลในเครือข่ายครอบคลุมทุกการรักษา จึงหมดห่วงเรื่องการรักษาลูกรักได้เลย', 'หมดกังวลไม่ว่าจะอยู่ที่ไหนของประเทศ เพราะเราใส่ใจในบริการจึงมีโรงพยาบาลเพื่อลูกรักคอยให้การรักษาครอบคลุมทั่วประเทศไทย\r\nมีโรงพยาบาลในเครือข่ายครอบคลุมทุกการรักษา จึงหมดห่วงเรื่องการรักษาลูกรักได้เลย', 'hospital', '2018-07-03 13:49:00'),
-(3, 'ให้คำแนะนำโดยตัวแทนคุณภาพ', 'ให้คำแนะนำโดยตัวแทนคุณภาพ', 'โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง\r\nสำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า', 'โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง\r\nสำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า', 'company', '2018-07-03 13:53:13');
+(3, 'ให้คำแนะนำโดยตัวแทนคุณภาพ', 'ให้คำแนะนำโดยตัวแทนคุณภาพ', 'โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง\r\nสำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า', 'โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง\r\nสำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า', 'company', '2018-07-05 06:18:32');
 
 -- --------------------------------------------------------
 
@@ -449,7 +451,8 @@ CREATE TABLE `tb_log` (
 INSERT INTO `tb_log` (`id`, `device`, `created_date`, `admin_id`) VALUES
 (1, 'Chrome 67.0.3396.99', '2018-07-03 14:47:11', 1),
 (2, 'Chrome 67.0.3396.99', '2018-07-04 08:54:43', 1),
-(3, 'Chrome 67.0.3396.99', '2018-07-04 09:29:12', 1);
+(3, 'Chrome 67.0.3396.99', '2018-07-04 09:29:12', 1),
+(4, 'Chrome 67.0.3396.99', '2018-07-05 06:08:33', 1);
 
 -- --------------------------------------------------------
 
@@ -827,127 +830,106 @@ ALTER TABLE `tb_review`
 --
 ALTER TABLE `tb_admin`
   MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `tb_banner`
 --
 ALTER TABLE `tb_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `tb_company`
 --
 ALTER TABLE `tb_company`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `tb_contact`
 --
 ALTER TABLE `tb_contact`
   MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `tb_contact_data`
 --
 ALTER TABLE `tb_contact_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tb_contact_kid`
 --
 ALTER TABLE `tb_contact_kid`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `tb_cover`
 --
 ALTER TABLE `tb_cover`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tb_headline`
 --
 ALTER TABLE `tb_headline`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `tb_home`
 --
 ALTER TABLE `tb_home`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `tb_hospital`
 --
 ALTER TABLE `tb_hospital`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `tb_insurance`
 --
 ALTER TABLE `tb_insurance`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `tb_insurance_content`
 --
 ALTER TABLE `tb_insurance_content`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `tb_insurance_how`
 --
 ALTER TABLE `tb_insurance_how`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `tb_insurance_package`
 --
 ALTER TABLE `tb_insurance_package`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `tb_log`
 --
 ALTER TABLE `tb_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tb_news`
 --
 ALTER TABLE `tb_news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `tb_news_category`
 --
 ALTER TABLE `tb_news_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `tb_plan`
 --
 ALTER TABLE `tb_plan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `tb_plan_package`
 --
 ALTER TABLE `tb_plan_package`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `tb_province`
 --
 ALTER TABLE `tb_province`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
-
 --
 -- AUTO_INCREMENT for table `tb_review`
 --
 ALTER TABLE `tb_review`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
