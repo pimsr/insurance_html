@@ -1,51 +1,69 @@
 <?php
-$lang['home'] 		= 'Home';
-$lang['about'] 		= 'About us';
-$lang['menu']       = 'Our menu';
-$lang['catering'] 	= 'Catering';
-$lang['wholesale'] 	= 'Wholesale';
-$lang['workshop'] 	= 'Workshop';
-$lang['contact'] 	= 'Contact us';
-$lang['terms'] 	    = 'Terms of use';
-$lang['privacy'] 	= 'Privacy policy';
-
-$lang['login'] = 'L<span>OGIN</span>';
-$lang['register'] = '/ R<span>EGISTER</span>';
-$lang['order_now'] = 'ORDER NOW';
-$lang['follow_us'] = 'follow us';
-
-$lang['select'] = 'AVAILABLE';
-$lang['bath'] = 'THB';
-
-$lang['popup1'] = 'WOULD YOU LIKE TO BUY A PIECE OF CAKE OR MIX OF 12 PIECES?';
-$lang['popup2'] = 'buy a piece';
-$lang['popup3'] = 'promotion buy 10 free 2';
-
-$lang['gallery'] = 'GALLERY';
-$lang['show_more'] = 'SHOW MORE';
-
-$lang['name'] = 'NAME';
-$lang['tel'] = 'Telephone';
-$lang['location'] = 'CATERING LOCATION';
+$lang['home'] = 'Home';
+$lang['insurance_kids'] = 'Insurance';
+$lang['insurance_page'] = 'All Insurance';
+$lang['hospital'] = 'Hospital';
+$lang['momandkids'] = 'Mom And Kids';
+$lang['plan'] = 'Education Plan';
+$lang['contact'] = 'Contact us';
+$lang['readmore'] = 'read more';
+$lang['readall'] = 'All Mom And Kids';
+$lang['contactyou'] = 'Let Us Contact You';
+$lang['yourname'] = 'Name';
+$lang['bd'] = "Kid's Birthday";
 $lang['email'] = 'Email';
-$lang['number'] = 'Number of guests';
-$lang['service'] = 'SERVICE TYPE';
-$lang['choose'] = 'CHOOSE SERVICE TYPE';
-$lang['other'] = 'Other query';
-$lang['send'] = 'send';
-$lang['thx_contact'] = 'Thank you for contact us.';
-$lang['cafe_name'] = 'CAFE/RESTAURANT NAME';
-$lang['interest'] = 'Interested services';
-$lang['interest_choose'] = 'CHOOSE Interested services';
-$lang['subject'] = 'SUBJECT';
-$lang['msg'] = 'MESSAGE';
+$lang['select_insurance'] = 'Select Insurance';
+$lang['tel'] = 'Telephone';
+$lang['review_form_customer'] = 'Reviews From Customer';
+$lang['link_fb'] = 'Facebook';
+$lang['link_line'] = 'ประกันลูก';
+$lang['detail'] = 'Detail';
 
-$lang['our_client'] = 'OUR CLIENT';
-$lang['ask'] = 'ASK FOR WHOLESALE PRICE';
+$lang['footer_info'] = 'ครบจบในที่เดียวเรื่องวางแผนประกันสุขภาพให้ลูก หมดปัญหาเรื่องรอข้อมูลเพื่อเปรียบเทียบราคา และปัญหาบริการหลังการขาย เพราะเราคือที่ปรึกษามืออาชีพ';
+$lang['footer_menu1'] = 'ผ่อนหนักให้เป็นเบา';
+$lang['footer_menu2'] = 'เบากระเป๋า';
+$lang['footer_menu3'] = 'เบาใจเหมาจ่าย';
+$lang['footer_menu4'] = 'เบี้ยไม่ทิ้ง';
+$lang['footer_menu5'] = 'ตัวแทน เอ ไอ เอ';
+$lang['footer_menu5'] = 'ตัวแทน ไทยประกันชีวิต';
+$lang['footer_menu5'] = 'ตัวแทน พรูเดนเชียล';
 
-$lang['workshop_comming'] = 'UPCOMING WORKSHOP';
-$lang['price'] = 'PRICE';
-$lang['register_now'] = 'Register now';
+$lang['all_insurance'] = 'Insurance';
+$lang['more_detail'] = 'More Detail';
+$lang['why_insurance'] = 'WHY CHOOSE US';
 
-$lang['our_shop'] = 'OUR SHOPS';
+$lang['search_hospital'] = 'Search Hospital';
+$lang['search_filter'] = 'Fillter';
+$lang['all'] = 'All';
+$lang['website'] = 'Website';
+
+$lang['search_news'] = 'Search ';
+$lang['search'] = 'Search';
+$lang['cate_news'] = 'Categories';
+$lang['recent_news'] = 'Recent';
+$lang['relate_news'] = 'Related articles';
+$lang['ads'] = 'Advertising';
+
+$lang['package'] = 'Package';
+
+$lang['service'] = 'Services';
+$lang['address'] = 'Address';
+$lang['time'] = 'Office Hours';
+$lang['contact_'] = 'ติดต่อเรื่องเคลม';
+$lang['view_info'] = 'ดูข้อมูลการเคลม';
+$lang['contact'] = 'Contact Us';
+
+$lang['name'] = 'Name-Surname';
+$lang['topic'] = 'Topic**';
+$lang['idcard'] = 'ID Card*';
+$lang['id_insurance'] = 'Policy number';
+$lang['messages'] = 'Messages';
+$lang['sent'] = 'Send';
+
+$lang['shortcut'] = 'Shortcut';
+$lang['agent'] = 'Our Agent';
+
+$lang['next'] = 'next';
+$lang['prev'] = 'prev';
+
 ?>

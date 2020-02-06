@@ -53,35 +53,35 @@
   </section>
   <section id="home-contact" class="content-p-top bg-gray content-p-bottom home-contact-inner">
       <div class="container  ">
-          <h3 class="title color-violet2"><img draggable="false" class="emoji" alt="" src="{{ link_img }}icon/phone-contact.png"> ให้เราติดต่อคุณ</h3>
+          <h3 class="title color-violet2"><img draggable="false" class="emoji" alt="" src="{{ link_img }}icon/phone-contact.png"> {{ label('contactyou') }}</h3>
           <form class="row mt-5 contact-position"  action="{{ base_url('contact/sendMsgKids') }}" method="post">
               <div class="col-md-12 col-xl-6">
                   <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input class="form-custom" type="text" name="name" placeholder="ชื่อของคุณ">
+                              <input class="form-custom" type="text" name="name" placeholder="{{ label('yourname') }}">
                           </div>
                            <div class="form-group">
-                              <input class="form-custom" type="email" name="email" placeholder="อีเมล์">
+                              <input class="form-custom" type="email" name="email" placeholder="{{ label('email') }}">
                           </div>
                            <div class="form-group">
-                              <input class="form-custom" type="text" name="tel" placeholder="เบอร์โทรศัพท์">
+                              <input class="form-custom" type="text" name="tel" placeholder="{{ label('tel') }}">
                           </div>
                       </div>
                       <div class="col-md-6">
                            <div class="form-group">
-                              <input id="datepicker" class="form-custom" type="text" name="date" placeholder="วันเกิดลูก*">
+                              <input id="datepicker" class="form-custom" type="text" name="date" placeholder="{{ label('bd') }}">
                           </div>
                           <div class="form-group select-wrapper">
                               <select class="form-custom" name="insurance_id">
-                                <option value="" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                <option value="" disabled selected>{{ label('select_insurance') }}</option>
                                 {% for value in nav.insurance %}
                                 <option value="{{ value.id }}">{{ attribute(value, 'title_'~lang) }}</option>
                                 {% endfor %}
                               </select>
                           </div>
                           <div class="form-group d-center">
-                              <button type="submit" class="btn btn-violet">ส่งข้อมูล   </button>
+                              <button type="submit" class="btn btn-violet">{{ label('sent') }}</button>
                           </div>
                       </div>
                   </div>
@@ -96,7 +96,7 @@
       <div class="container">
           
           <div class="">
-              <h3 class="title color-violet2 text-center">แพ็คเกจวางแผนการศึกษา</h3>
+              <h3 class="title color-violet2 text-center">{{ label('package') }}{{ label('plan') }}</h3>
 
               <div class="list-head pt-5">
                 <div class="owl-carousel owl-theme">

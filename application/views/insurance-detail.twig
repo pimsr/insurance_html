@@ -62,7 +62,7 @@
                               <input class="form-custom" type="text" name="name" placeholder="ชื่อของคุณ">
                           </div>
                            <div class="form-group">
-                              <input class="form-custom" type="email" name="email" placeholder="อีเมล์">
+                              <input class="form-custom" type="email" name="email" placeholder="อีเมล">
                           </div>
                            <div class="form-group">
                               <input class="form-custom" type="text" name="tel" placeholder="เบอร์โทรศัพท์">
@@ -94,19 +94,39 @@
   <section class="content-p-top">
       <div class="container">
           <div class="">
-              <h3 class="title color-violet2 text-center">แพ็คเกจ{{ attribute(data, 'title_'~lang) }}</h3>
+              {% if data.package %}
+              <h3 class="title color-violet2 text-center">{{ label('package') }}{{ attribute(data, 'title_'~lang) }}</h3>
 
               <div class="list-head pt-5">
-                <div class="owl-carousel owl-theme">
-                    {% for key, value in data.package %}
-                    <div class="item tabs"><a class="btn btn-violet {{ key == 0 ? 'activelink' : '' }}" href="javascript:void();" data-tag="pack{{ key }}">{{ attribute(value, 'title_'~lang) }}</a></div>
-                    {% endfor %}
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">
+                        <div class="form-group select-wrapper p">
+                            <select class="form-custom package " name="package">
+                                <option value="0">เลือกบริษัทประกัน</option>
+                                {% for value in package %}
+                                    <option value="{{value.id}}">{{ attribute(value, 'name_'~lang) }}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="hidden" name="id_cate" class="id_cate" value="{{id_cate}}" >
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-md-9">
+                        <div class="owl-carousel owl-theme">
+                    
+                            {% for key, value in data.package %}
+                                <div class="item tabs"><a class="btn btn-violet {{ key == 0 ? 'activelink' : '' }}" href="javascript:void(0);" data-tag="pack{{ value.id }}">{{ attribute(value, 'title_'~lang) }}</a></div>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
+                
+                
               </div>
               
               <div class="list-content">
                 {% for key, value in data.package %}
-                <div class="list box-list" id="pack{{ key }}">
+                
+                <div class="list box-list" id="pack{{ value.id }}">
                   <div class="table-group">
                     <div class="table-responsive">
                       {% autoescape %}
@@ -117,6 +137,7 @@
                 </div>
                 {% endfor %}
               </div>
+              {% endif %}
           </div>
       </div>
       
@@ -125,34 +146,99 @@
 
 {% block js %}
   <script>
-      //  insurance
-      $('.owl-carousel').owlCarousel({
-          margin:10,
-          responsive:{
-              0:{
-                  items:2
-              },
-              600:{
-                  items:3
-              },
-              1200:{
-                  items:5
-              }
-          }
-      });
+        //  insurance
+        $('.owl-carousel').owlCarousel({
+            margin:20,
+            responsive:{
+                0:{
+                    items:2
+                },
+                600:{
+                    items:2
+                },
+                1200:{
+                    items:3
+                }
+            }
+        });
+            $('.box-list').hide();
+            $('.box-list:first-child').show();
+            
+      
+            $(document).on('click', '.tabs a', function()
+            {
+                var tagid = $(this).data('tag');
+                $('.tabs a').removeClass('activelink');
+                $(this).addClass('activelink');
+                $( '.box-list' ).slideUp( 'slow', function() {
+                    $(this).removeClass('active').addClass('hide');
+                });
+                $( '#'+tagid ).slideDown( 'slow', function() {
+                    $(this).addClass('active').removeClass('hide');
+                });
+            });
+  
 
-      $(document).ready(function(){
-          $('.tabs a').click(function(){
-              var tagid = $(this).data('tag');
-              $('.tabs a').removeClass('activelink');
-              $(this).addClass('activelink');
-              $( '.box-list' ).slideUp( 'slow', function() {
-                $(this).removeClass('active').addClass('hide');
-              });
-              $( '#'+tagid ).slideDown( 'slow', function() {
-                $(this).addClass('active').removeClass('hide');
-              });
-          });
-      });
+        $('.package').on('change', function(e)
+        {	
+            
+            e.preventDefault();
+            
+            var _self = $(this.form);
+            
+            var data = {
+                'package': $(this).val(),
+                'id_cate' : $('.id_cate').val(),
+            };
+
+            $.ajax({
+                url: '{{ base_url() }}'+'info/fillter',
+                type: 'post',
+                data:  data,
+               
+            }).done(function (res)
+            {    
+                
+                var fillter = JSON.parse(res);
+                console.log(fillter);
+                $('.owl-carousel').html("");
+                for (i = 0; i < fillter.package.length; i++) {
+                    
+                    if(fillter.lang == 'th'){
+                        $('.owl-carousel').append(' <div class="item tabs"><a class="btn btn-violet " href="javascript:void(0);" data-tag="pack'+fillter.package[i].id+'">'+fillter.package[i].title_th+'</a></div>');
+                    }else{
+                        $('.owl-carousel').append(' <div class="item tabs"><a class="btn btn-violet " href="javascript:void(0);" data-tag="pack'+fillter.package[i].id+'">'+fillter.package[i].title_en+'</a></div>')
+                    }
+                   
+                }
+                $('.owl-carousel').owlCarousel('destroy');
+                $('.owl-carousel').owlCarousel({
+                    margin:10,
+                    responsive:{
+                        0:{
+                            items:2
+                        },
+                        600:{
+                            items:2
+                        },
+                        1200:{
+                            items:3
+                        }
+                    }
+                });
+
+                $('.owl-carousel .owl-item:first-child  a').addClass('activelink');
+
+                $test  =  $('.owl-carousel .owl-item:first-child  a').attr('data-tag');
+
+                $('.list-content .box-list').hide();
+                $('.list-content #'+$test).show();
+
+            });
+        }); 
+
+
   </script>
+
+    
 {% endblock %}

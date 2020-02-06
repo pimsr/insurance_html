@@ -1,51 +1,69 @@
 <?php
 $lang['home'] = 'หน้าแรก';
-$lang['about'] = 'เกี่ยวกับเรา';
-$lang['menu'] = 'เมนู';
-$lang['catering'] = 'การจัดเลี้ยง';
-$lang['wholesale'] = 'ขายส่ง';
-$lang['workshop'] = 'ทำเค้กเอง';
+$lang['insurance_kids'] = 'ประกันสุขภาพลูก';
+$lang['insurance_page'] = 'หน้ารวมประกัน';
+$lang['hospital'] = 'โรงพยาบาลลูก';
+$lang['momandkids'] = 'แม่และลูก';
+$lang['plan'] = 'วางแผนการศึกษา';
 $lang['contact'] = 'ติดต่อเรา';
-$lang['terms'] = 'ข้อกำหนดในการให้บริการ';
-$lang['privacy'] = 'นโยบายความเป็นส่วนตัว';
-
-$lang['login'] = 'เข้า<span>สู่ระบบ</span>';
-$lang['register'] = '/ ส<span>มัคร</span>';
-$lang['order_now'] = 'สั่งสินค้า';
-$lang['follow_us'] = 'สามารถติดต่อได้ที่';
-
-$lang['select'] = 'เลือก';
-$lang['bath'] = 'บาท';
-
-$lang['popup1'] = 'คุณต้องการซื้อแบบเป็นชิ้นเดียว หรือ ผสม 12 ชิ้น ?';
-$lang['popup2'] = 'ซื้อชิ้นเดียว';
-$lang['popup3'] = 'ผสม 12 ชิ้น';
-
-$lang['gallery'] = 'แกลลอรี่';
-$lang['show_more'] = 'เพิ่มเติม';
-
-$lang['name'] = 'ชื่อ';
-$lang['tel'] = 'เบอร์โทร';
-$lang['location'] = 'สถานที่';
+$lang['readmore'] = 'อ่านเพิ่ม';
+$lang['readall'] = 'ดูข่าวทั้งหมด';
+$lang['contactyou'] = 'ให้เราติดต่อคุณ';
+$lang['yourname'] = 'ชื่อของคุณ';
+$lang['bd'] = 'วันเกิดลูก';
 $lang['email'] = 'อีเมล';
-$lang['number'] = 'จำนวนคน';
-$lang['service'] = 'ประเภทบริการ';
-$lang['choose'] = 'เลือกประเภท';
-$lang['other'] = 'อื่นๆ';
-$lang['send'] = 'ส่ง';
-$lang['thx_contact'] = 'ขอขอบคุณสำหรับการติดต่อ';
-$lang['cafe_name'] = 'ชื่อร้าน';
-$lang['interest'] = 'บริการที่สนใจ';
-$lang['interest_choose'] = 'เลือกบริการที่สนใจ';
-$lang['subject'] = 'หัวข้อ';
-$lang['msg'] = 'ข้อความ';
+$lang['select_insurance'] = 'เลือกประเภทประกันที่สนใจ*';
+$lang['tel'] = 'เบอร์โทรศัพท์';
+$lang['review_form_customer'] = 'รีวิวจากลูกค้า';
+$lang['link_fb'] = 'เฟสบุ๊ค';
+$lang['link_line'] = 'ประกันลูก';
+$lang['detail'] = 'ดูรายละเอียด';
 
-$lang['our_client'] = 'ลูกค้าของเรา';
-$lang['ask'] = 'ขอราคาขายส่ง';
+$lang['footer_info'] = 'ครบจบในที่เดียวเรื่องวางแผนประกันสุขภาพให้ลูก หมดปัญหาเรื่องรอข้อมูลเพื่อเปรียบเทียบราคา และปัญหาบริการหลังการขาย เพราะเราคือที่ปรึกษามืออาชีพ';
+$lang['footer_menu1'] = 'ผ่อนหนักให้เป็นเบา';
+$lang['footer_menu2'] = 'เบากระเป๋า';
+$lang['footer_menu3'] = 'เบาใจเหมาจ่าย';
+$lang['footer_menu4'] = 'เบี้ยไม่ทิ้ง';
+$lang['footer_menu5'] = 'ตัวแทน เอ ไอ เอ';
+$lang['footer_menu5'] = 'ตัวแทน ไทยประกันชีวิต';
+$lang['footer_menu5'] = 'ตัวแทน พรูเดนเชียล';
 
-$lang['workshop_comming'] = 'ทำเค้กเอง';
-$lang['price'] = 'ราคา';
-$lang['register_now'] = 'สมัครตอนนี้';
+$lang['all_insurance'] = 'ประกันสุขภาพลูกทั้งหมด';
+$lang['more_detail'] = 'ดูรายละเอียด';
+$lang['why_insurance'] = 'ทำไมต้องเลือกประกันลูก';
 
-$lang['our_shop'] = 'สาขา';
+$lang['search_hospital'] = 'ค้นหาโรงพยาบาล';
+$lang['search_filter'] = 'จังหวัด';
+$lang['all'] = 'ทังหมด';
+$lang['website'] = 'เข้าเว็บไซต์';
+
+$lang['search_news'] = 'ค้นหาบทความ';
+$lang['search'] = 'ค้นหา';
+$lang['cate_news'] = 'หมวดหมู่บทความ';
+$lang['recent_news'] = 'บทความล่าสุด';
+$lang['relate_news'] = 'บทความที่เกี่ยวข้อง';
+$lang['ads'] = 'โฆษณา';
+
+$lang['package'] = 'แพ็คเกจ';
+
+$lang['service'] = 'บริการลูกค้า';
+$lang['address'] = 'ที่อยู่บริษัท';
+$lang['time'] = 'เวลาทำการ';
+$lang['contact_'] = 'ติดต่อเรื่องเคลม';
+$lang['view_info'] = 'ดูข้อมูลการเคลม';
+$lang['contact'] = 'ติดต่อประกันลูก';
+
+$lang['name'] = 'ชื่อ-นามสกุล';
+$lang['topic'] = 'เรื่องที่ต้องการสอบถาม**';
+$lang['idcard'] = 'เลขบัตรประชาชน*';
+$lang['id_insurance'] = 'เลขที่กรมธรรม์';
+$lang['sent'] = 'ส่งข้อมูล';
+$lang['messages'] = 'ข้อความ...';
+
+$lang['shortcut'] = 'เมนูลัด';
+$lang['agent'] = 'ตัวแทนของเรา';
+
+$lang['next'] = 'ถัดไป';
+$lang['prev'] = 'ย้อนกลับ';
+
 ?>

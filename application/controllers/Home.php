@@ -6,6 +6,8 @@ class Home extends MY_Controller {
 		parent::__construct();
 		$this->load->model('main_model');
 		$this->load->model('home_model');
+		$this->load->model('momandkids_model');
+		$this->load->model('info_model');
 	}
 	public function index()
 	{
@@ -22,6 +24,10 @@ class Home extends MY_Controller {
 		$data['dotcom_headline'] = $this->main_model->selectHeadline('dotcom');
 		$data['dotcom'] = $this->home_model->selectHome();
 		$data['review'] = $this->home_model->selectReview();
+		$data['news_lastest'] = $this->momandkids_model->selectNewsLastest(3);
+		$data['info'] = $this->info_model->selectInsurance();
+		$data['insur_img'] = $this->info_model->selectInsuranceImg();
+		
 		$this->twig->display('@f/home', $data);
 	}
 }

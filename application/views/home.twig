@@ -17,7 +17,7 @@
                 <div class="carousel-caption d-none d-md-block">
                     <h5>{{ attribute(value,'title_'~lang) }}</h5>
                     <p>{{ attribute(value,'subtitle_'~lang) }}</p>
-                    {% if value.link %}<a class="btn btn-violet" href="{{ value.link }}">ดูรายละเอียด</a>{% endif %}
+                    {% if value.link %}<a class="btn btn-violet" href="{{ value.link }}">{{ label('detail') }}</a>{% endif %}
                 </div>
             </div>
             {% endfor %}
@@ -73,60 +73,42 @@
         <div class="row d-flex">
             
             <div class="col-12 col-sm-12 col-md-6 order-1">
-                <h3 class="title color-violet2">ประกันสุขภาพลูก</h3>
+                <h3 class="title color-violet2">{{ label('insurance_kids') }}</h3>
 
                 <div class="row service2 text-center">
-                    <div class="col">
-                            <div class="list_ active">
-                            <a href="#">
-                                <div class="icon icon1 "></div>
-                                <h4>ผ่อนหนักให้เป็นเบา</h4>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list_">
-                            <a href="#">
-                                <div class="icon icon2"></div>
-                                <h4>เบากระเป๋า</h4>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list_">
-                            <a href="#">
-                                <div class="icon icon3"></div>
-                                <h4>เบาใจเหมาจ่าย</h4>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="list_">
-                            <a href="#">
-                                <div class="icon icon4"></div>
-                                <h4>เบี้ยไม่ทิ้ง</h4>
-                            </a>
-                        </div>
-                    </div>
+                    {% if info %}
+                        {% for key, value in info %}
+                            <div class="col">
+                                    <div class="list_ active">
+                                    <div class="s-list " id="s-list{{key+1}}" >
+                                        <div class="icon icon1" style=" background-image: url('{{ base_url('upload/thumb/insurance/')~value.icon }}') "></div>
+                                        <h4>{{ attribute(value,'title_'~lang) }}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
+                {% if info %}
+                        {% for key, value in info %}
 
-                <div class="service-content">
-                    <p>
-                        ยามที่ลูกยังเล็ก สิ่งที่เรากังวลมากที่สุดอย่างหนึ่งคือ การเจ็บป่วย และอุบัติเหตุ และไม่ว่าใครก็ไม่สามารถเนรมิตโลกของลูกน้อยให้ปลอดภัยได้อย่างสมบูรณ์แบบ
+                    <div class="service-content s-list{{key+1}} ">
+                        {{ attribute(value,'caption_'~lang) }}
+                        <p class="color-violet2">{{ attribute(value,'note_'~lang) }}</p>
 
-                    </p>
-                    <p>
-                        ประกันสุขภาพผ่อนหนักให้เป็นเบา  จะบรรเทาภาระค่ารักษาพยาบาลและรายได้ที่หายไป เพื่อให้พ่อแม่มีเวลาดูแลลูกน้อยได้อย่างเต็มที่ ด้วยการคำนวณผลประโยชน์แบบวงเงินคุ้มครองที่เลือกได้
+                        <div class="d-center"><a class="btn btn-violet" href="{{ base_url('info/detail/')~value.id }}">ดูรายละเอียด</a></div>
+                    </div>
 
-                    </p>
-                    <p class="color-violet2">- เหมาะสำหรับลูกรักที่เริ่มทำประกันครั้งแรกตั้งแต่อายุ 0 - 5 ปี</p>
-
-                    <div class="d-center"><a class="btn btn-violet" href="#">ดูรายละเอียด</a></div>
-                </div>
+                    {% endfor %}
+                {% endif %}
 
             </div>
+
             <div class="col-12 col-sm-12 col-md-6 order-2">
-                <img class="img-fluid" src="{{ link_img }}img-service.png" alt="img15"/>
+                {% for key, value in insur_img %}
+                    {% set img = trim(value.img) == '' ?  link_img~'default/dotcom.png' : base_url('upload/fullsize/insurance/')~value.img %}
+                    <img class="img-fluid s-list{{key+1}}" src="{{ img }}" alt="img15"/>
+                 {% endfor %}
             </div>
         </div>
     </div>
@@ -135,64 +117,35 @@
 
 <section id="news" class="content-p-top content-p-bottom ">
     <div class="container text-center">
-        <h3 class="title color-violet2">ข่าวสาร และ กิจกรรม</h3>
+        <h3 class="title color-violet2">{{ label('momandkids') }}</h3>
 
         <div class="news-wrapper mt-4 row">
+            {% for value in news_lastest %}
             <div class="col-12 col-md-4 col-xl-4">
                 <div class="card" >
                     <div class="card-img">
-                        <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
+                        <a href="{{ base_url('momandkids/detail/')~value.id }}">
+                        <img class="card-img-top" src="{{ base_url('upload/fullsize/news/')~value.img }}" alt="Card image cap">
                         <div class="news-date">
-                            <div> 07 <br> ม.ค</div>
+                            <div> {{ value.date|date('d') }} <br> {{ value.date|date('F') }}</div>
                         </div>
+                        </a>
                     </div>
                     <div class="card-body text-left">
-                    <a href="{{ base_url('momandkids/detail') }}">
-                            <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                            <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                            <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
+                    <a href="{{ base_url('momandkids/detail/')~value.id }}">
+                        <h5 class="card-title">{{ attribute(value,'title_'~lang)|slice(0, 40) ~ '...' }}</h5>
+                        <p class="card-text">{{ attribute(value,'caption_'~lang)|slice(0, 40) ~ '...' }}</p>
+                        <p class="color-violet2">{{ label('readmore') }} <img src="{{ link_img }}icon/icon-right.png"></p>
                     </a>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-4 col-xl-4">
-                <div class="card" >
-                    <div class="card-img">
-                        <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
-                        <div class="news-date">
-                            <div> 10 <br> ม.ค</div>
-                        </div>
-                    </div>
-                    <div class="card-body text-left">
-                    <a href="{{ base_url('momandkids/detail') }}">
-                            <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                            <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                            <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
-                    </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 col-xl-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
-                        <div class="news-date">
-                            <div> 11 <br> ม.ค</div>
-                        </div>
-                    </div>
-                    <div class="card-body text-left">
-                    <a href="{{ base_url('momandkids/detail') }}">
-                            <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                            <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                            <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
-                    </a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+           
         </div>
 
         <div class="text-center load-more">
-            <a class="btn btn-violet" href="{{ base_url('momandkids') }}">ดูข่าวทั้งหมด</a>
+            <a class="btn btn-violet" href="{{ base_url('momandkids') }}">{{ label('readall') }}</a>
         </div>
     </div>
 </section>
@@ -200,35 +153,35 @@
 
 <section id="home-contact" class="content-p-top bg-gray content-p-bottom home-contact-inner">
     <div class="container  ">
-        <h3 class="title color-violet2"><img draggable="false" class="emoji" alt="" src="{{ link_img }}icon/phone-contact.png"> ให้เราติดต่อคุณ</h3>
+        <h3 class="title color-violet2"><img draggable="false" class="emoji" alt="" src="{{ link_img }}icon/phone-contact.png"> {{ label('contactyou') }}</h3>
         <form class="row mt-5 contact-position"  action="{{ base_url('contact/sendMsgKids') }}" method="post">
               <div class="col-md-12 col-xl-6">
                   <div class="row">
                       <div class="col-md-6">
                           <div class="form-group">
-                              <input class="form-custom" type="text" name="name" placeholder="ชื่อของคุณ">
+                              <input class="form-custom" type="text" name="name" placeholder="{{ label('yourname') }}">
                           </div>
                            <div class="form-group">
-                              <input class="form-custom" type="email" name="email" placeholder="อีเมล์">
+                              <input class="form-custom" type="email" name="email" placeholder="{{ label('email') }}">
                           </div>
                            <div class="form-group">
-                              <input class="form-custom" type="text" name="tel" placeholder="เบอร์โทรศัพท์">
+                              <input class="form-custom" type="text" name="tel" placeholder="{{ label('tel') }}">
                           </div>
                       </div>
                       <div class="col-md-6">
                            <div class="form-group">
-                              <input id="datepicker" class="form-custom" type="text" name="date" placeholder="วันเกิดลูก*">
+                              <input id="datepicker" class="form-custom" type="text" name="date" placeholder="{{ label('bd') }}">
                           </div>
                           <div class="form-group select-wrapper">
                               <select class="form-custom" name="insurance_id">
-                                <option value="" disabled selected>เลือกประเภทประกันที่สนใจ*</option>
+                                <option value="" disabled selected>{{ label('select_insurance') }}</option>
                                 {% for value in nav.insurance %}
                                 <option value="{{ value.id }}">{{ attribute(value, 'title_'~lang) }}</option>
                                 {% endfor %}
                               </select>
                           </div>
                           <div class="form-group d-center">
-                              <button type="submit" class="btn btn-violet">ส่งข้อมูล   </button>
+                              <button type="submit" class="btn btn-violet">{{ label('sent') }}</button>
                           </div>
                       </div>
                   </div>
@@ -241,11 +194,12 @@
 
 <section id="home-reviews" class="content-p-top content-p-bottom ">
     <div class="container text-center">
-        <h3 class="title color-violet2">รีวิวจากลูกค้า</h3>
+        <h3 class="title color-violet2">{{ label('review_form_customer') }}</h3>
 
         
         <div class="owl-carousel owl-theme mt-5">
             {% for key, value in review %}
+           
             {% set img = trim(value.img) == '' ?  link_img~'default/review.png' : link_review~value.img %}
             <div class="item">
                 <div class="card" >
@@ -271,9 +225,11 @@
 <script>
     (function(){
         $('.owl-carousel').owlCarousel({
-            loop:true,
+            /*loop:true,*/
+            autoplay:true,
             margin:10,
-
+            dots: true,
+            nav: false,
             responsive:{
                 0:{
                     items:1
@@ -291,6 +247,21 @@
             var index = $(this).index();
             $('#content .dotcom-img img').hide().eq(index).fadeIn(300);
             $('#content .home-services li').removeClass('active').eq(index).addClass('active');
+        });
+
+        $('.service-content').hide();
+        $('.order-2 img').hide();
+        $('.s-list1').show();
+        $('.order-2 img.s-list1').show();
+        $('#service2 .list_ .s-list ').click(function(){
+
+        $('.service-content').hide();
+        $('.order-2 img').hide();
+        var index2 = $(this).attr('id');
+        
+
+        $("."+index2).show();
+
         });
     })();
 </script>

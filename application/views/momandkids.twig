@@ -4,200 +4,113 @@
  	<section class="banner" style="background-image: url('{{ link_img }}banner-main3.png');">
  		<div class="banner-caption">
  			<h2>แม่และลูก</h2>
+       {% if title_cate %}
+          <h3>{{ attribute(title_cate,'name_'~lang)  }}</h3>
+       {% endif %}
  		</div>
  		<div class="overlay"></div>
  	</section>
   <section id="news" class="content-p-top">
         <div class="container">
+        
           <div class="row d-flex">
+          
             <div class="col-md-8 news-wrapper order-2">
+                
                 <div class="row">
+                  {% for value in results %}
                   <div class="col-md-6">
-                    <div class="card" >
+                    <div class="card"  data-filter="{{ attribute(value, 'title_'~lang) }}" >
                         <div class="card-img">
-                            <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
+                        <a href="{{ base_url('momandkids/detail/')~value.id }}">
+                            <img class="card-img-top" src="{{ base_url('upload/fullsize/news/')~value.img }}" alt="Card image cap">
                             <div class="news-date">
-                               <div> 07 <br> ม.ค</div>
+                               <div> {{ value.date|date('d') }} <br> {{ value.date|date('F') }} </div>
                             </div>
+                        </a>
                         </div>
                         <div class="card-body text-left">
-                            <a href="{{ base_url('momandkids/detail') }}">
-                                 <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                                 <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                                 <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
+                            <a href="{{ base_url('momandkids/detail/')~value.id }}">
+                                 <h5 class="card-title">{{ attribute(value,'title_'~lang)  }}</h5>
+                                 <p class="card-text">{{ attribute(value,'caption_'~lang)|slice(0, 120) ~ '...' }}</p>
+                                 <p class="color-violet2">{{ label('readmore') }} <img src="{{ link_img }}icon/icon-right.png"></p>
                             </a>
                           </div>
                       </div>
                   </div>
+                  {% endfor %}
 
-                  <div class="col-md-6">
-                    <div class="card" >
-                        <div class="card-img">
-                            <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
-                            <div class="news-date">
-                               <div> 07 <br> ม.ค</div>
-                            </div>
-                        </div>
-                        <div class="card-body text-left">
-                            <a href="{{ base_url('momandkids/detail') }}">
-                                 <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                                 <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                                 <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
-                            </a>
-                          </div>
-                      </div>
-                  </div>
 
-                  <div class="col-md-6">
-                    <div class="card" >
-                        <div class="card-img">
-                            <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
-                            <div class="news-date">
-                               <div> 07 <br> ม.ค</div>
-                            </div>
-                        </div>
-                        <div class="card-body text-left">
-                          <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                          <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                          <a href="{{ base_url('momandkids/detail') }}" class="">อ่านเพิ่ม</a>
-                        </div>
-                      </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card" >
-                        <div class="card-img">
-                            <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
-                            <div class="news-date">
-                               <div> 07 <br> ม.ค</div>
-                            </div>
-                        </div>
-                        <div class="card-body text-left">
-                            <a href="{{ base_url('momandkids/detail') }}">
-                                 <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                                 <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                                 <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
-                            </a>
-                          </div>
-                      </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="card" >
-                        <div class="card-img">
-                            <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
-                            <div class="news-date">
-                               <div> 07 <br> ม.ค</div>
-                            </div>
-                        </div>
-                        <div class="card-body text-left">
-                            <a href="{{ base_url('momandkids/detail') }}">
-                                 <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                                 <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                                 <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
-                            </a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="card" >
-                        <div class="card-img">
-                            <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
-                            <div class="news-date">
-                               <div> 07 <br> ม.ค</div>
-                            </div>
-                        </div>
-                        <div class="card-body text-left">
-                            <a href="{{ base_url('momandkids/detail') }}">
-                                 <h5 class="card-title">โลเล็ม อิปซัม (lorem ipsum)</h5>
-                                 <p class="card-text">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง สำหรับการแสดงลักษณะของ ฟอนต์ การพิมพ์และการจัดหน้า ข้อความโลเร็ม ...</p>
-                                 <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
-                            </a>
-                          </div>
-                      </div>
-                  </div>
                 </div>
-
+                {% if pagination %}
                 <div class="row news-result mt-4">
                   <div class="col">
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination">
-                        <li class="page-item disabled">
-                          <a class="page-link" href="#" tabindex="-1">ย้อนกลับ</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item active"><a class="page-link " href="#">3</a></li>
-                        <li class="page-item">
-                          <a class="page-link" href="#">ถัดไป <img src="{{ link_img }}icon/icon-right.png"></a>
-                        </li>
-                      </ul>
-                    </nav>
+                                   
+                      {{pagination|raw}}
+                
                   </div>
-                  <div class="col text-right"><span>Page 1 of 60 results</span></div>
+                  <div class="col text-right"><span>Page {{ link }} of {{ all|number_format }} results</span></div>
                 </div>
+                 {% endif %}
+
+                 
             </div><!-- right -->
             <div class="col-md-4 order-1 c-left">
                 <div class="news-group">
                   <div class="title line">
-                    <h5 class="color-violet2">ค้นหาบทความ</h5>
-                    <input type="text" class="form-custom search" id="" placeholder="ค้นหาโรงพยาบาล">
+                    <h5 class="color-violet2">{{ label('search_news') }}</h5>
+                    <form id="input-filter" method="post" action="{{ base_url('momandkids/search') }} ">
+                      {# <input name="keyword" type="text" class="form-custom search" id="input-filter" placeholder="ค้นหาบทความ"> #}
+
+                      <div class="input-group mb-3">
+                        <input name="keyword" type="text" class="form-control form-custom search"  placeholder="{{ label('search_news') }}" aria-label="ค้นหาบทความ" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="click">{{ label('search') }}</button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div><!-- news-group -->
 
                 <div class="news-group">
                   <div class="title line">
-                    <h5 class="color-violet2">หมวดหมู่บทความ</h5>
+                    <h5 class="color-violet2">{{ label('cate_news') }}</h5>
                   </div>
-
+              
                   <div>
+                    {% for key, value in cate %}
+                      <p><a href="{{ base_url('momandkids/category/')~value.id }}"> {{ attribute(value,'name_'~lang) }}<span class="color-violet2 float-right">({{value.total}})</span></a></p>
+                    {% endfor %}
+                    {# <p><a href="#">โลเล็ม อิปซัม. <span class="color-violet2 float-right">(07)</span></a></p>
                     <p><a href="#">โลเล็ม อิปซัม. <span class="color-violet2 float-right">(07)</span></a></p>
-                    <p><a href="#">โลเล็ม อิปซัม. <span class="color-violet2 float-right">(07)</span></a></p>
-                    <p><a href="#">โลเล็ม อิปซัม. <span class="color-violet2 float-right">(07)</span></a></p>
-                    <p><a href="#">โลเล็ม อิปซัม. <span class="color-violet2 float-right">(07)</span></a></p>
+                    <p><a href="#">โลเล็ม อิปซัม. <span class="color-violet2 float-right">(07)</span></a></p> #}
                   </div>
                 </div><!-- news-group -->
 
                 <div class="news-group">
                   <div class="title line">
-                    <h5 class="color-violet2">บทความล่าสุด</h5>
+                    <h5 class="color-violet2">{{ label('recent_news') }}</h5>
                   </div>
-
+                  {% for value in news_lastest %}
                   <div class="news-recent">
                     <div class="media">
-                      <img width="100" class="mr-3" src="{{ link_img }}new1.png" alt="">
+                      <img width="100" class="mr-3" src="{{ base_url('upload/fullsize/news/')~value.img }}" alt="">
                       <div class="media-body">
-                        <h5 class="mt-0">2 June 2017</h5>
-                        <p>เป็นข้อความแทนที่ (placeholder </p>
-                        <a href="#" class="">อ่านเพิ่ม</a>
+                        <a href="{{ base_url('momandkids/detail/')~value.id }}" class="">
+                        <h5 class="mt-0">{{ value.date|date('j F Y') }}</h5>
+                        <p>{{ attribute(value,'title_'~lang)|slice(0, 40) ~ '...' }}</p>
+                        </a>
+                        <a href="{{ base_url('momandkids/detail/')~value.id }}" class="">อ่านเพิ่ม</a>
                       </div>
                     </div>
                   </div>
+                  {% endfor %}
 
-                  <div class="news-recent">
-                    <div class="media">
-                      <img width="100" class="mr-3" src="{{ link_img }}new1.png" alt="">
-                      <div class="media-body">
-                        <h5 class="mt-0">2 June 2017</h5>
-                        <p>เป็นข้อความแทนที่ (placeholder </p>
-                        <a href="#" class="">อ่านเพิ่ม</a>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="news-recent">
-                    <div class="media">
-                      <img width="100" class="mr-3" src="{{ link_img }}new1.png" alt="">
-                      <div class="media-body">
-                        <h5 class="mt-0">2 June 2017</h5>
-                        <p>เป็นข้อความแทนที่ (placeholder </p>
-                        <a href="#" class="">อ่านเพิ่ม</a>
-                      </div>
-                    </div>
-                  </div>
 
                 </div><!-- news-group -->
 
-                <div class="news-group">
+                {# <div class="news-group">
                   <div class="title line">
                     <h5 class="color-violet2">ปีที่โพสต์</h5>
                   </div>
@@ -208,21 +121,23 @@
                     <p><a href="#">โลเล็ม อิปซัม. <span class="color-violet2 float-right">(07)</span></a></p>
                     <p><a href="#">โลเล็ม อิปซัม. <span class="color-violet2 float-right">(07)</span></a></p>
                   </div>
-                </div><!-- news-group -->
-
+                </div> #}
+                {% if ads %}
                 <div class="news-group">
                   <div class="title line">
-                    <h5 class="color-violet2">โฆษณา</h5>
+                    <h5 class="color-violet2">{{ label('ads') }}</h5>
                   </div>
 
                   <div>
                     <div class="owl-carousel owl-theme">
-                        <div class="item"><img src="{{ link_img }}new1.png"></div>
-                        <div class="item"><img src="{{ link_img }}new1.png"></div>
-                        <div class="item"><img src="{{ link_img }}new1.png"></div>
+                        {% for value in ads %}
+                        <div class="item"><a target="_blank" href="{{value.link}}"><img src="{{ base_url('upload/fullsize/adv/')~value.img }}"></a></div>
+                        {% endfor %}
+                        
                     </div>
                   </div>
                 </div><!-- news-group -->
+                {% endif %}
 
 
             </div><!-- left -->
@@ -254,5 +169,40 @@
             }
         }
     })
+  </script>
+
+  <script>
+    (function(){
+       $('.search-result').hide();
+      $('#input-filter').submit(function(event){
+         event.preventDefault();
+        var url = $(this).attr('action');
+       // var val = $('.search').val();
+
+        var data = {
+            'keyword': $('.search').val(),
+        }
+
+
+        $.ajax({
+        url: url,
+        type: "post",
+        data: data
+        }).done(function(res)
+        { 
+          console.log(res);
+          if(res != 0){
+             $('.news-wrapper').html(res);
+          }else{
+            $('.news-wrapper').html(res);
+            $('.search-result').show();
+          }
+         
+        });
+
+      });
+
+      
+    })();
   </script>
 {% endblock %}

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Info_model extends CI_Model{
+class Footer_model extends CI_Model{
 	function __construct(){
 		parent::__construct();
 	}
@@ -61,7 +61,6 @@ class Info_model extends CI_Model{
 		$data = $query->result_array();
 		return $data;	
 	}
-
 	public function selectInsuranceHow($type)
 	{
 		$query = $this->db->select('*')
@@ -69,57 +68,29 @@ class Info_model extends CI_Model{
 				->where('type', $type)
 				->order_by('id', 'ASC')
 				->get();
-			//	echo	$this->db->last_query();exit();
 		$data = $query->result_array();
 		return $data;	
 	}
-	public function selectInsuranceHead($type)
+	public function selectCategoryTotal()
+	{
+		$query = $this->db->select('cate.id,cate.name_th,cate.name_en, COUNT(news.category_id) AS total')
+				->from('tb_news as news')
+				->join('tb_news_category as cate','news.category_id = cate.id' )
+				->where('cate.status', 1)
+				->group_by('news.category_id')
+				->get();
+		$data = $query->result_array();
+		return $data;	
+	}
+
+	public function selectNewsByID($id)
 	{
 		$query = $this->db->select('*')
-				->from('tb_insurance_how')
-				->where('type', $type)
-				->order_by('id', 'ASC')
+				->from('tb_news')
+				->where('id', $id)
+				->where('status', 1)
 				->get();
-			//	echo	$this->db->last_query();exit();
 		$data = $query->row();
-		return $data;	
-	}
-
-	public function selectPackage()
-	{
-		$query = $this->db->select('*')
-				->from('tb_filter_package')
-				->where('status', 1)
-				->order_by('id', 'ASC')
-				->get();
-			//	echo	$this->db->last_query();exit();
-		$data = $query->result_array();
-		return $data;	
-	}
-
-	public function selectInsuranceFillter($id_cate,$id_fillter)
-	{
-		$query = $this->db->select('*')
-				->from('tb_insurance_package')
-				->where('status', 1)
-				->where('insurance_id', $id_cate)
-				->where('filter_id', $id_fillter)
-				->order_by('seq', 'ASC')
-				->get();
-			//	echo	$this->db->last_query();exit();
-		$data = $query->result_array();
-		return $data;	
-	}
-	public function selectInsuranceFillterCate($id_cate)
-	{
-		$query = $this->db->select('*')
-				->from('tb_insurance_package')
-				->where('status', 1)
-				->where('insurance_id', $id_cate)
-				->order_by('seq', 'ASC')
-				->get();
-			//	echo	$this->db->last_query();exit();
-		$data = $query->result_array();
 		return $data;	
 	}
 }//class

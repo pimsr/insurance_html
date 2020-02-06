@@ -13,37 +13,68 @@
             <div class="col-md-8 news-wrapper order-2">
                 <div class="row">
                   <div class="col-md-12">
-                      <h3 class="color-violet2">เรื่องน่ารู้กับสุขภาพลูกรัก</h3>
+                      <h3 class="color-violet2">{{ attribute(detail,'title_'~lang) }}</h3>
                       <div class="b-custom">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                              <li class="breadcrumb-item"><a href="#">แม่และลูก</a></li>
-                              <li class="breadcrumb-item"><a href="#">บทความ</a></li>
-                              <li class="breadcrumb-item active" aria-current="page">โลเล็ม อิปซัม</li>
-                            </ol>
-                        </nav>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{ base_url('momandkids') }}">{{ label('momandkids') }}</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">{{ attribute(cate,'name_'~lang) }}</li>
+                                </ol>
+                            </nav>
+                          </div>
+                          
+                        </div>
+                        
+
+                        
                       </div>
-
                       <div class="detail">
-                        <img class="img-fluid" src="{{ link_img }}new1.png">
+                        <img class="img-fluid" src="{{ base_url('upload/fullsize/news/')~detail.img }}">
+                          <div class="row">
+                          <div class="col-sm-12">
+                            <ul class="list-inline mt-3">
+                              <li class="list-inline-item">
+                                <img  src="{{ link_img }}icon/icon-clock.png">
+                              </li>
+                              <li class="list-inline-item "><span class="color-violet2">{{ detail.date|date('j F Y') }}</span></li>
+                              
+                            </ul>
+                          </div>
 
-                          <ul class="list-inline mt-3">
-                            <li class="list-inline-item">
-                              <img  src="{{ link_img }}icon/icon-clock.png">
-                            </li>
-                            <li class="list-inline-item "><span class="color-violet2">01 June 2017</span></li>
-                            
-                          </ul>
+                        </div>
+                          
 
-                          <h5 class="color-violet2">Every policy comes with the support of a knowledgeable and friendly Cover agent</h5>
+                          <h5 class="color-violet2">{{ attribute(detail,'title_'~lang) }}</h5>
 
                           <div>
-                            Analytics alpha virality user experience release market beta crowdfunding product management crowdsource. Disruptive branding client business plan equity early adopters marketing lean startup handshake monetization leverage graphical user interface. Social proof traction research & development. Ramen pivot freemium launch party A/B testing series A financing churn rate user experience monetization assets iPhone entrepreneur. Partnership agile development business plan. Startup user experience pitch assets iPhone business model canvas seed round conversion advisor angel investor crowdfunding investor social media.
+                            {{ attribute(detail,'desc_'~lang)|raw }}
 
 
                           </div>
 
-                          <div class="card-img mt-4 mb-3">
+                          <div class="social-share mt-3">
+                              <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                              <a target="_blank" href="http://www.facebook.com/sharer.php?u={{current_url}}" class="share-facebook">
+                                <span class="icon icon-facebook" aria-hidden="true"></span>
+                                <span class="share-title">Share</span>
+                              </a>
+
+                              <!-- https://dev.twitter.com/docs/intents -->
+                              <a target="_blank" href="http://twitter.com/share?url={{current_url}}" class="share-twitter">
+                                <span class="icon icon-twitter" aria-hidden="true"></span>
+                                <span class="share-title">Tweet</span>
+                              </a>
+
+                              <!-- https://developers.google.com/+/web/share/ -->
+                              <a target="_blank" href="http://plus.google.com/share?url={{current_url}}" class="share-google">
+                                <span class="icon icon-google" aria-hidden="true"></span>
+                                <span class="share-title">+1</span>
+                              </a>
+                            </div>
+
+                          {# <div class="card-img mt-4 mb-3">
                             <img class="card-img-top" src="{{ link_img }}new1.png" alt="Card image cap">
                             <a href="#" class="news-date play">
                                <div><img src="{{ link_img }}icon/icon-play.png"></div>
@@ -54,20 +85,20 @@
 
                           <div>
                             Interaction design success early adopters angel investor metrics. Startup value and proposition branding stealth marketing early adopters scrum project learning curve monetization.
-                          </div>
+                          </div> #}
                       </div>
 
                       <div class="detail-tag mt-5 mb-4">
                         <h4 class="color-violet2"><span>Tags :</span></h4>
+                        {% if tag %}
+                        {% set tag = attribute(detail, 'tags_'~lang)|split(',') %}
+                      
+                        {% for item in tag %}
 
-                        <a class="btn-tag"  href="#">รักเด็ก</a>
-                        <a class="btn-tag" href="#">ประกัน</a>
-                        <a class="btn-tag" href="#">ประกันเด็ก</a>
-                        <a class="btn-tag" href="#">เด็กเล็ก</a>
-                        <a class="btn-tag" href="#">ลูกรัก</a>
-                        <a class="btn-tag" href="#">ออมเงิน</a>
-                        <a class="btn-tag" href="#">ภาษี</a>
+                          <a class="btn-tag"  href="#">{{item}}</a>
 
+                        {% endfor %}
+                        {% endif %}
 
                       </div>
 
@@ -76,12 +107,20 @@
                       </div>
 
                       <div class="page row mt-4">
-                        <div class="col-6">
-                          <a class="color-violet2" href="#"><img src="{{ link_img }}icon/icon-left.png"> ก่อนหน้า</a>
+                       
+                        <div class="col-6 text-left">
+                        {% if get_link.prevValue  %}
+                          <a class="color-violet2" href="{{ base_url('momandkids/detail')~'/'~get_link.prevValue }}"><img src="{{ link_img }}icon/icon-left.png"> {{ label('prev') }}</a>
+                        {% endif %}
                         </div>
+                         
+                        
                         <div class="col-6 text-right">
-                          <a class="color-violet2" href="#">ถัดไป <img src="{{ link_img }}icon/icon-right.png"></a>
+                        {% if get_link.nextValue  %}
+                          <a class="color-violet2" href="{{ base_url('momandkids/detail')~'/'~get_link.nextValue }}">{{ label('next') }} <img src="{{ link_img }}icon/icon-right.png"></a>
+                        {% endif %}
                         </div>
+                        
                       </div>
                   </div>
                   
@@ -92,144 +131,58 @@
 
                 <div class="news-group">
                   <div class="title line">
-                    <h5 class="color-violet2">บทความที่เกี่ยวข้อง</h5>
+                    <h5 class="color-violet2">{{ label('relate_news') }}</h5>
                   </div>
 
                   <div>
+                  
+                    {% if relate_news %}
+                    {% for value1 in relate_news  %}
+
                     <div class="card">
                       <div class="">
-                        <a href="momkids-detail.php"><img class="card-img-top" src="{{ link_img }}img1.png" alt="Card image cap"></a>
+                        <a href="{{ base_url('momandkids/detail/')~value1.id }}"><img class="card-img-top" src="{{ base_url('upload/fullsize/news/')~value1.img }}" alt="Card image cap"></a>
                         <div class="card-body">
                           <ul class="list-inline">
                             <li class="list-inline-item">
                               <img src="{{ link_img }}icon/icon-clock.png">
                             </li>
-                            <li class="list-inline-item">01 June 2017</li>
+                            <li class="list-inline-item">{{ value1.date|date('j F Y') }}</li>
                             
                           </ul>
 
-                          <a href="momkids-detail.php">
-                            Understanding the types of life insurance
+                          <a href="{{ base_url('momandkids/detail/')~value1.id }}">
+                            {{ attribute(value1,'title_'~lang) }}
                           </a>
 
-                          <div class="social-share mt-4">
-                             <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://labs.carsonshold.com/social-sharing-buttons" class="share-facebook">
-                              <span class="icon icon-facebook" aria-hidden="true"></span>
-                              <span class="share-title">Share</span>
-                            </a>
-
-                            <!-- https://dev.twitter.com/docs/intents -->
-                            <a target="_blank" href="http://twitter.com/share?url=http://labs.carsonshold.com/social-sharing-buttons&amp;text=jQuery%20social%20media%20buttons%20on%20GitHub&amp;" class="share-twitter">
-                              <span class="icon icon-twitter" aria-hidden="true"></span>
-                              <span class="share-title">Tweet</span>
-                            </a>
-
-                            <!-- https://developers.google.com/+/web/share/ -->
-                            <a target="_blank" href="http://plus.google.com/share?url=http://labs.carsonshold.com/social-sharing-buttons" class="share-google">
-                              <span class="icon icon-google" aria-hidden="true"></span>
-                              <span class="share-title">+1</span>
-                            </a>
-                          </div>
+                          
                         </div>
                       </div>
                     </div>
+                      {% endfor %}
+                    {% endif %}
 
-                    <div class="card">
-                      <div class="">
-                        <a href="momkids-detail.php"><img class="card-img-top" src="{{ link_img }}img1.png" alt="Card image cap"></a>
-                        <div class="card-body">
-                          <ul class="list-inline">
-                            <li class="list-inline-item">
-                              <img src="{{ link_img }}icon/icon-clock.png">
-                            </li>
-                            <li class="list-inline-item">01 June 2017</li>
-                            
-                          </ul>
-
-                          <a href="momkids-detail.php">
-                            Understanding the types of life insurance
-                          </a>
-
-                          <div class="social-share mt-4">
-                             <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://labs.carsonshold.com/social-sharing-buttons" class="share-facebook">
-                              <span class="icon icon-facebook" aria-hidden="true"></span>
-                              <span class="share-title">Share</span>
-                            </a>
-
-                            <!-- https://dev.twitter.com/docs/intents -->
-                            <a target="_blank" href="http://twitter.com/share?url=http://labs.carsonshold.com/social-sharing-buttons&amp;text=jQuery%20social%20media%20buttons%20on%20GitHub&amp;" class="share-twitter">
-                              <span class="icon icon-twitter" aria-hidden="true"></span>
-                              <span class="share-title">Tweet</span>
-                            </a>
-
-                            <!-- https://developers.google.com/+/web/share/ -->
-                            <a target="_blank" href="http://plus.google.com/share?url=http://labs.carsonshold.com/social-sharing-buttons" class="share-google">
-                              <span class="icon icon-google" aria-hidden="true"></span>
-                              <span class="share-title">+1</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card">
-                      <div class="">
-                        <a href="momkids-detail.php"><img class="card-img-top" src="{{ link_img }}img1.png" alt="Card image cap"></a>
-                        <div class="card-body">
-                          <ul class="list-inline">
-                            <li class="list-inline-item">
-                              <img src="{{ link_img }}icon/icon-clock.png">
-                            </li>
-                            <li class="list-inline-item">01 June 2017</li>
-                            
-                          </ul>
-
-                          <a href="momkids-detail.php">
-                            Understanding the types of life insurance
-                          </a>
-
-                          <div class="social-share mt-4">
-                             <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
-                            <a target="_blank" href="http://www.facebook.com/sharer.php?u=http://labs.carsonshold.com/social-sharing-buttons" class="share-facebook">
-                              <span class="icon icon-facebook" aria-hidden="true"></span>
-                              <span class="share-title">Share</span>
-                            </a>
-
-                            <!-- https://dev.twitter.com/docs/intents -->
-                            <a target="_blank" href="http://twitter.com/share?url=http://labs.carsonshold.com/social-sharing-buttons&amp;text=jQuery%20social%20media%20buttons%20on%20GitHub&amp;" class="share-twitter">
-                              <span class="icon icon-twitter" aria-hidden="true"></span>
-                              <span class="share-title">Tweet</span>
-                            </a>
-
-                            <!-- https://developers.google.com/+/web/share/ -->
-                            <a target="_blank" href="http://plus.google.com/share?url=http://labs.carsonshold.com/social-sharing-buttons" class="share-google">
-                              <span class="icon icon-google" aria-hidden="true"></span>
-                              <span class="share-title">+1</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
+                    
 
                   </div>
                 </div><!-- news-group -->
 
+                {% if ads %}
                 <div class="news-group">
                   <div class="title line">
-                    <h5 class="color-violet2">โฆษณา</h5>
+                    <h5 class="color-violet2">{{ label('ads') }}</h5>
                   </div>
 
                   <div>
                     <div class="owl-carousel owl-theme">
-                        <div class="item"><img src="{{ link_img }}new1.png"></div>
-                        <div class="item"><img src="{{ link_img }}new1.png"></div>
-                        <div class="item"><img src="{{ link_img }}new1.png"></div>
+                        {% for value in ads %}
+                        <div class="item"><a target="_blank" href="{{value.link}}"><img src="{{ base_url('upload/fullsize/adv/')~value.img }}"></a></div>
+                        {% endfor %}
+                        
                     </div>
                   </div>
                 </div><!-- news-group -->
+                {% endif %}
 
 
             </div><!-- left -->

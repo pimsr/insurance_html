@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>ประกันลูก</title>
-        <meta name="Description" content="">
-        <meta name="keywords" content="">
+        <meta name="Description" content="วางแผนประกันสุขภาพให้ลูก ด้วยบริการจากที่ปรึกษามืออาชีพ">
+        <meta name="keywords" content="ประกันสุขภาพลูก,โรงพยาบาลลูก,วางแผนการศึกษา">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta charset="utf-8">
-
+        <link rel="shortcut icon" type="image/png" href="{{ link_img }}favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="{{ base_url('assets/frontend/css/bootstrap-reboot.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ base_url('assets/frontend/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ base_url('assets/frontend/css/fonts.css') }}">
@@ -34,6 +34,14 @@
         <script src="assets/js/html5shiv.js"></script>
         <script src="assets/js/respond.min.js"></script>
         <![endif]-->
+        {% if footer__share %}
+            
+        <meta property="og:url"           content="{{ footer__share.current_url }}" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="{{ attribute(footer__share.share,'title_'~lang) }}" />
+        <meta property="og:description"   content="{{ attribute(footer__share.share,'caption_'~lang) }}" />
+        <meta property="og:image"         content="http://xn--12ca5eg4bo8ej8e.com/upload/fullsize/news/{{footer__share.share.img}}" />
+        {% endif %}
     </head>
     <body>
         <section id="header">
@@ -42,9 +50,9 @@
                     <div class="row">
                         <div class="col">
                             <div class="social top-social">
-                                <a href="{{ nav.contact.facebook }}" target="_blank"><img src="{{ link_img }}icon/icon-fb.png" alt=""></a>
-                                <a href="{{ nav.contact.instagram }}" target="_blank"><img src="{{ link_img }}icon/icon-ig.png" alt=""></a>
-                                <a href="{{ nav.contact.twitter }}" target="_blank"><img src="{{ link_img }}icon/icon-tw.png" alt=""></a>
+                                <a href="{{ nav.contact.facebook }}" target="_blank"><img src="{{ link_img }}icon/icon-fb.svg" alt=""></a>
+                                <a href="{{ nav.contact.instagram }}" target="_blank"><img src="{{ link_img }}icon/icon-ig.svg" alt=""></a>
+                                <a href="{{ nav.contact.twitter }}" target="_blank"><img src="{{ link_img }}icon/icon-tw.svg" alt=""></a>
                             </div>
                         
                         </div>
@@ -63,7 +71,7 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-lg navbar-light ">
                         <a class="navbar-brand" href="{{ base_url('home') }}">
-                            <img src="{{ link_img }}logo.png" alt="">
+                            <img  src="{{ link_img }}logo.svg" alt="">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -72,36 +80,36 @@
                         <div class="collapse navbar-collapse color-gray" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto ">
                                 <li class="nav-item {{ page == 'home' ? 'active' : '' }}">
-                                    <a class="nav-link color-gray" href="{{ base_url('home') }}">หน้าหลัก <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link color-gray" href="{{ base_url('home') }}">{{ label('home') }} <span class="sr-only">(current)</span></a>
                                 </li>
                             
                                 <li class="nav-item dropdown {{ page == 'info' ? 'active' : '' }}">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        ประกันสุขภาพลูก
+                                        {{ label('insurance_kids') }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <li><a class="dropdown-item" href="{{ base_url('info') }}">หน้ารวมประกัน</a></li>
+                                        <li><a class="dropdown-item" href="{{ base_url('info') }}">{{ label('insurance_page') }}</a></li>
                                         {% for value in nav.insurance %}
                                         <li><a class="dropdown-item" href="{{ base_url('info/detail/')~value.id }}">{{ attribute(value,'title_'~lang) }}</a></li>
                                         {% endfor %}
                                     </ul>
                                 </li>
                                 <li class="nav-item {{ page == 'hospital' ? 'active' : '' }}">
-                                    <a class="nav-link color-gray" href="{{ base_url('hospital') }}">โรงพยาบาลลูก</a>
+                                    <a class="nav-link color-gray" href="{{ base_url('hospital') }}">{{ label('hospital') }}</a>
                                 </li>
                                  <li class="nav-item {{ page == 'momandkids' ? 'active' : '' }}">
-                                    <a class="nav-link color-gray" href="{{ base_url('momandkids') }}">แม่และลูก</a>
+                                    <a class="nav-link color-gray" href="{{ base_url('momandkids') }}">{{ label('momandkids') }}</a>
                                 </li>
                                 <li class="nav-item {{ page == 'plan' ? 'active' : '' }}">
-                                    <a class="nav-link color-gray" href="{{ base_url('plan') }}">วางแผนการศึกษา</a>
+                                    <a class="nav-link color-gray" href="{{ base_url('plan') }}">{{ label('plan') }}</a>
                                 </li>
 
                                 <li class="nav-item dropdown {{ page == 'contact' ? 'active' : '' }}">
                                     <a class="nav-link dropdown-toggle color-gray" href="{{ base_url('contact') }}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        ติดต่อเรา
+                                        {{ label('contact') }}
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent') }}">ตัวแทนของเรา</a></li>
+                                        <li><a class="dropdown-item " href="{{ base_url('contact/agent') }}">{{ label('agent') }}</a></li>
                                         {% for value in nav.company %}
                                         <li><a class="dropdown-item" href="{{ base_url('contact/agent/')~value.id }}">{{ attribute(value,'title_'~lang) }}</a></li>
                                         {% endfor %}
@@ -128,10 +136,10 @@
                     <div class="stop">
                         <div class="row footer-social">
                             <div class="col-12 col-sm-6 col-md-3 link">
-                                <a href="{{ nav.contact.facebook }}" target="_blank"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-fb-footer.png"> <span>แชร์หน้านี้บนเฟสบุ๊ค</span></h4></a>
+                                <a href="{{ nav.contact.facebook }}" target="_blank"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-fb-footer.png"> <span>{{ label('link_fb') }}</span></h4></a>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3 link">
-                                <a href="{{ nav.contact.line }}" target="_blank"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-line-footer.png"> <span>pragunluk</span></h4></a>
+                                <a href="{{ nav.contact.line }}" target="_blank"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-line-footer.png"> <span>{{ label('link_line') }}</span></h4></a>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3 link">
                                 <a href="tel: {{ nav.contact.tel }}"><h4 class="title color-violet2"><img draggable="false"  alt="" src="{{ link_img }}icon/icon-tel-footer.png"> <span>{{ nav.contact.tel }}</span></h4></a>
@@ -147,55 +155,56 @@
             <div class="container content-p-bottom ">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="{{ link_img }}logo.png">
-                        <p class="mt-2 footer-content">เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง ใช้เพื่อลดความสนใจต่อข้อความที่นำมาแสดง </p>
+                        <img class="footer-img" src="{{ link_img }}logo.svg">
+                        <p class="mt-2 footer-content">{{ label('footer_info') }}</p>
                     </div>
                     <div class="col-md-8">
                         <div class="row nav-footer">
                             <div class="col-md-3">
-                                <h5>เกี่ยวกับเรา</h5>
+                                <h5>{{ label('insurance_kids') }}</h5>
                                 <ul class="list-unstyled">
+
+                                    {% if footer_insurance %}
+                                        {% for value in footer_insurance %}
                                     <li>
-                                        <a href="#">นิยามบริษัท</a>
+                                        <a href="{{ base_url('info/detail/')~value.id }}">{{ attribute(value,'title_'~lang) }}</a>
                                     </li>
-                                    <li>
-                                        <a href="#">ทำไมต้องเรา</a>
-                                    </li>
+                                        {% endfor %}
+                                    {% endif %}
+                                    
                                 </ul>
                             </div>
                             <div class="col-md-3">
-                                <h5>ประกันเด็ก</h5>
+                                <h5>{{ label('agent') }}</h5>
                                 <ul class="list-unstyled">
-                                    <li>
-                                        <a href="#">เบากระเป๋า</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">เบาใจเหมาจ่าย</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">เบี้ยไม่ทิ้ง</a>
-                                    </li>
+                                    {% for value in nav.company %}
+                                        <li><a href="{{ base_url('contact/agent/')~value.id }}">{{ attribute(value,'title_'~lang) }}</a></li>
+                                        {% endfor %}
                                 </ul>
                             </div>
                             <div class="col-md-3">
-                                <h5>โรงพยาบาลเด็ก</h5>
+                                <h5>{{ label('momandkids') }}</h5>
                                 <ul class="list-unstyled">
+                                    {% if footer__cate %}
+                                    {% for key, value in footer__cate %}
                                     <li>
-                                        <a href="#">นิยามบริษัท</a>
+                                        
+                                         <a href="{{ base_url('momandkids/category/')~value.id }}"> {{ attribute(value,'name_'~lang) }}</a>
+                   
                                     </li>
-                                    <li>
-                                        <a href="#">ทำไมต้องเรา</a>
-                                    </li>
+                                     {% endfor %}
+                                    {% endif %}
+                                    
                                 </ul>
                             </div>
                             <div class="col-md-3">
-                                <h5>ติดต่อสอบถาม</h5>
+                                <h5>{{ label('shortcut') }}</h5>
                                 <ul class="list-unstyled">
                                     <li>
-                                        <a href="#">นิยามบริษัท</a>
+                                        <a href="{{ base_url('plan') }}">วางแผนการศึกษา</a>
                                     </li>
                                     <li>
-                                        <a href="#">ทำไมต้องเรา</a>
+                                        <a href="{{ base_url('hospital') }}">โรงพยาบาลลูก</a>
                                     </li>
                                 </ul>
                             </div>
@@ -206,7 +215,7 @@
 
             <div class="copy-right bg-violet2">
                 <div class="container rel">
-                    <div class="text-center">Copyright © 2018 Pragundek.com All Rights Reserved.</div>
+                    <div class="text-center">Copyright © 2018 ประกันลูก.com All Rights Reserved.</div>
 
                     <div class="social top-social social-footer">
                         <a href="{{ nav.contact.facebook }}" target="_blank"><img src="{{ link_img }}icon/icon-fb.png" alt=""></a>
@@ -216,6 +225,8 @@
                 </div>
             </div>
         </footer>
+
+        <a href ="#" class ="scrollToTop" > <i class="fa fa-angle-up" aria-hidden="true"></i></a>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         {# <script src="{{ base_url('assets/frontend/js/jquery-migrate-1.0.0.js') }}"></script> #}
@@ -250,5 +261,27 @@
         </script>
 
         {% block js %} {% endblock %}
+
+        <div class="fb-customerchat"
+        page_id="<ENTER-YOUR-FACEBOOK-ID-HERE>"
+        minimized="true">
+        </div>
+        <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId            : '912333495590130',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.11'
+            });
+        };
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
     </body>
 </html>

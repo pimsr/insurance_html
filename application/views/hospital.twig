@@ -21,17 +21,17 @@
                   <div class="row">
                       <div class="col-sm-8">
                           <div class="input-group ">
-                            <input  type="text" class="form-custom search" id="input-filter" placeholder="ค้นหาโรงพยาบาล">
+                            <input  type="text" class="form-custom search" id="input-filter" placeholder="{{ label('search_hospital') }}">
                           </div>
                       </div>
                       
                       <div class="col-sm-4">
                           <div class="row">
-                            <label for="inputPassword" class="col-sm-4  color-violet2 label-filter">Filters :</label>
+                            <label for="inputPassword" class="col-sm-4  color-violet2 label-filter">{{ label('search_filter') }} :</label>
                             <div class="col-sm-8">
                               <div class="select-wrapper">
                                   <select class="form-custom" id="select-filter">
-                                    <option value="0">ทั้งหมด*</option>
+                                    <option value="0">{{ label('all') }}*</option>
                                     {% for value in province %}
                                     <option value="{{ value.id }}">{{ attribute(value, 'name_'~lang) }}</option>
                                     {% endfor %}
@@ -57,14 +57,16 @@
                         <div id="collapse{{ key }}" class="collapse {{ key == 0 ? 'show' : '' }}" aria-labelledby="heading{{ key }}" data-parent="#accordion">
                           <div class="card-body">
                             {% set room = json_decode(attribute(value, 'room_'~lang) ) %}
-                            {% set price = json_decode(value.price) %}
+                            {% set price = json_decode(attribute(value, 'price_'~lang)) %}
                             {% for key, value in room %}
+                            {% if value %}
                             <div class="list-hospital">
                               <ul>
                                 <li>{{ value }}</li>
                                 <li>{{ price[key] }}</li>
                               </ul>
                             </div>
+                            {% endif %}
                             {% endfor %}
                             <div class="link mt-3 ">
                               <ul class="list-inline mb-0">
@@ -83,7 +85,7 @@
                                     <img src="{{ link_img }}icon/icon-link.png">
                                 </li>
                                 <li class="list-inline-item">
-                                    <a href="{{ value.link }}" target="_blank">เข้าเว็บไซต์</a>
+                                    <a href="{{ value.link }}" target="_blank">{{ label('website') }}</a>
                                 </li>
                                 {% endif %}
                               </ul>
@@ -114,11 +116,18 @@
   var province = null;
   var text = null;
   $('#select-filter').change(function(){
+    
     var val = $(this).val();
-    $('#accordion .card').hide();
-    $('#accordion .card[data-province="'+val+'"]').fadeIn(300);
-    province = val;
+    if(val==0){
+        $('#accordion .card').show();
+    }else{
+      $('#accordion .card').hide();
+      $('#accordion .card[data-province="'+val+'"]').fadeIn(300);
+      province = val;
+    }
+    
   });
+
   $('#input-filter').keyup(function(){
     var val = $(this).val();
     text = val;

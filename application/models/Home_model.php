@@ -55,6 +55,7 @@ class Home_model extends CI_Model{
 				->order_by('seq', 'ASC')
 				->order_by('id', 'DESC')
 				->get();
+				//echo	$this->db->last_query();exit();
 		$data = $query->result_array();
 		return $data;	
 	}
@@ -66,6 +67,7 @@ class Home_model extends CI_Model{
 				->where('status', 1)
 				->get();
 		$data = $query->result_array();
+		
 		return sizeof($data) > 0 ? $data[0] : null;	
 	}
 }//class

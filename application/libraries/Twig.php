@@ -21,7 +21,7 @@ class Twig
 	/*=========== add function from codeigniter helper =============*/ 
 	
 	private $functions_asis = [
-		'base_url', 'site_url','mapStatus','json_decode','empty','trim'
+		'base_url', 'site_url','mapStatus','json_decode','empty','trim','label'
 	];
 	/*=========== add function from codeigniter helper =============*/ 
 

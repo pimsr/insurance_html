@@ -1,0 +1,24 @@
+<div class="row">
+  {% for value in results %}
+    <div class="col-md-6">
+      <div class="card"  data-filter="{{ attribute(value, 'title_'~lang) }}" >
+          <div class="card-img">
+          <a href="{{ base_url('momandkids/detail/')~value.id }}">
+              <img class="card-img-top" src="{{ base_url('upload/fullsize/news/')~value.img }}" alt="Card image cap">
+              <div class="news-date">
+                  <div> {{ value.date|date('d') }} <br> {{ value.date|date('F') }} </div>
+              </div>
+          </a>
+          </div>
+          <div class="card-body text-left">
+              <a href="{{ base_url('momandkids/detail/')~value.id }}">
+                    <h5 class="card-title">{{ attribute(value,'title_'~lang)  }}</h5>
+                    <p class="card-text">{{ attribute(value,'caption_'~lang)|slice(0, 120) ~ '...' }}</p>
+                    <p class="color-violet2">อ่านเพิ่ม <img src="{{ link_img }}icon/icon-right.png"></p>
+              </a>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+

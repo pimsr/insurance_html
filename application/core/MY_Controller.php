@@ -6,6 +6,9 @@ class MY_Controller extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->load->library('twig');
+		$this->twig->addGlobal("footer_insurance", $this->getInsurance());
+		$this->twig->addGlobal("footer__cate", $this->getCateMomAndKids());
+		$this->twig->addGlobal("footer__share", $this->getShare());
 	}
 	protected function checkAdmin(){
 		if(!$this->session->has_userdata('admin')){
@@ -161,6 +164,34 @@ class MY_Controller extends CI_Controller{
 	    	'status' => $status,
 	    	'msg' => $msg
     	);
+	}
+
+	private function getInsurance(){
+		$this->load->model('footer_model');
+
+		$insurance  = $this->footer_model->selectInsurance();
+		//echo "<pre>";print_r($meta);echo "</pre>";exit;  
+		return $insurance;
+
+	}
+
+	private function getCateMomAndKids(){
+		$this->load->model('footer_model');
+
+		$cate= $this->footer_model->selectCategoryTotal();
+		//echo "<pre>";print_r($meta);echo "</pre>";exit;  
+		return $cate;
+
+	}
+
+	private function getShare(){
+		$this->load->model('footer_model');
+		$id   = $this->uri->segment(3) OR $id = 1;	
+		$data['share'] = $this->footer_model->selectNewsByID($id);
+		$data['current_url'] = base_url(uri_string());
+		//echo "<pre>";print_r($meta);echo "</pre>";exit;  
+		return $data;
+
 	}
 
 }//class

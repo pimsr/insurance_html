@@ -19,7 +19,7 @@
                 <div class="col-md-6">
                   <div class="bg-gray contact-list text-center">
                       <img src="{{ link_img }}icon/icon-location.png">
-                      <h6 class="color-violet2 my-3">ที่อยู่บริษัท</h6>
+                      <h6 class="color-violet2 my-3">{{ label('address') }}</h6>
                       <p>
                         {{ attribute(data, 'address_'~lang)|nl2br }}
                       </p>
@@ -28,7 +28,7 @@
                 <div class="col-md-6">
                   <div class="bg-gray contact-list text-center">
                       <img src="{{ link_img }}icon/icon-time.png">
-                      <h6 class="color-violet2 my-3">เวลาทำการ</h6>
+                      <h6 class="color-violet2 my-3">{{ label('time') }}</h6>
                       <p>
                         {{ attribute(data, 'time_'~lang)|nl2br }}
                       </p>
@@ -38,51 +38,51 @@
 
               <div class="row mt-5 bg-gray contact-list">
                 <div class="col-md-12 text-center">
-                    <a href="tel: {{ data.claim_tel }}"><h4 class="color-violet2 mb-4" >ติดต่อเรื่องเคลม  ( {{ data.claim_tel }} )</h4></a>
-                    <a href="{{ data.claim_link }}" target="_blank" class="btn btn-violet">ดูข้อมูลการเคลม</a>
+                    <a href="tel: {{ data.claim_tel }}"><h4 class="color-violet2 mb-4" >{{ label('contact_') }}  ( {{ data.claim_tel }} )</h4></a>
+                    <a href="{{ data.claim_link }}" target="_blank" class="btn btn-violet">{{ label('view_info') }}</a>
                 </div>
               </div>
               
           </div>
 
           <div class="content-p-top">
-              <h3 class="color-violet2 text-center title">ติดต่อประกันลูก</h3>
+              <h3 class="color-violet2 text-center title">{{ label('contact') }}</h3>
               <p class="text-center">โลเล็ม อิปซัม (lorem ipsum) — เป็นข้อความแทนที่ (placeholder text) ใช้เพื่อลดความสนใจต่อ</p>
 
               <form class="mt-5" action="{{ base_url('contact/sendMsg') }}" method="post">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input class="form-custom" type="text" name="name" placeholder="ช่ือ-นามสกุล" required>
+                      <input class="form-custom" type="text" name="name" placeholder="{{ label('name') }}" required>
                     </div>
                     <div class="form-group">
-                      <input class="form-custom" type="email" name="email" placeholder="อีเมล์" required>
+                      <input class="form-custom" type="email" name="email" placeholder="{{ label('email') }}" required>
                     </div>
                     <div class="form-group">
-                      <input class="form-custom" type="text" name="card_id" placeholder="เลขบัตรประชาชน*" required>
+                      <input class="form-custom" type="text" name="card_id" placeholder="{{ label('idcard') }}" required>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input class="form-custom" type="text" name="subject" placeholder="เรื่องที่ต้องการสอบถาม**" required>
+                      <input class="form-custom" type="text" name="subject" placeholder="{{ label('topic') }}" required>
                     </div>
                     <div class="form-group">
-                      <input class="form-custom" type="text" name="tel" placeholder="เบอร์โทรศัพท์" required>
+                      <input class="form-custom" type="text" name="tel" placeholder="{{ label('tel') }}" required>
                     </div>
                     <div class="form-group">
-                      <input class="form-custom" type="text" name="policy_number" placeholder="เลขที่กรมธรรม์" required>
+                      <input class="form-custom" type="text" name="policy_number" placeholder="{{ label('id_insurance') }}" required>
                     </div>
                   </div>
 
                   <div class="col-md-12">
                     <div class="form-group">
-                      <textarea class="form-custom" rows="6" name="message" laceholder="ข้อความ..." required></textarea>
+                      <textarea class="form-custom" rows="6" name="message" laceholder="{{ label('messages') }}" required></textarea>
                     </div>
                   </div>
 
                   <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-violet">ส่งข้อมูล</button>
+                    <button type="submit" class="btn btn-violet">{{ label('sent') }}</button>
                   </div>
                 </div>
               </form>
